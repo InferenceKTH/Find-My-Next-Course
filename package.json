@@ -1,14 +1,24 @@
 {
+    "name": "find-my-next-course",
+    "version": "1.0.0",
+    "description": "A tool to determine courses at KTH one is eligible for. ",
+    "homepage": "https://github.com/jkluge/Find-My-Next-Course#readme",
+    "bugs": {
+        "url": "https://github.com/jkluge/Find-My-Next-Course/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jkluge/Find-My-Next-Course.git"
+    },
+    "license": "ISC",
+    "author": "",
     "type": "module",
+    "main": "index.ts",
     "scripts": {
         "start": "vite",
         "dev": "vite",
         "build": "vite build",
         "serve": "vite preview"
-    },
-    "devDependencies": {
-        "@vitejs/plugin-react": "4.2.0",
-        "vite": "^4.4.11"
     },
     "dependencies": {
         "firebase": "^9.23.0",
@@ -18,5 +28,9 @@
         "react-dom": "^18.0.0",
         "react-icons": "^5.4.0",
         "react-router-dom": "^6.28.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "4.2.0",
+        "vite": "^4.4.11"
     }
 }
