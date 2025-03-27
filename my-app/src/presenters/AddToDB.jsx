@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TextInputView } from "../views/TextInputView";
 
 // A dummy presenter, which adds the course supplied in the text field to the db.
-const AddToDB = observer(function AddToDB({ model }) {
+export const AddToDB = observer(function AddToDB({ model }) {
     const [text, setText] = useState("");
 	return <TextInputView text={text} onTextChanged={onTextChanged} onSubmit={onSubmit}/>;
 
@@ -16,5 +16,3 @@ const AddToDB = observer(function AddToDB({ model }) {
         model.addCourse(course);
     }
 });
-
-export { AddToDB };
