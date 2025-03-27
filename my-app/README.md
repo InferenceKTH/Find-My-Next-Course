@@ -1,12 +1,27 @@
-# React + Vite
+Project Structure Draft:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```
+.
+├── firebase.js      // handles fetching and saving to the realtime database on firebase
+├── firebase.json    // used for firebase deploy
+├── index.html       // the main index page - contains header and loads the index.jsx
+├── package.json     // used for nodejs (npm) packages
+├── package-lock.json    // used for nodejs (npm) packages
+├── README.md        // this file ^^
+├── src              // contains all source filed
+│   ├── assets       //  content, e.g. pictures, ressources etc.
+│   │   └── react.svg
+│   ├── index.jsx    // the react router - routes between pages, all pages are inserted here
+│   ├── model.js     // the model - handles prog. logic, that is either global or account specific
+│   ├── pages        // pages combine the presenters to a webpage. mby obsolete for 1 page project
+│   │   └── HomeRoot.jsx  // The future homepage?
+│   ├── presenters   // Presenters link views and the model. 
+│   |                   Hooks to modify the model & component  state is defined here
+│   │   └── HandleSearchPresenter.jsx  // An example presenter
+│   ├── styles.css   // a style document - mby one for each view?
+│   └── views        // views define parts of pages cosmetically. 
+│       └── DummyView.jsx
+└── vite.config.js
+```
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
