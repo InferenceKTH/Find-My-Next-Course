@@ -1,0 +1,2287 @@
+{
+    "FEL3310": {
+        "name": "Distributed Optimization, Intensive Course",
+        "code": "FEL3310",
+        "location": null,
+        "department": "EECS/Decision and Control Systems",
+        "academic_level": "RESEARCH",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FEL3310",
+        "description": null,
+        "prerequisites": null
+    },
+    "FMJ3410": {
+        "name": "Theory and Methodology of Science for Energy Research",
+        "code": "FMJ3410",
+        "location": "KTH Campus",
+        "department": "ITM/Heat and Power Technology",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FMJ3410",
+        "description": "<p>The aim of the course is to introduce theory and methods of science to doctoral students who are in early stage of their research career, and support them if the preparation of their research plans and research documents, and strengthen their scientific research knowledge.<br />After passing the course, the students should be able to:</p><ul><li>understand, describe and compare basic concepts in theory and methodology for science and relate them to energy research problems and own research subject</li></ul><ul><li>identify and propose application of specific methods to analyse energy problems and research subjects in their domain</li></ul><ul><li>critically review theories and methods that are used in scientific papers and reports  and their relevance for research on different thematic fields of energy,</li></ul><ul><li>clearly understand the requirements of a publishable research paper for a highly ranked journal</li></ul><ul><li>be able to understand and deal with sustainability dimensions in design and development of energy research projects.</li></ul>",
+        "prerequisites": "<p>Students who are researchers at KTH in the earlier stages of their doctoral programme ( first or second year).</p><p>Degree of Master or the equivalent from a major university in fields such as science, technology, energy or related fields. Documented proficiency in English B or the equivalent</p>"
+    },
+    "FKD3400": {
+        "name": "Corrosion Challenges - in Current and Future Technologies",
+        "code": "FKD3400",
+        "location": null,
+        "department": "CBH/Chemistry",
+        "academic_level": "RESEARCH",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FKD3400",
+        "description": "<p>After completion of the course the doctoral student should have the knowledge and ability to</p><ul><li>analyse an application for metallic materials from a corrosion perspective</li><li>break down a corrosion issue into questions related to damage mechanisms, materials selection criteria, and the effect of environmental parameters</li></ul>",
+        "prerequisites": "<p>PhD student in chemistry, chemical engineering and materials science.</p>"
+    },
+    "FMG3303": {
+        "name": "Business driven Production Development",
+        "code": "FMG3303",
+        "location": null,
+        "department": "ITM/Production Engineering",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FMG3303",
+        "description": "<p>This is a typical literature analysis based course and its focus will be on contributions that connect business with the technical dimension in manufacturing related disciplines.</p><p>The first part of the course (2-3 seminars) will be devoted to provide basic knowledge in the discipline. In detail, the contributions that are analysed in this part intend to give a good understanding of the relation between business models and production technology.</p><p>The other part of the course will lay the foundation for and advance such knowledge through well chosen reading. In addition to this there will be an activity for co-creation of study material as a basis for preparing the course for future questions.</p>",
+        "prerequisites": "<p>Admitted to third-cycle education in Production engineering.</p>"
+    },
+    "FSD3203": {
+        "name": "Vehicle Engineering Research Training",
+        "code": "FSD3203",
+        "location": null,
+        "department": "SCI/Aeronautical and Vehicle Engineering",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSD3203",
+        "description": "<p>After completing the course, the student have learned how to plan, perform and report a research study in vehicle technology.</p>",
+        "prerequisites": "<p>PhD student in the doctoral program Vehicle and Maritime Engineering.</p>"
+    },
+    "FSF3572": {
+        "name": "Approximation Theory",
+        "code": "FSF3572",
+        "location": null,
+        "department": "SCI/Mathematics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSF3572",
+        "description": "<p>After completing this graduate course the students will be able to understand and use basic methods and theory for numerical function approximation. In particular, the student should</p><ul><li>be able to use and analyze the basic methods for polynomial approximations (interpolation, least squares, piecewise approximations, Hermite interpolation)</li><li>undestand and use the theory of convergence (Weierstrass) and best approximations for continuous functions as well as error estimates for smooth functions</li><li>understand and use the theory of stability and conditioning for polynomial approximation methods, including its relation to interpolation points via Lebesgue constants</li><li>understand and use the theory of orthogonal polynomials and Gauss quadrature methods</li><li>have a good understanding of a couple of current topics in approximation theory, with a deeper knowledge of at least one of them.</li></ul>",
+        "prerequisites": "<p>A Master degree including at least 30 university credits (hp) in in Mathematics (including differential equations and numerical analysis).</p>"
+    },
+    "FEI3338": {
+        "name": "Characterisation of Dielectric Materials and Insulation Systems",
+        "code": "FEI3338",
+        "location": null,
+        "department": "EECS/Electromagnetic Engineering",
+        "academic_level": "RESEARCH",
+        "credits": 10,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FEI3338",
+        "description": "<p>After taking this course the student must be able to demonstrate the ability to:</p><ul><li>Describe in detail the setup and principle of a common measurement method for each of two material or system properties, including indicative quantitative assessment of factors affecting uncertainty.&#160;</li><li>For a specified type of material characterisation: identify and quantitatively assess error sources and their mitigation; make and justify an estimate of uncertainty.</li><li>Suggest and contrast ways to improve a specified measurement system .&#160;</li><li>Define and discuss ways in which the path to sustainability of power systems affects the need for new and improved insulation systems.</li><li>Apply the analysis and estimation skills from the common part of the course in an individual project within the student's research, and present this accessibly in oral and written form.&#160;</li></ul>",
+        "prerequisites": "<p>Completed master-level education in electrical engineering, physics or material science, or equivalent experience. Students are typically expected to be doctoral students in subjects within the general areas of high voltage engineering or material science.</p>"
+    },
+    "FEI3340": {
+        "name": "Fault Analysis and Protection Principles in Electric Power Systems",
+        "code": "FEI3340",
+        "location": null,
+        "department": "EECS/Electromagnetic Engineering",
+        "academic_level": "RESEARCH",
+        "credits": 10,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FEI3340",
+        "description": "<p>After taking this course the student should be able to demonstrate the ability to:</p><ul><li>Describe analytically, and implement numerically, methods for circuit solution of faulted power systems.&#160;</li><li>Implement in software a protection algorithm for sampled data.&#160;</li><li>Contrast good and bad points of different protection principles for various applications.</li><li>Define and discuss ways in which changes in power systems, in particular the move towards a sustainable energy supply, affect the demands on protection systems now and in the future.&#160;</li><li>Search, select, and critically evaluate suitable sources for obtaining new, detailed knowledge about a research topic within the course's scope.&#160;</li><li>Present their new knowledge accessibly in oral and written form.</li></ul>",
+        "prerequisites": "<p>Completed master-level education or equivalent. Students are typically expected to be doctoral students in subjects within the Electric Power area.</p>"
+    },
+    "FID3024": {
+        "name": "Systems for Scalable Machine Learning",
+        "code": "FID3024",
+        "location": null,
+        "department": "EECS/Software and Computer Systems",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FID3024",
+        "description": "<p>After passing the course, students should be able to:</p><ul><li>Demonstrate systematic understanding of ML systems and capacity to scholarly analyze and criticize their components.</li><li>Reflect on the ideas and technologies related to ML systems with insight on their possibilities and limitations.</li><li>Examine how ML systems are currently used and evaluate how they can be used for new purposes and under different application domains.</li><li>Identify the need for further knowledge in improving ML systems.</li></ul>",
+        "prerequisites": "<p>Enrolled as a doctoral student.</p>"
+    },
+    "FID3214": {
+        "name": "Programming for Data Science",
+        "code": "FID3214",
+        "location": "KTH Kista",
+        "department": "EECS/Software and Computer Systems",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FID3214",
+        "description": "<p>Having passed the course, the student should be able to:</p><p>1. account for and discuss the application of</p><ul><li>techniques to convert data to appropriate format for data analysis</li><li>algorithms to analyse data through supervised and unsupervised machine learning, as well as</li><li>techniques and performance measurements for evaluation of data analysis results</li></ul><p>2. implement and apply</p><ul><li>techniques to convert data to an appropriate format for data analysis</li><li>algorithms for supervised and unsupervised machine learning, as well as</li><li>techniques and performance measurements for evaluation of data analysis results</li></ul>"
+    },
+    "FLF3012": {
+        "name": "Theory of Science Perspectives on Technology and Learning",
+        "code": "FLF3012",
+        "location": null,
+        "department": "ITM/Learning in Engineering Sciences",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FLF3012",
+        "description": "<p>On passing the course, the student should be able to;</p><ul><li>discuss and compare natural science, engineering science, and the educational science within these domains, drawing on knowledge theory and sociology of science perspectives</li><li>critically discuss research within technology and learning in the light of knowledge theory, sociology of science, and history of ideas perspectives</li><li>formulate a chosen research approach by relating to perspectives and approaches discussed in the course, and formulate constructive critique/feedback on the work of other doctoral candidates</li></ul>",
+        "prerequisites": "<p>Admitted to&#160;doctoral education,&#160;primarily in <em>Technology and Learning</em>&#160;and adjacent subject areas.</p>"
+    },
+    "MJ2487": {
+        "name": "Aeromechanics Project Course",
+        "code": "MJ2487",
+        "location": null,
+        "department": "ITM/Heat and Power Technology",
+        "academic_level": "ADVANCED",
+        "credits": 12,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MJ2487",
+        "description": "<p>The Intended Learning Outcomes (ILOs) for the course are that after completing the course the students will be able to:</p><p>- describe the phenomena of flutter and forced response</p><p>- plot and interpret a Campbell diagram</p><p>- analyze the current literature on turbomachinery aeromechanics</p><p>- explain the main assumption behind the standard methods used to analyze turbomachinery aeromechanics</p><p>- determine the fundamental structural modes of a turbine blade by using a state-of-the-art commercial software</p><p>- perform steady and unsteady flow simulations of a 3D turbine blade using&#160; a state-of-the-art&#160; commercial&#160; CFD software</p><p>- perform a flutter analysis of turbomachinery blade row</p><p>- present and describe the results of an aeromechanical analysis</p>"
+    },
+    "AL1130": {
+        "name": "Physics, Chemistry, Energy and the Environment for CL",
+        "code": "AL1130",
+        "location": "KTH Campus",
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "BASIC",
+        "credits": 14,
+        "grading": "AF",
+        "lectures": 7,
+        "language": {
+            "swedish": true,
+            "english": false
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AL1130",
+        "description": "<p>The course is an introduction to university studies in Physics, Chemistry and Technology with focus on energy and sustainable development. The aim of the course is to give a broad basis in natural and technical science for studies and future working life. After the course, the student should be able to:</p><ul><li>Describe the main features of the Swedish energy system</li><li>Identify pros and cons with a chosen type of energy from a sustainability perspective</li><li>Describe the Swedish environmental goals mirroring important environmental impacts and use these in an educational context</li><li>From a natural science basis, describe the processes behind the greenhouse effect and critically analyse how this effect has been influenced by anthropogenic factors</li><li>Describe the definition of and discuss difficulties with Sustainable development</li><li>Collaborate in groups and be able to discuss problems inside the group as well as suggest solutions for these problems</li><li>Individually and in groups search for scientific information, compile it and present it in a scientific way in an oral presentation as well as in a written report</li><li>Solve technical problems of implemented electro physical topics</li><li>Follow, and for higher grades also in greater detail follow and engage in, chemistry technological discussions and reasoning related to the course content,&#160;</li><li>Perform relevant estimation calculations and judge magnitude and reasonableness in physical and chemical problems&#160;</li><li>use and understand restrictions and limitations in physical measurements and instruments&#160;</li><li>explain physics and chemistry problems, boundary conditions and limitations for collaborators or other audience without any science education&#160;&#160;</li><li>be able to implement safety instructions and safely perform chemical laboratory work</li></ul>",
+        "prerequisites": "<p>General and specific entry requirements for Master of Science programmes.</p><p>Obligatory in year 1 at&#160;Master of Science in Engineering and in Education (CLGYM), not open for other students.</p>"
+    },
+    "AL2503": {
+        "name": "Planning for Environmental Justice in Social-ecological Systems",
+        "code": "AL2503",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AL2503",
+        "description": "<p>After passing the course, the student should be able to:</p><ol><li>identify relevant issues and explain key concepts, theories and perspective within the scope of the focus area of the course; planning for environmental justice in social-ecological systems</li><li>discuss and argue for and against different perspectives on environmental justice in social-ecological systems</li><li>give suggestions on how urban planning/civil engineering and environmental technology can be developed to identify, handle and/or prevent injustices with respect to use of ecological resources.</li><li>apply the perspective of the course on real cases and communicate the result of the analysis to relevant target group</li></ol>",
+        "prerequisites": "<p>3 years of higher education in urban planning, regional planning, architecture, technology or social sciences. Documented knowledge in English B or the equivalent (TOEFL, IELTS e g).</p>"
+    },
+    "ME2087": {
+        "name": "Energy Business",
+        "code": "ME2087",
+        "location": "KTH Campus",
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": 16,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": false,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2087",
+        "description": "<p>On completion of the course, the student by combining knowledge in the subareas energy engineering, business administration, economics, business models and decision models should be able to:</p><ol><li>Carry out basic analyses of how a business is influenced by external factors in energy markets such as policies and other actors' actions.</li><li>Analyse and evaluate businesses and business opportunities in different parts of the value chain in energy systems.</li><li>Analyse how the climate issue and other sustainability issues can transform energy systems.</li><li>Analyse how the action of different actors in the energy field influence the future design of energy systems.</li></ol>",
+        "prerequisites": "<p>Achieved the requirements for Degree of Bachelor of Science&#160; in engineering or science.</p><p>English B/English 6, or equivalent.</p>"
+    },
+    "FAF3118": {
+        "name": "High Performance Concrete Structures",
+        "code": "FAF3118",
+        "location": null,
+        "department": "ABE/Concrete Structures",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3118",
+        "description": "<p>After completing the course the student should be able to describe the function of and design methods for high performance concrete structures.</p>",
+        "prerequisites": "<p>Master of Science in structural engineering and admission to postgraduate level</p>"
+    },
+    "FAK3147": {
+        "name": "The History of Development Aid",
+        "code": "FAK3147",
+        "location": null,
+        "department": "ABE/History of Science, Technology and Environment",
+        "academic_level": "RESEARCH",
+        "credits": 10,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAK3147",
+        "description": "<p>The aim is to provide the student with a basic knowledge about the history of international aid from the 1940s to the present, and with a solid understanding of some of the scholarly traditions that continues to dominate this particular field of research.&#160;</p>",
+        "prerequisites": "<p>The student needs to be enrolled in a PhD programme in the humanities or social sciences</p>"
+    },
+    "FDD3009": {
+        "name": "Computational Topics in Phylogeny Inference",
+        "code": "FDD3009",
+        "location": null,
+        "department": "EECS/Computational Science and  Technology",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDD3009",
+        "description": "<p>The general aim is to give basic knowledge of modelling of evolution. </p>\n<p>After completed course, you should be able to </p>\n<p>-  be familiar with important evolutionary models of substitutions duplications/losses, intensity changes etc. </p>\n<p>-  apply these models on real data using popular tools </p>\n<p>-  understand inference methods that are used for phylogenetic problems </p>\n<p>-  adapt known models to new problems </p>"
+    },
+    "FDD3402": {
+        "name": "Combinatorial Optimization",
+        "code": "FDD3402",
+        "location": null,
+        "department": "EECS/Theoretical Computer Science",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDD3402",
+        "description": "<p>After the course, the students should</p><ul><li>know basic concepts from polyhedral combinatorics</li><li>be able to recognize several types efficiently solvable problems based on polyhedral techniques and matroids</li><li>be able to understand techniques from combinatorial optimization used in research papers</li><li>have an enhanced base of techniques to approach open algorithmic problems.</li></ul>"
+    },
+    "FEG3202": {
+        "name": "Seminar Course in Electric Power Systems",
+        "code": "FEG3202",
+        "location": null,
+        "department": "EECS/Electric Power and Energy Systems",
+        "academic_level": "RESEARCH",
+        "credits": 1,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FEG3202",
+        "description": "<p>After the course, the student should</p><ul><li>be acquainted to current research topics and industrial applications in electric power systems,</li><li>be able to discuss and reflect upon current research topics and industrial applications in electric power systems,</li><li>be able to give a presentation on a current research topic in electric power systems.</li></ul>",
+        "prerequisites": "<p>The course is intended for Ph.D. students in electric power systems, but can also be interesting for students from other fields of electrical engineering.</p>"
+    },
+    "FID3015": {
+        "name": "Presenting Popular Science Posters",
+        "code": "FID3015",
+        "location": null,
+        "department": "EECS/Software and Computer Systems",
+        "academic_level": "RESEARCH",
+        "credits": 1.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FID3015",
+        "description": "<p>After the course the student will be able to:</p><ul><li>perform a popular science presentation of their own research in form of a poster,</li><li>support a poster presentation in a popular science venue by a prepared short oral summary (\"elevator pitch\"),</li><li>critically review popular science presentations in form of a poster.</li></ul>",
+        "prerequisites": "<p>Enrolled as PhD student.</p>"
+    },
+    "FIL3012": {
+        "name": "Planning and Performing of Experiments in Inkjet Printing Technology",
+        "code": "FIL3012",
+        "location": null,
+        "department": "EECS/Electronics and Embedded Systems",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FIL3012",
+        "prerequisites": "<p>-</p><p>Prerequisites<br />Basic knowledge in physics. Interest in diving into a multi-disciplinary field</p>"
+    },
+    "FSF3703": {
+        "name": "Topological Combinatorics",
+        "code": "FSF3703",
+        "location": null,
+        "department": "SCI/Mathematics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSF3703",
+        "description": "<p>After the course, the student should have a sufficiently deep knowledge of topological combinatorics to be able to start working on research projects in the area.</p>",
+        "prerequisites": "<p>A Master degree including at least 30 university credits (hp) in in Mathematics.&#160;&#160;</p><p>A basic knowledge ofbasic topology (corresponding to the course SF2721 Topology), combinatorics and group theory.</p>"
+    },
+    "FSK3403": {
+        "name": "Photonics",
+        "code": "FSK3403",
+        "location": "AlbaNova",
+        "department": "SCI/Applied Physics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSK3403",
+        "description": "<p>After completing the course, the student should be able to</p><ul><li>explain the physical principles underlying the generation, transmission, manipulation and detection of light in photonic devices.</li><li>choose, derive and apply suitable models to predict and analyze the response of basic photonic components</li><li>perform optical measurements through hands-on work in a photonic lab.</li><li>analyze and present data acquired using lab instruments and generated by simulations.</li><li>critically analyze and solve practical and theoretical problems within the field of photonics with the aid of relevant literature</li><li>provide an overview of the most recent developments of photonics and deeper insights into aspects of photonic science and applications of particular relevance for her/his own research field.</li></ul>",
+        "prerequisites": "<p>Enrolled as a PhD student</p>"
+    },
+    "MH1014": {
+        "name": "Fundamentals of Materials",
+        "code": "MH1014",
+        "location": null,
+        "department": "ITM/Materials Science and Engineering",
+        "academic_level": "BASIC",
+        "credits": 7,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MH1014",
+        "description": "<p>The course covers metallic and ceramic materials. Apart from the specific aims given below the course gives an overview of these materials and their applications.&#160;&#160;</p><p><strong>After the course the student should be able to:</strong></p><ul><li>sketch the most common crystal structures and give crystallographic orientations and planes in crystals using vectors and Millers indices.</li><li>describe and interpret phase transformations (diffusion controlled as well as diffusionless) and couple these to mechanical properties.</li><li>interpret microstructures and relate them to phase transformations.&#160;&#160;&#160;&#160;&#160;&#160;&#160;</li><li>explain/describe/recognize deformation- and strengthening mechanisms specifying the underlying cause (type of defects, microstructure etc).</li><li>describe the most common corrosion and decomposition mechanisms for metallic and ceramic materials.</li><li>use binary and ternary phase diagrams.</li><li>perform simple calculations and estimations within all areas mentioned above</li><li>basic terminology in Swedish and English.</li></ul>",
+        "prerequisites": "<p>Course comparable to:<br />KD1160 Materials Chemistry for Materials Design<br />MH1010 Thermodynamics of Materials<br />SE1020 H&#229;llfasthetsl&#228;ra grundkurs BD</p>"
+    },
+    "LS1415": {
+        "name": "English for Academic Studies (online)",
+        "code": "LS1415",
+        "location": null,
+        "department": "ITM/Learning in Engineering Sciences",
+        "academic_level": "BASIC",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/LS1415",
+        "description": "<p>The aim of the course is to help the students develop study and communication skills focusing on the conventions and requirements within their own academic disciplines.</p><p>On completion of the course, the students should be able to:</p><ul><li>Carry out a critical analysis of academic discourse</li><li>Demonstrate an understanding of the discourse practices within their disciplinary communities</li><li>Demonstrate an understanding of how knowledge is communicated in academic contexts</li><li>Create and present a reflected academic identity in spoken and written academic texts</li><li>Develop strategies for refinement of their academic language</li></ul>",
+        "prerequisites": "<p>General admission requirements</p>"
+    },
+    "FDD3437": {
+        "name": "Artificial Neural Networks and deep Architectures",
+        "code": "FDD3437",
+        "location": "KTH Campus",
+        "department": "EECS/Computational Science and  Technology",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDD3437",
+        "description": "<p>After completing the course the student should be able to</p><ul><li>describe the structure and function of the most common artificial neural network (ANN) types, e.g. multi-layer perceptron, recurrent network, self-organizing maps, Boltzmann machine, deep belief network, autoencoder, and provide examples of their applications</li><li>explain mechanisms of supervised/unsupervised learning from data and information processing in different ANN architectures, and also account for derivations of the basic ANN algorithms discussed in the course</li><li>demonstrate when and how deep architectures lead to increased performance in pattern recognition and data mining problems</li><li>quantitatively analyse the process and outcomes of learning in ANNs, and account for their shortcomings, limitations</li><li>apply, validate and evaluate suggested types of ANNs in typical small problems in the realm of regression, prediction, pattern recognition, scheduling and optimisation</li><li>devise and implement ANN approaches to selected problems in pattern recognition, system identification or predictive analytics using commonly available development tools, and critically examine their applicability</li></ul><p>in order to</p><ul><li>obtain an understanding of the technical potential as well as advantages and limitations of today's learning, adaptive and self-organizing systems</li><li>acquire the ANN practitioner&#8217;s competence to apply and develop ANN based solutions to data analytics problems.</li></ul>",
+        "prerequisites": "<p>PhD students at KTH</p>"
+    },
+    "FDH3377": {
+        "name": "Dis-Course, 4,5 hp",
+        "code": "FDH3377",
+        "location": null,
+        "department": "EECS/Media Technology and Interaction Design",
+        "academic_level": "RESEARCH",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDH3377",
+        "description": "<p>On completion of the course, the student should be able to:</p><ul><li>Read a doctoral thesis critically</li><li>Evaluate strengths and weaknesses in a doctoral thesis and argue for and against this position</li><li>Discuss design and contents of a doctoral thesis</li><li>Formulate questions about the issues of the doctoral thesis</li><li>Understand the dissertation situation, roles and routines</li><li>Reflect on the defence of a doctoral thesis</li></ul>",
+        "prerequisites": "<p>PhD student</p>"
+    },
+    "MG2027": {
+        "name": "Production Engineering - Project Course",
+        "code": "MG2027",
+        "location": null,
+        "department": "ITM/Production Engineering Stockholm",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MG2027",
+        "description": "<p>After passing the course, the student will be able to:</p><ul><li>use relevant models and practices for developing, comparing and suggesting solutions to a production engineering problem provided by industry</li><li>use knowledge and skills acquired in previous courses, and gather additional knowledge when required</li><li>write and formulate a well structured technical report that in a clearly defines the problem, describes the methodology for approaching and solving the problem, and outlines the result</li><li>orally present and motivate the results</li><li>argue for selected methods and presented result and their reliability, when criticized</li><li>evaluate and criticize another project and its results</li><li>organise and manage a long-lasting and complex project, considering the project provider, the supervisor and the project group</li></ul>",
+        "prerequisites": "<p>A minimum of 45 credits wu&#237;thin the TPRMM Master programme</p>"
+    },
+    "MG2028": {
+        "name": "CAD and Other IT Tools in Industrial Processes",
+        "code": "MG2028",
+        "location": "KTH Campus",
+        "department": "ITM/Production Engineering Stockholm",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": 15,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MG2028",
+        "description": "<p>After passing the course, the student will be able to:</p><ul><li>in a modern CAD system, create robust models, that could easily be understood and further developed by others</li><li>use CAD models:<br />-&#160; in a CAM system for creating a simple process plan for a part model, and build and use a machine tool model for simulation of the manufacturing process<br />- in a product configuration system integrated with a CAD system build and use a configuration model<br />- in a FEM program carry out a simple finite element analysis and simulation of the manufacturing of a part</li><li>adapt a CAD model for additive manufacturing and use it in preparation for manufacturing in a given additive manufacturing machine</li><li>create and exchange information about a product and its manufacturing by:<br />- using CAD system functionality in a structured manner, to communicate CAD related data<br />- using common exchange formats for product data exchange between different information handling<br />&#160; software systems</li><li>indepeendently and in own words reason about:<br />- how product and production information is handled in manufacturing companies, and how they use IT tools in their product realization processes<br />- opportunities and problems regarding information handling in an industrial product realization process</li></ul>",
+        "prerequisites": "<p>MF1061 Design and Product Realization, Introduction or<br />MJ1103 Introduction to Mechanical Engineering or<br />MF1001 Mechanical Engineering, introductory course</p><p>or the equivalent</p><p>Swedish B and English&#160;A&#160;or the equivalent</p>"
+    },
+    "CM2008": {
+        "name": "Entrepreneurship in Technology and Health",
+        "code": "CM2008",
+        "location": "KTH Flemingsberg",
+        "department": "CBH/Biomedical Engineering and Health Systems",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": 6,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/CM2008",
+        "description": "<p>After completing the course, the student should demonstrate proficiency in:</p><p>&#8226; value innovation and business concept development with, eg. \"KTH Innovation readiness level.\"</p><p>&#8226; analyse needs, market and pricing</p><p>&#8226; analyse competitors, stakeholders and distribution solutions</p><p>&#8226; evaluate fundamental intellectual property rights for a business concept</p><p>&#8226; explain relevant aspects of sustainable development</p><p>&#8226; explain procurement and interaction between private and public actors</p><p>&#8226; evaluates strategies and business models for commercialization</p><p>&#8226; apply entrepreneurial leadership&#160;by&#160;involving potential customers, partners or suppliers in business concept development</p><p>&#8226;&#160;develop business communication by presenting ideas in public domain</p><p>&#8226; create a business plan including conduct of alpha-beta and pilot tests and a financial plan&#160;</p>",
+        "prerequisites": "<p>Completed degree project of 15 credits, basic course in industrial economics of 6 credits and English B/English 6</p>"
+    },
+    "DA240X": {
+        "name": "Degree Project in Computer Science and Engineering, specializing in Software Engineering for Distributed Systems, Second Cycle",
+        "code": "DA240X",
+        "location": "KTH Kista",
+        "department": "EECS/Computer Science",
+        "academic_level": "ADVANCED",
+        "credits": 30,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/DA240X",
+        "description": "<p>After passing the degree project course, the student should be able to:</p><ul><li>show advanced knowledge within the main field of study/the specialisation for the education, including advanced insight into current research and development work</li><li>show methodological knowledge within the main field of study/the specialisation for the education </li><li>participate in research and development work and thereby contribute to the knowledge development</li><li>with a holistic approach, critically, independently and creatively identify, formulate, analyse, assess and deal with complex phenomena and issues, even with limited information</li><li>plan and with adequate methods carry out qualified assignments within given frames, and evaluate this work</li><li>integrate knowledge critically and systematically and identify the need of additional knowledge</li><li>in Swedish or in English, in speech and writing clearly report and discuss their conclusions and the knowledge and arguments on which they are based</li><li>within the frames of the degree project identify the role of the scholarship and the engineer in the society</li><li>within the frame of the specific degree project identify which issues that need to be answered in order to observe relevant dimensions of sustainable development</li><li>within the frames of the degree project assess and show awareness of ethical aspects of research and development work, with respect to methods, working methods and results of the degree project</li></ul><p>in order to be able to participate in research and development or work independently in other qualified activities according to the national aims for a Degree of Master of Science in Engineering and Degree of Master of Science in Higher Education Ordinance.</p>",
+        "prerequisites": "<p>Passed courses at second cycle level of at least 60 credits, including courses that are relevant for the degree project including a course in theory of knowledge and research methodology. </p><p>If the student is registered on an engineering programme should all courses that are required for issuing of Degree of Bachelor be completed.</p>"
+    },
+    "MF2010": {
+        "name": "Component Design",
+        "code": "MF2010",
+        "location": "KTH Campus",
+        "department": "ITM/SKD GRU",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MF2010",
+        "description": "<p>A student that has completed the course shall:</p><p>&#8226; have a good ability to use knowledge from basic subjects, such as mathematics, mechanics and solid mechanics, in the design of machine components;</p><p>&#8226; be able to calculate deformations and stresses in bending of short and thick beams;</p><p>&#8226; be able to perform fatigue analyses using the theory of cumulative fatigue damages;</p><p>&#8226; be able to describe common failure mechanisms which are limiting the performance of a product;</p><p>&#8226; be able to calculate the degree of efficiency of a product;</p><p>&#8226; be trained in using international standards when designing standard components;</p><p>&#8226; be able to use and evaluate analytical and numerical methods from solid mechanics when designing components and also be able to judge the validity of the methods;</p><p>&#8226; be able to create own models that describe the function of non-standard components and use the models to optimize the performance of the component;</p><p>&#8226; be able to apply knowledge about bearing design on components with similar contact conditions as in a bearing.</p>",
+        "prerequisites": "<p>A Bachelor of Science degree in Mechanical Engineering or equivalent.</p><p>The course MF2101 Machine Design</p>"
+    },
+    "FCK3311": {
+        "name": "NMR Spectroscopy and imaging – basic principles",
+        "code": "FCK3311",
+        "location": null,
+        "department": "CBH/Chemistry",
+        "academic_level": "RESEARCH",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCK3311",
+        "description": "<p>After completing the course, the student should be able to</p><ul><li>explain the basic principles for NMR spectroscopy and imaging</li><li>explain how the different NMR parameters depend on and reflect molecular properties.</li><li>use the above listed knowledge to plan, perform and evaluate a laboratory project within the subject area, in group (or individually, depending on the number of participants) including to perform a smaller literature study, and present the laboratory project in a written report and perform an opposition on another laboratory project in the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.</p>"
+    },
+    "FDD3021": {
+        "name": "Survey group on select topics in computer science",
+        "code": "FDD3021",
+        "location": null,
+        "department": "EECS/Computational Science and  Technology",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDD3021",
+        "description": "<p>On successful completion of the course, the student should be able to:</p><ul><li>Critically read research articles that treat topics within their specialization and explain their essence to other students,</li><li>Select relevant and high quality articles from the scientific literature for presentation</li><li>Discuss articles with respect to the impact, approach, evaluation methodology, and conclusions.</li></ul>",
+        "prerequisites": "<p>The student should carry out research on PhD level within computer vision / machine learning or a related field.</p>"
+    },
+    "FDD3024": {
+        "name": "Research preparation course in programming languages and formal methods",
+        "code": "FDD3024",
+        "location": null,
+        "department": "EECS/Theoretical Computer Science",
+        "academic_level": "RESEARCH",
+        "credits": 10,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDD3024",
+        "description": "<p>At the end of the course the student should be able to</p><ul><li>Apply several theories and methods covered in the course on sample problems of limited scope and size</li><li>Evaluate the suitability of a given theory/method within a given problem domain</li><li>Define and execute a first own research project within the students research area</li><li>Account for choice of approach</li><li>Relate own work to the state of the art in the area</li></ul>",
+        "prerequisites": "<p>See &#8221;prerequisites&#8221;.</p>"
+    },
+    "LH238V": {
+        "name": "Digital Learning in Higher Education",
+        "code": "LH238V",
+        "location": "KTH Campus",
+        "department": "ITM/Learning in Engineering Sciences",
+        "academic_level": "ADVANCED",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/LH238V",
+        "description": "<p>The course intends to contribute to university teachers' development of proficiencies and abilities to analyse, plan, create, carry out and evaluate learning and teaching in a digital education environment.</p><p>After passing the course, the participant should be able to:</p><ul><li>Describe and apply central concepts, theories and methods in digital learning in relation to their own teaching practices.</li><li>Create learning activities and assignments for assessment with digital tools.</li><li>Reflect on how digitalisation influence the preconditions for one's own teaching, the students' learning and one's own role as a teacher in a short and long perspective.</li></ul>",
+        "prerequisites": "<p>Completed the course LH231V or the equivalent, at KTH or other university or university college.</p>"
+    },
+    "ME2054": {
+        "name": "Purchasing & Supply Chain Management",
+        "code": "ME2054",
+        "location": "KTH Campus",
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2054",
+        "description": "<p>After passing the course, the students should be able to:</p><ol><li>describe and explain the role of the purchasing function within the management of transport and operations</li><li>use mathematical models for optimising purchasing costs</li><li>use mathematical models to suggest best portfolio of suppliers and strategies for relationship management</li><li>apply costing models to analyse purchasing costs and evaluate strategies for the supply chain</li><li>analyse, synthesise and explain how different types of organizational structures can influence purchasing and other managerial functions in the supply chain.</li><li>in detail describe topic of one's own choice from the course e g measurement of the supplier's performance, risk management, sustainable purchase and pricing etc</li><li>through analysis of the subjects that are treated in the course illustrate and formulate a relevant research question</li><li>through a systematic literature search in the area of purchasing identify relevant theories from previous studies</li><li>create a framework that synthesises the identified theories from the examined literature</li></ol>",
+        "prerequisites": "<p>Completed the&#160;the requirements for a Degree of Bachelor.</p><p>6 credits basic industrial economics (&#160;for example&#160;&#160;ME1003 Industrial economics, gk or ME1314 Introduction to industrial economics) or business/national economics.</p><p>English B/ Engelska 6 or the equivalent</p>"
+    },
+    "FMJ3389": {
+        "name": "Energy Policy and Planning",
+        "code": "FMJ3389",
+        "location": null,
+        "department": "ITM/Energy Systems",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FMJ3389",
+        "description": "<p>The course analyses energy policy and planning. The students learn to understand energy challenges based on a plannings perspective and the strategic role that policy plays for the formation of energy systems. The students will review different policies, analyse political aims and policy implementations and the results. In the final exercise, the doctoral students connect energy policy questions to their research subject.</p><p>On completion of the course, the doctoral student should be able to: (i) understand how the energy policy is designed and is carried out; (ii) identify different policies and political processes; (iii) understand the role of parties different interested and (iv) assess policyresultat. Furthermore, the students will also learn to understand how energy policy instruments influence investment decisions, industrial development and the action of public institutions.</p>",
+        "prerequisites": "<p>Master degree or the equivalent is required as prior knowledge in science, technology, energy or related subject. Documented proficiency in English B or the equivalent</p><p>The course is primarily aimed for doctoral students who focus on energy research.<br />Both doctoral students from KTH Royal Institute of Technology and other universities may participate.</p>"
+    },
+    "ME2085": {
+        "name": "Transformation in Energy Systems and Industries",
+        "code": "ME2085",
+        "location": "KTH Campus",
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2085",
+        "description": "<p>After completing the course, students are intended to be able to:</p><ol><li>empirically analyse business models in relation to energy systems and/or energy industries,</li><li>explain the diffusion of innovation in relation to energy systems and/or energy industries and their role for energy transitions,</li><li>discuss the mechanisms that underlie industrial transformations and technical changes and their implications in relation to energy systems and/or energy industries,</li><li>evaluate theoretical concepts and current research from the field of industrial dynamics for managing technological and industrial change processes in relation to energy systems and/or energy industries,</li><li>analyse&#160;industrial and technological change and independently discuss problem formulations and their solutions to tackle complex change in energy systems and/or energy industries,</li><li>present results and conclusions based on a scientific investigation for different types of audiences (e.g. academia, business).</li></ol>",
+        "prerequisites": "<p>Achieved the requirements for a Bachelor's degree&#160; in technology or natural sciences.</p><p>English B/ English 6, or equivalent.</p>"
+    },
+    "FAF3213": {
+        "name": "Safety Analysis for large Structures",
+        "code": "FAF3213",
+        "location": null,
+        "department": "ABE/Structural Design & Bridges",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3213",
+        "description": "<p>After completing the course the student should be able to present implementation of a deepening project in the area.</p>",
+        "prerequisites": "<p>Master of Science in structural engineering and admission to postgraduate level</p>"
+    },
+    "FAG3109": {
+        "name": "Visualization of Geoinformation",
+        "code": "FAG3109",
+        "location": "KTH Campus",
+        "department": "ABE/Geoinformatics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAG3109",
+        "description": "<p>The major objective of this course is to learn principles of cartography and techniques for effective visualization of geographic data. On the completion of this course, students should be able to design analogue and digital cartographic products using an existing geographic information system, and to gain critical thinking skills essential to avoid being misled by cartographic products.</p>"
+    },
+    "FAG3112": {
+        "name": "Spatial Analysis",
+        "code": "FAG3112",
+        "location": "KTH Campus",
+        "department": "ABE/Geoinformatics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAG3112",
+        "description": "<p>The course is designed to introduce the principles of spatial analysis and advanced concepts/techniques which are used to explore, analyze and model geospatial data.</p><p>Spatial analysis is the crux of GIS: the means of adding value to geospatial data, and turning data into information. Therefore, the goals of this course are 1) to teach students the fundamental concepts and advanced techniques of spatial analysis in lectures, 2) to allow students to experience these concepts and apply these techniques to solve realistic model problems in laboratory exercises, and 3) to develop deaper understanding for these concepts and techniques by critically evaluating prominent related scientific articles in seminars. In addition to enforcing concepts and techniques, the laboratory work and seminar will also prepare students to design, undertake, and critically evaluate GIS projects, and the seminars will strengthen the students' public speaking skills as they present scientific articles to their peers and will improve the students' scientific comprehension, design, presentation, and writing skills as they read, summarize, and review the seminar articles.</p>"
+    },
+    "FAI3017": {
+        "name": "Topics in Housing and Real Estate Economics",
+        "code": "FAI3017",
+        "location": "KTH Campus",
+        "department": "ABE/Real Estate Economics and Finance",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAI3017",
+        "description": "<p>The aim of the course is that the student should broaden their knowledge and also training in presentations of a scientific paper.</p>",
+        "prerequisites": "<p>Admission to postgraduate studies.</p>"
+    },
+    "FAI3027": {
+        "name": "Research and Theories in Business Administration",
+        "code": "FAI3027",
+        "location": null,
+        "department": "ABE/Real Estate Business and Financial Systems",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAI3027",
+        "description": "<p>After the course, the participant should be able to show a good understanding of theories from different subfields of business administration. Furthermore, participants should be able to analyze and compare different theories. Finally, participants should be able to present orally and in writing their analysis of the different theories, and how they relate to their own research.</p>",
+        "prerequisites": "<p>The course is open for doctoral students within business administration or an adjacent subject.</p>"
+    },
+    "FAK3144": {
+        "name": "The Research Process, Introductory course",
+        "code": "FAK3144",
+        "location": null,
+        "department": "ABE/History of Science, Technology and Environment",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAK3144",
+        "description": "<p>Following the course, the student should have attained basic knowledge and skills in:</p><p>-&#160;Searching for literature and source material.</p><p>-&#160;Formulating relevant and fruitful research questions.</p><p>-&#160;Writing a memo for a PhD project.</p><p>-&#160;Critically review, evaluate and give feedback.</p><p>The student should also be familiar with the structure and functions of academia, its institutions and disciplines, understand the requirements of a doctoral thesis, have obtained reflexive understanding of doctoral studies, academic research, and comprehended the formal administrative structure and regulations of KTH. Furthermore, students should learn the basic methods of archival research, oral history, and other research tools commonly used in history of science, technology and environment.</p>",
+        "prerequisites": "<p>Eligible applicants are students who meet the requirements for admission to graduate studies in history or other humanities and social sciences.</p>"
+    },
+    "FDH3363": {
+        "name": "Research Methods in Technology Enhanced Learning",
+        "code": "FDH3363",
+        "location": null,
+        "department": "EECS/Media Technology and Interaction Design",
+        "academic_level": "RESEARCH",
+        "credits": 5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDH3363",
+        "description": "<p>After completing the course, the PhD-student will be able to:</p><p>&#9679; Analyse and critically examine chosen examples of TEL research studies from a methodological perspective.</p><p>&#9679; Understand the benefits and challenges of mixing methods.</p><p>&#9679; Plan and conduct data collection for a TEL-oriented research study that combines quantitative and qualitative approaches.</p><p>&#9679; Prepare data analysis and integration across methods.</p><p>&#9679; Improve methodological research skills in TEL empirically as well as theoretically.</p>",
+        "prerequisites": "<p>The course can be taken by PhD students from all research disciplines but aims first and foremost at PhD-students working in TEL.</p>"
+    },
+    "FDM3509": {
+        "name": "Learning Behaviour",
+        "code": "FDM3509",
+        "location": null,
+        "department": "EECS/Media Technology and Interaction Design",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDM3509",
+        "description": "<p>By participation in the course the course participant should be able to </p><ul><li>Describe a number of learning theories and how they can be applied within TEL </li><li>Design TEL that utilises for the situation relevant gamification aspects and persuasive technologies, and apply this on own research </li><li>Design TEL that utilises for the situation relevant aspects from motivation theories and the behavioural economics, and apply this on own research. </li></ul>",
+        "prerequisites": "<p>Doctoral students in Media Technology, Human-Computer Interaction, Computer Science and close fields. </p>"
+    },
+    "FEF3330": {
+        "name": "Applied Plasma Physics, Advanced Course",
+        "code": "FEF3330",
+        "location": null,
+        "department": "EECS/Space and Plasma Physics",
+        "academic_level": "RESEARCH",
+        "credits": 5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FEF3330",
+        "description": "<p>After completed course the students should have knowledge of the research results, particular techniques, and applications both broadly in applied plasma physics, and with focus on the subject area of the thesis.</p>",
+        "prerequisites": "<p>MSc level mathematics and physics, and preferably EF2270 Applied Plasma Physics or equivalent.</p>"
+    },
+    "FIV3000": {
+        "name": "Philosophy of Science",
+        "code": "FIV3000",
+        "location": null,
+        "department": "EECS/Software and Computer Systems",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FIV3000",
+        "description": "<p>The student upon completion of the course will be able to:</p><p>- give an account of important events in the history of science</p><p>- explain the (ideal and factual) requirements on scientific &#160;work</p><p>- describe his or her own view on science, and compare this to his or her view on engineering</p><p>- apply scientific work to practical problems</p><p>- give an account of fundamental concepts of philosophy &#160;of science, &#160;and of ethics in science</p><p>- survey and present original texts in the area of philosophy &#160;of science</p><p>- instrumentalise scientific &#160;problems.</p>"
+    },
+    "FSF3705": {
+        "name": "Polytope Theory",
+        "code": "FSF3705",
+        "location": null,
+        "department": "SCI/Mathematics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSF3705",
+        "description": "<p>The course will give a basic knowledge of theory and methods in the theory of convex polytopes. The goal is to give a good and deep knowledge as a firm ground both for further studies in mathematics and for applications in other disciplines. More specifically the student should after the course</p><ul><li>know basic concepts and terminology in the theory for convex polytopes.</li><li>know and be able to use important special polytopes and methods to construct new ones.</li><li>be able to interpret combinatorial properties of a polytope from its face lattice</li><li>know the basic problems and ideas in Ehrhart theory, and learn some techniques to compute related invariants of lattice polytopes.</li><li>have increased intuition about properties of polytopes in higher dimensions and have realised how easy it is to guess incorrectly about properties in dimensions higher than 3.</li></ul>",
+        "prerequisites": "<p>A Master degree including at least 30 university credits (hp) in in Mathematics (including SF1631 Discrete mathematics and SF1624 Linear algebra or similar knowledge).</p>"
+    },
+    "FSG3031": {
+        "name": "Current Problems in Mechanics II",
+        "code": "FSG3031",
+        "location": null,
+        "department": "SCI/Mechanics",
+        "academic_level": "RESEARCH",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSG3031",
+        "description": "<p>The student will get new knowledge in specialized current topics in mechanics and / or develop the ability to critically review scientific articles in mechanics.</p>",
+        "prerequisites": "<p>Participants should be enrolled in a PhD-program related to applications of mechanics.</p>"
+    },
+    "FSK3523": {
+        "name": "Advanced Molecular Dynamics",
+        "code": "FSK3523",
+        "location": "AlbaNova",
+        "department": "SCI/Applied Physics",
+        "academic_level": "RESEARCH",
+        "credits": 5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": false,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSK3523",
+        "description": "<p>After completion of the course, the student should be able to:</p><ul><li>set up simulations of liquids, polymers and proteins</li><li>analyze structural and dynamic properties</li><li>assess the quality of sampling and be aware of methods to improve sampling</li><li>set up free energy calculations</li><li>apply systematic coarse-graining</li></ul>",
+        "prerequisites": "<p>Admitted as a PhD student</p>"
+    },
+    "SA1007": {
+        "name": "Engineering Skills",
+        "code": "SA1007",
+        "location": "KTH Campus",
+        "department": "SCI/Engineering Sciences",
+        "academic_level": "BASIC",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": 15,
+        "language": {
+            "swedish": true,
+            "english": false
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/SA1007",
+        "description": "<p>On completion of the course, the student should be able to</p><ul><li>be able to make informed choices both during the study period and beyond</li><li>critically review and reflect on the role of the engineer in a sustainable society</li><li>account for the main features of the science theory and technology history</li><li>identify and discuss ethical occupational problems</li><li>plan and implement projects in a group</li><li>document and present their work both in writing and orally</li><li>reflect on their own learning and identify their need for further knowledge</li></ul>",
+        "prerequisites": "<p>Only for students at study program COPEN.</p>"
+    },
+    "AI221V": {
+        "name": "Entreprneurship and Management",
+        "code": "AI221V",
+        "location": null,
+        "department": "ABE/Real Estate Economics and Finance",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AI221V",
+        "description": "<p>Knowledge and skills in entrepreneurship, service management and leadership, writing business plans, financing with venture capital, marketing, development of organizations.</p>",
+        "prerequisites": "<p><strong><em>For students not attending a KTH programme (Engineering programmes) the following requirements have to be fulfilled.</em></strong></p><ul><li>Completed upper secondary schooling including proficiency in Swedish and English. For English spoken courses, proficiency in English only and</li><li>120 hp (Swedish credits) at university level.</li></ul>"
+    },
+    "LS1420": {
+        "name": "German A1 for Engineers",
+        "code": "LS1420",
+        "location": "KTH Campus",
+        "department": "ITM/Learning in Engineering Sciences",
+        "academic_level": "BASIC",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": true,
+            "english": false
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/LS1420",
+        "description": "<p>The&#160;intended&#160;learning outcomes for the course refer&#160;mainly&#160;to the levels A1/A2 according to CEFR, the Common European Framework of Reference for Languages, and aim to strengthen the student's global competence.</p><p>On completion of the course, the student should be able to:</p><p>&#8226; use the language in speech and writing in simple everyday situations (A1)<br />&#8226; in Swedish, understand and account for information from different elementary texts (A1/A2)<br />&#8226; identify facts from simple authentic texts (A2)<br />&#8226; identify the main contents in a shorter oral presentation on familiar topics (A2)</p>",
+        "prerequisites": "<p>Basic university qualification. Applicants for the course should not have any prior knowledge of German.</p>"
+    },
+    "FAF3305": {
+        "name": "Pavement Design and Performance Prediction",
+        "code": "FAF3305",
+        "location": null,
+        "department": "ABE/Division of Road and Railway Engineering",
+        "academic_level": "RESEARCH",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3305",
+        "description": "<p>After the course, the student shall:</p><ul><li>have sufficient knowledge of numerical and experimental tools for pavement structural design and performance prediction, to be able to apply them for pavement structural and material design optimizations.</li><li>have a systematic knowledge of material and loading factors affecting pavements performance in the field.</li><li>have an up-to-date knowledge regarding emerging approaches to pavement design and performance prediction.</li></ul>",
+        "prerequisites": "<p>Master degree or equivalent basic eligibility to PhD studies in engineering</p>"
+    },
+    "FSF3571": {
+        "name": "Selected topics in Numerical analysis II",
+        "code": "FSF3571",
+        "location": null,
+        "department": "SCI/Mathematics",
+        "academic_level": "RESEARCH",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSF3571",
+        "description": "<p>The student has after completing the course obtained thorough competence within a current up-to-date subfield of numerical analysis.</p>",
+        "prerequisites": "<p>A Master degree including at least 30 university credits (hp) in in Mathematics (including differential equations and numerical analysis). Note SF3560 is not a requirement.</p>"
+    },
+    "FSF3964": {
+        "name": "Bayesian networks and Causal Inference",
+        "code": "FSF3964",
+        "location": null,
+        "department": "SCI/Mathematics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FSF3964",
+        "description": "<p>To pass the course, the student:</p><ul><li>will be able to assess when to use a Bayesian network as a model for an interaction of several variables.</li><li>will be able to identify statements of conditional independence by a DAG.</li><li>will be able to use at least two algorithms to learn the structure of a Bayesian network from data</li><li>will be able to use available software for update of probabilities</li><li>will be able to recognize a situation, where causal inference is required</li><li>will be able to apply intervention calculus</li><li>will be able to identify causal parameters,</li><li>will be able to find the scientific conditions when it is possible to estimate causal parameters from data</li><li>knows the main interpretations counterfactuals and their equivalence</li><li>can place causal inference in the general picture of statistical learning theory</li><li>can present clearly a topic in causal inference</li></ul>",
+        "prerequisites": "<p>First or second cycle courses in probability, in differential and integral calculus.<br />Recommended: FSF3961 Statistical inference, SF2955 Statistical learning, SF2740 Graph theory.</p>"
+    },
+    "AE1707": {
+        "name": "Innovations for Sustainable Development on a Local or Global Level",
+        "code": "AE1707",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "BASIC",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AE1707",
+        "description": "<p>Describe, problemitise and discuss what drives economic, social and technological development and how it impacts the environment.<br />Describe the role of globalization and technology in development , threats and opportunities .<br />Analyze and describe what sustainable development stands for environmentally, economically , technically and socially , and how these dimensions are linked to each other .<br />Describe how historical, political , economic and social structures promote or hinder sustainable development on a&#160; national, regional and global scale.<br />Identify and apply the knowledge which is beneficial to sustainable development , nationally and globally .<br />Plan, execute and present an independent work which results in an idea/innovation relating to sustainable development.<br />Be able to participate in a student-driven &#160;project and idea competition with a focus on sustainable development , NORQUEST .</p>",
+        "prerequisites": "<p>Completed upper secondary education including documented proficiency in English corresponding to English A/ English 6. Applicants with non-Swedish upper secondary education is exempt from the requirement of Swedish.</p>"
+    },
+    "AE1708": {
+        "name": "Innovation Projects for Sustainable Development",
+        "code": "AE1708",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "BASIC",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AE1708",
+        "description": "<p>- Describe, debate and discuss what drives economic, social and technological development and how it impacts the environment.<br />- Analyze and describe what sustainable development stands for environmentally, economically, technically and socially, and how these dimensions are related.<br />- Identify and apply the knowledge which is beneficial to sustainable development, nationally and globally.<br />- Apply the logical framework approach in the planning and implementation of projects.<br />- Plan, implement and report on a group project that results in the implementation of an idea / innovation relating to sustainable development.</p>",
+        "prerequisites": "<p>General admission to university studies</p>"
+    },
+    "FDT3151": {
+        "name": "Conversational Systems",
+        "code": "FDT3151",
+        "location": "KTH Campus",
+        "department": "EECS/Speech, Music and Hearing",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDT3151",
+        "description": "<p>After the course, the student should be able to:</p><ul><li>Describe different state-of-the-art models for conversational systems, their weaknesses and strengths, and apply a suitable model depending on the application</li><li>Implement a conversational system using rule-based frameworks and deep learning</li><li>Identify research topics related to conversational systems, find relevant litterature, develop a research plan, and execute the research project</li></ul>",
+        "prerequisites": "<p>Doctoral students from EECS</p>"
+    },
+    "FCB3082": {
+        "name": "Higher Seminar in DNA/RNA Science II",
+        "code": "FCB3082",
+        "location": "KTH Solna",
+        "department": "CBH/Gene Technology",
+        "academic_level": "RESEARCH",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCB3082",
+        "description": "<p>After completion of the course the student should be able to:</p><ul><li>show both broad and specialized knowledge in the overall subject area of biotechnology with emphasis on the scientific subject area of the course</li><li>show the ability to present pedagogically, critically examine and discuss scientific papers in the subject of biotechnology with emphasis on the scientific subject area of the course</li><li>show insight into, and basic ability to apply, academic authorship and the international scientific publishing landscape with relevance to the scientific subject area of the course</li><li>show the ability to identify, discuss and reflect on ethics and sustainability aspects in the research that is discussed within the framework of the subject area of the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.</p>"
+    },
+    "FCB3084": {
+        "name": "Higher Seminar in DNA/RNA Science IV",
+        "code": "FCB3084",
+        "location": "KTH Solna",
+        "department": "CBH/Gene Technology",
+        "academic_level": "RESEARCH",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCB3084",
+        "description": "<p>After completion of the course the student should be able to:</p><ul><li>&#160;show substantial in-depth knowledge, both broad and specialized, in the overall subject area of biotechnology with emphasis on the scientific subject area of the course</li><li>demonstrate qualified ability to present pedagogically, critically examine and discuss scientific papers in the subject of biotechnology with emphasis on the scientific subject area of the course</li><li>demonstrate deep insight into, and good ability to apply, academic authorship and the international scientific publishing landscape with relevance to the scientific subject area of the course</li><li>demonstrate qualified ability to identify, discuss and reflect on ethics and sustainability aspects in the research that is discussed within the framework of the subject area of the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.</p>"
+    },
+    "FCK3306": {
+        "name": "Research Frontiers in Organic Chemistry",
+        "code": "FCK3306",
+        "location": null,
+        "department": "CBH/Chemistry",
+        "academic_level": "RESEARCH",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCK3306",
+        "description": "<p>After passing the course the student should be able to:</p><ul><li>show broad and specialized knowledge in the scientific field of the course, and about the overall subject area of organic chemistry</li><li>pedagogically present, critically examine and discuss published scientific papers in the field of organic chemistry</li><li>demonstrate insight into, and basic ability to apply, academic authorship and the international scientific publishing landscape with relevance to the scientific subject area of the course</li><li>identify, discuss and reflect on ethics and sustainability aspects in the research that is discussed within the framework of the subject area of the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.**</p>"
+    },
+    "FCK3309": {
+        "name": "The Research front Line in analytical Chemistry",
+        "code": "FCK3309",
+        "location": "KTH Campus",
+        "department": "CBH/Chemistry",
+        "academic_level": "RESEARCH",
+        "credits": 4.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCK3309",
+        "description": "<p>After passing the course the student be able to:</p><ul><li>Show both broad and specialized knowledge in the scientific field of the course, regarding both theory and application</li><li>Pedagogically present, critically examine, and discuss their own and others scientific work within the subject area of analytical chemistry</li><li>Demonstrate insight into academic authorship, and the international scientific publishing landscape with relevance to the scientific subject area of the course</li><li>Identify, discuss and reflect on ethical and sustainability aspects in the research that are discussed within the framework of the scientific subject area of the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.**&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p><p>To be able to profit by the course the student should have taken one of the courses KD2020, KD2030, KD2330, FCK3303, or FCK3304, or should have acquired corresponding knowledge elsewhere.</p>"
+    },
+    "FDD3452": {
+        "name": "Formal Methods",
+        "code": "FDD3452",
+        "location": "KTH Campus",
+        "department": "EECS/Theoretical Computer Science",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FDD3452",
+        "description": "<p>Upon passing the course, the students will be able to:</p><ol><li>Model program behaviour.</li><li>Formalize requirements on program behaviour.</li><li>Express requirements for verification with tools.</li><li>Verify requirements with tools.</li><li>Explain the theory and algorithms behind the tools.</li></ol>"
+    },
+    "ME2501": {
+        "name": "Perspectives on Industrial Management",
+        "code": "ME2501",
+        "location": "KTH Campus",
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2501",
+        "description": "<p>After the course the students will be able to:</p><ul><li> <p>Discuss key theoretical areas and different levels of analysis in the field of industrial management from a systems perspective.</p></li><li> <p>Formulate and define problems to address complex management problems in industrial and technology intensive activities using knowledge and data from different types of sources.</p></li><li> <p>Evaluate and apply theoretical concepts, frameworks and methods related to the field of industrial management on activities in different industries in order to analyze and propose solutions to industrial challenges.</p></li><li> <p>Investigate, analyze, make judgements, and propose solutions for specific challenges and circumstances related to: management, gender, diversity, globalization and technology development in industrial and technology intensive activities.</p></li><li> <p>Discuss and critically analyze the implementation of sustainable development in industrial and technology intensive activities.</p></li><li> <p>Present in writing and orally findings and recommendations towards different audiences.</p></li><li> <p>Evaluate their own work and reflect on their own learning in the course, also in relation to future roles and management positions in industry.</p></li></ul>",
+        "prerequisites": "<ul><li>Achieved the requirements for a Bachelor's degree</li><li>Basic course in Industrial management (e.g. ME1003, or corresponding) completed</li></ul>"
+    },
+    "ME2502": {
+        "name": "Change Project in Industrial Management",
+        "code": "ME2502",
+        "location": "KTH Campus",
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 12,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2502",
+        "description": "<p>After the course students will be able to:</p><ul><li> <p>Creatively identify and formulate a concrete researchable problem based on an industrial and authentic issue.</p></li><li> <p>Critically evaluate and apply knowledge, current research, theoretical concepts and research methods in order to analyze complex issues in industrial and technology-intensive businesses</p></li><li> <p>Analyze, discuss and generate sustainable solutions to complex and reality-based challenges in industrial and technology-intensive businesses based on a systems perspective</p></li><li> <p>Evaluate own results and recommendations in the area of industrial management with regard to sustainable development and ethical aspects</p></li><li> <p>Lead, collaborate and provide feedback in project groups and reflect on group dynamics, academic work process and outcomes</p></li><li> <p>Critically discuss other students' scientific work and judgements with regard to problem formulation, theory and method selection</p></li></ul><p>Communicate your own positions, judgements and results - orally and in writing - towards companies and course management</p>",
+        "prerequisites": "<p>ME2501 Perspectives on Industrial management</p><p>A minimum of 36 credits within the subject area of Industrial management.</p>"
+    },
+    "FAF3608": {
+        "name": "Project in Soil and Rock Mechanics",
+        "code": "FAF3608",
+        "location": null,
+        "department": "ABE/Soil- and Rock Mechanics",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3608",
+        "description": "<p>After the course, the student shall be able to report the results of a project work within the specialisation soil and rock mechanics.</p>",
+        "prerequisites": "<p>Master degree in civil engineering or the equivalent entry requirements for third cycle studies in civil engineering</p>"
+    },
+    "F1A5046": {
+        "name": "Individual Seminar Course: Architecture",
+        "code": "F1A5046",
+        "location": null,
+        "department": "ABE/Architecture",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/F1A5046",
+        "description": "<p>After the course, the student should be able to</p><ul><li>Give a count for a field of theory, method, discourse, or similar for which the content of the specific iteration of the course has been designed</li><li>Critically reflect over this as well as give account for its relation to research in general</li><li>Discuss the relation to and relevance for ones&#180;own research work</li><li>Participate in a critical, dynamic and constructive discussion of a field of theory, method, discourse or similar for which the content of the iteration of the course has been designed in the format of academic seminars</li></ul>",
+        "prerequisites": "<p><strong>Prerequisites</strong><br />In order to follow the course a student must have completed a Masters&#180;degree in architecture or adjoining fields, or have an equivalent level of education. Priority is given to students enrolled at KTH or as doctoral students in architecture at other universities.</p>"
+    },
+    "FAF3117": {
+        "name": "Project in Concrete Structures",
+        "code": "FAF3117",
+        "location": null,
+        "department": "ABE/Concrete Structures",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3117",
+        "description": "<p>After completing the course the student should be able to present implementation of a deepening project in the area of concrete structures.</p>",
+        "prerequisites": "<p>Master of Science in structural engineering and admission to postgraduate level</p>"
+    },
+    "FAF3415": {
+        "name": "Service Life of Buildings - From Theory to Practice",
+        "code": "FAF3415",
+        "location": null,
+        "department": "ABE/Sustainable Buildings",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3415",
+        "description": "<p>After the course, the student shall</p><ul><li>have obtained a practical understanding about what is meant by service life;</li><li>have a good insight in the standards that are produced for determination and description of this;</li><li>be able to show how this can be applied making buildings develop in a sustainable way.</li></ul>",
+        "prerequisites": "<p>Master of Science in Civil Engineering or similar, with an undergraduate course in building technology.</p>"
+    },
+    "FAF3501": {
+        "name": "Fluid Mechanics",
+        "code": "FAF3501",
+        "location": null,
+        "department": "ABE/Sustainable Buildings",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3501",
+        "description": "<p>The objective of this course is to provide a deeper physical and mathematical understanding of the fluid flow processes relevant to indoor environmental management with key focus on air movement and distribution in buildings (e.g. natural and mechanical ventilation, air heating etc.), as well as fluid flow in heating, comfort cooling, domestic hot water generation and other building service systems. Relevant issues are discussed with the over-arching goal of achieving high resource (energy, water etc.) efficiency, &#160;high indoor environmental quality and user satisfaction, as well as optimal overall building performance.</p>",
+        "prerequisites": "<p>Master of Science in Civil and Architectural Engineering or equivalent.</p>"
+    },
+    "FAF3502": {
+        "name": "Heat Transfer",
+        "code": "FAF3502",
+        "location": "KTH Campus",
+        "department": "ABE/Sustainable Buildings",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": false,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3502",
+        "description": "<p>The objective of this course is to provide a deeper physical and mathematical understanding of the heat transfer processes relevant to indoor environmental management in buildings (as well as related buiding services systems) with key focus on ventilation, heating/cooling and lighting. Relevant issues are discussed with the over-arching goal of achieving high energy efficiency, high indoor environmental quality and user satisfaction, as well as optimal overall building performance.</p>",
+        "prerequisites": "<p>Master of Science in Civil and Architectural Engineering or similar.</p>"
+    },
+    "FAF3507": {
+        "name": "Ind. Literature Course in Building Services Engineering",
+        "code": "FAF3507",
+        "location": null,
+        "department": "ABE/Sustainable Buildings",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3507",
+        "description": "<p>The objective of the course is to carry out a state-of-the-art literature review based on leading publications relevant to the research project. Special focus shall be given to related sustainability aspects.</p>",
+        "prerequisites": "<p>Master of Science in Civil and Architectural Engineering or similar, with an undergraduate course in indoor environment/energy systems/building services technologies or equivalent.</p>"
+    },
+    "FAF3509": {
+        "name": "Project in Building Services Engineering",
+        "code": "FAF3509",
+        "location": null,
+        "department": "ABE/Sustainable Buildings",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAF3509",
+        "description": "<p>Upon successful course completion the PhD-student shall have acquired 3rd-cycle-level expertise in areas of Building Services Engineering to the PhD-project. A key objective for the course is strengthening the student's expertise in the domains of high-performance buildings and sustainable development of the built environment in a life-cycle and system-oriented perspective.</p>",
+        "prerequisites": "<p>MSc-Diploma; MSc-level expertise in Building Services Engineering.</p>"
+    },
+    "FAH3462": {
+        "name": "Topics in Transport Science, Part 2",
+        "code": "FAH3462",
+        "location": null,
+        "department": "ABE/Transport Planning",
+        "academic_level": "RESEARCH",
+        "credits": 4,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAH3462",
+        "description": "<p>Doctoral students get exposed to, become visible in, and familiarize themselves with the international research landscape in transport science.</p>",
+        "prerequisites": "<p>Enrollment in doctoral program in transport science or similar subjects with completed initial literature review or equivalent.</p>"
+    },
+    "FAL3504": {
+        "name": "Project in Environmental Strategic analysis 3",
+        "code": "FAL3504",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "RESEARCH",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FAL3504",
+        "description": "<p>The aim of the course is to give deeper insights in topics of relevance for environmental strategic analysis.</p>",
+        "prerequisites": "<p>The course is primarily open for PhD students in environmental strategic analysis.</p>"
+    },
+    "FEF3340": {
+        "name": "Applied Plasma Physics, Project Course",
+        "code": "FEF3340",
+        "location": null,
+        "department": "EECS/Space and Plasma Physics",
+        "academic_level": "RESEARCH",
+        "credits": 10,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FEF3340",
+        "description": "<p>After completed course the students should have knowledge of the research results, particular techniques, and applications both broadly in applied plasma physics, and with focus on the subject area of the thesis.</p>",
+        "prerequisites": "<p>MSc level mathematics and physics, and preferably Applied Plasma Physics or equivalent.</p>"
+    },
+    "MH1017": {
+        "name": "Micro and Nanostructures",
+        "code": "MH1017",
+        "location": null,
+        "department": "ITM/Materials Science and Engineering",
+        "academic_level": "BASIC",
+        "credits": 5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MH1017",
+        "description": "<p><em>&#160;</em><em>After the course the student should know how to:</em></p><ul><li>identify characteristic structure elements in micro- and nanostructures of crystalline materials and know how to analyze the most common structures in metallic and ceramic materials. </li></ul><ul><li>interpret the microstructure of a material and by using phase diagrams be able to draw reasonable conclusions about how the material has been treated and which phase transformations that have occurred.</li></ul><ul><li>explain and motivate which factors; composition, temperature cycle, deformation etc., that favor the formation of different structures. &#160;</li></ul><ul><li>make reasonable assumptions of ternary phase diagrams based on information from binary phase diagrams.</li></ul><ul><li>explain and motivate which fundamental chemical and physical quantities that are of importance for different types of phase transformations; diffusion, surface energy, coherency, thermodynamic driving force, thermal fluctuations etc.</li></ul><ul><li>explain and schematically construct Gibbs energy diagrams and explain the geometrical significance of e.g. driving force for the initial precipitation of one phase from another, the effect of surface energy on a two phase equilibria. </li></ul><ul><li>calculate e.g. driving force for the initial precipitation<strong>, </strong>critical radius for nucleation, growth rates, segregation during solidification, grain growth, rate of phase transformation and combine these to solve more complex problems using reasonable assumptions. </li></ul><ul><li>apply TTT and CCT diagrams to analyze what takes place in a material during e.g. heat treatment and also be able to motivate how these diagrams are affected by thermodynamic and microstructural factors. </li></ul><ul><li>explain the thermodynamic and kinetic factors that favor amorphous materials.<strong> </strong></li></ul>",
+        "prerequisites": "<p>Background corresponding to<br />MH1010 Thermodynamics of Materials, 9 hp<br />MH1014 Fundamentals of Materials, 7 hp</p>"
+    },
+    "AE2603": {
+        "name": "Project Work 1 in Hydraulic Engineering",
+        "code": "AE2603",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AE2603"
+    },
+    "AH203V": {
+        "name": "Railway Traffic: Planning, Market and Economy",
+        "code": "AH203V",
+        "location": null,
+        "department": "ABE/Transport Planning",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AH203V",
+        "description": null,
+        "prerequisites": null
+    },
+    "AG293X": {
+        "name": "Degree Project in Geodesy, Second Cycle",
+        "code": "AG293X",
+        "location": "KTH Campus",
+        "department": "ABE/ Surveying – Geodesy, Land Law and Real Estate Planning",
+        "academic_level": "ADVANCED",
+        "credits": 30,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AG293X",
+        "description": "<p>After a completed degree project, the student should be able to</p><ol><li> <p>show knowledge of the disciplinary foundation of the chosen subject area and best practice, an advanced understanding of current research and development work and advanced knowledge of methods.</p></li><li> <p>demonstrate the ability to search for, collect and integrate knowledge in a comprehensive, critical, and systematic way and to identify his or her needs for further knowledge.</p></li><li> <p>demonstrate the ability to identify, analyse, assess and handle complex phenomena, issues and situations, even with limited information.</p></li><li> <p>demonstrate the ability to plan, and with adequate methods, carry out high-quality assignments within given time frames, as well as to evaluate this work.</p></li><li> <p>demonstrate the ability to develop and evaluate products, processes, systems, methods or technical solutions, taking into consideration people's abilities and needs, and society's goals for economic, social and ecological sustainable development.</p></li><li> <p>demonstrate orally and in writing the ability to, in dialogue with different groups, clearly account for and discuss his or her conclusions, including the knowledge and arguments that are the basis of such conclusions.</p></li><li> <p>demonstrate the ability to exercise judgement, considering the relevant scientific, social and ethical aspects.</p></li><li> <p>demonstrate the skills required to participate in research and development work or to independently work in other advanced contexts.</p></li></ol>",
+        "prerequisites": "<p>All courses that are required for issuing the Degree of Bachelor should be fully completed with a pass mark. At least 60 credits of courses for second-cycle studies should be fully completed with a pass mark. These 60 credits should include all courses in the programme relevant to the degree project and a course in theory of science and research methodology.</p><p>The examiner is responsible to evaluate special admission requirements</p>"
+    },
+    "AH2916": {
+        "name": "Integrated Navigation",
+        "code": "AH2916",
+        "location": null,
+        "department": "ABE/ Surveying – Geodesy, Land Law and Real Estate Planning",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AH2916",
+        "description": "<p>To give students theoretical and practical knowledge on the modern technologies for positioning and navigation.</p><p>After the course, the students will be able to identify and apply a suitable navigation method for different applications.</p>",
+        "prerequisites": "<ul><li>A completed Bachelor of Science in Engineering or least 180 credits academic studies&#160;in a technical program, for example civil engineering, or physics.</li><li>Documented proficiency in English B or equivalent (TOEFL, IELTS &#160;e g).</li><li>AH2923 Global navigation satellite systems or equivalent</li></ul>"
+    },
+    "AE1709": {
+        "name": "Drinking Water Engineering- from Groundwater Sources to Healthy Tap Water",
+        "code": "AE1709",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "BASIC",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AE1709",
+        "description": null,
+        "prerequisites": null
+    },
+    "AE178V": {
+        "name": "Drinking Water Engineering - from Groundwater to Healthy Tap Water",
+        "code": "AE178V",
+        "location": null,
+        "department": "ABE/Sustainability and Environmental Engineering",
+        "academic_level": "BASIC",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/AE178V",
+        "description": "<p>After completing the course, students will be able to<br />- Have a thorough knowledge of the requirements of the various EU water directives, Swedish laws and regulations and WHO Water Safety Plans<br />- To assess the quality of a drinking water&#160;in relation to health regarding minerals, toxic substances and pathogens<br />- Have a good knowledge of&#160; municipal water supply from natural and artificial groundwater<br />- To assess how and to what degree drinking water may be affected by individual sewage treatment<br />- Be well oriented in different water treatment methods and their impact on water quality and mineral balance<br />- To determine whether a water is corrosive, which contains possible corrosion products and health risks with them, and what treatment that can prevent corrosion<br />- Be able to describe what drives economic, social and technological trends in the VA&#160;sector and how they affect the environment<br />- Be able to use project work to structured and methodical problem solving within your own field of work</p>",
+        "prerequisites": "<p>Completed upper secondary education including documented proficiency in Swedish corresponding to Swedish B/Swedish 3 and English corresponding to English A/English 6. For students who received their final school grades after 31 December 2009, there is an additional entry requirement for mathematics as follows: documented proficiency in mathematics corresponding to Mathematics A/Mathematics 1.</p>"
+    },
+    "DA256X": {
+        "name": "Degree Project in Computer Science and Engineering, specialising in ICT Innovation, Second Cycle",
+        "code": "DA256X",
+        "location": "KTH Kista",
+        "department": "EECS/Computer Science",
+        "academic_level": "ADVANCED",
+        "credits": 30,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/DA256X",
+        "description": "<p>After passing the degree project course, the student should be able to:</p><ul><li>show advanced knowledge within the main field of study/the specialisation for the education, including advanced insight into current research and development work</li><li>show methodological knowledge within the main field of study/the specialisation for the education</li><li>participate in research and development work and thereby contribute to the knowledge development</li><li>with a holistic approach, critically, independently and creatively identify, formulate, analyse, assess and deal with complex phenomena and issues, even with limited information</li><li>plan and with adequate methods carry out qualified assignments within given frames, and evaluate this work</li><li>integrate knowledge critically and systematically and identify the need of additional knowledge</li><li>in Swedish or in English, in speech and writing clearly report and discuss their conclusions and the knowledge and arguments on which they are based</li><li>within the frames of the degree project identify the role of the scholarship and the engineer in the society</li><li>within the frame of the specific degree project identify which issues that need to be answered in order to observe relevant dimensions of sustainable development</li><li>within the frames of the degree project assess and show awareness of ethical aspects of research and development work, with respect to methods, working methods and results of the degree project</li></ul><p>in order to be able to participate in research and development or work independently in other qualified activities according to the national aims for a Degree of Master of Science in Engineering and Degree of Master of Science in Higher Education Ordinance.</p>",
+        "prerequisites": "<p>Passed courses at second cycle level of at least 60 credits, including courses that are relevant for the degree project including a course in theory of knowledge and research methodology. </p><p>If the student is registered on an engineering programme should all courses that are required for issuing of Degree of Bachelor be completed.</p>"
+    },
+    "EA256X": {
+        "name": "Degree Project in Electrical Engineering, specialising in ICT Innovation, Second Cycle",
+        "code": "EA256X",
+        "location": "KTH Kista",
+        "department": "EECS/Computer Science",
+        "academic_level": "ADVANCED",
+        "credits": 30,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/EA256X",
+        "description": "<p>After passing the degree project course, the student should be able to:</p><ul><li>show advanced knowledge within the main field of study/the specialisation for the education, including advanced insight into current research and development work</li><li>show methodological knowledge within the main field of study/the specialisation for the education</li><li>participate in research and development work and thereby contribute to the knowledge development</li><li>with a holistic approach, critically, independently and creatively identify, formulate, analyse, assess and deal with complex phenomena and issues, even with limited information</li><li>plan and with adequate methods carry out qualified assignments within given frames, and evaluate this work</li><li>integrate knowledge critically and systematically and identify the need of additional knowledge</li><li>in Swedish or in English, in speech and writing clearly report and discuss their conclusions and the knowledge and arguments on which they are based</li><li>within the frames of the degree project identify the role of the scholarship and the engineer in the society</li><li>within the frame of the specific degree project identify which issues that need to be answered in order to observe relevant dimensions of sustainable development</li><li>within the frames of the degree project assess and show awareness of ethical aspects of research and development work, with respect to methods, working methods and results of the degree project</li></ul><p>in order to be able to participate in research and development or work independently in other qualified activities according to the national aims for a Degree of Master of Science in Engineering and Degree of Master of Science in Higher Education Ordinance.</p>",
+        "prerequisites": "<p>Passed courses at second cycle level of at least 60 credits, including courses that are relevant for the degree project including a course in theory of knowledge and research methodology. </p><p>If the student is registered on an engineering programme should all courses that are required for issuing of Degree of Bachelor be completed.</p>"
+    },
+    "FCB3081": {
+        "name": "Higher Seminar in DNA/RNA Science I",
+        "code": "FCB3081",
+        "location": "KTH Solna",
+        "department": "CBH/Gene Technology",
+        "academic_level": "RESEARCH",
+        "credits": 3,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": true,
+            "P2": false,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCB3081",
+        "description": "<p>After completion of the course the student should be able to</p><ul><li>show basic knowledge, both broad and specialized, in the overall subject area of biotechnology with emphasis on the scientific subject area of the course</li><li>show basic ability to present, critically examine and discuss scientific papers in the subjects of biotechnology with emphasis on the scientific subject area of the course</li><li>show basic insights of academic authorship and the international scientific publishing landscape with relevance to the scientific subject area of the course</li><li>demonstrate basic ability identify, discuss and reflect on ethics and sustainability aspects in the research that is discussed within the framework of the subject area of the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.</p>"
+    },
+    "FCK3303": {
+        "name": "Organic and Biochemical Analytical Separations",
+        "code": "FCK3303",
+        "location": "KTH Campus",
+        "department": "CBH/Chemistry",
+        "academic_level": "RESEARCH",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": true,
+            "english": false
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/FCK3303",
+        "description": "<p>After completing the course, the student should be able to</p><ul><li>explain the basic principles for gas chromatography, liquid chromatography, capillary electrophoresis and mass spectrometry, describe the different methods, which are used in each technique respectively, and the instrumental variants that exist, e.g. concerning injection and detection&#160;</li><li>suggest and explain how the method development and the optimisation can be accomplished for the different techniques</li><li>participate actively in the demonstration laboratory exercises and at the company visit</li><li>define and compare the different methods, choose technique/method for specific analysis problems and motivate the choices</li><li>use the above listed knowledge to plan, perform and evaluate a laboratory project within the subject area, individually or in group, including to perform a smaller literature study, and present the laboratory project in a written report and an oral presentation for the other students in the course, and perform an opposition on another laboratory project in the course</li></ul>",
+        "prerequisites": "<p>Eligible for studies at the third-cycle level.</p>"
+    },
+    "MF2098": {
+        "name": "Design Methodology in Urban Mobility",
+        "code": "MF2098",
+        "location": "KTH Campus",
+        "department": "ITM/Integrated Product Development and Design",
+        "academic_level": "ADVANCED",
+        "credits": 3,
+        "grading": "AF",
+        "lectures": 4,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/MF2098"
+    },
+    "LL137U": {
+        "name": "Technology for Teachers in grades 7-9",
+        "code": "LL137U",
+        "location": "KTH Campus",
+        "department": "ITM/Learning in Engineering Sciences",
+        "academic_level": "BASIC",
+        "credits": 45,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": true,
+            "english": false
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/LL137U"
+    },
+    "LS1424": {
+        "name": "German B1 for Engineers",
+        "code": "LS1424",
+        "location": "KTH Campus",
+        "department": "ITM/Learning in Engineering Sciences",
+        "academic_level": "BASIC",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": true,
+            "english": false
+        },
+        "periods": {
+            "P1": true,
+            "P2": true,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/LS1424",
+        "description": "<p>The&#160;intended&#160;learning outcomes for the course refer&#160;mainly&#160;to the level B1, with certain elements of B2, according to CEFR,&#160;the Common European Framework of Reference for Languages, and aim to strengthen the student's global competence.</p><p>On completion of the course, the student should, in addition to what is specified in courses at lower levels, be able to:</p><p>Listening comprehension<br />&#8226; understand the contents of clear standard speech about general subject areas (B1/B2)</p><p>Reading comprehension<br />&#8226; understand and account for short authentic texts with a connection to technology (B1/B2)</p><p>Spoken interaction and production<br />&#8226; talk and argue informally about subjects of personal interest or linked to studies, work, or current events (B1)<br />&#8226; give an individually prepared presentation of a specialised character (B1)</p><p>Written production<br />&#8226; write different types of text of general and technical nature (B1)</p>",
+        "prerequisites": "<p>Basic university qualification. Completion and pass of German A2 for Engineers, equivalent older course, or the equivalent knowledge demonstrated in a compulsory placement test.</p>"
+    },
+    "ME2083": {
+        "name": "Hydropower- Technology, Economy, Sustainability",
+        "code": "ME2083",
+        "location": null,
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2083",
+        "description": "<p>After passing the course, the students should be able to:</p><ol><li>Describe the role of the hydroelectric power in the energy system both in Sweden and internationally</li><li>Compare the design of dams, power stations and mechanical, electric and electronic equipment</li><li>Analyse new and innovative technical solutions for design, operation and regulation of hydroelectric power plants</li><li>Formulate and analyse the economic preconditions for and the consequences of hydroelectric power</li><li>Analyse and critically discuss the environmental impact of the hydroelectric power and the judicial preconditions for hydroelectric power</li><li>Choose and analyse a current problem connected to the hydroelectric power industry</li></ol>",
+        "prerequisites": "<p>Achieved the requirements for a Degree of Bachelor of Science</p>"
+    },
+    "ME2086": {
+        "name": "Global Energy Markets and Systems in Transition",
+        "code": "ME2086",
+        "location": "KTH Campus",
+        "department": "ITM/Industrial Economics and Management",
+        "academic_level": "ADVANCED",
+        "credits": 6,
+        "grading": "AF",
+        "lectures": 10,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": true,
+            "P3": false,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/ME2086",
+        "description": "<p>On completion of the course the students should be able to:</p><ol><li>Analyze the structure of the global energy system</li><li>Critically discuss the mechanisms that drive systems transitions in relation to global energy markets and their implications</li><li>Evaluate theoretical concepts and current research from the field of industrial dynamics for managing technological and industrial change processes in relation to global energy markets</li><li>Write an analysis related to industrial and technological change and independently discuss problem formulations and their solutions to tackle complex change in global energy markets</li><li>Present results and conclusions based on a scientific investigation for different types of audiences</li></ol>",
+        "prerequisites": "<p>Achieved the requirements for a Bachelor&#8217;s degree in technology, science or equivalent.</p>"
+    },
+    "SD2702": {
+        "name": "Naval Design",
+        "code": "SD2702",
+        "location": "KTH Campus",
+        "department": "SCI/Aeronautical and Vehicle Engineering",
+        "academic_level": "ADVANCED",
+        "credits": 20,
+        "grading": "AF",
+        "lectures": 16,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/SD2702",
+        "description": "<p>The technical aim is to develop an advanced naval system from specification to product, constrained by a given budget. During the course the students learn</p><ul><li>to work in a project environment</li><li>written and oral skills</li><li>to analyze technical problems from a systems perspective</li><li>to use modern engineering methods and tools</li><li>to treat and solve technical problems subject to multiple constraints</li><li>develop strategies for systematic use, and choice of available engineering methods</li></ul>",
+        "prerequisites": "<p>Base programme T, M, P, F or equivalent.</p><p>English B / English 6</p>"
+    },
+    "SE2870": {
+        "name": "Fem for Nonlinear Problems in Solid Mechanics",
+        "code": "SE2870",
+        "location": null,
+        "department": "SCI/Solid Mechanics",
+        "academic_level": "ADVANCED",
+        "credits": 7,
+        "grading": "AF",
+        "lectures": null,
+        "language": {
+            "swedish": null,
+            "english": null
+        },
+        "periods": {
+            "P1": null,
+            "P2": null,
+            "P3": null,
+            "P4": null
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/SE2870",
+        "description": "<p>After the course, the participants should be able to</p><ol><li>Demonstrate a theoretical understanding of non-linear continuum mechanics (KF2)</li><li>Solve a particular problem by application of appropriate solution methods and algorithms (KF2)</li><li>Describe the purpose, function, implication and limitation of modeling (KF2)</li><li>Combine and integrate different solution strategies to address more challenging problems (FF4)</li><li>Demonstrate a practical understanding in applying the FE method as demonstrated by solving typical structural problems (FF4)</li><li>Present, analyze and explain derived results in a clear and causal way</li></ol>",
+        "prerequisites": "<p>English B / English 6</p><p>Basic course in Solid mechanics, SE1010, SE1020, SE1055 or the equivalent</p><p>Basic course on FEM, SE1025 or the equivalent</p>"
+    },
+    "SF2525": {
+        "name": "Computational Methods for Stochastic Differential Equations and Machine Learning",
+        "code": "SF2525",
+        "location": "KTH Campus",
+        "department": "SCI/Mathematics",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "PF",
+        "lectures": null,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": true
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/SF2525",
+        "description": "<p>After completing this PhD level course the students will be able to model, analyze and efficiently compute solutions to problems including random phenomena in science and engineering. The student learns the basic mathematical theory for stochastic differential equations, optimal control and machine learning and applies it to applications, including financial mathematics, machine learning and chemical reactions in cell biology.</p><p>More precisely the goal of the course means that the student can:</p><ol><li>present some models in science and finance based on stochastic differential equations and evaluate methods to determine their solution,</li><li>derive and use the correspondence between expected values of stochastic diffusion processes and solutions to certain deterministic partial differential equations,</li><li>formulate, use and analyze the main numerical methods for stochastic differential equations, based on Monte Carlo stochastics and partial differential equations,</li><li>present some stochastic and deterministic optimal control problems in science and finance,</li><li>formulate, use and analyze deterministic and stochastic optimal control problems using both differential equations constrained minimization and dynamic programming, leading to the Hamilton-Jacobi-Bellman nonlinear partial differential equation,</li><li>derive the Black-Scholes equation for options in mathematical finance and analyze the alternatives to determine option prices numerically,</li><li>formulate, use and analyze the basic machine learning problem to determine a neural network that approximates given data using the stochastic gradient descent method,</li><li>use the machine learning program TensorFlow to&#160; construct a neural network that approximates given data,</li><li>formulate zero-sum differential games,</li><li>determine and analyze reaction rate problems for stochastic differential equation with small noise using optimal control theory.</li></ol>",
+        "prerequisites": "<p>English B / English 6</p><p>The prerequisite for the course is linear algebra, calculus, differential equations, probability, programming and numerics corresponding to the first three years at KTH.</p>"
+    },
+    "SF2526": {
+        "name": "Numerical algorithms for data-intensive science",
+        "code": "SF2526",
+        "location": "KTH Campus",
+        "department": "SCI/Mathematics",
+        "academic_level": "ADVANCED",
+        "credits": 7.5,
+        "grading": "AF",
+        "lectures": 14,
+        "language": {
+            "swedish": false,
+            "english": true
+        },
+        "periods": {
+            "P1": false,
+            "P2": false,
+            "P3": true,
+            "P4": false
+        },
+        "kth_page_url": "https://www.kth.se/student/kurser/kurs/SF2526",
+        "description": "<p>The general intended objective is to obtain understanding when the algorithms of the course work well and their implementation, justification and analysis. More specifically, after a completed course the student shall be able to</p><ul><li>implement linear algebra algorithms for topics of the blocks of the course;</li><li>analyze when the algorithms of the course work well and their limitations, by using linear algebra tools;</li><li>justify or derive methods of the course, using mathematical reasoning and relation to other numerical techniques;</li><li>apply the methods of the course to solve scientific problems relevant for a sustainable society</li></ul>",
+        "prerequisites": "<ul><li>Completed basic course in numerical analysis (SF1544, SF1545or equivalent) and</li><li>Completed basic course in computer science (DD1320 or equivalent).</li></ul>"
+    }
+}
