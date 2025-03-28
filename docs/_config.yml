@@ -5,4 +5,4 @@ theme: jekyll-theme-minimal
 logo: "/assets/images/favicon.png"
 favicon: "/assets/images/favicon.png"
 title: "Find my next course - by Inference"
-description: "A web application designed to help students explore KTH’s course offerings"
+description: "A web application designed to help students explore KTH’s course offerings."
