@@ -1,11 +1,11 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
-import { TextInputView } from "../views/TextInputView";
+import SearchbarView  from "../views/SearchbarView.jsx";
 
 // A dummy presenter, which adds the course supplied in the text field to the db.
 export const AddToDB = observer(function AddToDB({ model }) {
     const [text, setText] = useState("");
-	return <TextInputView text={text} onTextChanged={onTextChanged} onSubmit={onSubmit}/>;
+	return <SearchbarView text={text} onTextChanged={onTextChanged} onSubmit={onSubmit}/>;
 
     function onTextChanged(e){
         setText(e.target.value);
