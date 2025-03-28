@@ -1,4 +1,4 @@
-# Welcome to *Find My Next Course*
+# *Find My Next Course*
 
 ## About the Project
 Find My Next Course is a web application designed to help students explore KTH’s course offerings. With a user-friendly interface, students can search for courses, view prerequisites, and find courses they are eligible for by inputting their academic transcripts.

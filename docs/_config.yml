@@ -1,1 +1,7 @@
+include:
+  - "assets/images/favicon.ico"
+
 theme: jekyll-theme-minimal
+logo:
+title: "Find my next course - by Inference"
+description: "Find My Next Course is a web application designed to help students explore KTH’s course offerings"
