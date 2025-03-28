@@ -5,7 +5,7 @@ async function KTH_API_course_fetch(course) {
         const data = await response.json();
         const function_response = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
 
-        
+
 
         return function_response;
 
@@ -41,9 +41,9 @@ async function test() {
     console.log(resp);
 }
 
-//test();
+test();
 
-KTH_API_all_active_courses();
+//KTH_API_all_active_courses();
 
 
 
