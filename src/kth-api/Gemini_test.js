@@ -1,14 +1,16 @@
 import { GoogleGenAI } from "@google/genai";
+import { KTH_API_course_fetch, KTH_API_all_active_courses } from "./api_data_fetching.js";
 
-const ai = new GoogleGenAI({ apiKey: "" });
+const ai = new GoogleGenAI({ apiKey: "AIzaSyBtV0cqLhwXMEnJfFXPnw1hFLzg8Vdrzf8" });
 
-async function main() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.0-flash",
-    contents: "Could you extract the course requirements from the text I will provide later down? I want the return format to be a 2D array with where each element in the array is an array containing the course codes of the courses you only need one of the courses in the array to meet that one requirement? A course code starts with two capital letters and is followed by 4-5 letters or numbers. The data to check: \u003cp\u003eKunskaper och f\u0026#228;rdigheter i Javaprogrammering, 6 hp, motsvarande slutf\u0026#246;rd kurs ID1018/DD1337 alternativt en slutf\u0026#246;rd kurs i grundl\u0026#228;ggande programmering som DD1310-DD1319/DD1321/DD1331/DD100N kombinerad med en slutf\u0026#246;rd kurs i Javaprogrammering motsvarande DD1380.\u003c/p\u003e\u003cp\u003eKunskaper i boolesk algebra, 1,5 hp, motsvarande slutf\u0026#246;rd kurs IE1204/IE1205, alternativt ANN1 i IS1500.\u003c/p\u003e DATA END. Are you sure this is correct?"
+async function course_prereqs_interpreter(course) {
+    let course_info = await KTH_API_course_fetch(course);
+    let prompt = `Convert the given prerequisite description into a structured JSON format following these rules:\n\n1. **Logical Structure:**\n   - Use \"and\" where all conditions must be met.\n   - Use \"or\" where at least one condition must be met.\n   - Nest conditions accordingly to preserve logical meaning.\n\n2. **Course Code Recognition:**\n   - Course codes must start with a capital letter and contain at least six characters.\n   - If multiple course codes are separated by '/' or listed in a range (e.g., 'DD1310-DD1319'), treat them as an OR condition.\n\n3. **General Prerequisites:**\n   - Non-course prerequisites should be prefixed with '#'  (e.g., 'Bachelor degree or equivalent' should become '#Bachelor degree or equivalent')in the JSON output. If there are no specific prerequisites, the prerequisites should be empty.\n\n4. **Final JSON Structure:**\n   - All prerequisites must be included under a single 'prerequisites' key.\n\n#### Example Input:\n\"\"\"\nKnowledge and skills in Java programming, 6 credits, corresponding to completed course ID1018/DD1337 alternatively a completed course in basic programming such as DD1310-DD1319/DD1321/DD1331/DD100N combined with a completed course in Java programming corresponding to DD1380.\n\nKnowledge in Boolean algebra, 1,5 credits, corresponding to completed course IE1204/IE1205, alternatively IS1500.\n\"\"\"\n\n#### Expected JSON Output:\njson\n{\n  \"prerequisites\": {\n    \"and\": [\n      {\n        \"or\": [\n          [\"ID1018\", \"DD1337\"],\n          {\n            \"and\": [\n              [\n                \"DD1310\", \"DD1311\", \"DD1312\", \"DD1313\", \"DD1314\", \"DD1315\",\n                \"DD1316\", \"DD1317\", \"DD1318\", \"DD1319\", \"DD1321\", \"DD1331\", \"DD100N\"\n              ],\n              \"DD1380\"\n            ]\n          }\n        ]\n      },\n      {\n        \"or\": [\n          [\"IE1204\", \"IE1205\", \"IS1500\"]\n        ]\n      }\n    ]\n  }\n}\n  The data to look at is: ` + course_info["prerequisites"] 
+    const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash",
+        contents: prompt
   });
-  console.log(response.text);
-  
+    console.log(response.text);
 }
 
-await main();
+await course_prereqs_interpreter("IK1203");
