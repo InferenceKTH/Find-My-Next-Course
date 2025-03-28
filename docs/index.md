@@ -12,12 +12,12 @@ While ‘Find My Next Course’ is currently designed for KTH, we aim to expand 
 
 ## Team Members
 
--[Sami Al Saati](https://github.com/Dinoxh)  
--[Benedek Boldizsar](https://github.com/boldizsarbenedek)
--[Justus Kluge](https://github.com/jkluge)  
--[Chenny Li](https://github.com/re1entlessly)  
--[Kacper Lisik](https://github.com/LSKpr)  
--[Elias Naess](https://github.com/daDevBoat)  
--[Emanuel Paraschiv](https://github.com/emyemy89)  
--[Elias Tosteberg](https://github.com/Sailet03)  
--[Dean Tsankov](https://github.com/kexana)  
+- [Sami Al Saati](https://github.com/Dinoxh)  
+- [Benedek Boldizsar](https://github.com/boldizsarbenedek)  
+- [Justus Kluge](https://github.com/jkluge)  
+- [Chenny Li](https://github.com/re1entlessly)  
+- [Kacper Lisik](https://github.com/LSKpr)  
+- [Elias Naess](https://github.com/daDevBoat)  
+- [Emanuel Paraschiv](https://github.com/emyemy89)  
+- [Elias Tosteberg](https://github.com/Sailet03)  
+- [Dean Tsankov](https://github.com/kexana)  
