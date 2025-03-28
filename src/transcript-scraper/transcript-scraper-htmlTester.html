@@ -1,18 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-        <meta charset="UTF-8" />
-        <title>Hello World!</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcript Scraper</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+<body>
+    <h1>Upload PDF to Extract Text</h1>
+    <h3>Takes in National Official Transcript of Record, and prints out all the course codes that person has completed.</h3>
+    <input type="file" id="pdf-file" accept="application/pdf">
+    <pre id="output"></pre>
 
-	<body>
+    <script>
+        document.getElementById('pdf-file').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file && file.type === 'application/pdf') {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const pdfData = new Uint8Array(e.target.result);
 
-        <script type="module" src="transcript-scraper.js"></script>
+                    // Using PDF.js to read the PDF
+                    pdfjsLib.getDocument(pdfData).promise.then(function(pdf) {
+                        let textContent = '';
+                        
+                        const numPages = pdf.numPages;
+                        let pagePromises = [];
 
-        
-        <input type="file" id="pdfFileInput" name="transcriptPDF" accept="application/pdf">
-            
-        
+                        for (let pageNum = 1; pageNum <= numPages; pageNum++) {
+                            pagePromises.push(pdf.getPage(pageNum).then(function(page) {
+                                return page.getTextContent().then(function(text) {
+                                    let f = false;
+                                    if(!f){
+                                        console.log(text.items);
+                                        f = true;
+                                    }
+                                    textContent += text.items.map(item => item.str).join(' ... ') + "/n";
+                                });
+                            }));
+                        }
 
-    </body>
+                        // After all pages are processed, output the text
+                        Promise.all(pagePromises).then(function() {
+                            let croppedTextContent = '';
+                            let arr = textContent.split(" ... ");
+                            let isCurrentlyKTH = false;
+                            let isCurrentlyInTable = false;
+                            for(let i=0; i<arr.length; i++){
+                                //console.log("%d -- ", i, arr[i]);
+                                if((isCurrentlyKTH==false)){
+                                    if((arr[i] == "Kungliga Tekniska högskolan")|| (arr[i] == "KTH Royal Institute of Technology"))
+                                        isCurrentlyKTH = true;
+                                }else{
+                                    if((arr[i] == "Note")||(arr[i] == "Not")||isCurrentlyInTable){ //item which should be the first in the course codes
+                                        if(isCurrentlyInTable === false){
+                                            isCurrentlyInTable = true;
+                                            continue;  
+                                        }
+
+
+                                        if(arr[(i-1)] === ""){
+                                            //console.log("%d -- ", i, arr[i]);
+                                            let j = i+13;
+                                            if(arr[j]!==''){
+                                                console.log("we have escaped from table %d -- ", i, arr[i]);
+                                                isCurrentlyInTable = false;
+                                                isCurrentlyKTH = false;
+                                                /*let nextRowIndex;
+                                                for(nextRowIndex = (i+13); nextRowIndex < 20; nextRowIndex++){
+                                                    if((arr[nextRowIndex] === "")&&arr[nextRowIndex+14] === ""){
+                                                        //we found the next row after being thrown off from a line breaked row
+                                                        i = nextRowIndex;
+                                                        console.log("we have found problematic row %d -- ", i, arr[i]);
+                                                        break;
+                                                    }
+                                                    
+                                                }
+                                                if(nextRowIndex === (i+19+13)){
+                                                    console.log("we have escaped from table %d -- ", i, arr[i]);
+                                                    isCurrentlyInTable = false;
+                                                    isCurrentlyKTH = false;
+                                                }*/
+                                            }/*else{
+                                                let emptyStringsFound = 0;
+                                                for(let j = i; j<13; j++){
+                                                    if(arr[j]==="") emptyStringsFound++;
+                                                    if(emptyStringsFound>1) break;
+                                                }
+                                                if(emptyStringsFound<2){ //exit condition
+
+                                                }
+
+                                            }*/
+                                            //if this is true, thats because the user selected to upload a national official
+                                            //transcript which lists the parts of the grades
+                                            if(arr[(i+4)].includes("(")) continue;
+                                            croppedTextContent += arr[i] + '\n';
+                                        }
+                                    }
+                                }
+
+                                    
+                                
+
+                            }
+
+                            document.getElementById('output').textContent = croppedTextContent;
+                        });
+                    }).catch(function(error) {
+                        document.getElementById('output').textContent = 'Error reading PDF: ' + error;
+                    });
+                };
+                reader.readAsArrayBuffer(file);
+            } else {
+                alert('Please upload a valid PDF file.');
+            }
+        });
+    </script>
+</body>
 </html>

@@ -1,4 +1,4 @@
-import * as pdfjsLib from 'https://mozilla.github.io/pdf.js/build/pdf.mjs';
+import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.mjs';
 
 //const pdfjsLib = require('pdfjs-dist');
 
