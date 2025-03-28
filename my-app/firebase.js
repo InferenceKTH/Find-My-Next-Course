@@ -24,33 +24,46 @@ export const db = getDatabase(app);
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
-	const courses = await fetchCourses();
+    const courses = await fetchCourses();
     model.setCourses(courses);
 }
 
 export function connectToFirebase(model) {
-	// onAuthStateChanged(auth, (user) => {
-	// 	model.setUser(user);
-	// }); !can be used for auth! 
+    // onAuthStateChanged(auth, (user) => {
+    //  model.setUser(user);
+    // }); !can be used for auth! 
 
-	firebaseToModel(model);
+    firebaseToModel(model);
 }
 
 export async function addCourse(course){
-	if(!course?.courseCode)
-		return;
+    if(!course?.courseCode)
+        return;
     const myRef = ref(db, `courses/${course.courseCode}`);
-	await set(myRef, course);
+    await set(myRef, course);
 }
 
+// export async function fetchCourses() {
+//  const myRef = ref(db, `courses`);
+//  const snapshot = await get(myRef);
+//  if (!snapshot.exists()) return [];
+//  const value = snapshot.val();
+//  const courses = [];
+//  for (const id of Object.keys(courses)) {
+//      courses = [...courses, courses[id]];
+//  }
+//  return courses;
+// }
+
+// Before: [ {courseCode: "CS101", name: "Intro to CS"}, {...} ]
+// After: { "CS101": { name: "Intro to CS" }, "CS102": {...} }
+
+
 export async function fetchCourses() {
-	const myRef = ref(db, `courses`);
-	const snapshot = await get(myRef);
-	if (!snapshot.exists()) return [];
-	const value = snapshot.val();
-	const courses = [];
-	for (const id of Object.keys(courses)) {
-		courses = [...courses, courses[id]];
-	}
-	return courses;
+    const myRef = ref(db, `courses`);
+    const snapshot = await get(myRef);
+    if (!snapshot.exists()) return {};  // Return empty object instead of array
+
+    return snapshot.val();  // Return the object directly
 }
+
