@@ -1,5 +1,17 @@
+/* Function used for extracting the periodes a course is given in from a string */
+function period_extraction(text) {
+    const myArray = text.split(", ");
+    let result = [];
+    for (let i = 0; i < myArray.length; i++) {
+        const arr = myArray[i].split(" ");
+        result.push(arr[0]);
+    }
+    return result;
+}
+
+
 /* Takes in a string of the course code and returns the info based on the parameters */
-async function KTH_API_course_fetch(course, parameter_array) {
+async function KTH_API_course_fetch(course) {
     try {
         let course_info = {};
         const response = await fetch("https://api.kth.se/api/kopps/v2/course/" + course + "/detailedinformation");
@@ -9,31 +21,45 @@ async function KTH_API_course_fetch(course, parameter_array) {
         course_info["code"] = data["course"]["courseCode"];
         course_info["location"] = data["roundInfos"][0]["round"]["campus"]["name"];
         course_info["department"] = data["course"]["department"]["name"];
-        course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
         course_info["academic_level"] = data["course"]["educationalLevelCode"];
-        course_info["lectures"] = data["roundInfos"][0]["lectureCount"];
+        course_info["grading"] = data["course"]["gradeScaleCode"];
+        course_info["lectures"] = null;
         course_info["credits"] = data["course"]["credits"];
-        course_info["language"] = {"Swedish" : false, "English": false};
+        course_info["language"] = {"swedish" : false, "english": false};
         course_info["periods"] = {"P1" : false, "P2" : false, "P3" : false, "P4" : false};
-
+        
         for (let i = 0; i < data["roundInfos"].length; i++) {
             if (data["roundInfos"][i]["round"]["language"] == "Engelska") {
-                course_info["language"]["English"] = true;
+                course_info["language"]["english"] = true;
             }
             if (data["roundInfos"][i]["round"]["language"] == "Svenska") {
-                course_info["language"]["Swedish"] = true;
+                course_info["language"]["swedish"] = true;
             }
-
-            let period = data["roundInfos"][i]["round"]["courseRoundTerms"][0]["formattedPeriodsAndCredits"].substring(0, 2);
             
+            let periods_unformated = data["roundInfos"][i]["round"]["courseRoundTerms"][0]["formattedPeriodsAndCredits"];
+            let periods_array = period_extraction(periods_unformated);
+            
+            for (let i = 0; i < periods_array.length; i++) {
+                if (!course_info["periods"][periods_array[i]]) {
+                    course_info["periods"][periods_array[i]] = true;
+                }
+            }
+             
+        }
+        course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
+
+        let prereqs = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
+        if (prereqs != null) {
+            course_info["prerequisites"] = prereqs;
+        } else {
+            course_info["prerequisites"] = null;
 
         }
 
+        if (data["roundInfos"][0]["lectureCount"]) {
+            course_info["lectures"] = data["roundInfos"][0]["lectureCount"];
+        }
 
-        //course_info["period"] = data[]
-        
-        //course_info["profesors"] = data[""]
-        //console.log("N of rounds: " + data["roundInfos"].length);
         return course_info;
 
     } catch(err) {
@@ -64,22 +90,7 @@ async function KTH_API_all_active_courses() {
 }
 
 
-console.log(await KTH_API_course_fetch("IK1203", ""));
+//console.log(await KTH_API_course_fetch("IK1203"));
 
-
-
-/*
-async function KTH_API_fetch(course) {
-    let response = await fetch("https://api.kth.se/api/kopps/v2/course/" + course + "/detailedinformation");
-    return response;
-}
-function_response = "";
-await fetch("https://api.kth.se/api/kopps/v2/course/" + course + "/detailedinformation") 
-.then(response => response.json())  
-.then(data => {function_response = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"]; console.log(function_response); return function_response})    
-.catch(error => console.error(error));
-
-return function_response;
-*/
 
 
