@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import { connectToFirebase } from "../firebase";
 import { model } from "./model"
 import { HomeRoot } from "./pages/HomeRoot";
+import "./styles.css";
 
 configure({ enforceActions: "never" });
 const reactiveModel = observable(model);

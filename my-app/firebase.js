@@ -48,7 +48,7 @@ export async function fetchCourses() {
 	const snapshot = await get(myRef);
 	if (!snapshot.exists()) return [];
 	const value = snapshot.val();
-	const courses = [];
+	let courses = [];
 	for (const id of Object.keys(courses)) {
 		courses = [...courses, courses[id]];
 	}

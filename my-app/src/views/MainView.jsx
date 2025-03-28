@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Testo from '../components/FileUpload'
+import SideBar from '../components/SideBar'
+
 
 // dummy view, that returns text and a component state based counter.
 function App() {
@@ -7,14 +10,11 @@ function App() {
   return (
     <>
       <div className="card">
-        <h2>This is a dummy view, which has a counter</h2>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
       </div>
       <p className="read-the-docs">
-
+      
       </p>
+      <SideBar/>
     </>
   )
 }
