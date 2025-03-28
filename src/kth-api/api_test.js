@@ -1,13 +1,40 @@
-/* Takes in a string of the course code and returns the course code, name, location, department, prerequisits */
-async function KTH_API_course_fetch(course) {
+/* Takes in a string of the course code and returns the info based on the parameters */
+async function KTH_API_course_fetch(course, parameter_array) {
     try {
+        let course_info = {};
         const response = await fetch("https://api.kth.se/api/kopps/v2/course/" + course + "/detailedinformation");
         const data = await response.json();
-        const function_response = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
+        
+        course_info["name"] = data["course"]["titleOther"];
+        course_info["code"] = data["course"]["courseCode"];
+        course_info["location"] = data["roundInfos"][0]["round"]["campus"]["name"];
+        course_info["department"] = data["course"]["department"]["name"];
+        course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
+        course_info["academic_level"] = data["course"]["educationalLevelCode"];
+        course_info["lectures"] = data["roundInfos"][0]["lectureCount"];
+        course_info["credits"] = data["course"]["credits"];
+        course_info["language"] = {"Swedish" : false, "English": false};
+        course_info["periods"] = {"P1" : false, "P2" : false, "P3" : false, "P4" : false};
+
+        for (let i = 0; i < data["roundInfos"].length; i++) {
+            if (data["roundInfos"][i]["round"]["language"] == "Engelska") {
+                course_info["language"]["English"] = true;
+            }
+            if (data["roundInfos"][i]["round"]["language"] == "Svenska") {
+                course_info["language"]["Swedish"] = true;
+            }
+
+            let period = data["roundInfos"][i]["round"]["courseRoundTerms"][0]["formattedPeriodsAndCredits"].substring(0, 2);
+            
+
+        }
 
 
-
-        return function_response;
+        //course_info["period"] = data[]
+        
+        //course_info["profesors"] = data[""]
+        //console.log("N of rounds: " + data["roundInfos"].length);
+        return course_info;
 
     } catch(err) {
         console.error(err);
@@ -28,7 +55,7 @@ async function KTH_API_all_active_courses() {
             }
         }
         
-        return data
+        return active_courses;
         
     } catch(err) {
         console.error(err);
@@ -36,15 +63,8 @@ async function KTH_API_all_active_courses() {
     }
 }
 
-async function test() {
-    let resp = await KTH_API_course_fetch("IK1203");
-    console.log(resp);
-}
 
-test();
-
-//KTH_API_all_active_courses();
-
+console.log(await KTH_API_course_fetch("IK1203", ""));
 
 
 
