@@ -3,11 +3,11 @@ import React from 'react';
 
 function SidebarView(props) {
     return (
-        <div className="ring-offset-cyan-950 border-solid border-4 border-red-900">
+        <div>
             <h2>Sidebar</h2>
-            <ul>
-                <li>Home</li>
-                <li>Courses</li>
+            <ul >
+                <li className="mb-4">Home</li>
+                <li className="mb-4">Courses</li>
                 <li>About</li>
             </ul>
         </div>
