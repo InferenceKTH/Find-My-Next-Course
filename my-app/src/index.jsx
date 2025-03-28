@@ -3,7 +3,7 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { connectToFirebase } from "../firebase";
 import { model } from "./model"
-import { HomeRoot } from "./pages/HomeRoot";
+import App  from "./pages/App.jsx";
 import "./styles.css";
 
 configure({ enforceActions: "never" });
@@ -14,7 +14,7 @@ export function makeRouter(reactiveModel) {
     return createHashRouter([
         {
             path: "/",
-            element: <HomeRoot model={reactiveModel} />,
+            element: <App model={reactiveModel} />,
         },
     ]);
 }

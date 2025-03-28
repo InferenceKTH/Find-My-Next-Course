@@ -14,7 +14,7 @@ Project Structure Draft:
 │   ├── index.jsx    // the react router - routes between pages, all pages are inserted here
 │   ├── model.js     // the model - handles prog. logic, that is either global or account specific
 │   ├── pages        // pages combine the presenters to a webpage. mby obsolete for 1 page project
-│   │   └── HomeRoot.jsx  // The future homepage?
+│   │   └── App.jsx  // The future homepage?
 │   ├── presenters   // Presenters link views and the model. 
 │   |                   Hooks to modify the model & component  state is defined here
 │   │   └── HandleSearchPresenter.jsx  // An example presenter

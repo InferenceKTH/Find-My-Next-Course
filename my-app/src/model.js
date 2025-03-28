@@ -7,7 +7,7 @@ export const model = {
 	user: undefined,
 	currentCourse: undefined,
 	currentSearch: {},
-	courses: {},
+	courses: [], // Initialize as an array
 
     // sets the current user
     setUser(user) {
@@ -48,3 +48,4 @@ export const model = {
 
     }, // etc.
 }
+
