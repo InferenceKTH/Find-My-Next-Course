@@ -1,0 +1,53 @@
+// Fetch all courses from the specific department and print all their info
+async function KTH_API_courses_from_ED_department() {
+    try {
+        const response = await fetch("https://api.kth.se/api/kopps/v2/courses");
+        const data = await response.json();
+
+        // Filter by exact department match
+        const filtered_courses = data.filter(course => course.department === "ED (EES/Fusionsplasmafysik) ");
+
+        return filtered_courses; // return full course objects
+    } catch (err) {
+        console.error("Failed to fetch or filter courses:", err);
+        return [];
+    }
+}
+
+// Optional: Fetch eligibility info for one course
+async function KTH_API_course_fetch(course) {
+    try {
+        const response = await fetch("https://api.kth.se/api/kopps/v2/course/" + course + "/detailedinformation");
+        const data = await response.json();
+        const function_response = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
+        return function_response;
+    } catch (err) {
+        console.error("Failed to fetch course data for:", course, err);
+        return null;
+    }
+}
+
+// Test function: print all course data from that department
+async function test_ED_department_courses_full() {
+    const courses = await KTH_API_courses_from_ED_department();
+    console.log("Courses from IFF (ICT/Programvaru- och datorsystem):");
+
+    for (let course of courses) {
+        console.log("--------------");
+        console.log("Code: ", course.code);
+        console.log("Name: ", course.name);
+        console.log("Department: ", course.department);
+        console.log("State: ", course.state);
+        console.log("Last Exam Semester: ", course.last_examination_semester);
+        // Print the whole object if you want:
+        // console.log(course);
+    }
+
+    // Optional: get eligibility info for first 3 courses
+    for (let i = 0; i < 3 && i < courses.length; i++) {
+        const eligibility = await KTH_API_course_fetch(courses[i].code);
+        console.log(`\nEligibility for ${courses[i].code}:`, eligibility);
+    }
+}
+
+test_ED_department_courses_full();
