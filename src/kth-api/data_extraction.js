@@ -3,21 +3,35 @@ import fs from "fs";
 
 let active_courses = await KTH_API_all_active_courses();
 
-let json_course_data = {};
 
-for (let i = 0; i < 100; i++) {
+for (let start = 200; start < 4700; start += 100) {
+    let end = start + 100;
+    if (start > 4663) {
+        end = 4663;
+    }
+
+}
+let start = 400; 
+let end = start + 100;
+let previous_data = fs.readFileSync('all_courses_data2.json');
+let previous_object = JSON.parse(previous_data);
+let json_course_data = {};
+console.log("Writing from " + start + " to " + end + "\n");
+for (let i = start; i < end; i++) {
     if (i % 2 == 0) {process.stdout.write(".")}   // Generates progress bar
 
     let course_info = await KTH_API_course_fetch(active_courses[i]);
     json_course_data[active_courses[i]] = course_info;
 }
 
-const jsonString = JSON.stringify(json_course_data, null, 4);  // Pretty print with 4 spaces
+let new_object = {...previous_object, ...json_course_data};
 
-fs.writeFile('all_courses_data.json', jsonString, (err) => {
+const jsonString = JSON.stringify(new_object, null, 4);  // Pretty print with 4 spaces
+
+fs.writeFile('all_courses_data2.json', jsonString, (err) => {
     if (err) {
-        console.error('\nError writing file', err);
+        console.error('\nError writing file\n', err);
     } else {
-        console.log('\nFile written successfully');
+        console.log('\nFile written successfully\n');
     }
 });

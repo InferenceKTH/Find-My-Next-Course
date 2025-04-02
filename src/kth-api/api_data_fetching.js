@@ -81,8 +81,12 @@ async function KTH_API_course_fetch(course) {
         }
 
         try {
-            course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
-            course_info["prerequisites"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
+            if (data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"]) {
+                course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
+            }
+            if (data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"]) {
+                course_info["prerequisites"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
+            }
         } catch (err) {}
         
         return course_info;
@@ -116,6 +120,9 @@ async function KTH_API_all_active_courses() {
 
 export { KTH_API_course_fetch, KTH_API_all_active_courses };
 
+//  let resp = await KTH_API_all_active_courses();
+
+//console.log(resp.length);
 //let data = await KTH_API_course_fetch("SF1625");
 
 //console.log(Object.keys(data).length);
