@@ -24,7 +24,7 @@ export function makeRouter(reactiveModel) {
         },
         {
             path: "/all",
-            element: <AllCoursesPresenter model = {model}/>,
+            element: <AllCoursesPresenter model={reactiveModel}/>,
         },
 
         
