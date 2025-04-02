@@ -5,18 +5,22 @@ import ListView from "../views/ListView.jsx";
 
 function App() {
 	return (
-		<div className="flex h-screen w-screen">
-			<div className="w-1/4 h-full border border-solid border-red-900 border-5 bg-[#49347E]">
+		<div className="flex h-screen w-screen bg-white">
+
+			<div className="w-1/4 h-full border border-solid border-black border-5 bg-[#49347E]">
 				<SidebarView />
 			</div>
-			<div className="w-3/4 h-full flex flex-col ">
-				<img src=""/>
-				<div className="h-16 bg-blue-400 text-white border border-solid border-green-700 border-5">
+
+			<div className="flex flex-col flex-grow">
+
+				<div className="w-full">
 					<SearchbarView />
 				</div>
-				<div className="flex-grow bg-black border border-solid border-white border-5">
+
+				<div className="flex-grow border border-solid border-black border-5">
 					<ListView />
 				</div>
+
 			</div>
 		</div>
 	);

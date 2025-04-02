@@ -1,5 +1,7 @@
 // src/views/SidebarView.jsx
 import React from 'react';
+import {model} from "../model.js";
+
 
 function SidebarView(props) {
     return (
