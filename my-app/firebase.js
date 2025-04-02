@@ -37,22 +37,26 @@ export function connectToFirebase(model) {
 }
 
 export async function addCourse(course){
-    if(!course?.courseCode)
+    if(!course?.code)
         return;
-    const myRef = ref(db, `courses/${course.courseCode}`);
+    const myRef = ref(db, `courses/${course.code}`);
     await set(myRef, course);
 }
 
 export async function fetchAllCourses() {
- const myRef = ref(db, `courses`);
- const snapshot = await get(myRef);
- if (!snapshot.exists()) return [];
- const value = snapshot.val();
- const courses = [];
- for (const id of Object.keys(courses)) {
-     courses = [...courses, courses[id]];
- }
- return courses;
+    const myRef = ref(db, `courses`);
+    const snapshot = await get(myRef);
+
+    if (!snapshot.exists()) return [];
+
+    const value = snapshot.val(); // Firebase returns an object where keys are course IDs
+    const courses = [];
+
+    for (const id of Object.keys(value)) {
+        courses.push({ id, ...value[id] });
+    }
+
+    return courses;
 }
 
 // Before: [ {courseCode: "CS101", name: "Intro to CS"}, {...} ]
@@ -65,5 +69,30 @@ export async function fetchCoursesSnapshot() {
     if (!snapshot.exists()) return {};  // Return empty object instead of array
 
     return snapshot.val();  // Return the object directly
+}
+
+export async function saveJSONCoursesToFirebase(model, data){
+    if(!data || !model){
+        console.log("no model or data")
+        return;
+    }
+    console.log();
+    const entries = Object.entries(data);
+    entries.forEach(entry => {
+        const course = {code : entry[1].code , 
+            name: entry[1]?.name ?? "",
+            location: entry[1]?.location ?? "",
+            department: entry[1]?.department ?? "",
+            language: entry[1]?.language ?? "",
+            description: entry[1]?.description ?? "",
+            academicLevel: entry[1]?.academic_level ?? "",
+            period: entry[1]?.period ?? "",
+            credits: entry[1]?.credits ?? 0,
+            //lectureCount:entry[1].courseLectureCount,
+            //prerequisites:entry.coursePrerequisites
+            }
+            model.addCourse(course);
+            
+    });
 }
 
