@@ -1,6 +1,6 @@
 export function TextInputView(props){
-    return <div>
-        <h2>This is another view, where the presenter submits the text field to the Database</h2>
+    return <div>T
+        <h2>{props.label}:{props.value}</h2>
         <input
             value={props.text}
             onChange={props.onTextChanged}

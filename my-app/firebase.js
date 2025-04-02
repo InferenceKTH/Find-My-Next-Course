@@ -43,23 +43,23 @@ export async function addCourse(course){
     await set(myRef, course);
 }
 
-// export async function fetchCourses() {
-//  const myRef = ref(db, `courses`);
-//  const snapshot = await get(myRef);
-//  if (!snapshot.exists()) return [];
-//  const value = snapshot.val();
-//  const courses = [];
-//  for (const id of Object.keys(courses)) {
-//      courses = [...courses, courses[id]];
-//  }
-//  return courses;
-// }
+export async function fetchAllCourses() {
+ const myRef = ref(db, `courses`);
+ const snapshot = await get(myRef);
+ if (!snapshot.exists()) return [];
+ const value = snapshot.val();
+ const courses = [];
+ for (const id of Object.keys(courses)) {
+     courses = [...courses, courses[id]];
+ }
+ return courses;
+}
 
 // Before: [ {courseCode: "CS101", name: "Intro to CS"}, {...} ]
 // After: { "CS101": { name: "Intro to CS" }, "CS102": {...} }
 
 
-export async function fetchCourses() {
+export async function fetchCoursesSnapshot() {
     const myRef = ref(db, `courses`);
     const snapshot = await get(myRef);
     if (!snapshot.exists()) return {};  // Return empty object instead of array
