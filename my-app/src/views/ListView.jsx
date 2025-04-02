@@ -15,12 +15,17 @@ function ListView(props) {
                     <div>
                         <p className={"font-bold text-[#000061]"}>{course.code}</p>
                         <p className="font-bold">{course.name}</p>
-                        <p className="text-gray-600">{course.description}</p>
+                        <p className="text-gray-600" dangerouslySetInnerHTML={{__html:course.description}}></p>
                     </div>
                 </div>
             )) : "loading"}
         </div>
     );
+}
+
+function renderComment(description){
+    const parser = new DOMParser();
+    return parser.parseFromString(description, 'text').get
 }
 
 export default ListView;
