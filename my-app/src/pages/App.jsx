@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SidebarView from "../views/SidebarView.jsx";
-import SearchbarView from "../views/SearchBarView.jsx";
+import SearchbarView from "../views/SearchbarView.jsx";
 import ListView from "../views/ListView.jsx";
 import CourseView from "../views/CourseView.jsx";
 
