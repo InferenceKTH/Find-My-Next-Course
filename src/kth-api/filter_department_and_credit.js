@@ -12,24 +12,17 @@ const targetDepartment = 'EECS/Decision and Control Systems'; // Set to null if 
 const minCredits = null; // Set to null if not filtering by credits
 const maxCredits = 5;    // Set to null if not filtering by credits
 
-// File loading
-const folderPath = path.join(__dirname);
-const filePrefix = 'all_courses_data';
+// Load pruned course file
+const filePath = path.join(__dirname, 'all_courses_pruned.json');
 let allCoursesMerged = [];
 
-// Read all matching course JSON files
-fs.readdirSync(folderPath).forEach(file => {
-    if (file.startsWith(filePrefix) && file.endsWith('.json')) {
-        const fullPath = path.join(folderPath, file);
-        try {
-            const content = fs.readFileSync(fullPath, 'utf-8');
-            const data = JSON.parse(content);
-            allCoursesMerged.push(...Object.values(data));
-        } catch (err) {
-            console.warn(`Skipping ${file}: ${err.message}`);
-        }
-    }
-});
+try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const data = JSON.parse(content);
+    allCoursesMerged = Object.values(data);
+} catch (err) {
+    console.error(`Failed to load all_courses_pruned.json: ${err.message}`);
+}
 
 // Apply filters
 let filtered = allCoursesMerged;
