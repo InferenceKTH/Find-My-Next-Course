@@ -1,28 +1,12 @@
 import React from 'react';
 
+
 function ListView(props) {
-
-    let dummyCourses = [
-        {
-        code: "CS101",
-        name: "Introduction to Computer Science",
-        description: "very fun course",
-
-        },
-        {
-            code: "CS102",
-            name: "Data Structures and Algorithms",
-            description: "fun course",
-        },
-
-
-    ]
-
 
 
     return (
         <div className="bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
-            {dummyCourses.map((course) => (
+            {props.courses.map((course) => (
                 <div
                     key={course.code}
                     className="p-5 hover:bg-[#000061] flex items-center cursor-pointer border border-b-black border-solid w-full rounded-lg">

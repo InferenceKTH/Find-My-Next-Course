@@ -39,8 +39,8 @@ export const model = {
 
     async addCourse(course) {
         try {
-            await addCourse(course); 
-            this.courses[course.courseCode] = course;  // Update local copy (object)
+            await addCourse(course);
+            this.courses = [...this.courses, course];
             console.log("Course added successfully.");
         } catch (error) {
             console.error("Error adding course:", error);
@@ -48,17 +48,18 @@ export const model = {
     },
 
     getCourse(courseID) {
-        return this.courses[courseID];  // Corrected access
+        return this.courses.find(course => course.code === courseID);
     },
 
-    populateDatabase(data){
-        if(!data || !this){
-            console.log("no model or data")
+    populateDatabase(data) {
+        if (!data || !this) {
+            console.log("no model or data");
             return;
         }
         const entries = Object.entries(data);
         entries.forEach(entry => {
-            const course = {code : entry[1].code , 
+            const course = {
+                code: entry[1].code,
                 name: entry[1]?.name ?? "",
                 location: entry[1]?.location ?? "",
                 department: entry[1]?.department ?? "",
@@ -67,12 +68,9 @@ export const model = {
                 academicLevel: entry[1]?.academic_level ?? "",
                 period: entry[1]?.period ?? "",
                 credits: entry[1]?.credits ?? 0,
-                //lectureCount:entry[1].courseLectureCount,
-                //prerequisites:entry.coursePrerequisites
-                }
-                this.addCourse(course); 
+            };
+            this.addCourse(course);
         });
-    },
-
+    }
 }
 

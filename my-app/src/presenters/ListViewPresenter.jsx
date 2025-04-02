@@ -1,11 +1,10 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
+import { model } from "../model.js";
 import ListView from "../views/ListView.jsx";
 
-const ListViewPresenter = observer(({model}) => {
-    return (
-        <ListView courses={model.courses} searchResults={model.searchResults} />
-    );
+const ListViewPresenter = observer((props) => {
+    return <ListView courses={model.courses} />;
 });
 
 export { ListViewPresenter };
