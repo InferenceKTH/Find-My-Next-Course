@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transcript Scraper</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="transcript-scraper.js?207" defer></script>
 </head>
 <body>
     <h1>Upload PDF to Extract Text</h1>
-    <h3>Takes in National Official Transcript of Record, and prints out all the course codes that person has completed.</h3>
-    <input type="file" id="fileInput" />
-    
-    <pre id="output"></pre>
+    <h3>Takes in National Official Transcript of Records, and prints out all the course codes that person has completed.    </h3>
 
-    <script type="module" src="transcript-scraper.js"></script>
+    <input type="file" id="PDF-Scraper-Input" />
+    
+    <pre id="transcript-scraper.js:output"></pre>
+    <pre id="PDF-Scraper-Error", style = "visibility: hidden; color: red" ></pre>
+
+    
 </body>
 </html>
