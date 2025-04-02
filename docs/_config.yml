@@ -1,7 +1,7 @@
 include:
-  - "assets/images/favicon.ico"
+  - "/assets/images/favicon.ico"
 
 theme: jekyll-theme-minimal
-logo: "favicon.png"
+logo: "/assets/images/favicon.png"
 title: "Find my next course - by Inference"
 description: "A web application designed to help students explore KTH’s course offerings."
