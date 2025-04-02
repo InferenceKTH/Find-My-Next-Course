@@ -2,9 +2,9 @@ import React from 'react';
 import { observer } from "mobx-react-lite";
 import ListView from "../views/ListView.jsx";
 
-const ListViewPresenter = observer((props) => {
+const ListViewPresenter = observer(({model}) => {
     return (
-        <ListView courses={props.model.courses} searchResults={props.model.searchResults} />
+        <ListView courses={model.courses} searchResults={model.searchResults} />
     );
 });
 
