@@ -10807,7 +10807,12 @@
         },
         "kth_page_url": "https://www.kth.se/student/kurser/kurs/EP274V",
         "description": "<p>After passing the course, the student should, at an introductory level and for limited environments, be able to</p><ul><li>establish resources to support offensive security operations</li><li>perform reconnaissance and discovery to plan operations</li><li>access credentials, such as account names, passwords and access tokens</li><li>achieve initial access to networks and systems</li><li>execute malicious code on remote devices</li><li>establish command and control capabilities to communicate with compromised systems</li><li>elevate privileges on systems to gain higher-level permissions</li><li>persist on networks by maintaining access across interruptions</li><li>move laterally, pivoting through the computing environment</li><li>avoid detection by network defenders</li><li>collect and exfiltrate data from computing environments</li><li>assess the security of computer systems, applications, and services</li><li>carry out legal and ethical security testing.</li></ul><p>This will provide students with a practical understanding of the capabilities and possibilities of an attacker, in order to evaluate the cybersecurity of computer networks.</p>",
-        "prerequisites": "RERUNTHIS"
+        "prerequisites": {
+            "and": [
+                "#Documented knowledge and skills in basic programming, 6 ECTS-credits.",
+                "#Documented knowledge in English corresponding to the upper secondary course English B/English 6."
+            ]
+        }
     },
     "EP275V": {
         "name": "Ethical hacking II",
@@ -11733,7 +11738,11 @@
         },
         "kth_page_url": "https://www.kth.se/student/kurser/kurs/FMF3605",
         "description": "<p>After passing the course, the student should be able to:</p><ul><li>Apply different methods for EcoDesign in product development</li><li>Suggest and analyze design solutions for improving the products environmental performance</li><li>Evaluate, discuss and argue around sustainability in relation to product development</li></ul>",
-        "prerequisites": "RERUNTHIS"
+        "prerequisites": {
+            "and": [
+                "#Admitted to PdD studies"
+            ]
+        }
     },
     "AI1144": {
         "name": "Fundamentals of Residential Real Estate Finance",
@@ -11756,7 +11765,12 @@
         },
         "kth_page_url": "https://www.kth.se/student/kurser/kurs/AI1144",
         "description": "<p>After passing the course, the student should be able to:</p><ul><li>describe basic&#160;concepts and situations in residential real estate finance,</li><li>solve problems that arises in&#160;residential real estate finance.</li></ul>",
-        "prerequisites": "RERUNTHIS"
+        "prerequisites": {
+            "and": [
+                "AI1128",
+                "AI1178"
+            ]
+        }
     },
     "AI1170": {
         "name": "Relationship, Marketing and Market Analysis",
@@ -12873,7 +12887,15 @@
         },
         "kth_page_url": "https://www.kth.se/student/kurser/kurs/AF1752",
         "description": null,
-        "prerequisites": "RERUNTHIS"
+        "prerequisites": {
+            "or": [
+                "AF1744",
+                "AF1746",
+                "AF1747",
+                "AF1748",
+                "AF1749"
+            ]
+        }
     },
     "AF1753": {
         "name": "Renovation, Rebuilding and Extension 2",
@@ -13846,7 +13868,12 @@
         },
         "kth_page_url": "https://www.kth.se/student/kurser/kurs/AD2UPX",
         "description": "<p>The aim of the course is to enable students to apply and further develop the knowledge, skills and methods gained from previous courses within Urban Planning and Design. The main objective of the thesis work is to provide an opportunity for the student to conduct an independent research and/or design proposal related to a specific interest in the field of Urban Planning and Design. The student shall learn to formulate research and/or design problem, define researchable questions and develop solutions for the defined problems.</p><p>While working on their thesis projects students will implement their knowledge on an advanced level and demonstrate an in depth capacity to address challenges stemming from the complex ways in which cities function, grow and develop. The students will gain the professional and theoretical tools to conduct an in depth research as well as to implement their skills and knowledge through the process of design.&#160;&#160;</p>",
-        "prerequisites": "RERUNTHIS"
+        "prerequisites": {
+            "and": [
+                "#studied and completed the major part of the programme courses in specialisations of Urban Planning and Design.",
+                "#Students from KTH-Schools besides School of Architecture and Built Environment need to get approval from their School."
+            ]
+        }
     },
     "CM2007": {
         "name": "Applied Machine Learning and Data Mining for Performance Analysis",
