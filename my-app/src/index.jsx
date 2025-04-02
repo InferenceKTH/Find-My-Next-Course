@@ -6,6 +6,7 @@ import { model } from "./model"
 import App  from "./pages/App.jsx";
 import "./styles.css";
 import { JsonToDatabase } from "./presenters/Tests/JsonToDatabase"
+import { AllCoursesPresenter } from "./presenters/Tests/AllCoursesPresenter.jsx";
 
 configure({ enforceActions: "never" });
 const reactiveModel = observable(model);
