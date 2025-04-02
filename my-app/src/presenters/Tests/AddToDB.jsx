@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useState } from "react";
-import { TextInputView } from "../views/TextInputView";
+import { TextInputView } from "../../views/TextInputView";
 
 // A dummy presenter, which adds the course supplied in the text field to the db.
 export const AddToDB = observer(function AddToDB({ model }) {
@@ -16,7 +16,6 @@ export const AddToDB = observer(function AddToDB({ model }) {
     const [courseDepartment, setCourseDepartment] = useState("");
     const [courseLanguage, setCourseLanguage] = useState("");
     const [courseDescription, setCourseDescription] = useState("");
-    const [courseProfessors, setCourseProfessors] = useState("");
     const [courseAcademicLevel, setCourseAcademicLevel] = useState("");
     const [courseLectureCount, setCourseLectureCount] = useState("");
     const [coursePeriodOfDelivery, setCoursePeriodOfDelivery] = useState("");
@@ -60,12 +59,6 @@ export const AddToDB = observer(function AddToDB({ model }) {
                 label="Course Description"
                 value={courseDescription}
                 onTextChanged={e => setCourseDescription(e.target.value)}
-                onSubmit={onSubmit}
-            />
-            <TextInputView
-                label="Course Professors"
-                value={courseProfessors}
-                onTextChanged={e => setCourseProfessors(e.target.value)}
                 onSubmit={onSubmit}
             />
             <TextInputView
@@ -120,7 +113,6 @@ export const AddToDB = observer(function AddToDB({ model }) {
                         courseDepartment:courseDepartment,
                         courseLanguage:courseLanguage,
                         courseDescription:courseDescription,
-                        courseProfessors:courseProfessors,
                         courseAcademicLevel:courseAcademicLevel,
                         courseLectureCount:courseLectureCount,
                         coursePeriodOfDelivery:coursePeriodOfDelivery,

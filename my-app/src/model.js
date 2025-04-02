@@ -8,7 +8,7 @@ export const model = {
     user: undefined,
     currentCourse: undefined,
     currentSearch: {},
-    //courses: [],
+    courses: [],
 
 
     // sets the current user
@@ -27,12 +27,10 @@ export const model = {
         this.currentSearch = search;
     },
 
-    // // sets the course array - for example after loading all courses from the DB
-    // setCourses(courses){
-    //     this.courses = courses;
-    // },
-
-
+    // sets the course array - for example after loading all courses from the DB
+    setCourses(courses){
+        this.courses = courses;
+    },
 
     // add a single course
     // addCourse(course){
@@ -40,28 +38,19 @@ export const model = {
     //     addCourse(course); // update firebase
     // },
 
-    // async addCourse(course) {
-    //     try {
-    //         await addCourse(course); 
-    //         this.courses[course.courseCode] = course;  // Update local copy (object)
-    //         console.log("Course added successfully.");
-    //     } catch (error) {
-    //         console.error("Error adding course:", error);
-    //     }
-    // },
+    async addCourse(course) {
+        try {
+            await addCourse(course); 
+            this.courses[course.courseCode] = course;  // Update local copy (object)
+            console.log("Course added successfully.");
+        } catch (error) {
+            console.error("Error adding course:", error);
+        }
+    },
 
-    // getCourse(courseID) {
-    //     return this.courses[courseID];  // Corrected access
-    // },
+    getCourse(courseID) {
+        return this.courses[courseID];  // Corrected access
+    },
 
-    // // get courses, but appy a filter
-    // getCoursesForFilter(filter){
-
-    // },
-    // // get the prerequisite for a certain courses (returns course ids?)
-    // getPrerequisiteForCourse(course){
-
-    // }, // etc.
 }
-
 

@@ -1,5 +1,5 @@
 export function TextInputView(props){
-    return <div>T
+    return <div>
         <h2>{props.label}:{props.value}</h2>
         <input
             value={props.text}

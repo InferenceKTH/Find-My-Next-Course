@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import { connectToFirebase } from "../firebase";
 import { model } from "./model"
 import { HomeRoot } from "./pages/HomeRoot";
+import { JsonToDatabase } from "./presenters/Tests/JsonToDatabase"
 
 configure({ enforceActions: "never" });
 const reactiveModel = observable(model);
@@ -14,6 +15,10 @@ export function makeRouter(reactiveModel) {
         {
             path: "/",
             element: <HomeRoot model={reactiveModel} />,
+        },
+        {
+            path: "/button",
+            element: <JsonToDatabase model={reactiveModel} />,
         },
     ]);
 }

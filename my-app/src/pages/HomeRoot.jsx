@@ -1,13 +1,13 @@
 import { observer } from "mobx-react-lite";
-import DummyView from "../views/DummyView"
-import { AddToDB } from "../presenters/AddToDB"
+import { AddToDB } from "../presenters/Tests/AddToDB"
+import { AllCoursesPresenter } from "../presenters/Tests/AllCoursesPresenter";
 
 export const HomeRoot = observer(function ArtistRoot({ model }) {
 	return (
 		<div>
-			<h1>This is a dummy website for our Homepage / Mainpage!</h1>
-			<DummyView/> {/*The view is very simple */}
-      <AddToDB model={model}/> {/*Presenter for more complex shit */}
+			<h2>Those are Tests for our Website!</h2>
+      		{/* <AddToDB model={model}/> */}
+			<AllCoursesPresenter model = {model}/>
 		</div>
 	);
 });
