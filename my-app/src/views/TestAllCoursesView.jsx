@@ -11,7 +11,7 @@ export function TestAllCoursesView(props) {
 function mapCourse(course){
   return(
     <div>
-      <h3>{course.code}</h3>
+      <h2>{course.code}</h2>
       <h3>{course.name}</h3>
       <p>{course.location}</p>
       <p>{course.description}</p>

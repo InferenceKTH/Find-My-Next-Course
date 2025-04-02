@@ -78,7 +78,8 @@ export async function saveJSONCoursesToFirebase(model, data){
     }
     const entries = Object.entries(data);
     entries.forEach(entry => {
-        const course = {code : entry[1].code , 
+        const course = {
+            code : entry[1].code ,
             name: entry[1]?.name ?? "",
             location: entry[1]?.location ?? "",
             department: entry[1]?.department ?? "",
