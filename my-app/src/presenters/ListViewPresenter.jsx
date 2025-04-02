@@ -4,7 +4,7 @@ import { model } from "../model.js";
 import ListView from "../views/ListView.jsx";
 
 const ListViewPresenter = observer((props) => {
-    return <ListView courses={model.courses} />;
+    return <ListView courses={props.model.courses} />;
 });
 
 export { ListViewPresenter };

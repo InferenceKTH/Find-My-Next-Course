@@ -6,7 +6,9 @@ function ListView(props) {
 
     return (
         <div className="bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
-            {props.courses.map((course) => (
+            {
+            props?.courses ? 
+            props.courses.map((course) => (
                 <div
                     key={course.code}
                     className="p-5 hover:bg-[#000061] flex items-center cursor-pointer border border-b-black border-solid w-full rounded-lg">
@@ -16,7 +18,7 @@ function ListView(props) {
                         <p className="text-gray-600">{course.description}</p>
                     </div>
                 </div>
-            ))}
+            )) : "loading"}
         </div>
     );
 }
