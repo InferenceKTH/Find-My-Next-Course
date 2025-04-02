@@ -24,7 +24,7 @@ export const db = getDatabase(app);
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
-    const courses = await fetchCourses();
+    const courses = await fetchAllCourses();
     model.setCourses(courses);
 }
 
