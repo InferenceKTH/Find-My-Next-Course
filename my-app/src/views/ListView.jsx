@@ -10,7 +10,9 @@ function ListView(props) {
                     props.courses.map((course) => (
                         <div
                             key={course.code}
-                            className="p-5 hover:bg-[#000061] flex items-center cursor-pointer border border-b-black border-solid w-full rounded-lg">
+
+                            className="p-5 hover:bg-red-600 flex items-center cursor-pointer border border-b-black border-solid w-full rounded-lg">
+
                             <div>
                                 <p className={"font-bold text-[#000061]"}>{course.code}</p>
                                 <p className="font-bold">{course.name}</p>
