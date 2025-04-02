@@ -12,13 +12,13 @@ function SearchbarView(props) {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(setUser);
         return () => unsubscribe();
-    }, [auth]);
+    },[auth]);
 
     const handleSearch = () => {
         const results = model.courses.filter(course =>
             course.name.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        console.log(results);
+        ).splice(0, 10);
+        props.model.setCurrentSearch(results);
     };
 
     const handleSignIn = async () => {
@@ -61,14 +61,18 @@ function SearchbarView(props) {
 
                 <div className="w-[100px] h-[44px] bg-white text-black rounded-full text-center border border-solid cursor-pointer hover:bg-[#000061] hover:text-white flex items-center justify-center">
                     {user ? (
-                        <div className="flex items-center">
+                        <div className="flex items-center cursor-pointer">
                             <img src={user.photoURL} alt="Profile" className="h-6 w-6 rounded-full mr-2" />
-                            <button onClick={handleSignOut} className="flex items-center justify-center w-full h-full">
+                            <button
+                                onClick={handleSignOut}
+                                className="flex items-center justify-center w-full h-full curspor-pointer">
                                 Sign out
                             </button>
                         </div>
                     ) : (
-                        <button onClick={handleSignIn} className="flex items-center justify-center w-full h-full">
+                        <button
+                            onClick={handleSignIn}
+                            className="flex items-center justify-center w-full h-full cursor-pointer">
                             Sign in with Google
                         </button>
                     )}
