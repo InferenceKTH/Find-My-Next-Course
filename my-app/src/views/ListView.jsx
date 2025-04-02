@@ -23,9 +23,4 @@ function ListView(props) {
     );
 }
 
-function renderComment(description){
-    const parser = new DOMParser();
-    return parser.parseFromString(description, 'text').get
-}
-
 export default ListView;
