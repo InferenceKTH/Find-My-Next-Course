@@ -2,14 +2,13 @@
 // A certain model is bound to a specific session. 
 
 import { addCourse } from "../firebase";
-import { fetchCoursesSnapshot, fetchAllCourses } from "../firebase";
 
 export const model = {
     user: undefined,
     currentCourse: undefined,
     currentSearch: {},
     courses: [],
-
+    isReady: false,
 
     // sets the current user
     setUser(user) {
