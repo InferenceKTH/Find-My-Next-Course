@@ -6,23 +6,20 @@ import CourseView from "../views/CourseView.jsx";
 
 function App() {
 	return (
-		<div className="flex h-screen w-screen over">
-			<div className="flex-auto w-40% sm:w-1/4 md:w-1/4 h-full bg-[#49347E]">
-			{/* bg-gradient-to-t from-blue-900 via-cyan-600 to-lime-100 */}
+		<div className="flex h-screen w-screen">
+			<div className="flex-auto w-40%  h-full bg-[#49347E]">
 				<SidebarView />
 			</div>
-			<div className="w-3/4 h-full flex-auto flex-col ">
 
-				<div className=" bg-blue-400 text-white">
+			<div className="w-3/4 h-full flex flex-col">
+				<div className="bg-blue-400 text-white">
 					<SearchbarView />
 				</div>
 
-				<div className="flex-grow border border-solid border-red border-5">
+				<div className="flex-auto border overflow-auto bg-[#121212]">
 					<ListView />
 				</div>
-				<div>
-					<CourseView />
-				</div>
+
 
 			</div>
 		</div>

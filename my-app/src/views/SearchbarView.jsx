@@ -15,10 +15,10 @@ function SearchbarView(props) {
     },[auth]);
 
     const handleSearch = () => {
-        const results = model.courses.filter(course =>
+        const results = props.courses.filter(course =>
             course.name.toLowerCase().includes(searchQuery.toLowerCase())
         ).splice(0, 10);
-        props.model.setCurrentSearch(results);
+        props.searchResults(results);
     };
 
     const handleSignIn = async () => {
