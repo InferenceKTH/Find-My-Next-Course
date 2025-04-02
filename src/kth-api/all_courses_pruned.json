@@ -10892,7 +10892,11 @@
         },
         "kth_page_url": "https://www.kth.se/student/kurser/kurs/LT1008",
         "description": "<p>The course intends to develop skills to teach technology in the academic years F-6.</p><p>After passing the course, the student should be able to:</p><ul><li>Explain purpose and function of different technical solutions such as mechanisms, strong structures, electric connections and technical systems.</li><li>Show technology education expertise by choosing appropriate teaching strategies to give a basis for pupils to develop their technical ability.</li><li>Give an account of the importance that gender has and has&#160;had for the historical development of technology and science</li><li>Prepare and present teaching components in technology for years F-3 and 4-6, related to the fields that the course deals with, based on technology teaching research and regulations for school years F-6.</li><li>Give an account of working methods and different digital aids that can be used in teaching of technology.&#160;</li><li>Give an account of different forms of assessment of technology instruction and pupils' learning in technology.</li></ul>",
-        "prerequisites": []
+        "prerequisites": {
+            "and": [
+                "#General entry requirements only"
+            ]
+        }
     },
     "LT1019": {
         "name": "Gender Perspectives in Technology and Science - Education for secondary school grade 7-9",
