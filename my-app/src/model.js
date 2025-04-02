@@ -52,5 +52,28 @@ export const model = {
         return this.courses[courseID];  // Corrected access
     },
 
+    populateDatabase(data){
+        if(!data || !this){
+            console.log("no model or data")
+            return;
+        }
+        const entries = Object.entries(data);
+        entries.forEach(entry => {
+            const course = {code : entry[1].code , 
+                name: entry[1]?.name ?? "",
+                location: entry[1]?.location ?? "",
+                department: entry[1]?.department ?? "",
+                language: entry[1]?.language ?? "",
+                description: entry[1]?.description ?? "",
+                academicLevel: entry[1]?.academic_level ?? "",
+                period: entry[1]?.period ?? "",
+                credits: entry[1]?.credits ?? 0,
+                //lectureCount:entry[1].courseLectureCount,
+                //prerequisites:entry.coursePrerequisites
+                }
+                this.addCourse(course); 
+        });
+    },
+
 }
 
