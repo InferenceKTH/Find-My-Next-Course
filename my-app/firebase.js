@@ -76,7 +76,6 @@ export async function saveJSONCoursesToFirebase(model, data){
         console.log("no model or data")
         return;
     }
-    console.log();
     const entries = Object.entries(data);
     entries.forEach(entry => {
         const course = {code : entry[1].code , 

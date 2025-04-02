@@ -51,5 +51,6 @@ export const model = {
     getCourse(courseID) {
         return this.courses[courseID];  // Corrected access
     },
+
 }
 
