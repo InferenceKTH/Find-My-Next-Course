@@ -2,6 +2,7 @@ import React from 'react';
 import SidebarView from "../views/SidebarView.jsx";
 import SearchbarView from "../views/SearchBarView.jsx";
 import ListView from "../views/ListView.jsx";
+import CourseView from "../views/CourseView.jsx";
 
 function App() {
 	return (
@@ -17,6 +18,9 @@ function App() {
 				</div>
 				<div className="flex-grow bg-black border border-solid border-white border-5">
 					<ListView />
+				</div>
+				<div className="flex-grow bg-black border border-solid border-white border-5">
+					<CourseView />
 				</div>
 			</div>
 		</div>
