@@ -5,6 +5,7 @@ import { connectToFirebase } from "../firebase";
 import { model } from "./model"
 import App  from "./pages/App.jsx";
 import "./styles.css";
+import { JsonToDatabase } from "./presenters/Tests/JsonToDatabase"
 
 configure({ enforceActions: "never" });
 const reactiveModel = observable(model);
@@ -16,6 +17,16 @@ export function makeRouter(reactiveModel) {
             path: "/",
             element: <App model={reactiveModel} />,
         },
+        {
+            path: "/button",
+            element: <JsonToDatabase model={reactiveModel} />,
+        },
+        {
+            path: "/all",
+            element: <AllCoursesPresenter model = {model}/>,
+        },
+
+        
     ]);
 }
 
