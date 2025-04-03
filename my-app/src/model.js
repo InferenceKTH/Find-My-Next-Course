@@ -4,18 +4,11 @@
 import { addCourse } from "../firebase";
 
 export const model = {
-<<<<<<< HEAD
-	user: undefined,
-	currentCourse: undefined,
-	currentSearch: {},
-	courses: [], // Initialize as an array
-=======
     user: undefined,
     currentCourse: undefined,
     currentSearch: {},
     courses: [],
     isReady: false,
->>>>>>> 27a5b77bd1478c3b8493b19385b77340472d7591
 
     // sets the current user
     setUser(user) {

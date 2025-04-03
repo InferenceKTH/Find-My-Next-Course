@@ -5,11 +5,8 @@ import { connectToFirebase } from "../firebase";
 import { model } from "./model"
 import App  from "./pages/App.jsx";
 import "./styles.css";
-<<<<<<< HEAD
-=======
 import { JsonToDatabase } from "./presenters/Tests/JsonToDatabase"
 import { AllCoursesPresenter } from "./presenters/Tests/AllCoursesPresenter.jsx";
->>>>>>> 27a5b77bd1478c3b8493b19385b77340472d7591
 
 configure({ enforceActions: "never" });
 const reactiveModel = makeAutoObservable(model);

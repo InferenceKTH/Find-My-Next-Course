@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function CourseView(props) {
-<<<<<<< HEAD
     return (
         <div style={{ margin: '20px' }}>
             {/* Course Title Section */}
@@ -60,10 +59,3 @@ The focus of the course is on the protocols and algorithms used, and we will fol
         </div>
     );
 }
-=======
-
-    return
-    (<div>
-    </div>);
-}
->>>>>>> 27a5b77bd1478c3b8493b19385b77340472d7591

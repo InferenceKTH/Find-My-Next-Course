@@ -42,18 +42,6 @@ export async function addCourse(course){
     await set(myRef, course);
 }
 
-<<<<<<< HEAD
-export async function fetchCourses() {
-	const myRef = ref(db, `courses`);
-	const snapshot = await get(myRef);
-	if (!snapshot.exists()) return [];
-	const value = snapshot.val();
-	let courses = [];
-	for (const id of Object.keys(courses)) {
-		courses = [...courses, courses[id]];
-	}
-	return courses;
-=======
 export async function fetchAllCourses() {
     const myRef = ref(db, `courses`);
     const snapshot = await get(myRef);
@@ -68,7 +56,6 @@ export async function fetchAllCourses() {
     }
 
     return courses;
->>>>>>> 27a5b77bd1478c3b8493b19385b77340472d7591
 }
 
 // Before: [ {courseCode: "CS101", name: "Intro to CS"}, {...} ]
