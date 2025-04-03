@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    container_name: my-react-app
+    ports:
+      - "5173:5173" 
+    volumes:
+      - ./my-app:/app # Mount local 'my-app' folder to /app inside the container
+    environment:
+      - NODE_ENV=development  # Set environment variable to development
+    command: npm run dev  # Command to run in the container
+    stdin_open: true  # Allows interactive sessions
+    tty: true  # Keeps the container running interactively
