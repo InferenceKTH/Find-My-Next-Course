@@ -39,12 +39,12 @@ function App() {
 						>
 							{/* Wider modal container */}
 							<div
-								className="bg-indigo-400/70 backdrop-blur-sm h-full w-3/4 flex flex-col "
+								className="bg-indigo-400/70 backdrop-blur-sm h-full w-3/4 flex flex-col overflow-auto"
 								onClick={(e) => e.stopPropagation()}
 							>
 								{/* Container for CourseView which fills available space */}
 								<div className="flex-1">
-									{/* <CourseView /> */}
+									<CourseView />
 								</div>
 								<button
 									onClick={() => setIsPopupOpen(false)}
