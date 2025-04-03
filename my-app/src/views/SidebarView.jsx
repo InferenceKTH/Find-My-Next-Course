@@ -17,12 +17,19 @@ function SidebarView(props) {
   [&::-webkit-scrollbar-thumb]:bg-gray-300'>
                 <div class="z-10 w-100% rounded-lg justify-center" >
                     <h6 class="m-2 text-lg font-medium text-white text-center">
-                        Filters
+                        Filters 
                     </h6>
-                    <ToggleField/>
-                    <ButtonGroupField />
+                    <ToggleField
+                        field1={"English"}
+                        field2={"Swedish"}
+                    />
+                    <ButtonGroupField
+                        items={["item 1", "item 2", "item 3"]}
+                    />
                     <SliderField />
-                    <DropDownField/>
+                    <DropDownField
+                        options={["option 1", "option 2", "option 3", "option 4", "option 5"]}
+                    />
                 </div>
 
             </div>
