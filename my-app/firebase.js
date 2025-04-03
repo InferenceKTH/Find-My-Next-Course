@@ -18,9 +18,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getDatabase(app);
-// export const googleProvider = new GoogleAuthProvider();
-// googleProvider.addScope("profile");
-// googleProvider.addScope("email");
+export const googleProvider = new GoogleAuthProvider();
+googleProvider.addScope("profile");
+googleProvider.addScope("email");
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
@@ -29,10 +29,9 @@ async function firebaseToModel(model) {
 }
 
 export function connectToFirebase(model) {
-    // onAuthStateChanged(auth, (user) => {
-    //  model.setUser(user);
-    // }); !can be used for auth! 
-
+    onAuthStateChanged(auth, (user) => {
+      model.setUser(user);
+    });
     firebaseToModel(model);
 }
 
