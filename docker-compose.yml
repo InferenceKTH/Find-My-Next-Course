@@ -2,7 +2,9 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile 
+      dockerfile: Dockerfile
+      args:
+        - CI=${CI:-false}
     container_name: my-app
     ports:
       - "5173:5173" 
