@@ -14,7 +14,7 @@ function FavouritesDropdown(props) {
 
                         <button
                             className="text-red-500 cursor-pointer"
-                            onClick={() => removeFavourite(course.code)}>
+                            onClick={() => props.removeFavourite(course.code)}>
                             X
                         </button>
 
