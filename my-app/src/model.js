@@ -44,7 +44,7 @@ export const model = {
     },
 
     removeFavourite(course) {
-        this.favourites = (this.favourites || []).filter(fav => fav !== course);
+        this.favourites = (this.favourites || []).filter(fav => fav.code !== course.code);
     },
 
     getCourse(courseID) {
