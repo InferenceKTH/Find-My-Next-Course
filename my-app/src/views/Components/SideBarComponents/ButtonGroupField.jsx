@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ButtonGroupField() {
+export default function ButtonGroupField({items}) {
   const [activeIndex, setActiveIndex] = useState(null); 
 
   const handleClick = (index) => {
@@ -19,7 +19,7 @@ export default function ButtonGroupField() {
       </div>
           <div className="flex flex-col sm:inline-flex sm:flex-row rounded-lg shadow-2xs 
       w-full items-center font-medium text-white bg-[#aba8e0] border border-gray-200">
-        {["Item 1", "Item 2", "Item 3"].map((item, index) => (
+        {items.map((item, index) => (
           <button
             key={index}
             type="button"

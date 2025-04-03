@@ -6,7 +6,7 @@ import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';
 function App(props) {
 	return (
 		<div className="flex h-screen w-screen">
-			<div className="flex-auto w-40%  h-full bg-[#49347E]">
+			<div className="flex-auto w-40%  h-full bg-gradient-to-t from-[#4f3646] to-[#6747c0]">
 				<SidebarPresenter model={props.model}/>
 			</div>
 
