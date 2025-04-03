@@ -18,31 +18,31 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getDatabase(app);
-// export const googleProvider = new GoogleAuthProvider();
-// googleProvider.addScope("profile");
-// googleProvider.addScope("email");
+export const googleProvider = new GoogleAuthProvider();
+googleProvider.addScope("profile");
+googleProvider.addScope("email");
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
-	const courses = await fetchCourses();
+    const courses = await fetchAllCourses();
     model.setCourses(courses);
 }
 
 export function connectToFirebase(model) {
-	// onAuthStateChanged(auth, (user) => {
-	// 	model.setUser(user);
-	// }); !can be used for auth! 
-
-	firebaseToModel(model);
+    onAuthStateChanged(auth, (user) => {
+      model.setUser(user);
+    });
+    firebaseToModel(model);
 }
 
 export async function addCourse(course){
-	if(!course?.courseCode)
-		return;
-    const myRef = ref(db, `courses/${course.courseCode}`);
-	await set(myRef, course);
+    if(!course?.code)
+        return;
+    const myRef = ref(db, `courses/${course.code}`);
+    await set(myRef, course);
 }
 
+<<<<<<< HEAD
 export async function fetchCourses() {
 	const myRef = ref(db, `courses`);
 	const snapshot = await get(myRef);
@@ -53,4 +53,58 @@ export async function fetchCourses() {
 		courses = [...courses, courses[id]];
 	}
 	return courses;
+=======
+export async function fetchAllCourses() {
+    const myRef = ref(db, `courses`);
+    const snapshot = await get(myRef);
+
+    if (!snapshot.exists()) return [];
+
+    const value = snapshot.val(); // Firebase returns an object where keys are course IDs
+    const courses = [];
+
+    for (const id of Object.keys(value)) {
+        courses.push({ id, ...value[id] });
+    }
+
+    return courses;
+>>>>>>> 27a5b77bd1478c3b8493b19385b77340472d7591
 }
+
+// Before: [ {courseCode: "CS101", name: "Intro to CS"}, {...} ]
+// After: { "CS101": { name: "Intro to CS" }, "CS102": {...} }
+
+
+export async function fetchCoursesSnapshot() {
+    const myRef = ref(db, `courses`);
+    const snapshot = await get(myRef);
+    if (!snapshot.exists()) return {};  // Return empty object instead of array
+
+    return snapshot.val();  // Return the object directly
+}
+
+export async function saveJSONCoursesToFirebase(model, data){
+    if(!data || !model){
+        console.log("no model or data")
+        return;
+    }
+    const entries = Object.entries(data);
+    entries.forEach(entry => {
+        const course = {
+            code : entry[1].code ,
+            name: entry[1]?.name ?? "",
+            location: entry[1]?.location ?? "",
+            department: entry[1]?.department ?? "",
+            language: entry[1]?.language ?? "",
+            description: entry[1]?.description ?? "",
+            academicLevel: entry[1]?.academic_level ?? "",
+            period: entry[1]?.period ?? "",
+            credits: entry[1]?.credits ?? 0,
+            //lectureCount:entry[1].courseLectureCount,
+            //prerequisites:entry.coursePrerequisites
+            }
+            model.addCourse(course);
+            
+    });
+}
+

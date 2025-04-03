@@ -1,13 +1,18 @@
-import { configure, observable } from "mobx";
+import { configure, makeAutoObservable, observable } from "mobx";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { connectToFirebase } from "../firebase";
 import { model } from "./model"
 import App  from "./pages/App.jsx";
 import "./styles.css";
+<<<<<<< HEAD
+=======
+import { JsonToDatabase } from "./presenters/Tests/JsonToDatabase"
+import { AllCoursesPresenter } from "./presenters/Tests/AllCoursesPresenter.jsx";
+>>>>>>> 27a5b77bd1478c3b8493b19385b77340472d7591
 
 configure({ enforceActions: "never" });
-const reactiveModel = observable(model);
+const reactiveModel = makeAutoObservable(model);
 connectToFirebase(reactiveModel);
 
 export function makeRouter(reactiveModel) {
@@ -16,6 +21,16 @@ export function makeRouter(reactiveModel) {
             path: "/",
             element: <App model={reactiveModel} />,
         },
+        {
+            path: "/button",
+            element: <JsonToDatabase model={reactiveModel} />,
+        },
+        {
+            path: "/all",
+            element: <AllCoursesPresenter model={reactiveModel}/>,
+        },
+
+        
     ]);
 }
 

@@ -1,8 +1,10 @@
 // src/views/SidebarView.jsx
 import React from 'react';
 import UploadField from "./Components/SideBarComponents/UploadField.jsx";
-import ToggleField from "./Components/SidebarComponents/ToggleField.jsx";
+import ToggleField from "./Components/SideBarComponents/ToggleField.jsx";
 import ButtonGroupField from "./Components/SideBarComponents/ButtonGroupField.jsx";
+import SliderField from "./Components/SideBarComponents/SliderField.jsx";
+import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
 
 function SidebarView(props) {
     return (
@@ -18,7 +20,9 @@ function SidebarView(props) {
                         Filters
                     </h6>
                     <ToggleField/>
-                    <ButtonGroupField/>
+                    <ButtonGroupField />
+                    <SliderField />
+                    <DropDownField/>
                 </div>
 
             </div>
