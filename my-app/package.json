@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.17",
     "firebase": "^11.5.0",
+    "ldrs": "^1.1.6",
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",
     "pdfjs-dist": "^5.1.91",
