@@ -39,23 +39,9 @@ export const model = {
 
     async addCourse(course) {
         try {
-            await addCourse(course);
-            
-            console.error("Error adding course:", error);
-        }
-    },
 
-    getCourse(courseID) {
-        return this.courses.find(course => course.code === courseID);
-    },
-
-    populateDatabase(data) {
         if (!data || !this) {
-            console.log("no model or data");
-            return;
-        }(data);
-        entries.forEach(entry => {
-            const course = {
+            conso
                 code: entry[1].code,
                 name: entry[1]?.name ?? "",
                 location: entry[1]?.location ?? "",
