@@ -68,6 +68,7 @@ export const model = {
                 academicLevel: entry[1]?.academic_level ?? "",
                 period: entry[1]?.period ?? "",
                 credits: entry[1]?.credits ?? 0,
+                prerequisites: entry[1]?.prerequisites ?? "",
             };
             this.addCourse(course);
         });
