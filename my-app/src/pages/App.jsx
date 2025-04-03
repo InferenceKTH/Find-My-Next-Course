@@ -3,6 +3,7 @@ import SidebarView from "../views/SidebarView.jsx";
 import SearchbarView from "../views/SearchbarView.jsx";
 import ListView from "../views/ListView.jsx";
 import CourseView from "../views/CourseView.jsx";
+import PrerequisiteTree from "../views/PrerequisiteTree.jsx";
 
 function App() {
 	const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -20,6 +21,9 @@ function App() {
 
 				<div className="h-30 bg-blue-400 text-white border border-solid border-green-700 border-5">
 					<SearchbarView />
+				</div>
+				<div className="h-30 bg-blue-400 text-white border border-solid border-green-700 border-5">
+					<PrerequisiteTree/>
 				</div>
 
 				<div className="flex-grow bg-black border border-solid border-white flex-1">
