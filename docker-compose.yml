@@ -7,9 +7,9 @@ services:
     ports:
       - "5173:5173" 
     volumes:
-      - ./my-app:/app # Mount local 'my-app' folder to /app inside the container
+      - ./my-app:/app # mount local 'my-app' to /app inside the container
     environment:
-      - NODE_ENV=development  # Set environment variable to development
-    command: npm run dev  # Command to run in the container
-    stdin_open: true  # Allows interactive sessions
-    tty: true  # Keeps the container running interactively
+      - NODE_ENV=development  # set environment variable to development
+    command: npm run dev
+    stdin_open: true  # interactive sessions
+    tty: true  # keep the container running interactively
