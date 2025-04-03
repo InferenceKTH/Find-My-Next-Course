@@ -25,8 +25,7 @@ export default function ButtonGroupField() {
             type="button"
                 className={`flex-auto py-3 px-4 inline-flex items-center gap-x-2 text-sm 
                 font-medium focus:z-10 border border-gray-200 shadow-2xs hover:bg-[#8785ac]
-                 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900
-                  dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 ${
+                 focus:outline-hidden disabled:opacity-50 disabled:pointer-events-none ${
               activeIndex === index ? "bg-violet-500" : "bg-transparent"
             }`}
             onClick={() => handleClick(index)}
