@@ -1,16 +1,37 @@
 import { useState } from "react";
 
 export default function CourseTranscriptList() {
-    const [items, setItems] = useState([
-        "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7"
-    ]);
+    let local = [];
+    if (localStorage.getItem("completedCourses"))
+        local = JSON.parse(localStorage.getItem("completedCourses"));
 
-    const removeItem = (index) => {
-        setItems(items.filter((_, i) => i !== index));
+
+    window.addEventListener("completedCourses changed", event => {
+        if (localStorage.getItem("completedCourses"))
+            local = JSON.parse(localStorage.getItem("completedCourses"));
+        setItems(local);
+    });
+   
+    
+    const [items, setItems] = useState(local);
+    
+    function removeItem(index) {
+        var newItems = [];
+        for (let i = 0; i < items.length; i++){
+            if (i != index)
+                newItems.push(items[i]);
+        }
+        localStorage.setItem("completedCourses", JSON.stringify(newItems));
+        window.dispatchEvent(new Event("completedCourses changed"));
     };
-    const removeAllItems = () => {
-        setItems(items.filter((_, i) => i !==-1));
+    function removeAllItems(){
+        let newitems = [];
+        localStorage.setItem("completedCourses", JSON.stringify(newitems));
+        window.dispatchEvent(new Event("completedCourses changed"));
+
     };
+
+    
 
     return (
         <div className="max-w-80">
@@ -26,7 +47,7 @@ export default function CourseTranscriptList() {
             </div>
 
             {/* Container for multiple items per row */}
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {items.map((item, index) => (
                     <div
                         key={index}

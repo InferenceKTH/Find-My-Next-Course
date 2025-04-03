@@ -25,6 +25,8 @@ export default function UploadField(props) {
             return;
         }
 
+        setErrorVisibility("hidden");
+
 
         const arrayBuffer = await file.arrayBuffer();
         const typedArray = new Uint8Array(arrayBuffer);
@@ -71,11 +73,16 @@ export default function UploadField(props) {
             localStorage.setItem("completedCourses", '[]');
         }
 
+        local.sort();
+
         let newcodes = local.concat(codesArr);
         newcodes = [... new Set(newcodes)];
 
 
         localStorage.setItem("completedCourses", JSON.stringify(newcodes));
+        console.log(newcodes);
+
+        window.dispatchEvent(new Event("completedCourses changed"));
     }
 
     function evaluatePDFtextObjectArray(textObjects) {
@@ -164,9 +171,10 @@ export default function UploadField(props) {
         const file = event.target.files[0];
         //document.getElementById('PDF-Scraper-Error').style.visibility = "visible";
         transcriptScraperFunction(file);
+        document.getElementById('PDF-Scraper-Input').value = '';
     };
     return (
-        <div className='w-full pb-5 px-8'>
+        <div className='pb-5 px-8 '>
             <div className="flex items-center justify-center ">
                 <label for="PDF-Scraper-Input" className="flex flex-col items-center justify-center w-full h-50 border-2  border-gray-300 border-dashed rounded-lg cursor-pointer bg-[#aba8e0] dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-400 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -180,7 +188,7 @@ export default function UploadField(props) {
                 </label>
             </div>
             <p className='text-sm opacity-50 pt-3'> Describe how the Transcript upload works</p>
-            <pre id="PDF-Scraper-Error" className={`text-red-500 text-xs ${errorVisibility}`}>
+            <pre id="PDF-Scraper-Error" className={`text-red-500 text-xs text-wrap ${errorVisibility}`}>
                 {errorMessage}
             </pre>
             <CourseTranscriptList />
