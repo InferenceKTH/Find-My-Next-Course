@@ -43,9 +43,7 @@ export const model = {
         if (!data || !this) {
             conso
                 code: entry[1].code,
-                name: entry[1]?.name ?? "",
-                location: entry[1]?.location ?? "",
-                department: entry[1]?.department ?? "",
+                name: entry[1]?.name ?? tment: entry[1]?.department ?? "",
                 language: entry[1]?.language ?? "",
                 description: entry[1]?.description ?? "",
                 academicLevel: entry[1]?.academic_level ?? "",
