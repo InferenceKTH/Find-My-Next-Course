@@ -49,7 +49,7 @@ export default function UploadField(props) {
             items-center font-medium text-white bg-[#aba8e0] border border-gray-200 p-3">
                 <div className="flex-1 justify-between pl-2">
                     <span
-                        className={"text-sm font-bold text-white text-gray-600"}
+                        className={"text-sm font-bold text-white "}
                     >
                         Credits: {values[selectedIndex]}
                     </span>
