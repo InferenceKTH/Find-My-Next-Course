@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { model } from '../model.js';
-import kth_logo from '../assets/kth_logo.png';
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
+import kth_logo from '../assets/kth_logo.png';
+import project_logo from '../assets/project_icon.png';
+import FavouritesDropdown from './Components/FavouriteDropdown.jsx';
 
 function SearchbarView(props) {
     const [searchQuery, setSearchQuery] = useState('');
     const [user, setUser] = useState(null);
+    const [showFavourites, setShowFavourites] = useState(false);
+
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(setUser);
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            setUser(user);
+        });
         return () => unsubscribe();
-    },[auth]);
+    }, [auth]);
 
-    const handleSearch = () => {
-        const results = props.courses.filter(course =>
-            course.name.toLowerCase().includes(searchQuery.toLowerCase())
-        ).splice(0, 10);
-        props.searchResults(results);
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+        props.searchCourses(query);
     };
 
     const handleSignIn = async () => {
@@ -37,7 +40,7 @@ function SearchbarView(props) {
         <div className="w-full px-6 py-6 bg-[#000061] flex items-center justify-between">
             <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
                 <img
-                    src={kth_logo}
+                    src={project_logo}
                     className="h-[90px] w-auto"
                     alt="KTH Logo"
                 />
@@ -47,36 +50,54 @@ function SearchbarView(props) {
                 type="text"
                 placeholder="What course are you looking for?"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && handleSearch()}
+                onChange={(e) => handleSearch(e.target.value)}
                 className="w-[400px] h-[44px] pl-14 pr-4 bg-white text-black rounded-full"
             />
 
-            <div className="flex gap-4">
+            <div className="flex gap-6 items-center">
                 <button
-                    className="w-[100px] h-[44px] bg-white text-black rounded-full text-center border border-solid cursor-pointer hover:bg-[#000061] hover:text-white"
+                    className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200"
                     onClick={() => window.location.href = "https://inferencekth.github.io/Find-My-Next-Course/"}>
                     About us
                 </button>
 
-                <div className="w-[100px] h-[44px] bg-white text-black rounded-full text-center border border-solid cursor-pointer hover:bg-[#000061] hover:text-white flex items-center justify-center">
+                <button onClick={() => setShowFavourites(!showFavourites)}
+                        className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+                    Favourites
+                </button>
+
+                <div className="relative">
+                {showFavourites && (
+                    <FavouritesDropdown
+                        favouriteCourses={props.favouriteCourses}
+                        removeFavourite={props.removeFavourite}
+                    />
+                )}
+                </div>
+
+                <div className="flex items-center cursor-pointer">
                     {user ? (
-                        <div className="flex items-center cursor-pointer">
-                            <img src={user.photoURL} alt="Profile" className="h-6 w-6 rounded-full mr-2" />
-                            <button
-                                onClick={handleSignOut}
-                                className="flex items-center justify-center w-full h-full curspor-pointer">
-                                Sign out
-                            </button>
-                        </div>
+                        <button
+                            onClick={handleSignOut}
+                            className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+                            Sign out
+                        </button>
                     ) : (
                         <button
                             onClick={handleSignIn}
-                            className="flex items-center justify-center w-full h-full cursor-pointer">
+                            className="w-auto min-w-[120px] h-[44px] bg-[#003399] text-white text-sm rounded-full border border-[#001a4d] cursor-pointer hover:bg-[#001a4d] transition-all duration-200 flex items-center justify-center px-4">
                             Sign in with Google
                         </button>
                     )}
                 </div>
+
+                {user && (
+                    <img
+                        src={user.photoURL}
+                        alt="Profile"
+                        className="w-[44px] h-[44px] rounded-full border border-[#000061]"
+                    />
+                )}
             </div>
         </div>
     );
