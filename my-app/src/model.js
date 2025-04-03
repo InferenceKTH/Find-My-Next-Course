@@ -40,9 +40,7 @@ export const model = {
     async addCourse(course) {
         try {
             await addCourse(course);
-            this.courses = [...this.courses, course];
-            console.log("Course added successfully.");
-        } catch (error) {
+            
             console.error("Error adding course:", error);
         }
     },
@@ -55,8 +53,7 @@ export const model = {
         if (!data || !this) {
             console.log("no model or data");
             return;
-        }
-        const entries = Object.entries(data);
+        }(data);
         entries.forEach(entry => {
             const course = {
                 code: entry[1].code,
