@@ -1,0 +1,21 @@
+name: Docker CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build and start services with Docker Compose
+      run: docker-compose up -d --build
+
+    - name: Check running containers
+      run: docker ps -a
