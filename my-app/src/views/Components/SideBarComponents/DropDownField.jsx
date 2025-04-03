@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-export default function DropDownField() {
+export default function DropDownField({options}) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
 
-  const items = ["Option 1", "Option 2", "Option 3", "Option 4"];
+  const items = options;
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -50,7 +50,12 @@ export default function DropDownField() {
                   onChange={() => handleCheckboxChange(item)}
                   className="mr-2 sr-only peer"
                   />
-                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-violet-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-violet-500 dark:peer-checked:bg-blue-600"></div>
+                  <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4
+                 peer-focus:ring-blue-300  rounded-full peer
+                   peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
+                  peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px]
+                   after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all
+                    peer-checked:bg-violet-500 "></div>
                 <span>{item}</span>
                 </label>
                 </li>
