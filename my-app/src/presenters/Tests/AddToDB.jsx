@@ -96,9 +96,9 @@ export const AddToDB = observer(function AddToDB({ model }) {
 
 
 
-    function onTextChanged(e){
-        setText(e.target.value);
-    }
+    // function onTextChanged(e){
+    //     setText(e.target.value);
+    // }
 
     // function onSubmit(){
     //     const course = {courseCode : text, data : "A course"};

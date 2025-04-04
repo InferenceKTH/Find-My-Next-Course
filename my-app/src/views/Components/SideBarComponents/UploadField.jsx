@@ -8,7 +8,7 @@ import { useState } from "react";
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 
 
-export default function UploadField(props) {
+export default function UploadField() {
     const [errorMessage, setErrorMessage] = useState(""); // Stores error message
     const [errorVisibility, setErrorVisibility] = useState("hidden"); // Controls visibility
 
@@ -32,7 +32,6 @@ export default function UploadField(props) {
         const typedArray = new Uint8Array(arrayBuffer);
         try {
             const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
-            let extractedText = '';
 
             //this is our array we are going to work with
             let textObjects = [];

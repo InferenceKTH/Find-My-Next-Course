@@ -1,4 +1,4 @@
-import { configure, makeAutoObservable, observable } from "mobx";
+import { configure, makeAutoObservable } from "mobx";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 import { connectToFirebase } from "../firebase";

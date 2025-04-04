@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CourseView(props) {
+export default function CourseView() {
     return (
         <div style={{ margin: '20px' }}>
             {/* Course Title Section */}
