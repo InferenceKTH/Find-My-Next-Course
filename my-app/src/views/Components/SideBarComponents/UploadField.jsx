@@ -201,6 +201,7 @@ export default function UploadField(props) {
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}>
+
                 <label for="PDF-Scraper-Input" className="flex flex-col items-center justify-center w-full h-50 border-2 
                  border-gray-300 border-dashed rounded-lg cursor-pointer bg-[#aba8e0] hover:bg-gray-400">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
