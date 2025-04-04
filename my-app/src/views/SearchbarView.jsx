@@ -37,7 +37,7 @@ function SearchbarView(props) {
     };
 
     return (
-        <div className="w-full px-6 py-6 bg-[#000061] flex items-center justify-between">
+        <div className="w-full px-6 py-6 flex items-center justify-between">
             <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
                 <img
                     src={project_logo}

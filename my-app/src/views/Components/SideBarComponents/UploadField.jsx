@@ -173,9 +173,34 @@ export default function UploadField(props) {
         transcriptScraperFunction(file);
         document.getElementById('PDF-Scraper-Input').value = '';
     };
+
+    const [isDragging, setIsDragging] = useState(false);
+
+    const handleDragOver = (event) => {
+        event.preventDefault(); // Prevent default behavior (to allow drop)
+        setIsDragging(true);
+    };
+
+    const handleDragLeave = () => {
+        setIsDragging(false);
+    };
+
+    const handleDrop = (event) => {
+        event.preventDefault();
+        setIsDragging(false);
+
+        if (event.target.files.length > 0) {
+            handleFileChange(event.target.files);
+        }
+    };
+
     return (
         <div className='pb-5 px-8 '>
-            <div className="flex items-center justify-center ">
+            <div className={`flex items-center justify-center border-2 border-dashed rounded-lg cursor-pointer transition-colors 
+                            ${isDragging ? "border-blue-500 bg-blue-100" : "border-gray-300 bg-[#aba8e0]"}`}
+                onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDrop}>
                 <label for="PDF-Scraper-Input" className="flex flex-col items-center justify-center w-full h-50 border-2 
                  border-gray-300 border-dashed rounded-lg cursor-pointer bg-[#aba8e0] hover:bg-gray-400">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
