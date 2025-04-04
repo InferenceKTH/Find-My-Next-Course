@@ -7,12 +7,16 @@ const SearchbarPresenter = observer(({ model }) => {
         model.searchCourses(query);
     }
 
+    const removeFavourite = (course) => {
+        model.removeFavourite(course);
+    }
+
     return (
         <SearchbarView
             model={model}
             searchCourses={searchCourses}
             favouriteCourses = {model.favourites}
-            removeFavourite={model.removeFavourite}
+            removeFavourite={removeFavourite}
         />
     );
 });
