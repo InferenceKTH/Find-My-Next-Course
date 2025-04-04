@@ -5,7 +5,7 @@ import ButtonGroupField from "./Components/SideBarComponents/ButtonGroupField.js
 import SliderField from "./Components/SideBarComponents/SliderField.jsx";
 import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
 
-function SidebarView(props) {
+function SidebarView() {
     return (
         <div className='object-center text-white p-3 pt-15  flex-col h-screen overflow-auto pb-10' >
             <UploadField/>
