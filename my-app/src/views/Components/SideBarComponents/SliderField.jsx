@@ -45,7 +45,7 @@ export default function UploadField(props) {
                     <p className='text-sm opacity-50'> - filter description</p>
                 </div>
             </div>
-            <div class="flex flex-col sm:inline-flex sm:flex-row rounded-lg shadow-2xs w-full 
+            <div className="flex flex-col sm:inline-flex sm:flex-row rounded-lg shadow-2xs w-full 
             items-center font-medium text-white bg-[#aba8e0] border border-gray-200 p-3">
                 <div className="flex-1 justify-between pl-2">
                     <span
