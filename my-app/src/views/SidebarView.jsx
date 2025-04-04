@@ -14,8 +14,8 @@ function SidebarView(props) {
   [&::-webkit-scrollbar]:opacity-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300'>
-                <div class="z-10 w-100% rounded-lg justify-center" >
-                    <h6 class="m-2 text-lg font-medium text-white text-center">
+                <div className="z-10 w-100% rounded-lg justify-center" >
+                    <h6 className="m-2 text-lg font-medium text-white text-center">
                         Filters 
                     </h6>
                     <ToggleField
