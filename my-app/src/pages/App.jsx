@@ -14,7 +14,8 @@ function App() {
 				<SidebarPresenter model={model} />
 			</div>
 			<div className="w-3/4 h-full flex flex-col">
-				<div className="bg-blue-400 text-white">
+				<div className="bg-gradient-to-t from-[#6246a8] to-[#6747c0] text-white" style={{color: "red"}}>
+				{/* bg-gradient-to-t from-[#6246a8] to-[#6747c0] */}
 					<SearchbarPresenter model={model} />
 				</div>
 				<div className="flex-auto border overflow-auto bg-[#121212]">
