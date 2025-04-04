@@ -8,28 +8,23 @@ export const model = {
     favourites: [],
     isReady: false,
 
-    // sets the current user
     setUser(user) {
         if (!this.user)
             this.user = user;
     },
 
-    // sets the currently selected course (detail view?) - could be component state
     setCurrentCourse(course){
         this.currentCourse = course;
     },
 
-    // keeps track of the current search / the associated promises.
     setCurrentSearch(searchResults){
         this.currentSearch = searchResults;
     },
 
-    // sets the course array - for example after loading all courses from the DB
     setCourses(courses){
         this.courses = courses;
     },
 
-    // add a single course
     async addCourse(course) {
         try {
             await addCourse(course);

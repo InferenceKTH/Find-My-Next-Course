@@ -37,7 +37,7 @@ function SearchbarView(props) {
     };
 
     return (
-        <div className="w-full px-6 py-6 bg-[#000061] flex items-center justify-between">
+        <div className="w-full px-6 py-6 bg-[#000061] flex items-center justify-between relative">
             <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
                 <img
                     src={project_logo}
@@ -61,18 +61,18 @@ function SearchbarView(props) {
                     About us
                 </button>
 
-                <button onClick={() => setShowFavourites(!showFavourites)}
-                        className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
-                    Favourites
-                </button>
-
                 <div className="relative">
-                {showFavourites && (
-                    <FavouritesDropdown
-                        favouriteCourses={props.favouriteCourses}
-                        removeFavourite={props.removeFavourite}
-                    />
-                )}
+                    <button onClick={() => setShowFavourites(!showFavourites)}
+                            className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+                        Favourites
+                    </button>
+                    {showFavourites && (
+                        <FavouritesDropdown
+                            courses={props.courses}
+                            favouriteCourses={props.favouriteCourses}
+                            removeFavourite={props.removeFavourite}
+                        />
+                    )}
                 </div>
 
                 <div className="flex items-center cursor-pointer">
