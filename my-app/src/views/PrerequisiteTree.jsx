@@ -25,8 +25,8 @@ function addChildNodes(origin, preR, leftOfset,) {
         //Adds the "or" node when needed
         if (temp.length > 1) {
             cur = "or " + origin + " " + k;
-            initialNodes.push({ id: "or " + origin + " " + k, data: { label: "or" }, position: { x: leftOfset * 400 + 200, y: ofsett + depth[leftOfset] }, sourcePosition: "left", targetPosition: "right" });
-            initialEdges.push({ id: origin + "-" + "or " + origin + " " + k, source: "or " + origin + " " + k, target: origin, markerEnd: { type: "arrow" }, type: "default" },);
+            initialNodes.push({ id: "or " + origin + " " + k, data: { label: "One of" }, position: { x: leftOfset * 400 + 300, y: ofsett + depth[leftOfset] }, style: { width: 60 }, sourcePosition: "left", targetPosition: "right" });
+            initialEdges.push({ id: origin + "-" + "or " + origin + " " + k, source: "or " + origin + " " + k, target: origin, markerEnd: { type: "line", color: "black" }, type: "default", style: { stroke: "black" } });
         } else {
             cur = origin;
         }
@@ -35,13 +35,14 @@ function addChildNodes(origin, preR, leftOfset,) {
         //Adds a node
         for (let i = 0; i < temp.length; i++) {
             initialNodes.push({ id: temp[i], data: { label: temp[i] }, position: { x: leftOfset * 400 + 400, y: ofsett + depth[leftOfset] }, sourcePosition: "left", targetPosition: "right" });
-            initialEdges.push({ id: cur + "-" + temp[i], source: temp[i], target: cur, markerEnd: { type: "arrow" }, type: "default" },);
+            initialEdges.push({ id: cur + "-" + temp[i], source: temp[i], target: cur, markerEnd: { type: "line", color: "black" }, type: "default", style: { stroke: "black" } });
             ofsett += 50;
         }
-        ofsett += 50;
+        ofsett += 60;
     }
     depth[leftOfset] += ofsett;
 }
+
 
 function loadTree(course) {
     initialNodes.push({ id: course, data: { label: course }, position: { x: 0, y: 0 }, sourcePosition: "left", targetPosition: "right" });
