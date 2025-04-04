@@ -29,7 +29,7 @@ function App() {
 				</button>
 				{isPopupOpen && (
 					<div
-						className="fixed inset-0 bg-transparent flex justify-end"
+						className="backdrop-blur-sm fixed inset-0 bg-transparent flex justify-end z-100"
 						onClick={() => setIsPopupOpen(false)}
 					>
 						<div
