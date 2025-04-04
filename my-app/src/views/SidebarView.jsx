@@ -1,4 +1,3 @@
-// src/views/SidebarView.jsx
 import React from 'react';
 import UploadField from "./Components/SideBarComponents/UploadField.jsx";
 import ToggleField from "./Components/SideBarComponents/ToggleField.jsx";

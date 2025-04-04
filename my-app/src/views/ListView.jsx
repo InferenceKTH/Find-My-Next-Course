@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Quantum } from 'ldrs/react';
 import 'ldrs/react/Quantum.css';
-import FavouritesDropdown from './Components/FavouriteDropdown.jsx';
 
 function ListView(props) {
     const coursesToDisplay = props.searchResults.length > 0 ? props.searchResults : props.courses;
