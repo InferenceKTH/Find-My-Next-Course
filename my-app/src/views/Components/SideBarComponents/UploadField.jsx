@@ -188,7 +188,6 @@ export default function UploadField(props) {
     const handleDrop = (event) => {
         event.preventDefault();
         setIsDragging(false);
-
         if (event.dataTransfer.files.length > 0) {
             handleFileChange({ target: { files: event.dataTransfer.files } });
         }
