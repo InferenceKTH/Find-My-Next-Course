@@ -3,7 +3,12 @@ import { Quantum } from 'ldrs/react';
 import 'ldrs/react/Quantum.css';
 
 function ListView(props) {
-    const coursesToDisplay = props.searchResults.length > 0 ? props.searchResults : props.courses;
+    const coursesToDisplay = props.searchResults.length > 0
+        ?
+        props.searchResults
+        :
+        props.courses;
+
     const [readMoreState, setReadMoreState] = useState({});
 
     const toggleReadMore = (courseCode) => {
@@ -22,7 +27,9 @@ function ListView(props) {
 
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
-            {coursesToDisplay.length > 0 ? (
+            {coursesToDisplay.length > 0
+                ?
+                (
                 coursesToDisplay.map((course) => (
                     <div
                         key={course.code}
@@ -35,8 +42,10 @@ function ListView(props) {
                                 className="text-gray-600"
                                 dangerouslySetInnerHTML={{
                                     __html: readMoreState[course.code]
-                                        ? course.description
-                                        : course.description.slice(0, 150),
+                                        ?
+                                        course.description
+                                        :
+                                        course.description.slice(0, 150),
                                 }}
                             />
                             {course.description.length > 150 && (
@@ -67,7 +76,9 @@ function ListView(props) {
                         </div>
                     </div>
                 ))
-            ) : (
+            )
+                :
+                (
                 <Quantum
                     size="1000"
                     speed="2"

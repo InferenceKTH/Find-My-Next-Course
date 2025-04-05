@@ -51,6 +51,7 @@ export const model = {
             console.log("no model or data");
             return;
         }
+
         const entries = Object.entries(data);
         entries.forEach(entry => {
             const course = {
