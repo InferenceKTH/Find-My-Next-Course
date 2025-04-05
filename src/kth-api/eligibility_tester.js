@@ -3,18 +3,18 @@ import fs from "fs";
 let data = fs.readFileSync('all_courses_pruned.json');
 let data_object = JSON.parse(data);
 
-let test_courses_taken = []
+let test_courses_taken = ["SF003", "II1306", "SF1690", "IE1204", "SF1684", "ID1018", "SF1685", "IS1200", "SF1610", "IE1206", "SF1686", "ID1021", "SK1118", "ID2222", "IK1203", "ID1217"];
 let prereqs = data_object["IK1203"]["prerequisites"];
 let prereq_string = JSON.stringify(prereqs, null, 4)
 //console.log(prereq_string);
 
 
-function prereq_convert(courses_taken, current_object, previous_key, hash_bool) {
+function prereq_convert(courses_taken, current_object, previous_key, hash_bool, count_object) {
     if (current_object == undefined) {return}
     /* STEP 1: Sets courses taken to true, and not taken to false */
     if (!Array.isArray(current_object)) {   // Is object
         let key = Object.keys(current_object)[0];
-        prereq_convert(courses_taken, current_object[key], key, hash_bool);      
+        prereq_convert(courses_taken, current_object[key], key, hash_bool, count_object);      
     } else {    // Is an array
         for (let i = 0; i < current_object.length; i++) {
             if (typeof current_object[i] == "string") {
@@ -23,11 +23,13 @@ function prereq_convert(courses_taken, current_object, previous_key, hash_bool) 
                     //console.log(JSON.stringify(prereqs, null, 4)); 
                 } else if (courses_taken.includes(current_object[i])) {
                     current_object[i] = true;
+                    if (count_object != undefined) {count_object["count"]++;}
                 } else {
                     current_object[i] = false;
+                    if (count_object != undefined) {count_object["count"]++;}
                 }
             } else {
-                prereq_convert(courses_taken, current_object[i], previous_key, hash_bool);
+                prereq_convert(courses_taken, current_object[i], previous_key, hash_bool, count_object);
             }
         }
     }
@@ -71,8 +73,8 @@ function prereq_convert(courses_taken, current_object, previous_key, hash_bool) 
 }
 
 
-function eligibility_check(courses_taken, prereqs_object, hash_bool) {
-    prereq_convert(courses_taken, prereqs_object, null, hash_bool);
+function eligibility_check(courses_taken, prereqs_object, hash_bool, count_object) {
+    prereq_convert(courses_taken, prereqs_object, null, hash_bool, count_object);
     let key = Object.keys(prereqs_object);
     return prereqs_object[key];
 }
@@ -80,12 +82,18 @@ function eligibility_check(courses_taken, prereqs_object, hash_bool) {
 function eligibility(courses_taken, prereqs_object) {
     let prereqs_object1 = structuredClone(prereqs_object);
     let prereqs_object2 = structuredClone(prereqs_object);
-    let return_object = {strong: false, weak: false};
+    let return_object = {strong: false, moderate: false, weak: false};
+    let count_object = {count: 0};
     
     if (eligibility_check(courses_taken, prereqs_object1, false)) {
-        return_object["strong"] = true; 
-    } else if (eligibility_check(courses_taken, prereqs_object2, true)) {
-        return_object["weak"] = true;
+        return_object["strong"] = true;
+    } 
+    else if (eligibility_check(courses_taken, prereqs_object2, true, count_object)) {
+        if (count_object["count"] > 0) {
+            return_object["moderate"] = true;
+        } else {
+            return_object["weak"] = true;
+        }
     }
     return return_object;
 }
@@ -103,23 +111,23 @@ function benchmark(courses) {
             //console.log(courses[i]);
             let eli = eligibility(test_courses_taken, data_object[courses[i]]["prerequisites"]);
             if (eli["strong"]) {
-                console.log(courses[i]);
+                //console.log(courses[i]);
                 count++;
             }
         }
     }
     const end = Date.now();
-
-    console.log(end - start);
-    console.log(count);
+    let time = end - start;
+    console.log("Exexution time is " + time + "ms");
+    console.log("Number of eligible courses: " + count);
 }
 
 let all_course_codes = Object.keys(data_object);
 
 benchmark(all_course_codes);
-//let ret = eligibility(test_courses_taken, data_object["FDD3024"]["prerequisites"]);
+let ret = eligibility(test_courses_taken, data_object["IK1203"]["prerequisites"]);
 
-//console.log("Eligibility: " + JSON.stringify(ret, null, 4));
+console.log("Eligibility: " + JSON.stringify(ret, null, 4));
 
 /*
 
