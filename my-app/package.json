@@ -13,12 +13,15 @@
     "@tailwindcss/vite": "^4.0.17",
     "autoprefixer": "^10.4.21",
     "firebase": "^11.5.0",
+    "ldrs": "^1.1.6",
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",
+    "pdfjs-dist": "^5.1.91",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.4.0",
     "reactflow": "^11.11.4",
+
     "tailwindcss": "^4.0.17"
   },
   "devDependencies": {
@@ -26,6 +29,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
