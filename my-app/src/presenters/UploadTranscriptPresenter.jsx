@@ -7,7 +7,7 @@ import UploadField from '../views/Components/SideBarComponents/UploadField';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 
-const UploadTranscriptPresenter = observer(({ model }) => {
+const UploadTranscriptPresenter = observer(() => {
     const [errorMessage, setErrorMessage] = useState(""); // Stores error message
     const [errorVisibility, setErrorVisibility] = useState("hidden"); // Controls visibility
     const [fileInputValue, setFileInputValue] = useState(""); // Controls upload field state
@@ -32,7 +32,6 @@ const UploadTranscriptPresenter = observer(({ model }) => {
         const typedArray = new Uint8Array(arrayBuffer);
         try {
             const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
-            let extractedText = '';
 
             //this is our array we are going to work with
             let textObjects = [];

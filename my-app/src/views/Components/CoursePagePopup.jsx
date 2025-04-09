@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
 function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
+
   const treeRef = useRef(null);
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -49,7 +50,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
                 className="text-yellow-500 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation(); // prevent popup from opening
-                  handleFavouriteClick(course.code);
+                  PaymentResponse.handleFavouriteClick(course.code);
                 }}
               >
                 {/* {model.favouriteCourses.includes(course.code)
@@ -71,6 +72,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
 
             {/* Prerequisite Graph Tree Section */}
             <div>
+
               <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">
                 Prerequisite Graph Tree
               </h3>
@@ -83,6 +85,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
               >
                 {prerequisiteTree}
               </div>
+
 
             </div>
             {/* Reviews Section */}
