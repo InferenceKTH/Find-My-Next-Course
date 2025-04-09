@@ -7,6 +7,14 @@ import PrerequisitePresenter from './PrerequisitePresenter.jsx';
 
 const ListViewPresenter = observer(({ model }) => {
 
+    const handleFavouriteClick = (course) => {
+        if (model.favourites.some(fav => fav.code === course.code)) {
+            model.removeFavourite(course);
+        } else {
+            model.addFavourite(course);
+        }
+    };
+
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
     const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse}/>
@@ -19,14 +27,6 @@ const ListViewPresenter = observer(({ model }) => {
         model.removeFavourite(course);
     }
 
-    function handleFavouriteClick(course){
-        if (props.favouriteCourses.some(fav => fav.code === course.code)) {
-            props.removeFavourite(course);
-        } else {
-            props.addFavourite(course);
-        }
-    };
-
     return <ListView
         courses={model.courses}
         searchResults={model.currentSearch}
@@ -37,6 +37,7 @@ const ListViewPresenter = observer(({ model }) => {
         setIsPopupOpen={setIsPopupOpen}
         setSelectedCourse={setSelectedCourse}
         popUp={popup}
+        handleFavouriteClick={handleFavouriteClick}
 
     />;
 });
