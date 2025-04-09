@@ -1,71 +1,56 @@
 import React from 'react';
 import { useState } from "react";
 
-export default function UploadField() {
-    const values = [1,
-        1.5,
-        2,
-        2.5,
-        3,
-        3.5,
-        4,
-        4.5,
-        5,
-        5.5,
-        6,
-        7,
-        7.5,
-        8,
-        8.5,
-        9,
-        10,
-        11,
-        12,
-        13.5,
-        14,
-        15,
-        20,
-        22.5,
-        30, 45]; // 8 set values
-    const [selectedIndex, setSelectedIndex] = useState(0); // Start at first value
 
-    const handleSliderChange = (event) => {
-        const rawIndex = Number(event.target.value);
-        setSelectedIndex(rawIndex);
+export default function UploadField(props) {
+    const values = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7, 7.5, 8, 8.5, 9, 10, 11, 12, 13.5, 14, 15, 20, 22.5, 30, 45]; // 8 set values
+    const [minIndex, setMinIndex] = useState(0);
+    const [maxIndex, setMaxIndex] = useState(values.length - 1);
+
+    const handleMinChange = (e) => {
+        const val = Math.min(Number(e.target.value), maxIndex - 1);
+        setMinIndex(val);
+      };
+    
+      const handleMaxChange = (e) => {
+        const val = Math.max(Number(e.target.value), minIndex + 1);
+        setMaxIndex(val);
       };
 
-    return (
-        <div className='m-2'>
-            <div className='mb-2 text-white justify-center'>
-
-                <div className='float-left mr-1'>
-                    <h3>One filter</h3>
-                </div>
-                <div>
-                    <p className='text-sm opacity-50'> - filter description</p>
-                </div>
+      return (
+        <div className="m-4">
+          <div className="mb-2 text-white">
+            <h3>Range Filter</h3>
+            <p className="text-sm opacity-50">Select a range of credits</p>
+          </div>
+    
+          <div className="bg-[#aba8e0] text-white p-4 rounded-lg shadow-lg border border-gray-300 relative">
+            <div className="mb-2 text-sm font-bold">
+              Credits: {values[minIndex]} – {values[maxIndex]}
             </div>
-            <div className="flex flex-col sm:inline-flex sm:flex-row rounded-lg shadow-2xs w-full 
-            items-center font-medium text-white bg-[#aba8e0] border border-gray-200 p-3">
-                <div className="flex-1 justify-between pl-2">
-                    <span
-                        className={"text-sm font-bold text-white "}
-                    >
-                        Credits: {values[selectedIndex]}
-                    </span>
-                </div>
-                <input
-                    type="range"
-                    min={0}
-                    max={25}
-                    step="1"
-                    value={selectedIndex}
-                    onChange={handleSliderChange}
-                    className="flex-2 w-0% appearance-none bg-gray-300 rounded-lg h-2 focus:outline-none focus:ring-2
-                     focus:ring-violet-500 accent-violet-500"
-                />
-                
+    
+            <div className="relative h-6">
+              {/* First slider (min) */}
+              <input
+                type="range"
+                min="0"
+                max={values.length - 1}
+                value={minIndex}
+                onChange={handleMinChange}
+                className="absolute w-full h-2 bg-transparent appearance-none pointer-events-auto z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:bg-violet-600 [&::-webkit-slider-thumb]:rounded-full"
+              />
+    
+              {/* Second slider (max) */}
+              <input
+                type="range"
+                min="0"
+                max={values.length - 1}
+                value={maxIndex}
+                onChange={handleMaxChange}
+                className="absolute w-full h-2 bg-transparent appearance-none pointer-events-auto z-20 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:bg-violet-300 [&::-webkit-slider-thumb]:rounded-full"
+              />
             </div>
+          </div>
         </div>
-    );
+      );
 }
