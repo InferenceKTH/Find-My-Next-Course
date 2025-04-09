@@ -1,7 +1,6 @@
 // import React from 'react';
 // import PrerequisiteTree from "./PrerequisiteTree.jsx";
 // // import {model} from '/src/model.js';
-
 // export default function CourseView({ course }) {
 //     if (!course) return null;
     
