@@ -13,7 +13,7 @@ const UploadTranscriptPresenter = observer(({ model }) => {
     const [fileInputValue, setFileInputValue] = useState(""); // Controls upload field state
 
     async function transcriptScraperFunction(file) {
-        console.log(file);
+        //console.log(file);
         //const pdfjsLib = window['pdfjsLib'];
         //pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         if (!file) {
@@ -80,7 +80,7 @@ const UploadTranscriptPresenter = observer(({ model }) => {
 
 
         localStorage.setItem("completedCourses", JSON.stringify(newcodes));
-        console.log(newcodes);
+        //console.log(newcodes);
 
         window.dispatchEvent(new Event("completedCourses changed"));
     }
@@ -125,7 +125,10 @@ const UploadTranscriptPresenter = observer(({ model }) => {
                     if (!flagTableDone) {
                         flagTable = true;
                     } else {
-                        if (textObjects[i - 2].transform[4] !== 497.66899718999997) {
+                        if ((textObjects[i - 1].transform[4] !== 532.71801758)&&(textObjects[i - 11].transform[4] !== 532.71801758)) {
+                            //if its i-1, the page number is the object directly behind, otherwise if -11 its because theres some filter,
+                            //e.g. utskrift datum, personnummer and others. hopefully this should cover all base (probably doesn't)
+                            //this is a very hardcoded solution to this problem.
                             //the new table (that is the new found "Kod" / "Code" is not because unexpected page break, therefore we are done transcribing
                             //KTH courses, these are either uncomplete courses, or courses from other universities
                             flagTable = false;
