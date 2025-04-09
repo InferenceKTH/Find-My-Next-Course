@@ -1,8 +1,8 @@
-import React from "react";
-import ReactFlow, { MiniMap, Controls, Background } from "reactflow";
-import "reactflow/dist/style.css";
+import { observer } from "mobx-react-lite";
+import PrerequisiteTreeView from "../views/PrerequisiteTreeView";
 
-
+export const PrerequisitePresenter = observer((props) => {
+    
 //contains the nodes and lines
 const initialNodes = [];
 const initialEdges = [];
@@ -61,24 +61,12 @@ function loadTree(course) {
     preR2 = [["SF1005"], ["SF1006", "SF1007"]];
     addChildNodes(start, preR2, column);
     column++;
-
 }
+    loadTree(props.selectedCourse.code);   
 
-const PrerequisiteTree = () => {
-    if (initialNodes.length == 0){
-        loadTree("SF2526");
-    }
-    
+    return <PrerequisiteTreeView initialNodes={initialNodes} initialEdges={initialEdges}/>
+});
 
-    return (
-        <div style={{ width: "100%", height: "500px" }}>
-            <ReactFlow nodes={initialNodes} edges={initialEdges} fitView>
-                <MiniMap />
-                <Controls />
-                <Background variant="dots" gap={12} size={1} />
-            </ReactFlow>
-        </div>
-    );
-};
+export default PrerequisitePresenter;
 
-export default PrerequisiteTree;
+
