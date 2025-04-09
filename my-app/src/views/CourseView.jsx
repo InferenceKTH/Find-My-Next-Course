@@ -1,5 +1,4 @@
 import React from 'react';
-import DisqusComments from '../views/Components/DisqusComments.jsx';
 
 export default function CourseView(props) {
     return (
@@ -49,11 +48,6 @@ export default function CourseView(props) {
                 <h3 style={{ fontFamily: 'Georgia, serif', fontSize: '24px' }}>Reviews</h3>
                 {/* Placeholder for reviews */}
                 <p style={{ fontSize: '16px' }}>Here would be some reviews of the course...</p>
-                <DisqusComments
-                    url="ahxjk"
-                    identifier={props.currentCourse}
-                    title={props.currentCourse}
-                />
             </div>
 
             {/* Prerequisite Graph Tree Section */}
