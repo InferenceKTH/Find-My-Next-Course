@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
-import { get, getDatabase, ref, set } from "firebase/database";
-import { reaction } from "mobx";
+import { get, getDatabase, ref, set, onValue } from "firebase/database";
+import { reaction, toJS } from "mobx";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -27,10 +27,14 @@ let noUpload = false;
 export function connectToFirebase(model) {
     loadCoursesFromCacheOrFirebase(model);
 	onAuthStateChanged(auth, (user) => {
-		model.setUser(user);
-        if (!user) return;
+		if (user) {
+			model.setUser(user.uid); // Set the user ID once authenticated
+			firebaseToModel(model);  // Set up listeners for user-specific data
+			syncModelToFirebase(model);  // Start syncing changes to Firebase
+		} else {
+			model.setUser(null);  // If no user, clear user-specific data
+		}
 	});
-	firebaseToModel(model);
 }
 
 // fetches all relevant information to create the model

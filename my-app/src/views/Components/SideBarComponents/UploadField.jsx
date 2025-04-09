@@ -3,6 +3,9 @@ import CourseTranscriptList from './CourseTranscriptList';
 //import * as scraper from '../../../../src/scripts/transcript-scraper/transcript-scraper.js';
 import { useState } from "react";
 
+export default function UploadField(props) {
+
+
     const [isDragging, setIsDragging] = useState(false);
 
     const handleDragOver = (event) => {
