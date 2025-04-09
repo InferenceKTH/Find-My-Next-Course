@@ -53,7 +53,10 @@ function ListView(props) {
                             {course.description.length > 150 && (
                                 <span
                                     className="text-blue-500 cursor-pointer"
-                                    onClick={() => toggleReadMore(course.code)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();  // Prevent the event from bubbling up.
+                                        toggleReadMore(course.code);
+                                    }}
                                 >
                                     {readMoreState[course.code]
                                         ?
