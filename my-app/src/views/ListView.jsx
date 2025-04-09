@@ -19,12 +19,18 @@ function ListView(props) {
             props.addFavourite(course);
         }
     };
+  
 
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
             {coursesToDisplay.length > 0 ? (
                 coursesToDisplay.map((course) => (
                     <div
+                    onClick={() => {
+                        console.log('Clicked:', course); // check browser console
+                        props.setSelectedCourse(course);
+                        props.setIsPopupOpen(true);
+                    }}
                         key={course.code}
                         className="p-5 hover:bg-blue-100 flex items-center border border-b-black border-solid w-full rounded-lg cursor-pointer"
                     >
@@ -42,7 +48,10 @@ function ListView(props) {
                             {course.description.length > 150 && (
                                 <span
                                     className="text-blue-500 cursor-pointer"
-                                    onClick={() => toggleReadMore(course.code)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();  // Prevent the event from bubbling up.
+                                        toggleReadMore(course.code);
+                                    }}
                                 >
                                     {readMoreState[course.code]
                                         ?
@@ -54,7 +63,10 @@ function ListView(props) {
                             <div>
                                 <button
                                     className="text-yellow-500 cursor-pointer"
-                                    onClick={() => handleFavouriteClick(course)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();  // Prevent the event from bubbling up.
+                                        handleFavouriteClick(course);
+                                    }}
                                 >
                                     {props.favouriteCourses.some(fav => fav.code === course.code)
                                         ?
@@ -74,6 +86,7 @@ function ListView(props) {
                     color="#000061"
                 />
             )}
+             {props.popUp}
         </div>
     );
 }
