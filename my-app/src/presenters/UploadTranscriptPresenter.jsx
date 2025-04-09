@@ -32,7 +32,6 @@ const UploadTranscriptPresenter = observer(({ model }) => {
         const typedArray = new Uint8Array(arrayBuffer);
         try {
             const pdf = await pdfjsLib.getDocument({ data: typedArray }).promise;
-            let extractedText = '';
 
             //this is our array we are going to work with
             let textObjects = [];

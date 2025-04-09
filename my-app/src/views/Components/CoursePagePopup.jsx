@@ -26,7 +26,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
                 className="text-yellow-500 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation(); // prevent popup from opening
-                  handleFavouriteClick(course.code);
+                  PaymentResponse.handleFavouriteClick(course.code);
                 }}
               >
                 {/* {model.favouriteCourses.includes(course.code)
