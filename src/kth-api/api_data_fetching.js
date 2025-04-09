@@ -30,6 +30,7 @@ async function KTH_API_course_fetch(course) {
         course_info["kth_page_url"] = "https://www.kth.se/student/kurser/kurs/" + course_info["code"];
         course_info["description"] = null;
         course_info["prerequisites"] = null;
+        course_info["learning_outcomes"] = null;
         
         let language_set = false;
         let periods_set = false;
@@ -81,11 +82,14 @@ async function KTH_API_course_fetch(course) {
         }
 
         try {
-            if (data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"]) {
-                course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
+            if (data["publicSyllabusVersions"][0]["courseSyllabus"]["content"]) {
+                course_info["description"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["content"];
             }
             if (data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"]) {
                 course_info["prerequisites"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["eligibility"];
+            }
+            if (data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"]) {
+                course_info["learning_outcomes"] = data["publicSyllabusVersions"][0]["courseSyllabus"]["goals"];
             }
         } catch (err) {}
         
@@ -119,14 +123,3 @@ async function KTH_API_all_active_courses() {
 }
 
 export { KTH_API_course_fetch, KTH_API_all_active_courses };
-
-//  let resp = await KTH_API_all_active_courses();
-
-//console.log(resp.length);
-//let data = await KTH_API_course_fetch("SF1625");
-
-//console.log(Object.keys(data).length);
-//  console.log(data);
-
-
-

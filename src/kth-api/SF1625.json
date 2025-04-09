@@ -1,0 +1,2502 @@
+{
+    "course": {
+        "academicLevel": "A",
+        "courseCode": "SF1625",
+        "versionNumber": 1,
+        "departmentCode": "SF",
+        "department": {
+            "code": "SF",
+            "name": "SCI/Mathematics"
+        },
+        "educationalLevelCode": "BASIC",
+        "educationalTypeId": 22,
+        "gradeScaleCode": "AF",
+        "title": "Calculus in One Variable",
+        "titleOther": "Envariabelanalys",
+        "cancelled": false,
+        "deactivated": false,
+        "credits": 7.5,
+        "creditUnitLabel": "Credits",
+        "creditUnitAbbr": "hp",
+        "state": "ESTABLISHED",
+        "courseVersion": {
+            "versionNumber": 1,
+            "keywordsEn": [],
+            "keywordsSv": []
+        }
+    },
+    "examiners": [
+        {
+            "kthid": "u1ylahac",
+            "givenName": "Albin",
+            "lastName": "Eriksson Östman",
+            "email": "albin01@kth.se",
+            "username": "albin01"
+        }
+    ],
+    "roundInfos": [
+        {
+            "lectureCount": 21,
+            "excerciseCount": 14,
+            "usage": [
+                {
+                    "programmeCode": "CINTE",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Information and Communication Technology",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/vt-2025-cinte1/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u14s5yx4",
+                    "givenName": "Christina Marianne",
+                    "lastName": "Carlsund Levin",
+                    "email": "ninni@kth.se",
+                    "username": "ninni"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u14s5yx4",
+                    "givenName": "Christina Marianne",
+                    "lastName": "Carlsund Levin",
+                    "email": "ninni@kth.se",
+                    "username": "ninni"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "1",
+                "ladokUID": "cb7d24a5-9a88-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CINTE1",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P3 (7.5 hp)",
+                        "term": {
+                            "term": 20251
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 3
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 11
+                        },
+                        "creditsP3": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "60924",
+                        "term": "20251",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKV25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20251
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 3
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 11
+                },
+                "startDate": "Jan 14, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-01-14",
+                "lastTuitionDate": "2025-03-16",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 14,
+            "usage": [
+                {
+                    "programmeCode": "CDATE",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Computer Science and Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "specCode": "TEDA",
+                    "programmeCode": "CLGYM",
+                    "progAdmissionTerm": {
+                        "term": 20232
+                    },
+                    "studyYear": 2,
+                    "title": "Master of Science in Engineering and in Education",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/vt-2025-cdate1-mfl/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u18gkauo",
+                    "givenName": "Klaus",
+                    "lastName": "Kröncke",
+                    "email": "kroncke@kth.se",
+                    "username": "kroncke"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u18gkauo",
+                    "givenName": "Klaus",
+                    "lastName": "Kröncke",
+                    "email": "kroncke@kth.se",
+                    "username": "kroncke"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "2",
+                "ladokUID": "e8278da5-9a88-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CDATE1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P3 (7.5 hp)",
+                        "term": {
+                            "term": 20251
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 3
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 11
+                        },
+                        "creditsP3": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "60188",
+                        "term": "20251",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKV25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20251
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 3
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 11
+                },
+                "startDate": "Jan 14, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-01-14",
+                "lastTuitionDate": "2025-03-16",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "CDEPR",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Design and Product Realisation",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CENMI",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Energy and Environment",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "specCode": "TEMI",
+                    "programmeCode": "CLGYM",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 2,
+                    "title": "Master of Science in Engineering and in Education",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "1",
+                "ladokUID": "efdfb2ac-cf51-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CDEPR1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P2 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 44
+                        },
+                        "endWeek": {
+                            "year": 2026,
+                            "week": 3
+                        },
+                        "creditsP2": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "51280",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 44
+                },
+                "endWeek": {
+                    "year": 2026,
+                    "week": 3
+                },
+                "startDate": "Oct 27, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-10-27",
+                "lastTuitionDate": "2026-01-12",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 42,
+            "usage": [
+                {
+                    "programmeCode": "CSAMH",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Civil Engineering and Urban Management",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CTKEM",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Engineering Chemistry",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CMATD",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Materials Design and Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "specCode": "MAKE",
+                    "programmeCode": "CLGYM",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 2,
+                    "title": "Master of Science in Engineering and in Education",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "2",
+                "ladokUID": "71f90df9-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CMATD1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "51060",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 43
+                },
+                "startDate": "Aug 25, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-08-25",
+                "lastTuitionDate": "2025-10-24",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "3",
+                "ladokUID": "7b1b4fbb-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "OMREG",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50143",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 43
+                },
+                "startDate": "Aug 25, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-08-25",
+                "lastTuitionDate": "2025-10-24",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "COPEN",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme Open Entrance",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CITEH",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Industrial Technology and Sustainability",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CMETE",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Media Technology",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "4",
+                "ladokUID": "82b5b918-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CITEH1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50848",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 43
+                },
+                "startDate": "Aug 25, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-08-25",
+                "lastTuitionDate": "2025-10-24",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "CELTE",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Electrical Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CINEK",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Industrial Engineering and Management",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "5",
+                "ladokUID": "b99ae9f7-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CELTE1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50330",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 43
+                },
+                "startDate": "Aug 25, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-08-25",
+                "lastTuitionDate": "2025-10-24",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "CBIOT",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Biotechnology",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CMAST",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Mechanical Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "6",
+                "ladokUID": "c088bfa6-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CBIOT1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P2 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 44
+                        },
+                        "endWeek": {
+                            "year": 2026,
+                            "week": 3
+                        },
+                        "creditsP2": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "51046",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 44
+                },
+                "endWeek": {
+                    "year": 2026,
+                    "week": 3
+                },
+                "startDate": "Oct 27, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-10-27",
+                "lastTuitionDate": "2026-01-12",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 14,
+            "usage": [
+                {
+                    "programmeCode": "CMEDT",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Medical Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "7",
+                "ladokUID": "d8bfc8e9-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CMEDT1",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50749",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH25"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 43
+                },
+                "startDate": "Aug 25, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-08-25",
+                "lastTuitionDate": "2025-10-24",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2025-omreg-3/calendar/",
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "8",
+                "ladokUID": "df57689a-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "OMREG",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P2 (7.5 hp)",
+                        "term": {
+                            "term": 20252
+                        },
+                        "startWeek": {
+                            "year": 2025,
+                            "week": 44
+                        },
+                        "endWeek": {
+                            "year": 2026,
+                            "week": 3
+                        },
+                        "creditsP2": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50068",
+                        "term": "20252",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20252
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2025,
+                    "week": 44
+                },
+                "endWeek": {
+                    "year": 2026,
+                    "week": 3
+                },
+                "startDate": "Oct 27, 2025 12:00:00 AM",
+                "firstTuitionDate": "2025-10-27",
+                "lastTuitionDate": "2026-01-12",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "1",
+                "ladokUID": "606d53aa-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "OMREG",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P3 (7.5 hp)",
+                        "term": {
+                            "term": 20261
+                        },
+                        "startWeek": {
+                            "year": 2026,
+                            "week": 3
+                        },
+                        "endWeek": {
+                            "year": 2026,
+                            "week": 11
+                        },
+                        "creditsP3": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "60039",
+                        "term": "20261",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20261
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2026,
+                    "week": 3
+                },
+                "endWeek": {
+                    "year": 2026,
+                    "week": 11
+                },
+                "startDate": "Jan 13, 2026 12:00:00 AM",
+                "firstTuitionDate": "2026-01-13",
+                "lastTuitionDate": "2026-03-13",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 14,
+            "usage": [
+                {
+                    "programmeCode": "CDATE",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Computer Science and Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CINTE",
+                    "progAdmissionTerm": {
+                        "term": 20252
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Information and Communication Technology",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "specCode": "TEDA",
+                    "programmeCode": "CLGYM",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 2,
+                    "title": "Master of Science in Engineering and in Education",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [],
+            "ldapTeachers": [],
+            "round": {
+                "ladokRoundId": "2",
+                "ladokUID": "b30b61a4-cf52-11ef-9bca-bbbddaff469b",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CDATE1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "targetGroup": "\u003cp\u003eCDATE1\u003c/p\u003e\u003cp\u003eCLGYM TEDA2\u003c/p\u003e\u003cp\u003eCINTE1\u003c/p\u003e",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P3 (7.5 hp)",
+                        "term": {
+                            "term": 20261
+                        },
+                        "startWeek": {
+                            "year": 2026,
+                            "week": 3
+                        },
+                        "endWeek": {
+                            "year": 2026,
+                            "week": 11
+                        },
+                        "creditsP3": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "60223",
+                        "term": "20261",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20261
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2026,
+                    "week": 3
+                },
+                "endWeek": {
+                    "year": 2026,
+                    "week": 11
+                },
+                "startDate": "Jan 13, 2026 12:00:00 AM",
+                "firstTuitionDate": "2026-01-13",
+                "lastTuitionDate": "2026-03-13",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "COPEN",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme Open Entrance",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CMETE",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Media Technology",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2024-cmete1-mfl/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u1lvdahr",
+                    "givenName": "Lars",
+                    "lastName": "Filipsson",
+                    "email": "lfn@kth.se",
+                    "username": "lfn"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u1lvdahr",
+                    "givenName": "Lars",
+                    "lastName": "Filipsson",
+                    "email": "lfn@kth.se",
+                    "username": "lfn"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "1",
+                "ladokUID": "f85be5fd-98c7-11ee-888d-8a62d8d3440a",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CMETE1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2024,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50234",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2024,
+                    "week": 43
+                },
+                "startDate": "Aug 26, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-08-26",
+                "lastTuitionDate": "2024-10-27",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 14,
+            "usage": [
+                {
+                    "programmeCode": "CMEDT",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Medical Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2024-cmedt1/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u1qyhdi3",
+                    "givenName": "Oswald",
+                    "lastName": "Fogelklou",
+                    "email": "oswaldf@kth.se",
+                    "username": "oswaldf"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u1qyhdi3",
+                    "givenName": "Oswald",
+                    "lastName": "Fogelklou",
+                    "email": "oswaldf@kth.se",
+                    "username": "oswaldf"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "2",
+                "ladokUID": "d33ca2d3-9a88-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CMEDT1",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2024,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "51147",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2024,
+                    "week": 43
+                },
+                "startDate": "Aug 26, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-08-26",
+                "lastTuitionDate": "2024-10-27",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "CDEPR",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Design and Product Realisation",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CENMI",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Energy and Environment",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "specCode": "TEMI",
+                    "programmeCode": "CLGYM",
+                    "progAdmissionTerm": {
+                        "term": 20232
+                    },
+                    "studyYear": 2,
+                    "title": "Master of Science in Engineering and in Education",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2024-cdepr1-mfl/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u12empxv",
+                    "givenName": "Kristian",
+                    "lastName": "Bjerklöv",
+                    "email": "bjerklov@kth.se",
+                    "username": "bjerklov"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u12empxv",
+                    "givenName": "Kristian",
+                    "lastName": "Bjerklöv",
+                    "email": "bjerklov@kth.se",
+                    "username": "bjerklov"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "3",
+                "ladokUID": "123a46d2-9a89-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CDEPR1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P2 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 44
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 3
+                        },
+                        "creditsP2": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "51503",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH24"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 44
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 3
+                },
+                "startDate": "Oct 28, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-10-28",
+                "lastTuitionDate": "2025-01-13",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 14,
+            "usage": [],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "ldapResponsibles": [
+                {
+                    "kthid": "u1ylahac",
+                    "givenName": "Albin",
+                    "lastName": "Eriksson Östman",
+                    "email": "albin01@kth.se",
+                    "username": "albin01"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u1ylahac",
+                    "givenName": "Albin",
+                    "lastName": "Eriksson Östman",
+                    "email": "albin01@kth.se",
+                    "username": "albin01"
+                },
+                {
+                    "kthid": "u1tqa5gd",
+                    "givenName": "Maria",
+                    "lastName": "Saprykina",
+                    "email": "masha@kth.se",
+                    "username": "masha"
+                },
+                {
+                    "kthid": "u1bai8p0",
+                    "givenName": "Roy",
+                    "lastName": "Skjelnes",
+                    "email": "skjelnes@kth.se",
+                    "username": "skjelnes"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "4",
+                "ladokUID": "2eba91fe-9a89-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CITEH1",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2024,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50307",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2024,
+                    "week": 43
+                },
+                "startDate": "Aug 26, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-08-26",
+                "lastTuitionDate": "2024-10-27",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "CBIOT",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Biotechnology",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CITEH",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Industrial Technology and Sustainability",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CMAST",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Mechanical Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2024-cbiot1-mfl/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u12empxv",
+                    "givenName": "Kristian",
+                    "lastName": "Bjerklöv",
+                    "email": "bjerklov@kth.se",
+                    "username": "bjerklov"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u12empxv",
+                    "givenName": "Kristian",
+                    "lastName": "Bjerklöv",
+                    "email": "bjerklov@kth.se",
+                    "username": "bjerklov"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "5",
+                "ladokUID": "647a7d3d-9a89-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CBIOT1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P2 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 44
+                        },
+                        "endWeek": {
+                            "year": 2025,
+                            "week": 3
+                        },
+                        "creditsP2": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50740",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 44
+                },
+                "endWeek": {
+                    "year": 2025,
+                    "week": 3
+                },
+                "startDate": "Oct 28, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-10-28",
+                "lastTuitionDate": "2025-01-13",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 42,
+            "usage": [
+                {
+                    "programmeCode": "CSAMH",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Civil Engineering and Urban Management",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CTKEM",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Engineering Chemistry",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CMATD",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Materials Design and Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "specCode": "MAKE",
+                    "programmeCode": "CLGYM",
+                    "progAdmissionTerm": {
+                        "term": 20232
+                    },
+                    "studyYear": 2,
+                    "title": "Master of Science in Engineering and in Education",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2024-cmatd1-mfl/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u1t7qy4n",
+                    "givenName": "Mattias",
+                    "lastName": "Dahl",
+                    "email": "dahl@kth.se",
+                    "username": "dahl"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u1t7qy4n",
+                    "givenName": "Mattias",
+                    "lastName": "Dahl",
+                    "email": "dahl@kth.se",
+                    "username": "dahl"
+                },
+                {
+                    "kthid": "u1tyze7e",
+                    "givenName": "Tommy",
+                    "lastName": "Ekola",
+                    "email": "ekola@kth.se",
+                    "username": "ekola"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "6",
+                "ladokUID": "6da46047-9a89-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CMATD1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2024,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50037",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false,
+                        "admissionRoundCode": "AKH24"
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2024,
+                    "week": 43
+                },
+                "startDate": "Aug 26, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-08-26",
+                "lastTuitionDate": "2024-10-27",
+                "studyPace": 50
+            }
+        },
+        {
+            "lectureCount": 21,
+            "excerciseCount": 28,
+            "usage": [
+                {
+                    "programmeCode": "CELTE",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Electrical Engineering",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                },
+                {
+                    "programmeCode": "CINEK",
+                    "progAdmissionTerm": {
+                        "term": 20242
+                    },
+                    "studyYear": 1,
+                    "title": "Degree Programme in Industrial Engineering and Management",
+                    "electiveCondition": {
+                        "ordinal": 1,
+                        "name": "O",
+                        "abbrLabel": "Mandatory"
+                    }
+                }
+            ],
+            "timeslots": "",
+            "hasTimeslots": false,
+            "schemaUrl": "https://www.kth.se/social/course/SF1625/subgroup/ht-2024-celte1-mfl/calendar/",
+            "ldapResponsibles": [
+                {
+                    "kthid": "u1lvdahr",
+                    "givenName": "Lars",
+                    "lastName": "Filipsson",
+                    "email": "lfn@kth.se",
+                    "username": "lfn"
+                }
+            ],
+            "ldapTeachers": [
+                {
+                    "kthid": "u1lvdahr",
+                    "givenName": "Lars",
+                    "lastName": "Filipsson",
+                    "email": "lfn@kth.se",
+                    "username": "lfn"
+                }
+            ],
+            "round": {
+                "ladokRoundId": "7",
+                "ladokUID": "a0542458-9a89-11ee-bfe5-0721067a4fbf",
+                "state": "APPROVED",
+                "tutoringTimeOfDay": {
+                    "name": "DAG",
+                    "key": "tutoringtime.DAG"
+                },
+                "municipalityCode": "KTHCAMPUS",
+                "tutoringForm": {
+                    "name": "NML",
+                    "key": "tutoringform.NML"
+                },
+                "shortName": "CELTE1 m.fl.",
+                "campus": {
+                    "name": "KTH Campus",
+                    "label": "KTH Campus"
+                },
+                "selectionCriteriaSv": "\u003cp\u003e\u003c/p\u003e",
+                "selectionCriteriaEn": "\u003cp\u003e\u003c/p\u003e",
+                "language": "Swedish",
+                "draftCourseRoundType": {
+                    "code": "ORD",
+                    "name": "Programutbildning",
+                    "active": true,
+                    "category": "PU"
+                },
+                "courseRoundTerms": [
+                    {
+                        "formattedPeriodsAndCredits": "P1 (7.5 hp)",
+                        "term": {
+                            "term": 20242
+                        },
+                        "startWeek": {
+                            "year": 2024,
+                            "week": 35
+                        },
+                        "endWeek": {
+                            "year": 2024,
+                            "week": 43
+                        },
+                        "creditsP1": 7.5
+                    }
+                ],
+                "applicationCodes": [
+                    {
+                        "applicationCode": "50167",
+                        "term": "20242",
+                        "courseRoundType": {
+                            "code": "ORD",
+                            "name": "Programutbildning",
+                            "active": true,
+                            "category": "PU"
+                        },
+                        "avgFri": false
+                    }
+                ],
+                "startTerm": {
+                    "term": 20242
+                },
+                "isPU": true,
+                "isVU": false,
+                "startWeek": {
+                    "year": 2024,
+                    "week": 35
+                },
+                "endWeek": {
+                    "year": 2024,
+                    "week": 43
+                },
+                "startDate": "Aug 26, 2024 12:00:00 AM",
+                "firstTuitionDate": "2024-08-26",
+                "lastTuitionDate": "2024-10-27",
+                "studyPace": 50
+            }
+        }
+    ],
+    "mainSubjects": [
+        "Mathematics",
+        "Technology"
+    ],
+    "examinationSets": {
+        "20072": {
+            "startingTerm": {
+                "term": 20072
+            },
+            "examinationRounds": [
+                {
+                    "examCode": "TEN1",
+                    "title": "Examination",
+                    "gradeScaleCode": "AF",
+                    "credits": 7.5,
+                    "creditUnitLabel": "Credits",
+                    "creditUnitAbbr": "hp",
+                    "ladokUID": "7f2659f9-73d8-11e8-b4e0-063f9afb40e3"
+                }
+            ]
+        }
+    },
+    "publicSyllabusVersions": [
+        {
+            "edition": 2,
+            "validFromTerm": {
+                "term": 20192
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "goals": "\u003cp\u003eAfter the course the student should be able to\u003c/p\u003e\u003cul\u003e\u003cli\u003euse concepts. theorems and methods to solve and present solutions to problems within the parts of one variable caclulus described by the course content,\u003c/li\u003e\u003cli\u003eread and comprehend mathematical text.\u003c/li\u003e\u003c/ul\u003e",
+                "content": "\u003cp\u003eFunction, function graph, domain, range. Increasing and decreasing functions, odd and even functions. Inverse functions. The class of elementary functions. Trigonometric functions, exponential and logarithmic functions. Power laws, logarithms. Limits, rules for calculating limits, standard limits. Continuity, theorems on continuous functions. Derivative, rules of differentiation, the mean value theorem,\u0026#160; implicit differentiation, applications: rate of change, linear approximation, tangent, extreme value problems, sketching the graph of a function, l\u0027H\u0026#244;pital\u0027s rule. Taylor\u0027s formula with error estimates. Linear differential equations with constant coefficients and their applications. The Riemann integral, primitive functions, the fundamental theorem integral calculus, variable substitution, integration by parts, partial fractions. Riemann sums, geometric and other applications of integrals, improper integrals, estimates and convergence. Paramterization of curves and arc length. Sequences and series, convergence criteria, the Cauchy integral test. Taylor series.\u003c/p\u003e",
+                "eligibility": "\u003cp\u003eBasic requirements.\u0026#160;\u003c/p\u003e",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.\u003cp\u003eThe examiner decides, in consultation with KTHs Coordinator of students with disabilities (Funka), about any customized examination for students with documented, lasting disability.\u003c/p\u003e",
+                "reqsForFinalGrade": "\u003cp\u003eWritten exam, possibly with the possibility of continuous examination.\u003c/p\u003e",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2019",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20192
+                }
+            }
+        },
+        {
+            "edition": 1,
+            "validFromTerm": {
+                "term": 20182
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "goals": "\u003cp\u003eAfter completing the course the student a passing grade to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eUse, explain and apply fundamental concepts and problem solving methods of one variable calculus, especially:\u003cbr /\u003e- Describe the fundamental characteristics of elementary functions, such as power laws, logarithm lawss and trigonometric formulas and use them in problem solving and calculations\u003cbr /\u003e- Calculating derivatives using, among other things, the product, quotient and the chain rule\u003cbr /\u003e- Using derivatives to investigate the properties of a function, for example, decide questions of increasing and decreasing behavior, sketch function graphs, determine the tangent, prove inequalities and find extreme values\u003cbr /\u003e- Using Taylor\u0027s formula to approximate functions with polynomials to desired degree of accuracy\u003cbr /\u003e- Account for the definition of the Riemann Integral and its applications, as well as approximate integrals with Riemann sums\u003cbr /\u003e- Calculate integrals using primitive functions, integration by parts, variable substitution and partial fractions\u003cbr /\u003e- Account for the fundamental theorem of calculus about the relationship between the derivative and integral, and use it in problem solving and calculations\u003cbr /\u003e- Solve some linear ordinary differential equations with constant coefficients and explain how they arise in applications\u003cbr /\u003e- Calculate limits and use these to study the behavior of functions locally or asymptotically\u003cbr /\u003e- Determine whether a given function is invertible and if possible calculate the inverse function\u003cbr /\u003e- Determine if certain series converges or diverges and if possible calculate them\u003c/li\u003e\u003cli\u003eSet up simple mathematical models for applications that can be described with the help of functions of one variable, and discuss such models relevance, plausibility and accuracy.\u003c/li\u003e\u003cli\u003eRead and understand mathematical text about functions of one variable and their applications, communicate mathematical reasoning and computations within this filed orally as well as in writing in such a way that they are easy to follow.\u003c/li\u003e\u003c/ul\u003e\u003cp\u003eFor higher grades, the student should be able to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eAccount for the theory of one variable calculus, with definitions, theorems and proofs\u003c/li\u003e\u003cli\u003eGeneralize and adapt methods to fit in new situations\u003c/li\u003e\u003cli\u003eSolve problems requiring a combination of methods, or more extensive calculations in several steps\u003c/li\u003e\u003cli\u003eSolve more advanced problems in, for example, limits, series, integrals and applications\u003c/li\u003e\u003c/ul\u003e",
+                "content": "\u003cp\u003eFunction, function graph, domain, range. Increasing and decreasing functions, odd and even functions. Inverse functions. The class of elementary functions. Unit circle, trigonometric formulas and equations, exponential and logarithmic functions, power laws, logarithms. Limits, rules for calculating limits, standard limits. Continuity, theorems on continuous functions. Derivative, rules of differentiation and applications: rate of change, linear approximation, tangent, extreme value problems, sketching the graph of a function, inequalities etc. Taylor\u0027s formula with error estimates. Linear differential equations with constant coefficients and their applications. Riemann integral, primitive functions, variable substitution, integration by parts, partial fractions. Riemann sums, geometric and other applications of integrals, improper integrals. Something about sequences and series. Something about numerical methods (eg Newton\u0027s method).\u003c/p\u003e",
+                "eligibility": "\u003cp\u003eBasic and specific requirements for engineering program.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eMandatory for first year, can not be read by other students\u003cbr /\u003e\u003c/strong\u003e\u003c/p\u003e",
+                "literature": "\u003cp\u003eRobert A. Adams, Christopher Essex, \u003cem\u003eCalculus - A Complete Course\u003c/em\u003e, 9th edition. ISBN 978-0-13-415436-7\u003c/p\u003e",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "reqsForFinalGrade": "\u003cp\u003eWritten exam, possibly with the possibility of continuous examination.\u003c/p\u003e",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2018",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20182
+                }
+            }
+        },
+        {
+            "edition": 1,
+            "validFromTerm": {
+                "term": 20152
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "goals": "\u003cp\u003eAfter completing the course the student a passing grade to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eUse, explain and apply fundamental concepts and problem solving methods of one variable calculus, especially:\u003cbr /\u003e- Describe the fundamental characteristics of elementary functions, such as power laws, logarithm lawss and trigonometric formulas and use them in problem solving and calculations\u003cbr /\u003e- Calculating derivatives using, among other things, the product, quotient and the chain rule\u003cbr /\u003e- Using derivatives to investigate the properties of a function, for example, decide questions of increasing and decreasing behavior, sketch function graphs, determine the tangent, prove inequalities and find extreme values\u003cbr /\u003e- Using Taylor\u0027s formula to approximate functions with polynomials to desired degree of accuracy\u003cbr /\u003e- Account for the definition of the Riemann Integral and its applications, as well as approximate integrals with Riemann sums\u003cbr /\u003e- Calculate integrals using primitive functions, integration by parts, variable substitution and partial fractions\u003cbr /\u003e- Account for the fundamental theorem of calculus about the relationship between the derivative and integral, and use it in problem solving and calculations\u003cbr /\u003e- Solve some linear ordinary differential equations with constant coefficients and explain how they arise in applications\u003cbr /\u003e- Calculate limits and use these to study the behavior of functions locally or asymptotically\u003cbr /\u003e- Determine whether a given function is invertible and if possible calculate the inverse function\u003cbr /\u003e- Determine if certain series converges or diverges and if possible calculate them\u003c/li\u003e\u003cli\u003eSet up simple mathematical models for applications that can be described with the help of functions of one variable, and discuss such models relevance, plausibility and accuracy.\u003c/li\u003e\u003cli\u003eRead and understand mathematical text about functions of one variable and their applications, communicate mathematical reasoning and computations within this filed orally as well as in writing in such a way that they are easy to follow.\u003c/li\u003e\u003c/ul\u003e\u003cp\u003eFor higher grades, the student should be able to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eAccount for the theory of one variable calculus, with definitions, theorems and proofs\u003c/li\u003e\u003cli\u003eGeneralize and adapt methods to fit in new situations\u003c/li\u003e\u003cli\u003eSolve problems requiring a combination of methods, or more extensive calculations in several steps\u003c/li\u003e\u003cli\u003eSolve more advanced problems in, for example, limits, series, integrals and applications\u003c/li\u003e\u003c/ul\u003e",
+                "content": "\u003cp\u003eFunction, function graph, domain, range. Increasing and decreasing functions, odd and even functions. Inverse functions. The class of elementary functions. Unit circle, trigonometric formulas and equations, exponential and logarithmic functions, power laws, logarithms. Limits, rules for calculating limits, standard limits. Continuity, theorems on continuous functions. Derivative, rules of differentiation and applications: rate of change, linear approximation, tangent, extreme value problems, sketching the graph of a function, inequalities etc. Taylor\u0027s formula with error estimates. Linear differential equations with constant coefficients and their applications. Riemann integral, primitive functions, variable substitution, integration by parts, partial fractions. Riemann sums, geometric and other applications of integrals, improper integrals. Something about sequences and series. Something about numerical methods (eg Newton\u0027s method).\u003c/p\u003e",
+                "eligibility": "\u003cp\u003eBasic and specific requirements for engineering program.\u003c/p\u003e\u003cp\u003e\u003cstrong\u003eMandatory for first year, can not be read by other students\u003cbr /\u003e\u003c/strong\u003e\u003c/p\u003e",
+                "literature": "\u003cp\u003eRobert A. Adams, Christopher Essex, \u003cem\u003eCalculus - A Complete Course\u003c/em\u003e, 8th edition. ISBN 978-0-321-78107-9.\u003c/p\u003e",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "reqsForFinalGrade": "\u003cp\u003eWritten exam, possibly with the possibility of continuous examination.\u003c/p\u003e",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2015",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20152
+                }
+            }
+        },
+        {
+            "edition": 2,
+            "validFromTerm": {
+                "term": 20142
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "goals": "\u003cp\u003eAfter completing this course with a passing grade the student should be able to\u003c/p\u003e\u003cul\u003e\u003cli\u003eUse, explain and apply the fundamental concepts and problem solving methods of one variable Calculus, especially:\u003cbr /\u003e- Use the derivative to investigate functions, e.g. sketch graphs and solve extremal value problems\u003cbr /\u003e\u0026#160;- Use Taylor\u0026#8217;s formula to approximate functions with polynomials to a desired degree of accuracy\u003cbr /\u003e\u0026#160;- Explain the definition of the Riemann integral and account for some of its applications, compute integrals using anti-derivatives, partial integration and change of variables\u003cbr /\u003e- Solve certain linear ordinary differential equations with constant coefficients and explain how they are used in applications\u003cbr /\u003e- Compute some elementary limits and use these to study the behavior of a function locally or asymptotically\u003c/li\u003e\u003cli\u003ePropose mathematical models for applications that can be described by functions of one variable, discuss relevance and accuracy of such models, and be aware of how mathematical software can be used, for example to plot graphs and solve equations\u003c/li\u003e\u003cli\u003eRead and understand mathematical text about functions of one variable and their applications, communicate mathematical reasoning and computations within this field orally as well as in writing in such a way that it is easy to follow\u003c/li\u003e\u003c/ul\u003e\u003cp\u003eFor the higher grades the student should also be able to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eDeduce some particularly important theorems and formulas\u003c/li\u003e\u003cli\u003eGeneralize and adapt the methods to fit in new situations\u003c/li\u003e\u003cli\u003eSolve problem that require complex computations in several steps\u003c/li\u003e\u003cli\u003eExplain the mathematical theory behind the concepts limit, continuity, series\u003c/li\u003e\u003c/ul\u003e",
+                "content": "\u003cp\u003eFunction, graph of a function. Transcendental function, the unit circle, trigonometric formlulas and equations, exponential function, logarithms, laws of the logarithm, powers. Limits, standard limits, continuity. The derivative, laws of derivation and applications: extremal value problems, curve sketching, inequalities. Taylor\u0026#8217;s formula with estimations of the error. Linear ordinary differential equations with constant coefficients and their applications. The Riemann integral, anti-derivatives, change of variables, partial integration, geometric and other applications of the integral, generalized integrals. Series.\u003c/p\u003e",
+                "eligibility": "\u003cp\u003eBasic and specific requirements for engineering program.\u003cbr /\u003e\u003cstrong\u003eMandatory for first year, can not be read by other students\u003cbr /\u003e\u003c/strong\u003e\u003c/p\u003e",
+                "literature": "\u003cp\u003eRobert A. Adams, Christopher Essex, \u003cem\u003eCalculus - A Complete Course\u003c/em\u003e, 8th edition. ISBN 978-0-321-78107-9.\u003c/p\u003e",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "reqsForFinalGrade": "\u003cp\u003eWritten exam, possibly with the possibility of continuous examination.\u003c/p\u003e",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2014",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20142
+                }
+            }
+        },
+        {
+            "edition": 1,
+            "validFromTerm": {
+                "term": 20132
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "goals": "\u003cp\u003eAfter completing this course with a passing grade the student should be able to\u003c/p\u003e\u003cul\u003e\u003cli\u003eUse, explain and apply the fundamental concepts and problem solving methods of one variable Calculus, especially:\u003cbr /\u003e- Use the derivative to investigate functions, e.g. sketch graphs and solve extremal value problems\u003cbr /\u003e\u0026#160;- Use Taylor\u0026#8217;s formula to approximate functions with polynomials to a desired degree of accuracy\u003cbr /\u003e\u0026#160;- Explain the definition of the Riemann integral and account for some of its applications, compute integrals using anti-derivatives, partial integration and change of variables\u003cbr /\u003e- Solve certain linear ordinary differential equations with constant coefficients and explain how they are used in applications\u003cbr /\u003e- Compute some elementary limits and use these to study the behavior of a function locally or asymptotically\u003c/li\u003e\u003cli\u003ePropose mathematical models for applications that can be described by functions of one variable, discuss relevance and accuracy of such models, and be aware of how mathematical software can be used, for example to plot graphs and solve equations\u003c/li\u003e\u003cli\u003eRead and understand mathematical text about functions of one variable and their applications, communicate mathematical reasoning and computations within this field orally as well as in writing in such a way that it is easy to follow\u003c/li\u003e\u003c/ul\u003e\u003cp\u003eFor the higher grades the student should also be able to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eDeduce some particularly important theorems and formulas\u003c/li\u003e\u003cli\u003eGeneralize and adapt the methods to fit in new situations\u003c/li\u003e\u003cli\u003eSolve problem that require complex computations in several steps\u003c/li\u003e\u003cli\u003eExplain the mathematical theory behind the concepts limit, continuity, series\u003c/li\u003e\u003c/ul\u003e",
+                "content": "\u003cp\u003eFunction, graph of a function. Transcendental function, the unit circle, trigonometric formlulas and equations, exponential function, logarithms, laws of the logarithm, powers. Limits, standard limits, continuity. The derivative, laws of derivation and applications: extremal value problems, curve sketching, inequalities. Taylor\u0026#8217;s formula with estimations of the error. Linear ordinary differential equations with constant coefficients and their applications. The Riemann integral, anti-derivatives, change of variables, partial integration, geometric and other applications of the integral, generalized integrals. Series.\u003c/p\u003e",
+                "eligibility": "\u003cp\u003eBasic and specific requirements for engineering program.\u003cbr /\u003e\u003cstrong\u003eMandatory for first year, can not be read by other students\u003cbr /\u003e\u003c/strong\u003e\u003c/p\u003e",
+                "literature": "\u003cp\u003ePersson\u0026amp;B\u0026#246;iers/Analys i en variabel.\u003cbr /\u003eLTH/\u0026#214;vningar i analys i en variabel.\u003cbr /\u003eKompletterande kompendium om serier som kan laddas ner fr\u0026#229;n kurshemsidan\u003c/p\u003e",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "reqsForFinalGrade": "\u003cp\u003eWritten exam, possibly with the possibility of continuous examination.\u003c/p\u003e",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2013",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20132
+                }
+            }
+        },
+        {
+            "edition": 2,
+            "validFromTerm": {
+                "term": 20102
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "goals": "\u003cp\u003eAfter completing this course with a passing grade the student should be able to\u003c/p\u003e\u003cul\u003e\u003cli\u003eUse, explain and apply the fundamental concepts and problem solving methods of one variable Calculus, especially:\u003cbr /\u003e- Use the derivative to investigate functions, e.g. sketch graphs and solve extremal value problems\u003cbr /\u003e\u0026#160;- Use Taylor\u0026#8217;s formula to approximate functions with polynomials to a desired degree of accuracy\u003cbr /\u003e\u0026#160;- Explain the definition of the Riemann integral and account for some of its applications, compute integrals using anti-derivatives, partial integration and change of variables\u003cbr /\u003e- Solve certain linear ordinary differential equations with constant coefficients and explain how they are used in applications\u003cbr /\u003e- Compute some elementary limits and use these to study the behavior of a function locally or asymptotically\u003c/li\u003e\u003cli\u003ePropose mathematical models for applications that can be described by functions of one variable, discuss relevance and accuracy of such models, and be aware of how mathematical software can be used, for example to plot graphs and solve equations\u003c/li\u003e\u003cli\u003eRead and understand mathematical text about functions of one variable and their applications, communicate mathematical reasoning and computations within this field orally as well as in writing in such a way that it is easy to follow\u003c/li\u003e\u003c/ul\u003e\u003cp\u003eFor the higher grades the student should also be able to:\u003c/p\u003e\u003cul\u003e\u003cli\u003eDeduce some particularly important theorems and formulas\u003c/li\u003e\u003cli\u003eGeneralize and adapt the methods to fit in new situations\u003c/li\u003e\u003cli\u003eSolve problem that require complex computations in several steps\u003c/li\u003e\u003cli\u003eExplain the mathematical theory behind the concepts limit, continuity, series\u003c/li\u003e\u003c/ul\u003e",
+                "content": "\u003cp\u003eFunction, graph of a function. Transcendental function, the unit circle, trigonometric formlulas and equations, exponential function, logarithms, laws of the logarithm, powers. Limits, standard limits, continuity. The derivative, laws of derivation and applications: extremal value problems, curve sketching, inequalities. Taylor\u0026#8217;s formula with estimations of the error. Linear ordinary differential equations with constant coefficients and their applications. The Riemann integral, anti-derivatives, change of variables, partial integration, geometric and other applications of the integral, generalized integrals. Series.\u003c/p\u003e",
+                "eligibility": "\u003cp\u003eBasic and specific requirements for engineering program.\u003cbr /\u003e\u003cstrong\u003eMandatory for first year, can not be read by other students\u003cbr /\u003e\u003c/strong\u003e\u003c/p\u003e",
+                "literature": "\u003cp\u003ePersson\u0026amp;B\u0026#246;iers/Analys i en variabel.\u003cbr /\u003eLTH/\u0026#214;vningar i analys i en variabel.\u003cbr /\u003eKompletterande kompendium om serier som kan laddas ner fr\u0026#229;n kurshemsidan\u003c/p\u003e",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "reqsForFinalGrade": "\u003cp\u003eWritten exam, possibly with the possibility of continuous examination.\u003c/p\u003e",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2010",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20102
+                }
+            }
+        },
+        {
+            "edition": 1,
+            "validFromTerm": {
+                "term": 20092
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2009",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20092
+                }
+            }
+        },
+        {
+            "edition": 1,
+            "validFromTerm": {
+                "term": 20082
+            },
+            "inStateApproved": true,
+            "courseSyllabus": {
+                "discontinuationText": "If the course is discontinued, students may request to be examined during the following two academic years",
+                "examComments": "Based on recommendation from KTH’s coordinator for disabilities, the examiner will decide how to adapt an examination for students with documented disability. \u003cbr\u003e\u003cbr\u003eThe examiner may apply another examination format when re-examining individual students.",
+                "establishment": "Course syllabus for SF1625 valid from Autumn 2008",
+                "languageOfInstruction": "The language of instruction is specified in the course offering information in the course catalogue.",
+                "ethicalApproach": "\u003cul\u003e\u003cli\u003eAll members of a group are responsible for the group\u0027s work.\u003c/li\u003e\u003cli\u003eIn any assessment, every student shall honestly disclose any help received and sources used.\u003c/li\u003e\u003cli\u003eIn an oral assessment, every student shall be able to present and answer questions about the entire assignment and solution.\u003c/li\u003e\u003c/ul\u003e",
+                "courseSyllabusVersionValidFromTerm": {
+                    "term": 20082
+                }
+            }
+        }
+    ],
+    "socialCoursePageUrl": "https://www.kth.se/social/course/SF1625/",
+    "formattedGradeScales": {
+        "AF": "A, B, C, D, E, FX, F"
+    }
+}
