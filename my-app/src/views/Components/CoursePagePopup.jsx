@@ -8,7 +8,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
       onClick={onClose}
     >
       <div
-        className="bg-indigo-300/70 backdrop-blur-lg h-full w-3/4 flex flex-col overflow-auto"
+        className="bg-indigo-300/75 backdrop-blur-lg h-full w-3/4 flex flex-col overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex-1">
@@ -37,10 +37,10 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
 
             {/* Description Section */}
             <div>
-              <h3 className="text-2xl font-bold text-[#3d3d68] mb-0">Course Description</h3>
+              <h3 className="text-2xl font-bold text-[#2e2e4f] mb-0.5">Course Description</h3>
               <div className="mb-3 h-0.5 w-full bg-violet-500"></div>
               <div
-                className="text-lg leading-8 text-[#2c2c2c] tracking-wide prose prose-slate max-w-full"
+                className="text-lg leading-8 text-[#2e2e4f] font-semibold tracking-wide prose prose-slate max-w-full"
                 dangerouslySetInnerHTML={{ __html: course.description }}
               />
                
@@ -48,21 +48,19 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
 
             {/* Prerequisite Graph Tree Section */}
             <div>
-              <h3 className="text-2xl font-semibold text-[#2e2e4f]">Prerequisite Graph Tree</h3>
-              <p className="text-lg text-slate-700 leading-7">Graph tree or prerequisite info will go here...</p>
+              <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Prerequisite Graph Tree</h3>
+              <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
+              <div className="bg-indigo-300/50">
+                {prerequisiteTree}
+              </div>
             </div>
             {/* Reviews Section */}
             <div>
-              <h3 className="text-2xl font-semibold text-[#2e2e4f]">Reviews</h3>
+              <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Reviews</h3>
+              <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
               <p className="text-lg text-slate-700 leading-7">Here would be some reviews of the course...</p>
             </div>
 
-            {/* Prerequisite Graph Tree Section */}
-            <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h3 style={{ fontFamily: 'Courier New, monospace', fontSize: '24px' }}>Prerequisite Graph Tree</h3>
-              {/* Placeholder for graph tree */}
-              {prerequisiteTree}
-            </div>
           </div>
         </div>
         <button
