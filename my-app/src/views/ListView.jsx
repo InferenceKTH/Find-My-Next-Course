@@ -65,7 +65,10 @@ function ListView(props) {
                             <div>
                                 <button
                                     className="text-yellow-500 cursor-pointer"
-                                    onClick={() => handleFavouriteClick(course)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();  // Prevent the event from bubbling up.
+                                        handleFavouriteClick(course);
+                                    }}
                                 >
                                     {props.favouriteCourses.some(fav => fav.code === course.code)
                                         ?
