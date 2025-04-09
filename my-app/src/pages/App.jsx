@@ -22,33 +22,6 @@ function App() {
 				<div className="flex-auto border overflow-auto bg-[#121212]">
 					<ListViewPresenter model={model} />
 				</div>
-				<button
-					onClick={() => setIsPopupOpen(true)}
-					className="px-4 py-2 bg-blue-500 text-white"
-				>
-					open
-				</button>
-				{isPopupOpen && (
-					<div
-						className="backdrop-blur-sm fixed inset-0 bg-transparent flex justify-end z-100"
-						onClick={() => setIsPopupOpen(false)}
-					>
-						<div
-							className="bg-indigo-400/70 backdrop-blur-sm h-full w-3/4 flex flex-col overflow-auto"
-							onClick={(e) => e.stopPropagation()}
-						>
-							<div className="flex-1">
-								<CourseView />
-							</div>
-							<button
-								onClick={() => setIsPopupOpen(false)}
-								className="px-4 py-2 bg-blue-500 text-white"
-							>
-								Close
-							</button>
-						</div>
-					</div>
-				)}
 			</div>
 		</div>
 	);

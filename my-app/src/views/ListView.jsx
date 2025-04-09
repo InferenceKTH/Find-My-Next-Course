@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Quantum } from 'ldrs/react';
 import 'ldrs/react/Quantum.css';
+import CoursePagePopupComponent from '../views/Components/CoursePagePopup.jsx';
+
 
 function ListView(props) {
     const coursesToDisplay = props.searchResults.length > 0 ? props.searchResults : props.courses;
     const [readMoreState, setReadMoreState] = useState({});
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [selectedCourse, setSelectedCourse] = useState(null);
+
 
     const toggleReadMore = (courseCode) => {
         setReadMoreState(prevState => (
@@ -19,12 +24,18 @@ function ListView(props) {
             props.addFavourite(course);
         }
     };
+  
 
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
             {coursesToDisplay.length > 0 ? (
                 coursesToDisplay.map((course) => (
                     <div
+                    onClick={() => {
+                        console.log('Clicked:', course); // check browser console
+                        setSelectedCourse(course);
+                        setIsPopupOpen(true);
+                    }}
                         key={course.code}
                         className="p-5 hover:bg-blue-100 flex items-center border border-b-black border-solid w-full rounded-lg cursor-pointer"
                     >
@@ -74,6 +85,12 @@ function ListView(props) {
                     color="#000061"
                 />
             )}
+             <CoursePagePopupComponent
+                isOpen={isPopupOpen}
+                onClose={() => setIsPopupOpen(false)}
+                
+                course={selectedCourse}
+                    />
         </div>
     );
 }
