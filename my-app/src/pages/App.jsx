@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { SidebarPresenter } from "../presenters/SidebarPresenter.jsx";
 import { SearchbarPresenter } from "../presenters/SearchbarPresenter.jsx";
 import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';
-import CourseView from '../views/CourseView.jsx';
 import {model} from '/src/model.js';
 
 function App() {
