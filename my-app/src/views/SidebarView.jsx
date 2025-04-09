@@ -4,6 +4,7 @@ import ToggleField from "./Components/SideBarComponents/ToggleField.jsx";
 import ButtonGroupField from "./Components/SideBarComponents/ButtonGroupField.jsx";
 import SliderField from "./Components/SideBarComponents/SliderField.jsx";
 import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
+import { UploadTranscriptPresenter } from '../presenters/UploadTranscriptPresenter.jsx';
 
 function SidebarView(props) {
     return (
@@ -14,10 +15,10 @@ function SidebarView(props) {
                 scrollbarColor: "#888 #f1f1f1",
             }}
         >
-            <UploadField/>
+            <UploadTranscriptPresenter/>
             <div className='flex-auto justify-center h-100 max-h-100 '>
-                <div class="z-10 w-100% rounded-lg justify-center" >
-                    <h6 class="m-2 text-lg font-medium text-white text-center">
+                <div className="z-10 w-100% rounded-lg justify-center" >
+                    <h6 className="m-2 text-lg font-medium text-white text-center">
                         Filters 
                     </h6>
                     <ToggleField

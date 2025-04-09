@@ -1,4 +1,6 @@
 import React from 'react';
+import PrerequisiteTree from "./PrerequisiteTree.jsx";
+
 // import {model} from '/src/model.js';
 
 export default function CourseView({ course }) {
@@ -37,15 +39,12 @@ export default function CourseView({ course }) {
                 />
             </div>
 
+
             {/* Prerequisite Graph Tree Section */}
-            <div>
-                <h3 className="text-2xl font-semibold text-[#2e2e4f]">Prerequisite Graph Tree</h3>
-                <p className="text-lg text-slate-700 leading-7">Graph tree or prerequisite info will go here...</p>
-            </div>
-            {/* Reviews Section */}
-            <div>
-                <h3 className="text-2xl font-semibold text-[#2e2e4f]">Reviews</h3>
-                <p className="text-lg text-slate-700 leading-7">Here would be some reviews of the course...</p>
+            <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
+                <h3 style={{ fontFamily: 'Courier New, monospace', fontSize: '24px' }}>Prerequisite Graph Tree</h3>
+                {/* Placeholder for graph tree */}
+                <PrerequisiteTree />
             </div>
 
         </div>
