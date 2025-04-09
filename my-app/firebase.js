@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { get, getDatabase, ref, set, onValue } from "firebase/database";
 import { reaction, toJS } from "mobx";
-
+// foo
 // Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyCBckVI9nhAP62u5jZJW3F4SLulUv7znis",
