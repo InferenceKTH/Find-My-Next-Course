@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SidebarPresenter } from "../presenters/SidebarPresenter.jsx";
 import { SearchbarPresenter } from "../presenters/SearchbarPresenter.jsx";
 import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';
 import {model} from '/src/model.js';
 
 function App() {
-	const [isPopupOpen, setIsPopupOpen] = useState(false);
-
 	return (
 		<div className="flex h-screen w-screen">
 			<div className="flex-auto w-40% h-full bg-gradient-to-t from-[#4f3646] to-[#6747c0]">

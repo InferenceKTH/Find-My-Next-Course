@@ -4,7 +4,12 @@ import SearchbarView from "../views/SearchbarView.jsx";
 
 const SearchbarPresenter = observer(({ model }) => {
     const searchCourses = (query) => {
-        model.searchCourses(query);
+        const searchResults = model.courses.filter(course =>
+            course.code.toLowerCase() === query.toLowerCase() ||
+            course.name.toLowerCase().includes(query.toLowerCase()) ||
+            course.description.toLowerCase().includes(query.toLowerCase())
+        );
+        model.setCurrentSearch(searchResults);
     }
 
     const removeFavourite = (course) => {
