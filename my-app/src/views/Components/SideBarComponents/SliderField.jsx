@@ -126,5 +126,5 @@ export default function UploadField(props) {
                 </div>
             </div>
         </div>
-    );
+      );
 }
