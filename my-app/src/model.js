@@ -1,4 +1,5 @@
-import { addCourse } from "../firebase";
+import { addCourse, addReview, getReviewsForCourse } from "../firebase"; // for reviews
+
 
 export const model = {
     user: undefined,
@@ -76,5 +77,29 @@ export const model = {
             course.description.toLowerCase().includes(query.toLowerCase())
         );
         this.setCurrentSearch(searchResults);
-    }
+    },
+
+
+    //for reviews
+    async addReview(courseCode, review) {
+        try {
+            await addReview({ ...review, courseCode });
+        } catch (error) {
+            console.error("Error adding review:", error);
+        }
+    },
+    
+    async getReviews(courseCode) {
+        try {
+            return await getReviewsForCourse(courseCode);
+        } catch (error) {
+            console.error("Error fetching reviews:", error);
+            return [];
+        }
+    },
+
+    
+    
+
+
 };

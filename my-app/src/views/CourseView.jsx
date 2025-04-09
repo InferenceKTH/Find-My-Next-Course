@@ -1,10 +1,13 @@
 import React from 'react';
 import PrerequisiteTree from "./PrerequisiteTree.jsx";
+import { useEffect, useState } from "react"; //for reviews
+import { model } from "../model"; //for reviews
 
-// import {model} from '/src/model.js';
 
-export default function CourseView({ course }) {
+
+export default function CourseView({ course, reviews, newReview, setNewReview, handleReviewSubmit }) {
     if (!course) return null;
+
     
     
     return (
@@ -44,11 +47,10 @@ export default function CourseView({ course }) {
                 <h3 className="text-2xl font-semibold text-[#2e2e4f]">Prerequisite Graph Tree</h3>
                 <p className="text-lg text-slate-700 leading-7">Graph tree or prerequisite info will go here...</p>
             </div>
-            {/* Reviews Section */}
-            <div>
-                <h3 className="text-2xl font-semibold text-[#2e2e4f]">Reviews</h3>
-                <p className="text-lg text-slate-700 leading-7">Here would be some reviews of the course...</p>
-            </div>
+
+
+
+           
 
 
             {/* Prerequisite Graph Tree Section */}
@@ -58,6 +60,33 @@ export default function CourseView({ course }) {
                 <PrerequisiteTree />
             </div>
 
+       
+
+         {/* Reviews Section */}
+         <div>
+         <h3 className="text-2xl font-semibold text-[#2e2e4f]">Reviews</h3>
+         <ul className="list-disc ml-6 text-slate-700 space-y-2">
+            {(reviews || []).map((rev, i) => (
+                <li key={i}><strong>{rev.userName}:</strong> {rev.text}</li>
+            ))}
+        </ul>
+     
+         <div className="mt-4">
+             <input
+                 type="text"
+                 placeholder="Your review"
+                 className="border rounded p-2 w-full"
+                 value={newReview}
+                 onChange={(e) => setNewReview(e.target.value)}
+             />
+             <button
+                 className="mt-2 bg-violet-600 text-white py-1 px-4 rounded"
+                onClick={handleReviewSubmit}
+             >
+                 Submit Review
+             </button>
+         </div>
         </div>
+     </div>
     );
 }

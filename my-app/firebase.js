@@ -137,3 +137,31 @@ export async function saveJSONCoursesToFirebase(model, data){
     });
 }
 
+// for reviews
+export async function addReview(courseCode, review) {
+    const reviewsRef = ref(db, `reviews/${courseCode}`);
+    const newReviewRef = push(reviewsRef);  // Firebase creates a unique key for each review
+    await set(newReviewRef, review);  // Save the review data to the generated ID
+}
+
+
+
+export async function getReviewsForCourse(courseCode) {
+    const reviewsRef = ref(db, `reviews/${courseCode}`);
+    const snapshot = await get(reviewsRef);
+    if (!snapshot.exists()) return [];
+
+    const reviews = [];
+    snapshot.forEach(childSnapshot => {
+        reviews.push({
+            id: childSnapshot.key,  // Firebase-generated unique key
+            userName: childSnapshot.val().userName,
+            text: childSnapshot.val().text
+        });
+    });
+    return reviews;
+}
+
+
+
+
