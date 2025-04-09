@@ -1,6 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react'
 
 function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
+
+  const treeRef = useRef(null);
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
+  const handleTreeClick = () => {
+    if (treeRef.current) {
+      treeRef.current.focus(); // gives it focus
+    }
+  };
+
   if (!isOpen || !course) return null; // Don't render if not open or course not selected
   return (
     <div
@@ -43,16 +67,26 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
                 className="text-lg leading-8 text-[#2e2e4f] font-semibold tracking-wide prose prose-slate max-w-full"
                 dangerouslySetInnerHTML={{ __html: course.description }}
               />
-               
+
             </div>
 
             {/* Prerequisite Graph Tree Section */}
             <div>
-              <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Prerequisite Graph Tree</h3>
+
+              <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">
+                Prerequisite Graph Tree
+              </h3>
               <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
-              <div className="bg-indigo-300/50">
+              <div
+                className="bg-indigo-300/50 outline-none focus:outline-none focus:ring-2 focus:ring-violet-600 rounded-lg transition-shadow"
+                ref={treeRef}
+                onClick={handleTreeClick}
+                tabIndex={0} // allows the div to receive focus
+              >
                 {prerequisiteTree}
               </div>
+
+
             </div>
             {/* Reviews Section */}
             <div>
