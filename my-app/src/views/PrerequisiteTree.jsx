@@ -65,7 +65,10 @@ function loadTree(course) {
 }
 
 const PrerequisiteTree = () => {
-    loadTree("SF2526");
+    if (initialNodes.length == 0){
+        loadTree("SF2526");
+    }
+    
 
     return (
         <div style={{ width: "100%", height: "500px" }}>
