@@ -1,4 +1,3 @@
-// dummy view, that returns text and a component state based counter.
 export function TestAllCoursesView(props) {
 
   return (

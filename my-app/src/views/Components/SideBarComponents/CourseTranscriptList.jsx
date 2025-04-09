@@ -5,7 +5,7 @@ export default function CourseTranscriptList() {
     if (localStorage.getItem("completedCourses"))
         local = JSON.parse(localStorage.getItem("completedCourses"));
 
-
+    // eslint-disable-next-line no-unused-vars
     window.addEventListener("completedCourses changed", event => {
         if (localStorage.getItem("completedCourses"))
             local = JSON.parse(localStorage.getItem("completedCourses"));
@@ -47,7 +47,7 @@ export default function CourseTranscriptList() {
             </div>
 
             {/* Container for multiple items per row */}
-            <div className="grid grid-cols-3 w-full max-[1200px]:grid-cols-2 gap-1 sm:gap-2">
+            <div className="grid grid-cols-3 w-full max-[1200px]:grid-cols-2 max-[700px]:grid-cols-1 gap-1 sm:gap-2">
                 {items.map((item, index) => (
                     <div
                         key={index}
