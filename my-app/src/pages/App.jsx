@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SidebarPresenter } from "../presenters/SidebarPresenter.jsx";
 import { SearchbarPresenter } from "../presenters/SearchbarPresenter.jsx";
 import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';

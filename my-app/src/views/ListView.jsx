@@ -11,14 +11,6 @@ function ListView(props) {
             { ...prevState, [courseCode]: !prevState[courseCode] }
         ));
     };
-
-    const handleFavouriteClick = (course) => {
-        if (props.favouriteCourses.some(fav => fav.code === course.code)) {
-            props.removeFavourite(course);
-        } else {
-            props.addFavourite(course);
-        }
-    };
   
 
     return (

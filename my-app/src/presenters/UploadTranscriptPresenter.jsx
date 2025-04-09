@@ -7,7 +7,7 @@ import UploadField from '../views/Components/SideBarComponents/UploadField';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 
-const UploadTranscriptPresenter = observer(({ model }) => {
+const UploadTranscriptPresenter = observer(() => {
     const [errorMessage, setErrorMessage] = useState(""); // Stores error message
     const [errorVisibility, setErrorVisibility] = useState("hidden"); // Controls visibility
     const [fileInputValue, setFileInputValue] = useState(""); // Controls upload field state

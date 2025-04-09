@@ -19,6 +19,14 @@ const ListViewPresenter = observer(({ model }) => {
         model.removeFavourite(course);
     }
 
+    function handleFavouriteClick(course){
+        if (props.favouriteCourses.some(fav => fav.code === course.code)) {
+            props.removeFavourite(course);
+        } else {
+            props.addFavourite(course);
+        }
+    };
+
     return <ListView
         courses={model.courses}
         searchResults={model.currentSearch}
