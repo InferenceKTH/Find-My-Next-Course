@@ -16,12 +16,17 @@ const SearchbarPresenter = observer(({ model }) => {
         model.removeFavourite(course);
     }
 
+    function removeAllFavourites(){
+        model.setFavourite([]);
+    }
+
     return (
         <SearchbarView
             model={model}
             searchCourses={searchCourses}
             favouriteCourses = {model.favourites}
             removeFavourite={removeFavourite}
+            removeAllFavourites={removeAllFavourites}
         />
     );
 });
