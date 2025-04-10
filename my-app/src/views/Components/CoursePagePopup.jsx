@@ -19,14 +19,14 @@ function CoursePagePopup({
       }
     };
 
-    if (isOpen) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
+		if (isOpen) {
+			window.addEventListener("keydown", handleKeyDown);
+		}
 
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isOpen, onClose]);
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [isOpen, onClose]);
 
   const handleTreeClick = () => {
     if (treeRef.current) {
@@ -116,6 +116,5 @@ function CoursePagePopup({
       </div>
     </div>
   );
-}
 
 export default CoursePagePopup;
