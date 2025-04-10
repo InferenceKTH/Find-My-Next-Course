@@ -6,9 +6,9 @@ import SliderField from "./Components/SideBarComponents/SliderField.jsx";
 import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
 import { UploadTranscriptPresenter } from '../presenters/UploadTranscriptPresenter.jsx';
 
+
 function SidebarView(props) {
     console.log("view ", props);
-    
     return (
         <div className='object-center text-white p-3 pt-15  flex-col h-screen
          overflow-y-scroll'

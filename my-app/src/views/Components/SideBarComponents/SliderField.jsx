@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 
-
 export default function UploadField(props) {
     const values = [
         1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5,

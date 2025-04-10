@@ -82,4 +82,5 @@ export const model = {
     updateLanguage(languages) {
         this.filterOptions.language = languages;
     }
+
 };
