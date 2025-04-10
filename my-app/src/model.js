@@ -74,7 +74,6 @@ export const model = {
             this.addCourse(course);
         });
     },
-
     //for reviews
     async addReview(courseCode, review) {
         try {
@@ -102,4 +101,5 @@ export const model = {
     updateLanguage(languages) {
         this.filterOptions.language = languages;
     }
+
 };
