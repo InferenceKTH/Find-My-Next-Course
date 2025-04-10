@@ -83,5 +83,5 @@ export const model = {
             console.error("Error fetching reviews:", error);
             return [];
         }
-    },  
+    },
 };
