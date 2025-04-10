@@ -113,7 +113,7 @@ function ListView(props) {
                     ))}
                 </InfiniteScroll>
             )}
-            {props.popUp}
+            {props.popup}
         </div>
     );
 }

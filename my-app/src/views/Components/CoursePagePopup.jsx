@@ -1,8 +1,17 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 
-function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
-
+function CoursePagePopup({
+  favouriteCourses,
+  addFavourite,
+  removeFavourite,
+  handleFavouriteClick,
+  isOpen,
+  onClose,
+  course,
+  prerequisiteTree
+}) {
   const treeRef = useRef(null);
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
@@ -26,6 +35,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
   };
 
   if (!isOpen || !course) return null; // Don't render if not open or course not selected
+
   return (
     <div
       className="fixed backdrop-blur-sm inset-0 bg-transparent flex justify-end z-50"
@@ -41,21 +51,22 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
             <div>
               <h2 className="text-5xl font-extrabold text-[#2e2e4f] ">
                 <span className="text-violet-700">{course.code}</span> - {course.name}
-                <span className="ml-4 text-lg text-violet-700">({course.credits} Credits)</span>
+                <span className="ml-4 text-lg text-violet-700 whitespace-nowrap">({course.credits} Credits)</span>
               </h2>
               <div className="my-6 h-1.5 w-full bg-violet-500"></div>
             </div>
             <div>
               <button
-                className="text-yellow-500 cursor-pointer"
+                className="text-yellow-100 bg-yellow-400 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation(); // prevent popup from opening
-                  PaymentResponse.handleFavouriteClick(course.code);
+                  // Pass the full course object now instead of course.code:
+                  handleFavouriteClick(course);
                 }}
               >
-                {/* {model.favouriteCourses.includes(course.code)
+                {favouriteCourses.some(fav => fav.code === course.code)
                         ? 'Remove from Favourites'
-                        : 'Add to Favourites'} */}
+                        : 'Add to Favourites'} 
               </button>
             </div>
 
@@ -67,8 +78,7 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
                 className="text-lg leading-8 text-[#2e2e4f] font-semibold tracking-wide prose prose-slate max-w-full"
                 dangerouslySetInnerHTML={{ __html: course.description }}
               />
-
-            </div>
+            </div>  
 
             {/* Prerequisite Graph Tree Section */}
             <div>
@@ -85,16 +95,16 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
               >
                 {prerequisiteTree}
               </div>
-
-
             </div>
+
             {/* Reviews Section */}
             <div>
               <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Reviews</h3>
               <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
-              <p className="text-lg text-slate-700 leading-7">Here would be some reviews of the course...</p>
+              <p className="text-lg text-slate-700 leading-7">
+                Here would be some reviews of the course...
+              </p>
             </div>
-
           </div>
         </div>
         <button
