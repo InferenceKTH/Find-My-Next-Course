@@ -35,83 +35,82 @@ function ListView(props) {
 
     const fetchMoreCourses = useCallback(() => {
         if (!hasMore) return;
-
+    
         const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 10);
-
         setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
         setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
     }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
     return (
-        <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
+        <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
             {isLoading ? (
                 <div className="flex justify-center items-center h-full">
                     <Quantum size="400" speed="10" color="#000061" />
                 </div>
             ) : (
-                <InfiniteScroll
-                    dataLength={displayedCourses.length}
-                    next={fetchMoreCourses}
-                    hasMore={hasMore}
-                    loader={
-                        <div className="text-center py-3">
-                            <DotPulse size="100" speed="1.3" color="black" />
-                        </div>
-                    }
-                    endMessage={<p className="text-center py-2">No more courses</p>}
-                    scrollThreshold="200px"
-                >
-                    {displayedCourses.map(course => (
-                        <div
-                            onClick={() => {
-                                props.setSelectedCourse(course);
-                                props.setIsPopupOpen(true);
-                            }}
-                            key={course.code}
-                            className="p-5 mb-3 hover:bg-blue-100 flex items-center border border-b-black border-solid w-full rounded-lg cursor-pointer"
-                        >
-                            <div>
-                                <p className="font-bold text-[#000061]">{course.code}</p>
-                                <p className="font-bold">{course.name}</p>
-                                <p
-                                    className="text-gray-600"
-                                    dangerouslySetInnerHTML={{
-                                        __html: readMore[course.code]
-                                            ? course.description
-                                            : course.description.slice(0, 150),
-                                    }}
-                                />
-                                {course.description.length > 150 && (
-                                    <span
-                                        className="text-blue-500 cursor-pointer"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            toggleReadMore(course.code);
-                                        }}
-                                    >
-                                        {readMore[course.code] ? ' show less' : ' read more'}
-                                    </span>
-                                )}
+                <div className="overflow-y-auto h-full" id="scrollableDiv">
+                    <InfiniteScroll
+                        dataLength={displayedCourses.length}
+                        next={fetchMoreCourses}
+                        hasMore={hasMore}
+                        loader={
+                            <div className="text-center py-3">
+                                <DotPulse size="100" speed="1.3" color="black" />
+                            </div>
+                        }
+                        endMessage={<p className="text-center py-2">No more courses</p>}
+                        scrollThreshold={0.9} // 90% of the container height
+                        scrollableTarget="scrollableDiv"
+                    >
+                        {displayedCourses.map(course => (
+                            <div
+                                onClick={() => {
+                                    props.setSelectedCourse(course);
+                                    props.setIsPopupOpen(true);
+                                }}
+                                key={course.code}
+                                className="p-5 mb-3 hover:bg-blue-100 flex items-center border border-b-black border-solid w-full rounded-lg cursor-pointer"
+                            >
                                 <div>
-                                    <button
-                                        className="text-yellow-500 cursor-pointer"
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            handleFavouriteClick(course);
+                                    <p className="font-bold text-[#000061]">{course.code}</p>
+                                    <p className="font-bold">{course.name}</p>
+                                    <p
+                                        className="text-gray-600"
+                                        dangerouslySetInnerHTML={{
+                                            __html: readMore[course.code]
+                                                ? course.description
+                                                : course.description.slice(0, 150),
                                         }}
-                                    >
-                                        {props.favouriteCourses.some(fav => fav.code === course.code)
-                                            ?
-                                            'Unfavourite'
-                                            :
-                                            'Favourite'
-                                        }
-                                    </button>
+                                    />
+                                    {course.description.length > 150 && (
+                                        <span
+                                            className="text-blue-500 cursor-pointer"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                toggleReadMore(course.code);
+                                            }}
+                                        >
+                                            {readMore[course.code] ? ' show less' : ' read more'}
+                                        </span>
+                                    )}
+                                    <div>
+                                        <button
+                                            className="text-yellow-500 cursor-pointer"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleFavouriteClick(course);
+                                            }}
+                                        >
+                                            {props.favouriteCourses.some(fav => fav.code === course.code)
+                                                ? 'Unfavourite'
+                                                : 'Favourite'}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </InfiniteScroll>
+                        ))}
+                    </InfiniteScroll>
+                </div>
             )}
             {props.popup}
         </div>

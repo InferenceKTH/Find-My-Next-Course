@@ -8,16 +8,17 @@ function FavouritesDropdown(props) {
             {props.favouriteCourses.length > 0 ? (
                 props.favouriteCourses.map(course => (
                     <div
+
                         onClick={() => {
                             console.log('Clicked:', course);
                             props.setSelectedCourse(course);
                             props.setIsPopupOpen(true);
                         }}
                         key={course.code}
-                        className="p-2 flex justify-between items-center w-full border border-solid border-black">
+                        className="p-2 hover:bg-blue-100 cursor-pointer flex justify-between items-center w-full border border-solid border-black">
                         <p className="text-black">{course.name}</p>
                         <button
-                            className="text-red-500 cursor-pointer"
+                            className="text-red-500  hover:bg-blue-100 cursor-pointer"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 props.removeFavourite(course);
