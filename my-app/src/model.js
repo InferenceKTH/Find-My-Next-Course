@@ -1,4 +1,5 @@
-import { addCourse } from "../firebase";
+import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"; // for reviews
+
 
 export const model = {
     user: undefined,
@@ -64,5 +65,24 @@ export const model = {
             };
             this.addCourse(course);
         });
+    },
+
+    //for reviews
+    async addReview(courseCode, review) {
+        try {
+            await addReviewForCourse(courseCode, review);
+
+        } catch (error) {
+            console.error("Error adding review:", error);
+        }
+    },
+    
+    async getReviews(courseCode) {
+        try {
+            return await getReviewsForCourse(courseCode);
+        } catch (error) {
+            console.error("Error fetching reviews:", error);
+            return [];
+        }
     },
 };
