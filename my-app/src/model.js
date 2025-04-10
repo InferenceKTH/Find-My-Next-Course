@@ -1,20 +1,15 @@
-import { addCourse } from "../firebase";
+import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"; // for reviews
+
 
 export const model = {
     user: undefined,
-    currentCourse: undefined,
     currentSearch: [],
     courses: [],
     favourites: [],
-    isReady: false,
 
     setUser(user) {
         if (!this.user)
             this.user = user;
-    },
-
-    setCurrentCourse(course){
-        this.currentCourse = course;
     },
 
     setCurrentSearch(searchResults){
@@ -32,6 +27,9 @@ export const model = {
         } catch (error) {
             console.error("Error adding course:", error);
         }
+    },
+    setFavourite(favorites){
+        this.favourites = favorites;
     },
 
     addFavourite(course) {
@@ -69,12 +67,22 @@ export const model = {
         });
     },
 
-    searchCourses(query) {
-        const searchResults = this.courses.filter(course =>
-            course.code.toLowerCase() === query.toLowerCase() ||
-            course.name.toLowerCase().includes(query.toLowerCase()) ||
-            course.description.toLowerCase().includes(query.toLowerCase())
-        );
-        this.setCurrentSearch(searchResults);
-    }
+    //for reviews
+    async addReview(courseCode, review) {
+        try {
+            await addReviewForCourse(courseCode, review);
+
+        } catch (error) {
+            console.error("Error adding review:", error);
+        }
+    },
+    
+    async getReviews(courseCode) {
+        try {
+            return await getReviewsForCourse(courseCode);
+        } catch (error) {
+            console.error("Error fetching reviews:", error);
+            return [];
+        }
+    },
 };

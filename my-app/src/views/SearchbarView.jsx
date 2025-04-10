@@ -71,6 +71,14 @@ function SearchbarView(props) {
                             courses={props.courses}
                             favouriteCourses={props.favouriteCourses}
                             removeFavourite={props.removeFavourite}
+                            removeAllFavourites={props.removeAllFavourites}
+                            popup={props.popup}
+                            addFavourite={props.addFavourite}
+                            isPopupOpen={props.isPopupOpen}
+                            setIsPopupOpen={props.setIsPopupOpen}
+                            setSelectedCourse={props.setSelectedCourse}
+                           
+                            handleFavouriteClick={props.handleFavouriteClick}
                         />
                     )}
                 </div>
