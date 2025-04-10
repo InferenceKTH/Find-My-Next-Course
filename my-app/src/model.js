@@ -4,6 +4,7 @@ import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"
 export const model = {
     user: undefined,
     currentSearch: [],
+    currentSearchText: "",
     currentScrollPosition : "",
     courses: [],
     favourites: [],
@@ -15,6 +16,10 @@ export const model = {
 
     setCurrentSearch(searchResults){
         this.currentSearch = searchResults;
+    },
+
+    setCurrentSearchText(text){
+        this.currentSearchText = text;
     },
 
     setCourses(courses){

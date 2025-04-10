@@ -9,6 +9,7 @@ const SearchbarPresenter = observer(({ model }) => {
             course.name.toLowerCase().includes(query.toLowerCase()) ||
             course.description.toLowerCase().includes(query.toLowerCase())
         );
+        model.setCurrentSearchText(query);
         model.setCurrentSearch(searchResults);
     }
 
