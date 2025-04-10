@@ -20,7 +20,7 @@ export const ReviewPresenter = observer(({ model, course }) => {
     const handleReviewSubmit = async () => {
         if (newReview.trim()) {
             const review = {
-                userName: model.user?.name || "Anonymous",
+                userName: model.user?.displayName || "Anonymous",
                 text: newReview,
                 timestamp: Date.now(), //timestamp
             };
