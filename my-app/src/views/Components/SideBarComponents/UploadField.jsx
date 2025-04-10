@@ -1,5 +1,6 @@
 import React from 'react';
 import CourseTranscriptList from './CourseTranscriptList';
+import FilterEnableCheckbox from "./FilterEnableCheckbox";
 //import * as scraper from '../../../../src/scripts/transcript-scraper/transcript-scraper.js';
 import { useState } from "react";
 
@@ -7,6 +8,7 @@ export default function UploadField(props) {
 
 
     const [isDragging, setIsDragging] = useState(false);
+    const [filterEnabled, setFilterEnabled] = useState(true);
 
     const handleDragOver = (event) => {
         event.preventDefault(); // Prevent default behavior (to allow drop)
@@ -44,13 +46,28 @@ export default function UploadField(props) {
                     <input id="PDF-Scraper-Input" type="file" className="hidden" onChange={props.handleFileChange} />
                 </label>
             </div>
-            <p className='text-sm opacity-50 pt-3'> Describe how the Transcript upload works</p>
+            <div className="mb-2 text-white flex justify-between">
+                <div className="flex items-center text-wrap max-w-70">
+                    <p className='text-sm opacity-50'>
+                        Describe how the Transcript upload works
+                    </p>
+                </div>
+                <div className='pt-2'>
+
+                    <FilterEnableCheckbox
+                        onToggle={() => { setFilterEnabled(!filterEnabled); props.HandleFilterEnable(["Transcript", !filterEnabled]); }}
+                    />
+                </div>
+            </div>
             <div className='max-w-70'>
                 <pre id="PDF-Scraper-Error" className={`text-red-500 text-xs text-wrap ${props.errorVisibility}`}>
                     {props.errorMessage}
                 </pre>
             </div>
-            <CourseTranscriptList />
+            <div className={`opacity-${filterEnabled ? "100" : "50"} ${filterEnabled ? "pointer-events-auto" : "pointer-events-none user-select-none"
+                }`}>
+                <CourseTranscriptList />
+            </div>
         </div>
     );
 }
