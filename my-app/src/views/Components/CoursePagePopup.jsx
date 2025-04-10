@@ -80,7 +80,7 @@ function CoursePagePopup({
                 className="text-lg leading-8 text-[#2e2e4f] font-semibold tracking-wide prose prose-slate max-w-full"
                 dangerouslySetInnerHTML={{ __html: course.description }}
               />
-            </div>
+            </div>  
 
             {/* Prerequisite Graph Tree Section */}
             <div>

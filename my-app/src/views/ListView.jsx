@@ -86,7 +86,7 @@ function ListView(props) {
                     color="#000061"
                 />
             )}
-             {props.popUp}
+            {props.popup}
         </div>
     );
 }

@@ -43,7 +43,7 @@ const ListViewPresenter = observer(({ model }) => {
         isPopupOpen={isPopupOpen}
         setIsPopupOpen={setIsPopupOpen}
         setSelectedCourse={setSelectedCourse}
-        popUp={popup}
+        popup={popup}
         handleFavouriteClick={handleFavouriteClick}
 
     />;
