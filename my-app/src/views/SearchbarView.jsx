@@ -71,6 +71,7 @@ function SearchbarView(props) {
                             courses={props.courses}
                             favouriteCourses={props.favouriteCourses}
                             removeFavourite={props.removeFavourite}
+                            removeAllFavourites={props.removeAllFavourites}
                         />
                     )}
                 </div>
