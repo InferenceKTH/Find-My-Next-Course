@@ -1,52 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-<<<<<<< HEAD
-function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
-  if (!isOpen || !course) return null; // Don't render if not open or course not selected
-  return (
-    <div
-      className="fixed backdrop-blur-sm inset-0 bg-transparent flex justify-end z-50"
-      onClick={onClose}
-    >
-      <div
-        className="bg-indigo-300/70 backdrop-blur-lg h-full w-3/4 flex flex-col overflow-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex-1">
-          <div className="px-10 py-10 md:px-20 md:py-16 text-slate-900 space-y-12 font-sans">
-            {/* Course Title Section */}
-            <div>
-              <h2 className="text-5xl font-extrabold text-[#2e2e4f] ">
-                <span className="text-violet-700">{course.code}</span> - {course.name}
-                <span className="ml-4 text-lg text-violet-700">({course.credits} Credits)</span>
-              </h2>
-              <div className="my-6 h-1.5 w-full bg-violet-500"></div>
-            </div>
-            <div>
-              <button
-                className="text-yellow-500 cursor-pointer"
-                onClick={(e) => {
-                  e.stopPropagation(); // prevent popup from opening
-                  handleFavouriteClick(course.code);
-                }}
-              >
-                {/* {model.favouriteCourses.includes(course.code)
-                        ? 'Remove from Favourites'
-                        : 'Add to Favourites'} */}
-              </button>
-            </div>
-
-            {/* Description Section */}
-            <div>
-              <h3 className="text-2xl font-bold text-[#3d3d68] mb-0">Course Description</h3>
-              <div className="mb-3 h-0.5 w-full bg-violet-500"></div>
-              <div
-                className="text-lg leading-8 text-[#2c2c2c] tracking-wide prose prose-slate max-w-full"
-                dangerouslySetInnerHTML={{ __html: course.description }}
-              />
-               
-            </div>
-=======
 function CoursePagePopup({
                              favouriteCourses,
                              handleFavouriteClick,
@@ -77,7 +30,6 @@ function CoursePagePopup({
             treeRef.current.focus();
         }
     };
->>>>>>> ee2188cfb5b8df8b8c6fc633c807995b4bf6609d
 
     if (!isOpen || !course) return null;
 
