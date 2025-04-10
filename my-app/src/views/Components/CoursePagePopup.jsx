@@ -51,7 +51,7 @@ function CoursePagePopup({
             <div>
               <h2 className="text-5xl font-extrabold text-[#2e2e4f] ">
                 <span className="text-violet-700">{course.code}</span> - {course.name}
-                <span className="ml-4 text-lg text-violet-700">({course.credits} Credits)</span>
+                <span className="ml-4 text-lg text-violet-700 whitespace-nowrap">({course.credits} Credits)</span>
               </h2>
               <div className="my-6 h-1.5 w-full bg-violet-500"></div>
             </div>
