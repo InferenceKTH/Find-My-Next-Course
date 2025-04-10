@@ -39,7 +39,6 @@ export default function UploadField(props) {
             creditMax: values[Math.min(index, maxIndex - 1)],
             creditMin: values[Math.max(index, maxIndex + 1)]
         }
-        props.model.updateFilter(sliderParams);
 
     };
 
@@ -59,7 +58,7 @@ export default function UploadField(props) {
                     className="relative h-3 bg-gray-300 rounded-full cursor-pointer"
                     onMouseDown={(e) => handleDrag(e, "bar")}
                     onTouchStart={(e) => handleDrag(e, "bar")}
-                >
+                    onMouseUp={props.HandleFilterChange}>
                     {/* Selected range bar */}
                     <div
                         className="absolute h-full bg-violet-500 rounded-full"

@@ -4,8 +4,8 @@ import SidebarView from "../views/SidebarView.jsx";
 
 
 const SidebarPresenter = observer(({ model }) => {
-    console.log("presenter ", model);
     const HandleFilterChange = () => {
+        console.log("presenter ", model);
         model.updateLanguage();
     }
     return (

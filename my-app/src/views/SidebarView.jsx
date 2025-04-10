@@ -28,7 +28,7 @@ function SidebarView(props) {
                     />
                     <ToggleField
                         fields={["English", "Swedish"]}
-                        HandleLanguage = {props.HandleFilterChange}
+                        HandleFilterChange = {props.HandleFilterChange}
                     />
 
                     {/*expanding list for department */}
@@ -40,7 +40,7 @@ function SidebarView(props) {
                     <ButtonGroupField
                         items={["item 1", "item 2", "item 3"]}
                     />
-                    <SliderField props={props} />
+                    <SliderField HandleFilterChange = {props.HandleFilterChange}/>
                     <DropDownField
                         options={["option 1", "option 2", "option 3", "option 4", "option 5"]}
                     />

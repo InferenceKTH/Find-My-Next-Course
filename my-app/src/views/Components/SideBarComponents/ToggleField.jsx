@@ -19,7 +19,7 @@ export default function ToggleField(props) {
                 first:rounded-t-md last:rounded-b-md sm:first:rounded-s-md sm:mt-0 sm:first:ms-0 s
                 m:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-md text-sm font-medium
                 focus:z-10 border border-gray-200  shadow-2xs cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" onChange={props.HandleLanguage} />
+                    <input type="checkbox" value="" className="sr-only peer" onChange={props.HandleFilterChange} />
                     <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none 
                     peer-focus:ring-4 peer-focus:ring-blue-300 
                     rounded-full peer  peer-checked:after:translate-x-full
@@ -33,7 +33,7 @@ export default function ToggleField(props) {
                 first:rounded-t-md last:rounded-b-md sm:first:rounded-s-md sm:mt-0 sm:first:ms-0 s
                 m:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-md text-sm font-medium
                 focus:z-10 border border-gray-200  shadow-2xs cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" onChange={props.HandleLanguage}/>
+                    <input type="checkbox" value="" className="sr-only peer" onChange={props.HandleFilterChange}/>
                     <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 
                     peer-focus:ring-blue-300  rounded-full peer
                       peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full

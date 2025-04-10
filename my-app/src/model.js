@@ -7,10 +7,17 @@ export const model = {
     courses: [],
     favourites: [],
     isReady: false,
-    filterOptions : {
+    filtersChange: false,
+    filteredCourses: [],
+    filterOptions: {
+        applyTranscriptFilter: false,
+        applyLevelFilter:false,
         level: "none",
+        applyLanguageFilter: false,
         language: "none",
+        applyLocationFilter:false,
         location: "none",
+        applyCreditsFilter:false,
         creditMin: 0,
         creditMax: 45,
     },
@@ -100,6 +107,12 @@ export const model = {
 
     updateLanguage(languages) {
         this.filterOptions.language = languages;
+    },
+    updateLevel(level) {
+        this.filterOptions.level = level;
+    },
+    updateLocation(location) {
+        this.filterOptions.location = location;
     }
 
 };
