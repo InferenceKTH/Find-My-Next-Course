@@ -1,6 +1,5 @@
 import { addCourse } from "../firebase";
-import { DateTime } from "luxon"; //reviews
-//import { generateUsername, generateAvatar } from './utils';// reviews
+import { DateTime } from "luxon";
 
 export const model = {
     user: undefined,
@@ -67,30 +66,31 @@ export const model = {
             this.addCourse(course);
         });
     },
+
+    getChildComments(comment, comments){
+        return comment[comments];
+        // return comments.filter(c => c.parentCommentId === comment.id);
+    },
 };
 
 
 // for reviews
 
-export class Comment {
-  constructor({ id = null, username = generateUsername(), avatar = generateAvatar(), commentDate = DateTime.now(), commentText, upvotes = 0, parentCommentId = null } = {}) {
-    this.id = id;
-    this.username = username;
-    this.avatar = avatar;
-    this.commentDate = commentDate;
-    this.commentText = commentText;
-    this.upvotes = upvotes;
-    this.parentCommentId = parentCommentId;
-  }
-}
-
-export const getChildComments = (comment, comments) => {
-  return comments.filter(c => c.parentCommentId === comment.id);
-}
+// export class Comment {
+//   constructor({ id = null, username = generateUsername(), avatar = generateAvatar(), commentDate = DateTime.now(), commentText, upvotes = 0, parentCommentId = null } = {}) {
+//     this.id = id;
+//     this.username = username;
+//     this.avatar = avatar;
+//     this.commentDate = commentDate;
+//     this.commentText = commentText;
+//     this.upvotes = upvotes;
+//     this.parentCommentId = parentCommentId;
+//   }
+// }
 
 
 //this should instead get the username
-export const generateUsername = () => {
+// export const generateUsername = () => {
     // const usernames = [
     //   'Clarence Richardson',
     //   'Nellie Zavala',
@@ -104,28 +104,24 @@ export const generateUsername = () => {
     //   'Mariella Howell'
     // ]
     // const randomIndex = Math.floor(Math.random() * 10)
-    return usernames[randomIndex]
-  }
+//     return usernames[randomIndex]
+//   }
   
 
 
-  export const generateAvatar = () => {
-    const avatars = [
-      '/images/avatars/avatar-0.svg',
-      '/images/avatars/avatar-1.svg',
-      '/images/avatars/avatar-2.svg',
-      '/images/avatars/avatar-3.svg',
-      '/images/avatars/avatar-4.svg',
-      '/images/avatars/avatar-5.svg',
-      '/images/avatars/avatar-6.svg',
-      '/images/avatars/avatar-7.svg',
-      '/images/avatars/avatar-8.svg',
-      '/images/avatars/avatar-9.svg'
-    ]
-    const randomIndex = Math.floor(Math.random() * 10)
-    return avatars[randomIndex]
-  }
-  
-  export const getChildComments = (comment, comments) => {
-    return comments.filter(c => c.parentCommentId === comment.id)
-  }
+//   export const generateAvatar = () => {
+//     const avatars = [
+//       '/images/avatars/avatar-0.svg',
+//       '/images/avatars/avatar-1.svg',
+//       '/images/avatars/avatar-2.svg',
+//       '/images/avatars/avatar-3.svg',
+//       '/images/avatars/avatar-4.svg',
+//       '/images/avatars/avatar-5.svg',
+//       '/images/avatars/avatar-6.svg',
+//       '/images/avatars/avatar-7.svg',
+//       '/images/avatars/avatar-8.svg',
+//       '/images/avatars/avatar-9.svg'
+//     ]
+//     const randomIndex = Math.floor(Math.random() * 10)
+//     return avatars[randomIndex]
+//   }

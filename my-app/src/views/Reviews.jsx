@@ -1,18 +1,13 @@
 import { useState, useEffect, useCallback } from 'react'
 import { DateTime } from 'luxon'
-import { getChildComments, generateAvatar } from './utils'
-import Comment from './models/comment'
-import useWebSocket from './webSocketHook'
 
-function App() {
+export function ReviewView(props) {
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [comments, setComments] = useState([])
   const [commentReplyStatuses, setCommentReplyStatuses] = useState({})
   const [inputValues, setInputValues] = useState({})
   const [avatarsForNewComments, setAvatarsForNewComments] = useState({})
-
-  const ws = useWebSocket({ socketUrl: 'ws://localhost:3000' })
 
   const fetchComments = useCallback(async () => {
     try {
@@ -108,13 +103,6 @@ function App() {
     setCommentReplyStatuses({ ...commentReplyStatuses, ...({ [comment.id]: true }) })
   }
 
-  useEffect(() => {
-    if (ws.data) {
-      const { message } = ws.data
-      fetchComments()
-    }
-  }, [ws.data, fetchComments])
-
   if (error) {
     return <div>Error: {error.message}</div>
   } else if (!isLoaded) {
@@ -151,7 +139,7 @@ function App() {
                 </div>
               )}
               <ul>
-                {getChildComments(comment, comments).map(subComment => (
+                {props.getChildComments(comment, comments).map(subComment => (
                   <li key={subComment.id}>
                     <div>{subComment.username} - {subComment.commentDate.toRelative()}</div>
                     <div>{subComment.commentText}</div>
@@ -168,4 +156,3 @@ function App() {
   }
 }
 
-export default App
