@@ -101,19 +101,48 @@ export const model = {
         }
     },
     //for filters
-    updateFilter(filters) {
-        this.filterOptions.creditMax = filters.creditMax;
-        this.filterOptions.creditMin = filters.creditMin;
+
+    setFiltersChange() {
+        this.filtersChange = true;
+    },
+    
+    updateLevelFilter(level) {
+        this.filterOptions.level = level;
+        console.log(this.filterOptions.level);
+    },
+    updateLanguageFilter(languages) {
+        this.filterOptions.language = languages;
+        console.log(languages)
+    },
+    updateLocationFilter(location) {
+        this.filterOptions.location = location;
+    },
+    updateCreditsFilter(creditLimits) {
+        this.filterOptions.creditMin = creditLimits[0];
+        this.filterOptions.creditMax = creditLimits[1];
+        console.log(creditLimits)
     },
 
-    updateLanguage(languages) {
-        this.filterOptions.language = languages;
+    //setters for the filter options
+    setApplyTranscriptFilter(transcriptFilterState) {
+        this.filterOptions.applyTranscriptFilter = transcriptFilterState;
     },
-    updateLevel(level) {
-        this.filterOptions.level = level;
+    setApplyLevelFilter(levelFilterState) {
+        this.filterOptions.applyLevelFilter = levelFilterState;
     },
-    updateLocation(location) {
-        this.filterOptions.location = location;
-    }
+    setApplyLanguageFilter(languageFilterState) {
+        this.filterOptions.applyLanguageFilter = languageFilterState;
+    },
+    setApplyLocationFilter(locationFilterState) {
+        this.filterOptions.applyLocationFilter = locationFilterState;
+    },
+    setApplyCreditsFilter(creditsFilterState) {
+        this.filterOptions.applyCreditsFilter = creditsFilterState;
+    },
+    // setApplyDepartmentFilter(departmentFilterState) {
+    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
+    // },
+
+
 
 };
