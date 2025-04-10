@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
+import eligibility from "../scripts/eligibility_refined.js";
 
 const FilterPresenter = observer(({ model }) => {
     var localFilteredCourses = []; //might need to declare out of scope. idk js
@@ -7,6 +8,7 @@ const FilterPresenter = observer(({ model }) => {
 
     function applyTranscriptEligibility() {
         /* this elias thing  */
+        
     }
 
     function updateCredits() {
@@ -126,25 +128,25 @@ const FilterPresenter = observer(({ model }) => {
         localFilteredCourses = [...model.courses];
 
 
-        if (model.filterOptions.filterOptions.applyLocationFilter) {
+        if (model.filterOptions.applyLocationFilter) {
             updateLocations();
         }
-        if (model.filterOptions.filterOptions.applyLevelFilter) {
+        if (model.filterOptions.applyLevelFilter) {
             updateLevels();
         }
-        if (model.filterOptions.filterOptions.applyLanguageFilter) {
+        if (model.filterOptions.applyLanguageFilter) {
             updateLanguages();
         }
-        if (model.filterOptions.filterOptions.applyCreditsFilter) {
+        if (model.filterOptions.applyCreditsFilter) {
             updateCredits();
         }
-        if (model.filterOptions.filterOptions.applyTranscriptFilter) {
+        if (model.filterOptions.applyTranscriptFilter) {
             applyTranscriptEligibility();
         }
 
 
         model.filteredCourses = localFilteredCourses;
-        model.filterOptions.filtersChange = false;
+        model.filtersChange = false;
     }
 });
 
