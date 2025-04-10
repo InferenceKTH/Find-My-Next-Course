@@ -9,9 +9,9 @@ function FavouritesDropdown(props) {
                 props.favouriteCourses.map(course => (
                     <div
                         onClick={() => {
-                            console.log('Clicked:', course); // check browser console
+                            console.log('Clicked:', course);
                             props.setSelectedCourse(course);
-                            props.setIsPopupOpen(true); // Ensure popup state is updated
+                            props.setIsPopupOpen(true);
                         }}
                         key={course.code}
                         className="p-2 flex justify-between items-center w-full border border-solid border-black">
@@ -19,7 +19,7 @@ function FavouritesDropdown(props) {
                         <button
                             className="text-red-500 cursor-pointer"
                             onClick={(e) => {
-                                e.stopPropagation(); // Prevent parent click
+                                e.stopPropagation();
                                 props.removeFavourite(course);
                             }}>
                             X
@@ -31,8 +31,7 @@ function FavouritesDropdown(props) {
                     No favourites
                 </div>
             )}
-            {/* Ensure popup is conditionally rendered */}
-            <div style={{ position: 'relative', zIndex: 1000 }}>
+            <div className="relative z-100">
                 {props.isPopupOpen && props.popup}
             </div>
             {props.favouriteCourses.length > 0 && (
