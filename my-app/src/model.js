@@ -1,4 +1,6 @@
 import { addCourse } from "../firebase";
+import { DateTime } from "luxon"; //reviews
+import { generateUsername, generateAvatar } from './utils';// reviews
 
 export const model = {
     user: undefined,
@@ -66,3 +68,22 @@ export const model = {
         });
     },
 };
+
+
+// for reviews
+
+export class Comment {
+  constructor({ id = null, username = generateUsername(), avatar = generateAvatar(), commentDate = DateTime.now(), commentText, upvotes = 0, parentCommentId = null } = {}) {
+    this.id = id;
+    this.username = username;
+    this.avatar = avatar;
+    this.commentDate = commentDate;
+    this.commentText = commentText;
+    this.upvotes = upvotes;
+    this.parentCommentId = parentCommentId;
+  }
+}
+
+export const getChildComments = (comment, comments) => {
+  return comments.filter(c => c.parentCommentId === comment.id);
+}

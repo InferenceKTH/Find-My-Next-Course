@@ -7,6 +7,7 @@ import App  from "./pages/App.jsx";
 import "./styles.css";
 import { JsonToDatabase } from "./presenters/Tests/JsonToDatabase"
 import { AllCoursesPresenter } from "./presenters/Tests/AllCoursesPresenter.jsx";
+import { ReviewPresenter } from "./presenters/ReviewPresenter";
 
 configure({ enforceActions: "never" });
 const reactiveModel = makeAutoObservable(model);
@@ -24,7 +25,7 @@ export function makeRouter(reactiveModel) {
         },
         {
             path: "/all",
-            element: <AllCoursesPresenter model={reactiveModel}/>,
+            element: <ReviewPresenter model={reactiveModel}/>,
         },
 
         
