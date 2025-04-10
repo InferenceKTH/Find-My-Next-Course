@@ -3,7 +3,7 @@ import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/
 import { observer } from "mobx-react-lite";
 import project_logo from "../assets/project_icon.png";
 import FavouritesDropdown from "./Components/FavouriteDropdown.jsx";
-import ShareLinkButton from "./ShareURL/ShareLinkButton";
+import ShareLinkButton from "./ShareLinkButton";
 
 function SearchbarView(props) {
   const [searchQuery, setSearchQuery] = useState("");
