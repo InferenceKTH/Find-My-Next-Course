@@ -15,8 +15,9 @@ const SearchbarPresenter = observer(({ model }) => {
         <SearchbarView
             model={model}
             searchCourses={searchCourses}
-            favouriteCourses = {model.favourites}
+            favouriteCourses={model.favourites}
             removeFavourite={removeFavourite}
+            courses={model.courses}
         />
     );
 });

@@ -1,6 +1,7 @@
 import React from 'react';
+import { observer } from "mobx-react-lite";
 
-function FavouritesDropdown(props) {
+const FavouritesDropdown = observer((props) => {
     return (
         <div className="absolute mt-2 w-48 bg-white border border-solid border-black rounded-lg z-50">
             {props.favouriteCourses.length > 0 ? (
@@ -8,9 +9,8 @@ function FavouritesDropdown(props) {
                     <div
                         key={course.code}
                         className="p-2 flex justify-between items-center w-full border border-solid border-black">
-                        <p
-                            className="text-black">
-                            {course.name}
+                        <p className="text-black">
+                            {course.name || course.code}
                         </p>
                         <button
                             className="text-red-500 cursor-pointer"
@@ -26,6 +26,6 @@ function FavouritesDropdown(props) {
             )}
         </div>
     );
-}
+});
 
 export default FavouritesDropdown;
