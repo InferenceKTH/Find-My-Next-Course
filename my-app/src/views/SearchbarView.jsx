@@ -38,6 +38,7 @@ function SearchbarView(props) {
   };
 
   return (
+
     <div className="w-full px-6 py-6 flex items-center justify-between">
       <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
         <img src={project_logo} className="h-[90px] w-auto" alt="KTH Logo" />
@@ -71,6 +72,14 @@ function SearchbarView(props) {
               courses={props.courses}
               favouriteCourses={props.favouriteCourses}
               removeFavourite={props.removeFavourite}
+                            removeAllFavourites={props.removeAllFavourites}
+                            popup={props.popup}
+                            addFavourite={props.addFavourite}
+                            isPopupOpen={props.isPopupOpen}
+                            setIsPopupOpen={props.setIsPopupOpen}
+                            setSelectedCourse={props.setSelectedCourse}
+                           
+                            handleFavouriteClick={props.handleFavouriteClick}
             />
           )}
         </div>

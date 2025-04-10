@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 
-export default function UploadField(props) {
+export default function UploadField() {
     const values = [1,
         1.5,
         2,
