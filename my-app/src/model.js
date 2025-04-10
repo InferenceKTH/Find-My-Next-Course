@@ -7,6 +7,13 @@ export const model = {
     courses: [],
     favourites: [],
     isReady: false,
+    filterOptions : {
+        level: "none",
+        language: "none",
+        location: "none",
+        creditMin: 0,
+        creditMax: 45,
+    },
 
     setUser(user) {
         if (!this.user)
@@ -75,6 +82,16 @@ export const model = {
             course.name.toLowerCase().includes(query.toLowerCase()) ||
             course.description.toLowerCase().includes(query.toLowerCase())
         );
-        this.setCurrentSearch(searchResults);
+        this.setCurrentSearch(searchResults.slice(0,50));
+    },
+
+    updateFilter(filters) {
+        this.filterOptions.creditMax = filters.creditMax;
+        this.filterOptions.creditMin = filters.creditMin;
+    },
+
+    updateLanguage(languages) {
+        this.filterOptions.language = languages;
     }
+
 };

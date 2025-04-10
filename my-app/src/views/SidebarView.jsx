@@ -6,7 +6,11 @@ import SliderField from "./Components/SideBarComponents/SliderField.jsx";
 import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
 import { UploadTranscriptPresenter } from '../presenters/UploadTranscriptPresenter.jsx';
 
+
 function SidebarView(props) {
+    console.log("view ", props);
+
+
     return (
         <div className='object-center text-white p-3 pt-15  flex-col h-screen
          overflow-y-scroll'
@@ -21,14 +25,24 @@ function SidebarView(props) {
                     <h6 className="m-2 text-lg font-medium text-white text-center">
                         Filters 
                     </h6>
-                    <ToggleField
-                        field1={"English"}
-                        field2={"Swedish"}
+                    <DropDownField
+                        options={["Preparatory", "Basic", "Advanced", "Research"]}
                     />
+                    <ToggleField
+                        fields={["English", "Swedish"]}
+                        HandleLanguage = {props.HandleFilterChange}
+                    />
+
+                    {/*expanding list for department */}
+
+                    <DropDownField
+                        options={["Kista", "Valhalavagen", "Sodetalje", "T-centralen"]}
+                    />
+
                     <ButtonGroupField
                         items={["item 1", "item 2", "item 3"]}
                     />
-                    <SliderField />
+                    <SliderField props={props} />
                     <DropDownField
                         options={["option 1", "option 2", "option 3", "option 4", "option 5"]}
                     />
