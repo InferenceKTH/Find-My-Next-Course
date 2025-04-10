@@ -3,6 +3,7 @@ import { addCourse } from "../firebase";
 export const model = {
     user: undefined,
     currentSearch: [],
+    currentScrollPosition : "",
     courses: [],
     favourites: [],
 
