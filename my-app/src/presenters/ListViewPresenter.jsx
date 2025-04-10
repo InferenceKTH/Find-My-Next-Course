@@ -1,12 +1,18 @@
 import React from 'react';
-import { observer} from "mobx-react-lite";
+import { observer } from "mobx-react-lite";
 import { useState } from 'react';
 import ListView from "../views/ListView.jsx";
 import CoursePagePopup from '../views/Components/CoursePagePopup.jsx';
 import PrerequisitePresenter from './PrerequisitePresenter.jsx';
+import {ReviewPresenter} from "../presenters/ReviewPresenter.jsx"
 
 const ListViewPresenter = observer(({ model }) => {
-
+    const addFavourite = (course) => {
+        model.addFavourite(course);
+    }
+    const removeFavourite = (course) => {
+        model.removeFavourite(course);
+    }
     const handleFavouriteClick = (course) => {
         if (model.favourites.some(fav => fav.code === course.code)) {
             model.removeFavourite(course);
@@ -17,15 +23,19 @@ const ListViewPresenter = observer(({ model }) => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
-    const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse}/>
-    const popup = <CoursePagePopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} course={selectedCourse} handleFavouriteClick={handleFavouriteClick} prerequisiteTree={preP}/>
+    const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />;
+    const reviewPresenter = <ReviewPresenter model={model} course={selectedCourse}/>;
 
-    const addFavourite = (course) => {
-        model.addFavourite(course);
-    }
-    const removeFavourite = (course) => {
-        model.removeFavourite(course);
-    }
+    const popup = <CoursePagePopup
+        favouriteCourses={model.favourites}
+        addFavourite={addFavourite}
+        removeFavourite={removeFavourite}
+        isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}
+        course={selectedCourse}
+        prerequisiteTree={preP} 
+        reviewPresenter={reviewPresenter}/>
+        
+
 
     return <ListView
         courses={model.courses}

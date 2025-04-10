@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
-import { get, getDatabase, ref, set, onValue } from "firebase/database";
+import { get, getDatabase, ref, set, onValue, push } from "firebase/database";
 import { reaction, toJS } from "mobx";
-// foo
 // Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyCBckVI9nhAP62u5jZJW3F4SLulUv7znis",
@@ -49,8 +48,8 @@ async function firebaseToModel(model) {
 		noUpload = true;
 		if (data.favourites) 
             model.setFavourite(data.favourites);
-		if (data.currentSearch) 
-            model.setCurrentSearch(data.currentSearch);
+		// if (data.currentSearch) 
+        //     model.setCurrentSearch(data.currentSearch);
 		noUpload = false;
 	});
 }
@@ -61,16 +60,17 @@ export function syncModelToFirebase(model) {
 		() => ({
 			userId: model?.user,
 			favourites: toJS(model.favourites),
-			currentSearch: toJS(model.currentSearch),
+			// currentSearch: toJS(model.currentSearch),
 			// Add more per-user attributes here
 		}),
+		// eslint-disable-next-line no-unused-vars
 		({ userId, favourites, currentSearch }) => {
 			if (noUpload || !userId) 
                 return;
 			const userRef = ref(db, `users/${userId}`);
 			const dataToSync = {
 				favourites,
-				currentSearch,
+				//currentSearch,
 			};
 
 			set(userRef, dataToSync)
@@ -169,3 +169,35 @@ export async function saveJSONCoursesToFirebase(model, data) {
 		model.addCourse(course);
 	});
 }
+
+
+export async function addReviewForCourse(courseCode, review) {
+    try {
+        const reviewsRef = ref(db, `reviews/${courseCode}`);
+        const newReviewRef = push(reviewsRef);
+        await set(newReviewRef, review);
+    } catch (error) {
+        console.error("Error when adding a course to firebase:", error);
+	}
+}
+
+
+export async function getReviewsForCourse(courseCode) {
+    const reviewsRef = ref(db, `reviews/${courseCode}`);
+    const snapshot = await get(reviewsRef);
+    if (!snapshot.exists()) return [];
+
+    const reviews = [];
+    snapshot.forEach(childSnapshot => {
+        reviews.push({
+            id: childSnapshot.key,  // Firebase-generated unique key
+            userName: childSnapshot.val().userName,
+            text: childSnapshot.val().text
+        });
+    });
+    return reviews;
+}
+
+
+
+
