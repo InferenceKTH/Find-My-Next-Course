@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
-import { get, getDatabase, ref, set, onValue, push} from "firebase/database";
+import { get, getDatabase, ref, set, onValue, push } from "firebase/database";
 import { reaction, toJS } from "mobx";
 // Your web app's Firebase configuration
 const firebaseConfig = {
