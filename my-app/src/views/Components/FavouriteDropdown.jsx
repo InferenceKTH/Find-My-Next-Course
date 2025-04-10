@@ -2,7 +2,7 @@ import React from 'react';
 
 function FavouritesDropdown(props) {
     return (
-        <div className="absolute mt-2 w-48 bg-white border border-solid border-black rounded-lg z-50 overflow-y-auto">
+        <div className="absolute mt-2 w-48 bg-white border border-solid border-black rounded-lg z-50 overflow-y-auto max-h-60">
             {props.favouriteCourses.length > 0 ? (
                 props.favouriteCourses.map(course => (
                     <div

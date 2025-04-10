@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { DotPulse, Quantum } from 'ldrs/react';
 import 'ldrs/react/Quantum.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -9,7 +9,6 @@ function ListView(props) {
     const [hasMore, setHasMore] = useState(true);
     const [readMore, setReadMore] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [isFetching, setIsFetching] = useState(false);
 
     const toggleReadMore = (courseCode) => {
         setReadMore(prevState => ({
@@ -31,20 +30,17 @@ function ListView(props) {
         const initialCourses = coursesToDisplay.slice(0, 10);
         setDisplayedCourses(initialCourses);
         setHasMore(coursesToDisplay.length > 10);
-        setIsLoading(false); // Reset isLoading after initial load
+        setIsLoading(false);
     }, [props.courses, props.searchResults]);
 
-    const fetchMoreCourses = () => {
-        if (isFetching || !hasMore) return; // Prevent fetching if already in progress or no more courses
-        setIsFetching(true);
+    const fetchMoreCourses = useCallback(() => {
+        if (!hasMore) return;
 
         const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 10);
-        setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
-        const totalLoaded = displayedCourses.length + nextItems.length;
-        setHasMore(totalLoaded < coursesToDisplay.length);
 
-        setTimeout(() => setIsFetching(false), 500); // Debounce to prevent rapid triggers
-    };
+        setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
+        setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
+    }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-full overflow-auto">
