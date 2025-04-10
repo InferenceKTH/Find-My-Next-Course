@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
-function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
+function CoursePagePopup({ favouriteCourses, addFavourite,
+  removeFavourite, isOpen, onClose, course, prerequisiteTree }) {
   const treeRef = useRef(null);
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -17,6 +18,15 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
+
+  
+  const handleFavouriteClick = (course) => {
+    if (favouriteCourses.some(fav => fav.code === course.code)) {
+        removeFavourite(course);
+    } else {
+        addFavourite(course);
+    }
+};
 
   const handleTreeClick = () => {
     if (treeRef.current) {
@@ -40,21 +50,23 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
             <div>
               <h2 className="text-5xl font-extrabold text-[#2e2e4f] ">
                 <span className="text-violet-700">{course.code}</span> - {course.name}
-                <span className="ml-4 text-lg text-violet-700">({course.credits} Credits)</span>
+                <span className="ml-4 text-lg text-violet-700 whitespace-nowrap">
+                  ({course.credits} Credits)
+                </span>
               </h2>
               <div className="my-6 h-1.5 w-full bg-violet-500"></div>
             </div>
             <div>
               <button
-                className="text-yellow-500 cursor-pointer"
+                className="text-yellow-500 bg-yellow-400 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation(); // prevent popup from opening
                   handleFavouriteClick(course.code);
                 }}
               >
-                {/* {model.favouriteCourses.includes(course.code)
+                {favouriteCourses.includes(course.code)
                         ? 'Remove from Favourites'
-                        : 'Add to Favourites'} */}
+                        : 'Add to Favourites'}
               </button>
             </div>
 
