@@ -2,19 +2,13 @@ import { addCourse } from "../firebase";
 
 export const model = {
     user: undefined,
-    currentCourse: undefined,
     currentSearch: [],
     courses: [],
     favourites: [],
-    isReady: false,
 
     setUser(user) {
         if (!this.user)
             this.user = user;
-    },
-
-    setCurrentCourse(course){
-        this.currentCourse = course;
     },
 
     setCurrentSearch(searchResults){
@@ -32,6 +26,9 @@ export const model = {
         } catch (error) {
             console.error("Error adding course:", error);
         }
+    },
+    setFavourite(favorites){
+        this.favourites = favorites;
     },
 
     addFavourite(course) {
@@ -68,13 +65,4 @@ export const model = {
             this.addCourse(course);
         });
     },
-
-    searchCourses(query) {
-        const searchResults = this.courses.filter(course =>
-            course.code.toLowerCase() === query.toLowerCase() ||
-            course.name.toLowerCase().includes(query.toLowerCase()) ||
-            course.description.toLowerCase().includes(query.toLowerCase())
-        );
-        this.setCurrentSearch(searchResults);
-    }
 };

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 function CoursePagePopup({ favouriteCourses, addFavourite,
   removeFavourite, isOpen, onClose, course, prerequisiteTree }) {
@@ -42,6 +43,7 @@ function CoursePagePopup({ favouriteCourses, addFavourite,
     >
       <div
         className="bg-indigo-300/75 backdrop-blur-lg h-full w-3/4 flex flex-col overflow-auto"
+        className="bg-indigo-300/75 backdrop-blur-lg h-full w-3/4 flex flex-col overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex-1">
@@ -55,13 +57,14 @@ function CoursePagePopup({ favouriteCourses, addFavourite,
                 </span>
               </h2>
               <div className="my-6 h-1.5 w-full bg-violet-500"></div>
+              <div className="my-6 h-1.5 w-full bg-violet-500"></div>
             </div>
             <div>
               <button
                 className="text-yellow-500 bg-yellow-400 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation(); // prevent popup from opening
-                  handleFavouriteClick(course.code);
+                  PaymentResponse.handleFavouriteClick(course.code);
                 }}
               >
                 {favouriteCourses.includes(course.code)
@@ -74,7 +77,10 @@ function CoursePagePopup({ favouriteCourses, addFavourite,
             <div>
               <h3 className="text-2xl font-bold text-[#2e2e4f] mb-0.5">Course Description</h3>
               <div className="mb-3 h-0.5 w-full bg-violet-500"></div>
+              <h3 className="text-2xl font-bold text-[#2e2e4f] mb-0.5">Course Description</h3>
+              <div className="mb-3 h-0.5 w-full bg-violet-500"></div>
               <div
+                className="text-lg leading-8 text-[#2e2e4f] font-semibold tracking-wide prose prose-slate max-w-full"
                 className="text-lg leading-8 text-[#2e2e4f] font-semibold tracking-wide prose prose-slate max-w-full"
                 dangerouslySetInnerHTML={{ __html: course.description }}
               />
@@ -99,6 +105,8 @@ function CoursePagePopup({ favouriteCourses, addFavourite,
             </div>
             {/* Reviews Section */}
             <div>
+              <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Reviews</h3>
+              <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
               <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Reviews</h3>
               <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
               <p className="text-lg text-slate-700 leading-7">Here would be some reviews of the course...</p>
