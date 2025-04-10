@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
-import { get, getDatabase, ref, set, onValue } from "firebase/database";
+import { get, getDatabase, ref, set, onValue, push} from "firebase/database";
 import { reaction, toJS } from "mobx";
-// foo
 // Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyCBckVI9nhAP62u5jZJW3F4SLulUv7znis",
@@ -70,7 +69,7 @@ export function syncModelToFirebase(model) {
 			const userRef = ref(db, `users/${userId}`);
 			const dataToSync = {
 				favourites,
-				currentSearch,
+				//currentSearch,
 			};
 
 			set(userRef, dataToSync)
@@ -170,11 +169,15 @@ export async function saveJSONCoursesToFirebase(model, data) {
 	});
 }
 
-// for reviews
-export async function addReview(courseCode, review) {
-    const reviewsRef = ref(db, `reviews/${courseCode}`);
-    const newReviewRef = push(reviewsRef);  // Firebase creates a unique key for each review
-    await set(newReviewRef, review);  // Save the review data to the generated ID
+
+export async function addReviewForCourse(courseCode, review) {
+    try {
+        const reviewsRef = ref(db, `reviews/${courseCode}`);
+        const newReviewRef = push(reviewsRef);
+        await set(newReviewRef, review);
+    } catch (error) {
+        console.error("Error when adding a course to firebase:", error);
+	}
 }
 
 

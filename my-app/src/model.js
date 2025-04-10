@@ -1,4 +1,4 @@
-import { addCourse, addReview, getReviewsForCourse } from "../firebase"; // for reviews
+import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"; // for reviews
 
 
 export const model = {
@@ -70,7 +70,7 @@ export const model = {
     //for reviews
     async addReview(courseCode, review) {
         try {
-            await addReview({ ...review, courseCode });
+            await addReviewForCourse(courseCode, review);
         } catch (error) {
             console.error("Error adding review:", error);
         }
