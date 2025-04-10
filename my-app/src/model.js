@@ -71,6 +71,7 @@ export const model = {
     async addReview(courseCode, review) {
         try {
             await addReviewForCourse(courseCode, review);
+
         } catch (error) {
             console.error("Error adding review:", error);
         }

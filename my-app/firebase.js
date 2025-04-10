@@ -48,8 +48,8 @@ async function firebaseToModel(model) {
 		noUpload = true;
 		if (data.favourites) 
             model.setFavourite(data.favourites);
-		if (data.currentSearch) 
-            model.setCurrentSearch(data.currentSearch);
+		// if (data.currentSearch) 
+        //     model.setCurrentSearch(data.currentSearch);
 		noUpload = false;
 	});
 }
@@ -60,7 +60,7 @@ export function syncModelToFirebase(model) {
 		() => ({
 			userId: model?.user,
 			favourites: toJS(model.favourites),
-			currentSearch: toJS(model.currentSearch),
+			// currentSearch: toJS(model.currentSearch),
 			// Add more per-user attributes here
 		}),
 		// eslint-disable-next-line no-unused-vars
