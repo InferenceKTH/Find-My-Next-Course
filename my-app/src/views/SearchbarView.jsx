@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
-import kth_logo from '../assets/kth_logo.png';
 import project_logo from '../assets/project_icon.png';
 import FavouritesDropdown from './Components/FavouriteDropdown.jsx';
 
@@ -72,6 +71,7 @@ function SearchbarView(props) {
                             courses={props.courses}
                             favouriteCourses={props.favouriteCourses}
                             removeFavourite={props.removeFavourite}
+                            removeAllFavourites={props.removeAllFavourites}
                         />
                     )}
                 </div>

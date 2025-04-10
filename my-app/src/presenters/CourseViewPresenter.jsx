@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import CourseView from "../views/CourseView.jsx";
 
-import { model } from "../model"; //for reviews
-
-
 
 const CourseViewPresenter = observer(({ model, course }) => {
     const [reviews, setReviews] = useState([]);
