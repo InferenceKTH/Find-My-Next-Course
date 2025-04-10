@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
+function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree, reviews }) {
 
   const treeRef = useRef(null);
   useEffect(() => {
@@ -89,12 +89,13 @@ function CoursePagePopup({ isOpen, onClose, course, prerequisiteTree }) {
 
             </div>
             {/* Reviews Section */}
-            <div>
+            {/* <div>
               <h3 className="text-2xl font-semibold text-[#2e2e4f] mb-0.5">Reviews</h3>
               <div className="mb-4 h-0.5 w-full bg-violet-500"></div>
               <p className="text-lg text-slate-700 leading-7">Here would be some reviews of the course...</p>
-            </div>
+            </div> */}
 
+            {reviews}
           </div>
         </div>
         <button
