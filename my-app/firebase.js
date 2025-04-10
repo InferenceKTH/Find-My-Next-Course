@@ -63,6 +63,7 @@ export function syncModelToFirebase(model) {
 			currentSearch: toJS(model.currentSearch),
 			// Add more per-user attributes here
 		}),
+		// eslint-disable-next-line no-unused-vars
 		({ userId, favourites, currentSearch }) => {
 			if (noUpload || !userId) 
                 return;
