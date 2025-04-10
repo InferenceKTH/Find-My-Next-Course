@@ -9,7 +9,7 @@ const ListViewPresenter = observer(({ model }) => {
     const addFavourite = (course) => {
         model.addFavourite(course);
     }
-    const removeFavourite = (course) => {
+    const removeFavourite = (course) => {   
         model.removeFavourite(course);
     }
     const handleFavouriteClick = (course) => {
@@ -28,6 +28,7 @@ const ListViewPresenter = observer(({ model }) => {
         favouriteCourses={model.favourites}
         addFavourite={addFavourite}
         removeFavourite={removeFavourite}
+        handleFavouriteClick={handleFavouriteClick}
         isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}
         course={selectedCourse}
         prerequisiteTree={preP} />
