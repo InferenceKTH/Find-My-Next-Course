@@ -35,7 +35,7 @@ export default function DropDownField({options}) {
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <div className="absolute bottom-10 mt-2 w-48 bg-[#aba8e0] border border-gray-200 rounded-lg shadow-lg z-10 ">
+        <div className="absolute bottom-10 mt-2 w-48 bg-[#aba8e0] border border-gray-200 rounded-lg shadow-lg z-30 ">
           <ul className="">
             {items.map((item, index) => (
               <li key={index} className="flex items-center p-2 hover:bg-gray-500">
