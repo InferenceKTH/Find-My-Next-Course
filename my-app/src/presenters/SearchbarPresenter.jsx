@@ -29,7 +29,9 @@ const SearchbarPresenter = observer(({ model }) => {
             model.addFavourite(course);
         }
     };
-
+    const creditsSum = (favouriteCourses) => {
+        return favouriteCourses.reduce((sum, course) => sum + parseFloat(course.credits), 0);
+    };
 
     function removeAllFavourites() {
         model.setFavourite([]);
@@ -66,6 +68,7 @@ const SearchbarPresenter = observer(({ model }) => {
             setSelectedCourse={setSelectedCourse}
             popup={popup}
             handleFavouriteClick={handleFavouriteClick}
+            const totalCredits = {creditsSum(model.favourites)}
         />
     );
 });

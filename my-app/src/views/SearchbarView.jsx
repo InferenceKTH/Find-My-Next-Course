@@ -35,9 +35,14 @@ function SearchbarView(props) {
         signOut(auth);
     };
 
-    return (
+    const handleClickOutside = (e) => {
+        if (!e.target.closest('.favourites-container')) {
+            setShowFavourites(false);
+        }
+    };
 
-        <div className="w-full px-6 py-6 flex items-center justify-between">
+    return (
+        <div className="w-full px-6 py-6 flex items-center justify-between" onClick={handleClickOutside}>
             <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
                 <img
                     src={project_logo}
@@ -61,24 +66,19 @@ function SearchbarView(props) {
                     About us
                 </button>
 
-                <div className="relative">
-                    <button onClick={() => setShowFavourites(!showFavourites)}
-                            className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+                <div className="relative favourites-container">
+                    <button 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setShowFavourites(!showFavourites);
+                        }}
+                        className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
                         Favourites
                     </button>
                     {showFavourites && (
                         <FavouritesDropdown
-                            courses={props.courses}
-                            favouriteCourses={props.favouriteCourses}
-                            removeFavourite={props.removeFavourite}
-                            removeAllFavourites={props.removeAllFavourites}
-                            popup={props.popup}
-                            addFavourite={props.addFavourite}
-                            isPopupOpen={props.isPopupOpen}
-                            setIsPopupOpen={props.setIsPopupOpen}
-                            setSelectedCourse={props.setSelectedCourse}
-                           
-                            handleFavouriteClick={props.handleFavouriteClick}
+                            {...props}
+                            onClick={(e) => e.stopPropagation()}
                         />
                     )}
                 </div>
