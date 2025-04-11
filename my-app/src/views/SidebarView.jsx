@@ -49,7 +49,7 @@ function SidebarView(props) {
 
                     <ButtonGroupField
                         items={["item 1", "item 2", "item 3"]}
-                        filterName="languageN" 
+                        filterName="ALMA ES KORTE" 
                         HandleFilterEnable={props.HandleFilterEnable}
                     />
                     <SliderField

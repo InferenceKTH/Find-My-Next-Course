@@ -10,7 +10,7 @@ export const model = {
     filtersChange: false,
     filteredCourses: [],
     filterOptions: {
-        applyTranscriptFilter: true,
+        applyTranscriptFilter: false,
         applyLevelFilter:true,
         level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         applyLanguageFilter: true,

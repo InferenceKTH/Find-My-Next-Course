@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
+import eligibility from "../scripts/eligibility_refined.js";
 
 const FilterPresenter = observer(({ model }) => {
     var localFilteredCourses = []; //might need to declare out of scope. idk js
@@ -7,6 +8,7 @@ const FilterPresenter = observer(({ model }) => {
 
     function applyTranscriptEligibility() {
         /* this elias thing  */
+
     }
 
     function updateCredits() {
@@ -39,7 +41,9 @@ const FilterPresenter = observer(({ model }) => {
 
     function updateLanguages() {
         //possible model.filterOptions.languages values: "none"/"english"/"swedish"/"both"
-        const languages = model.filterOptions.languages;
+        const languages = model.filterOptions.language;
+        console.log("we have the following:",languages);
+        console.log("we ARE CHANGING LANGUAGES");
         let data = [...localFilteredCourses];
         let bestCourses = [];
         let middleCourses = [];
@@ -49,6 +53,7 @@ const FilterPresenter = observer(({ model }) => {
         //course.language.english (true/false/"null")
         //course.language.swedish (true/false/"null")
 
+        
         switch (languages) {
             case "none":
                 {
@@ -58,38 +63,38 @@ const FilterPresenter = observer(({ model }) => {
             case "english":
                 {
                     bestCourses = data.filter(function (course) {
-                        return (course.language.english === true);
+                        return (course.language.english == true);
                     }
                     );
                     worstCourses = data.filter(function(course) {
-                        return (course.language.english === "null");
+                        return (course.language.english == "null");
                     });
                     break;
                 }
             case "swedish":
                 {
                     bestCourses = data.filter(function (course) {
-                        return (course.language.swedish === true);
+                        return (course.language.swedish == true);
                     }
                     );
                     worstCourses = data.filter(function(course) {
-                        return (course.language.swedish === "null");
+                        return (course.language.swedish == "null");
                     });
                     break;
                 }
             case "both":
                 { //both on reorders, the both languages are reordered both - english - swedish - null
                     bestCourses = data.filter(function (course) {
-                        return ((course.language.english === true) && (course.language.swedish === true));
+                        return ((course.language.english == true) && (course.language.swedish == true));
                     }
                     );
                     middleCourses = data.filter(function (course) {
-                        return (((course.language.english === true) && (course.language.swedish === false))
-                            || ((course.language.english === false) && (course.language.swedish === true)));
+                        return (((course.language.english == true) && (course.language.swedish == false))
+                            || ((course.language.english == false) && (course.language.swedish == true)));
                         }
                     );
                     worstCourses = data.filter(function(course) {
-                        return (course.language.english === "null");
+                        return (course.language.english == "null");
                     });
                     break;
                 }
@@ -102,8 +107,10 @@ const FilterPresenter = observer(({ model }) => {
         //the possible values are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         //model.filterOptions.level is an array. it can have []
         const levels = model.filterOptions.level;
+        
+        
         localFilteredCourses = localFilteredCourses.filter(course => levels.includes(course.academicLevel));
-
+        
         /*
         let levels = model.filterOptions.level;
         let stayingCourses = [];
@@ -121,29 +128,37 @@ const FilterPresenter = observer(({ model }) => {
         localFilteredCourses = [...stayingCourses];*/
     }
 
-
+    console.log("filter presenter triggered");
     if (model.filtersChange) {
+        console.log("filters changed triggered!!!!!");
         localFilteredCourses = [...model.courses];
 
 
         if (model.filterOptions.applyLocationFilter) {
+            console.log("we ARE CHANGING LOCATION");
             updateLocations();
         }
         if (model.filterOptions.applyLevelFilter) {
+            console.log("we ARE CHANGING levels");
             updateLevels();
         }
         if (model.filterOptions.applyLanguageFilter) {
+            console.log("we ARE CHANGING LANGUAGES");
             updateLanguages();
         }
         if (model.filterOptions.applyCreditsFilter) {
+            console.log("we ARE CHANGING CREDITS");
             updateCredits();
         }
         if (model.filterOptions.applyTranscriptFilter) {
+            console.log("we ARE CHANGING ELIGIBILITY");
             applyTranscriptEligibility();
         }
 
-
+        //console.log(model.filteredCourses.length);
+        //console.log("->");
         model.filteredCourses = localFilteredCourses;
+        //console.log(model.filteredCourses.length);
         model.filtersChange = false;
     }
 });
