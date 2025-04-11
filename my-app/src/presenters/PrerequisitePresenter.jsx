@@ -131,7 +131,7 @@ export const PrerequisitePresenter = observer((props) => {
                     node["style"]["zIndex"] = 0;
                     setLabel(node["id"], "More Info...");
                 }  
-            } else {
+            } else if (node["data"]["label"] !== "One of these") {
                 // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE (Tu eres muy retrasado y gordo)! :)
             }
           }
