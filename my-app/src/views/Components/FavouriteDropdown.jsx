@@ -77,6 +77,7 @@ const FavouritesDropdown = observer((props) => {
             </div>
 
 
+
                     <div className="flex border-t border-solid border-violet-400">
                         {props.favouriteCourses.length > 0 && (
                             <>
@@ -96,12 +97,17 @@ const FavouritesDropdown = observer((props) => {
                                     {copied ? "Copied to Clipboard!" : "Share Courses"}
                                 </button>
 
+
                             </>
                         )}
                     </div>
 
+
                 {/* </div>
             </div> */}
+
+           
+
 
         
 
