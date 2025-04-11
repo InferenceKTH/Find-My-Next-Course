@@ -86,14 +86,11 @@ export function syncModelToFirebase(model) {
 
 function syncScrollPositionToFirebase(model) {
     reaction(
-        () => ({
-            // Here we calculate a percentage based on window.scrollY and total scrollable height.
-            scrollPercentage: window.scrollY / document.documentElement.scrollHeight,
-        }),
-        ({ scrollPercentage }) => {
+        () => window.scrollY,
+        (scrollPixel) => {
             if (model?.user?.uid) {
                 const userRef = ref(db, `users/${model.user.uid}/scrollPosition`);
-                set(userRef, { scrollPercentage })
+                set(userRef, { scrollPixel })
                     .catch(console.error);
             }
         }

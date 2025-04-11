@@ -10,13 +10,11 @@ const ListViewPresenter = observer(({ model }) => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Calculate the percentage
-            const scrollPercentage = window.scrollY / document.documentElement.scrollHeight;
-            // Update the model's scroll position
-            model.setScrollPosition(scrollPercentage);
-            // If not logged in, also store in localStorage
+            const scrollPixel = window.scrollY;
+            model.setScrollPosition(scrollPixel);
+            // If not logged in, also save in localStorage (absolute pixel value)
             if (!model.user) {
-                localStorage.setItem("scrollPercentage", scrollPercentage);
+                localStorage.setItem("scrollPosition", scrollPixel);
             }
         };
 
@@ -24,11 +22,16 @@ const ListViewPresenter = observer(({ model }) => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [model]);
 
+    // When user is not logged in, restore scroll from localStorage on login state change.
     useEffect(() => {
         if (!model.user) {
-            const stored = localStorage.getItem("scrollPercentage");
+            const stored = localStorage.getItem("scrollPosition");
             if (stored) {
-                window.scrollTo(0, stored * document.documentElement.scrollHeight);
+                const target = Number(stored);
+                // Only scroll if the document is tall enough
+                if (document.documentElement.scrollHeight > target) {
+                    window.scrollTo(0, target);
+                }
             }
         }
     }, [model.user]);
@@ -75,6 +78,7 @@ const ListViewPresenter = observer(({ model }) => {
         setSelectedCourse={setSelectedCourse}
         popup={popup}
         handleFavouriteClick={handleFavouriteClick}
+        targetScroll={model.scrollPosition}
     />;
 });
 

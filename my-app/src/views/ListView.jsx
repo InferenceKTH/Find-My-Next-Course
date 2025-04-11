@@ -41,6 +41,19 @@ function ListView(props) {
         setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
     }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
+    useEffect(() => {
+        if (!props.targetScroll) return;  // nothing to restore
+
+        const currentHeight = document.documentElement.scrollHeight;
+        if (currentHeight < props.targetScroll && hasMore) {
+            // Load more courses, then try again.
+            fetchMoreCourses();
+        } else {
+            // Once enough content has loaded, scroll to the target.
+            window.scrollTo(0, props.targetScroll);
+        }
+    }, [displayedCourses, hasMore, props.targetScroll, fetchMoreCourses]);
+
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
             {isLoading ? (
