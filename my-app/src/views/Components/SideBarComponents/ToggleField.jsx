@@ -12,7 +12,7 @@ export default function ToggleField(props) {
         <div className="m-2">
             <div className="mb-2 text-white flex items-center justify-between">
                 <div className="flex items-center">
-                    <h3>{props.filterName}</h3>
+                    <h3>{String(props.filterName).charAt(0).toUpperCase() + String(props.filterName).slice(1)}</h3>
                     <div>
                         <p className="text-sm opacity-50"> - filter description</p>
                     </div>

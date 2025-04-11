@@ -40,7 +40,7 @@ export default function DropDownField(props) {
     <div className="m-2">
       <div className="mb-2 text-white flex items-center justify-between">
         <div className="flex items-center">
-          <h3>{props.filterName}</h3>
+          <h3>{String(props.filterName).charAt(0).toUpperCase() + String(props.filterName).slice(1)}</h3>
           <div>
             <p className="text-sm opacity-50"> - filter description</p>
           </div>
@@ -58,7 +58,7 @@ export default function DropDownField(props) {
             onClick={toggleDropdown}
             className="bg-violet-500 text-white px-4 py-2 rounded-md shadow-md focus:outline-none hover:bg-[#aba8e0] w-full"
           >
-            Select Options
+            {selectedItems.length? (selectedItems.join(", ").substring(0, 30) + ((selectedItems.join(", ").substring(0, 30).length>=30)? "...": "") ):"Select Options"}
           </button>
 
           {/* Dropdown Menu */}

@@ -42,8 +42,6 @@ const FilterPresenter = observer(({ model }) => {
     function updateLanguages() {
         //possible model.filterOptions.languages values: "none"/"english"/"swedish"/"both"
         const languages = model.filterOptions.language;
-        console.log("we have the following:",languages);
-        console.log("we ARE CHANGING LANGUAGES");
         let data = [...localFilteredCourses];
         let bestCourses = [];
         let middleCourses = [];
@@ -128,37 +126,26 @@ const FilterPresenter = observer(({ model }) => {
         localFilteredCourses = [...stayingCourses];*/
     }
 
-    console.log("filter presenter triggered");
     if (model.filtersChange) {
-        console.log("filters changed triggered!!!!!");
         localFilteredCourses = [...model.courses];
 
-
         if (model.filterOptions.applyLocationFilter) {
-            console.log("we ARE CHANGING LOCATION");
             updateLocations();
         }
         if (model.filterOptions.applyLevelFilter) {
-            console.log("we ARE CHANGING levels");
             updateLevels();
         }
         if (model.filterOptions.applyLanguageFilter) {
-            console.log("we ARE CHANGING LANGUAGES");
             updateLanguages();
         }
         if (model.filterOptions.applyCreditsFilter) {
-            console.log("we ARE CHANGING CREDITS");
             updateCredits();
         }
         if (model.filterOptions.applyTranscriptFilter) {
-            console.log("we ARE CHANGING ELIGIBILITY");
             applyTranscriptEligibility();
         }
 
-        //console.log(model.filteredCourses.length);
-        //console.log("->");
         model.filteredCourses = localFilteredCourses;
-        //console.log(model.filteredCourses.length);
         model.filtersChange = false;
     }
 });

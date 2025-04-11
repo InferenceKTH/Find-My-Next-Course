@@ -10,21 +10,24 @@ import CollapsibleCheckboxes from './Components/SideBarComponents/CollapsibleChe
 
 function SidebarView(props) {
     return (
-        <div className='object-center text-white p-3 pt-8  flex-col h-screen
+        <div className='object-center text-white p-3 pt-2  flex-col h-screen
          overflow-y-scroll'
             style={{
                 scrollbarWidth: "thin",
                 scrollbarColor: "#888 #f1f1f1",
             }}
         >
+            <h6 className="m-2 text-lg font-medium text-white text-center">
+                        Filters 
+                    </h6>
             <UploadTranscriptPresenter
+                HandleFilterChange={props.HandleFilterChange}
+                filterName = "transcript"
                 HandleFilterEnable={props.HandleFilterEnable}
             />
             <div className='flex-auto justify-center h-100 max-h-100 '>
                 <div className="z-10 w-100% rounded-lg justify-center pb-10" >
-                    <h6 className="m-2 text-lg font-medium text-white text-center">
-                        Filters 
-                    </h6>
+                    
                     <DropDownField
                         options={["Preparatory", "Basic", "Advanced", "Research"]}
                         HandleFilterChange={props.HandleFilterChange}
@@ -44,12 +47,6 @@ function SidebarView(props) {
                         options={["Kista", "Valhalavagen", "Sodetalje", "T-centralen"]}
                         HandleFilterChange={props.HandleFilterChange}
                         filterName="location"
-                        HandleFilterEnable={props.HandleFilterEnable}
-                    />
-
-                    <ButtonGroupField
-                        items={["item 1", "item 2", "item 3"]}
-                        filterName="ALMA ES KORTE" 
                         HandleFilterEnable={props.HandleFilterEnable}
                     />
                     <SliderField

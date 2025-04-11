@@ -3,6 +3,7 @@ import CourseTranscriptList from './CourseTranscriptList';
 import FilterEnableCheckbox from "./FilterEnableCheckbox";
 //import * as scraper from '../../../../src/scripts/transcript-scraper/transcript-scraper.js';
 import { useState } from "react";
+import ButtonGroupField from './ButtonGroupField';
 
 export default function UploadField(props) {
 
@@ -29,11 +30,13 @@ export default function UploadField(props) {
 
     return (
         <div className='pb-5 px-8 '>
+            <div className={`opacity-${filterEnabled ? "100" : "50"} ${filterEnabled ?
+                "pointer-events-auto" : "pointer-events-none user-select-none"}`}>
             <div className={`flex items-center justify-center border-2 border-dashed rounded-lg cursor-pointer transition-colors 
                             ${isDragging ? "border-blue-500 bg-blue-100" : "border-gray-300 bg-[#aba8e0]"}`}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}>
+                            onDragOver={handleDragOver}
+                            onDragLeave={handleDragLeave}
+                            onDrop={handleDrop}>
                 <label htmlFor="PDF-Scraper-Input" className="flex flex-col items-center justify-center w-full h-50 border-2 
                  border-gray-300 border-dashed rounded-lg cursor-pointer bg-[#aba8e0] hover:bg-gray-400">
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -46,6 +49,11 @@ export default function UploadField(props) {
                     <input id="PDF-Scraper-Input" type="file" className="hidden" onChange={props.handleFileChange} />
                 </label>
             </div>
+            <ButtonGroupField
+                items={["Weak", "Moderate", "Strong"]}
+                HandleFilterEnable={props.HandleFilterEnable}
+                />
+            </div>
             <div className="mb-2 text-white flex justify-between">
                 <div className="flex items-center text-wrap max-w-70">
                     <p className='text-sm opacity-50'>
@@ -55,7 +63,7 @@ export default function UploadField(props) {
                 <div className='pt-2'>
 
                     <FilterEnableCheckbox
-                        onToggle={() => { setFilterEnabled(!filterEnabled); props.HandleFilterEnable(["Transcript", !filterEnabled]); }}
+                        onToggle={() => { setFilterEnabled(!filterEnabled); props.HandleFilterEnable(["transcript", !filterEnabled]); }}
                     />
                 </div>
             </div>

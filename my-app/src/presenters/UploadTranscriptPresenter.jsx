@@ -124,7 +124,7 @@ const UploadTranscriptPresenter = observer((props) => {
                     if (!flagTableDone) {
                         flagTable = true;
                     } else {
-                        if ((textObjects[i - 1].transform[4] !== 532.71801758)&&(textObjects[i - 11].transform[4] !== 532.71801758)) {
+                        if ((textObjects[i - 1].transform[4] !== 532.71801758) && (textObjects[i - 11].transform[4] !== 532.71801758)) {
                             //if its i-1, the page number is the object directly behind, otherwise if -11 its because theres some filter,
                             //e.g. utskrift datum, personnummer and others. hopefully this should cover all base (probably doesn't)
                             //this is a very hardcoded solution to this problem.
@@ -171,7 +171,6 @@ const UploadTranscriptPresenter = observer((props) => {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        console.log("vliza");
         //document.getElementById('PDF-Scraper-Error').style.visibility = "visible";
         transcriptScraperFunction(file);
         //document.getElementById('PDF-Scraper-Input').value = '';
@@ -185,6 +184,8 @@ const UploadTranscriptPresenter = observer((props) => {
             handleFileChange={handleFileChange}
             fileInputValue={fileInputValue}
             HandleFilterEnable={props.HandleFilterEnable}
+            HandleFilterChange={props.HandleFilterChange}
+            filterName= {props.filterName}
         />);
 });
 

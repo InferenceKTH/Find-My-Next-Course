@@ -35,16 +35,18 @@ export default function CourseTranscriptList() {
 
     return (
         <div className="max-w-80">
-            <div className="flex justify-between">
+            {items.length > 0 && (
+                <div className="flex justify-between">
 
-                <h3 className="text-lg flex-auto">Taken courses:</h3>
-                <button
-                    onClick={() => removeAllItems()}
-                    className="text-red-500 hover:text-red-700 font-bold text-sm hover:bg-red-300 rounded-lg flex-auto h-5"
-                >
-                    RemoveAll
-                </button>
-            </div>
+                    <h3 className="text-lg flex-10">Taken courses:</h3>
+                    <button
+                        onClick={() => removeAllItems()}
+                        className="text-red-500 hover:text-red-700 font-bold text-sm hover:bg-red-300 rounded-lg flex-auto h-5"
+                    >
+                        RemoveAll
+                    </button>
+                </div>
+            )}
 
             {/* Container for multiple items per row */}
             <div className="grid grid-cols-3 w-full max-[1200px]:grid-cols-2 max-[700px]:grid-cols-1 gap-1 sm:gap-2">

@@ -124,6 +124,10 @@ const SidebarPresenter = observer(({ model }) => {
                 console.log("credits filter set to: " + param[1]);
                 model.setApplyCreditsFilter(param[1]);
                 break;
+            case "transcript":
+                console.log("transcript filter set to: " + param[1]);
+                model.setApplyTranscriptFilter(param[1]);
+                break;
             default:
                 console.log("Invalid filter type");
         }
