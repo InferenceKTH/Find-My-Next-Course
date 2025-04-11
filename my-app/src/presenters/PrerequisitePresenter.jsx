@@ -21,6 +21,8 @@ export const PrerequisitePresenter = observer((props) => {
     let textCounter = 0;
     let codeCounter = 0;
 
+    let input_text_obj = {};
+
     const position = { x: 0, y: 0 };
     const edgeType = 'smoothstep';
 
@@ -101,9 +103,9 @@ export const PrerequisitePresenter = observer((props) => {
                     style={{ backgroundColor: '#F7F9FB' }}
                     nodesDraggable={false}
                     nodesConnectable={false}
-                    elementsSelectable={true}
-                    elementsFocusable={false}
                     edgesFocusable={false}
+                    onNodeClick={clicked}
+                    elementsSelectable={false}
                 >
                     <Background />
                 </ReactFlow>
@@ -111,6 +113,28 @@ export const PrerequisitePresenter = observer((props) => {
             </div>
 
         );
+
+        function setLabel(id, label) {
+            setNodes((nodes) =>
+              nodes.map((n) =>
+                n.id === id ? { ...n, data: { ...n.data, label } } : n
+              )
+            );
+        }
+
+        function clicked(event, node) {
+            if (node["id"].split(" ")[0] === "text") {
+                if (node["data"]["label"] === "More Info...") {
+                    node["style"]["zIndex"] = 1;
+                    setLabel(node["id"], <span>{input_text_obj[node["id"]]} <br/> <b style={{ color: 'blue' }}>CLOSE</b></span>);
+                } else {
+                    node["style"]["zIndex"] = 0;
+                    setLabel(node["id"], "More Info...");
+                }  
+            } else {
+                // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE
+            }
+          }
     };
 
 
@@ -123,6 +147,7 @@ export const PrerequisitePresenter = observer((props) => {
                 id: id,
                 type: node_type,
                 data: { label: name },
+                style: { zIndex: 0 },
                 position,
             };
         } else {
@@ -130,6 +155,7 @@ export const PrerequisitePresenter = observer((props) => {
                 id: id,
                 type: node_type,
                 data: { label: name },
+                style: { zIndex: 0 },
                 position,
             };
 
@@ -160,7 +186,8 @@ export const PrerequisitePresenter = observer((props) => {
                     let input_text = current_object[i];
                     if (current_object[i].startsWith("#")) {
                         input_text = "More Info...";
-                        input_id = "text" + ++textCounter;
+                        input_id = "text " + ++textCounter;
+                        input_text_obj[input_id] = current_object[i].slice(1);
                     } else {
                         input_id = current_object[i] + " " + ++codeCounter;
                     }
@@ -175,7 +202,7 @@ export const PrerequisitePresenter = observer((props) => {
     }
 
     function generateTree(prereqs) {
-        console.log(JSON.stringify(prereqs, null, 4));
+        //console.log(JSON.stringify(prereqs, null, 4));
         prereq_convert(prereqs, null, props.selectedCourse.code);
     }
 
@@ -186,8 +213,10 @@ export const PrerequisitePresenter = observer((props) => {
 
         generateTree(props.selectedCourse.prerequisites);
 
-        console.log(initialNodes);
-        console.log(initialEdges);
+        //console.log(initialNodes);
+        //console.log(initialEdges);
+        //console.log(JSON.stringify(input_text_obj, null, 4));
+
     }
 
     /* return <PrerequisiteTreeView initialNodes={initialNodes} initialEdges={initialEdges} /> */
@@ -196,3 +225,23 @@ export const PrerequisitePresenter = observer((props) => {
 
 export default PrerequisitePresenter;
 
+
+
+/*
+
+
+
+
+        let HTML_nodes = document.getElementsByClassName("react-flow__node");
+
+        for (let i = 0; i < HTML_nodes.length; i++) {
+            //console.log(HTML_nodes[i].children[0].getAttribute("data-nodeid").split(" ")[0])
+            if (HTML_nodes[i].children[0].getAttribute("data-nodeid").split(" ")[0] === "text") {
+                HTML_nodes[i].addEventListener('click', function () {
+                    alert('Button was clicked!');
+                  });
+            }   // Can add else
+        }
+
+
+        */
