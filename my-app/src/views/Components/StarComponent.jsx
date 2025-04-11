@@ -15,7 +15,7 @@ export const StarComponent = ({ index, rating, onRatingChange, onHover }) => {
             onMouseLeave={() => onHover(0)}
         >
             <i
-                className={`bx ${starClass} text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-yellow-400 transition-transform duration-200 group-hover:scale-110`}
+                className={`bx ${starClass} text-5xl text-violet-500 t-500 transition-transform duration-200 group-hover:scale-110`}
             ></i>
             <button
                 className="absolute top-0 left-1/2 w-1/2 h-full cursor-pointer"
