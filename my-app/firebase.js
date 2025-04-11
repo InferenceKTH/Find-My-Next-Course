@@ -27,7 +27,7 @@ export function connectToFirebase(model) {
     loadCoursesFromCacheOrFirebase(model);
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
-			model.setUser(user.uid); // Set the user ID once authenticated
+			model.setUser(user); // Set the user ID once authenticated
 			firebaseToModel(model);  // Set up listeners for user-specific data
 			syncModelToFirebase(model);  // Start syncing changes to Firebase
 		} else {
@@ -40,7 +40,7 @@ export function connectToFirebase(model) {
 async function firebaseToModel(model) {
 	if (!model.user) 
         return;
-	const userRef = ref(db, `users/${model.user}`);
+	const userRef = ref(db, `users/${model.user.uid}`);
 	onValue(userRef, (snapshot) => {
 		if (!snapshot.exists()) 
             return;
@@ -58,7 +58,7 @@ async function firebaseToModel(model) {
 export function syncModelToFirebase(model) {
 	reaction(
 		() => ({
-			userId: model?.user,
+			userId: model?.user.uid,
 			favourites: toJS(model.favourites),
 			// currentSearch: toJS(model.currentSearch),
 			// Add more per-user attributes here
