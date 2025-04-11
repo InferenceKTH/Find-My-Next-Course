@@ -51,7 +51,7 @@ export default function UploadField(props) {
             </div>
             <ButtonGroupField
                 items={["Weak", "Moderate", "Strong"]}
-                HandleFilterEnable={props.HandleFilterEnable}
+                HandleFilterChange={props.HandleFilterChange}
                 />
             </div>
             <div className="mb-2 text-white flex justify-between">

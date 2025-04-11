@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 .stroke-animate {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: dash 0.6s ease-out forwards;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 10s ease-out forwards;
   }
   
   @keyframes dash {

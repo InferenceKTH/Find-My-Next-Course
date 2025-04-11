@@ -4,11 +4,22 @@ import FilterEnableCheckbox from "./FilterEnableCheckbox";
 const CollapsibleCheckboxes = (props) => {
   const [expanded, setExpanded] = useState({});
   const [filterEnabled, setFilterEnabled] = useState(true);
+  const [checkedSubItems, setCheckedSubItems] = useState({});
+
+
 
   const toggleExpand = (id) => {
     setExpanded((prev) => ({
       ...prev,
       [id]: !prev[id],
+    }));
+  };
+
+  const toggleSubCheckbox = (mainId, index) => {
+    const key = `${mainId}-${index}`;
+    setCheckedSubItems((prev) => ({
+      ...prev,
+      [key]: !prev[key],
     }));
   };
 
@@ -26,15 +37,31 @@ const CollapsibleCheckboxes = (props) => {
     {
       id: 3,
       label: "Category 3",
-      subItems: ["Sub-item 3.1", "Sub-item 3.2", "Sub-item 3.3", "Sub-item 3.4", "Sub-item 3.4"],
+      subItems: [
+        "Sub-item 3.1",
+        "Sub-item 3.2",
+        "Sub-item 3.3",
+        "Sub-item 3.4",
+        "Sub-item 3.5",
+        "Sub-item 3.6",
+      ],
     },
   ];
+
+    rows.forEach((row) => {
+      row.subItems.forEach((_, index) => {
+        //toggleSubCheckbox(row.id, index);
+      });
+    });
 
   return (
     <div className="m-2">
       <div className="mb-2 text-white flex items-center justify-between">
         <div className="flex flex-col">
-          <h3>{String(props.filterName).charAt(0).toUpperCase() + String(props.filterName).slice(1)}</h3>
+          <h3>
+            {String(props.filterName).charAt(0).toUpperCase() +
+              String(props.filterName).slice(1)}
+          </h3>
           <p className="text-sm opacity-50">- filter description</p>
         </div>
         <FilterEnableCheckbox
@@ -45,8 +72,11 @@ const CollapsibleCheckboxes = (props) => {
         />
       </div>
       <div
-        className={`${filterEnabled ? "opacity-100 pointer-events-auto" : "opacity-50 pointer-events-none"
-          } transition-all`}
+        className={`${
+          filterEnabled
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-50 pointer-events-none"
+        } transition-all`}
       >
         <div className="rounded-lg shadow-2xs w-full text-white bg-[#aba8e0] border border-gray-200 p-4">
           {rows.map((row) => (
@@ -63,50 +93,48 @@ const CollapsibleCheckboxes = (props) => {
                   {row.label}
                 </label>
               </div>
-              {expanded[row.id] && (
-                <svg
-                  width="40"
-                  height={row.subItems.length * 50}
-                  viewBox={`0 0 40 ${row.subItems.length * 50}`}
-                  preserveAspectRatio="none"
-                  className="absolute left-3 top-6 transition-all duration-300 ease-in-out"
-                >
-                  {row.subItems.map((_, i) => {
-                    const y = i * 30;
-                    return (
-                      <path
-                        key={i}
-                        d={`M10 0 L10 ${y + 20} H40`}
-                        stroke="white"
-                        strokeWidth="1.5"
-                        fill="none"
-                        className="transition-all duration-500 ease-in-out stroke-animate"
-                      />
-                    );
-                  })}
-                </svg>
-              )}
+
               {expanded[row.id] && (
                 <div className="mt-2 space-y-2 relative">
-                  {row.subItems.map((subItem, index) => (
-                    <div
-                      key={index}
-                      className="relative pl-6 flex items-center"
-                    >
-                      <input
-                        type="checkbox"
-                        defaultChecked={true}
-                        id={`sub-checkbox-${row.id}-${index}`}
-                        className="accent-violet-500"
-                      />
-                      <label
-                        htmlFor={`sub-checkbox-${row.id}-${index}`}
-                        className="cursor-pointer ml-2"
-                      >
-                        {subItem}
-                      </label>
-                    </div>
-                  ))}
+                  {row.subItems.map((subItem, index) => {
+                    const checkboxId = `sub-checkbox-${row.id}-${index}`;
+                    const key = `${row.id}-${index}`;
+                    const y = index * 32;
+
+                    return (
+                      <div key={checkboxId} className="relative pl-6 flex items-center">
+                        {/* SVG line only if the checkbox is checked */}
+                        {checkedSubItems[key] && (
+                          <svg
+                            width="40"
+                            height="30"
+                            viewBox="0 0 40 30"
+                            preserveAspectRatio="none"
+                            className="absolute left-[-40px] top-1 transition-all duration-300 ease-in-out"
+                          >
+                            <path
+                              d="M10 0 L10 15 H40"
+                              stroke="white"
+                              strokeWidth="1.5"
+                              fill="none"
+                              className="transition-all duration-300 ease-in-out"
+                            />
+                          </svg>
+                        )}
+
+                        <input
+                          type="checkbox"
+                          id={checkboxId}
+                          className="accent-violet-500"
+                          checked={!!checkedSubItems[key]}
+                          onChange={() => toggleSubCheckbox(row.id, index)}
+                        />
+                        <label htmlFor={checkboxId} className="cursor-pointer ml-2">
+                          {subItem}
+                        </label>
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>

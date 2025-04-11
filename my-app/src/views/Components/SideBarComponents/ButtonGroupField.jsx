@@ -1,12 +1,13 @@
 import { useState } from "react";
-import FilterEnableCheckbox from "./FilterEnableCheckbox";
 
 export default function ButtonGroupField(props) {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+
   const handleClick = (index) => {
     setActiveIndex(index);
+    props.HandleFilterChange(["buttongroup","eligibility",props.items[index]]);
   };
   const getButtonClasses = (index) => {
     const baseClasses = `flex-auto py-1 px-4 inline-flex items-center gap-x-2 text-sm 

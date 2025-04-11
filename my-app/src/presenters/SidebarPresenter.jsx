@@ -94,6 +94,9 @@ const SidebarPresenter = observer(({ model }) => {
             case "credits":
                 model.updateCreditsFilter(param[2]);
                 break;
+            case "eligibility":
+                model.updateTranscriptElegibilityFilter(param[2].toLowerCase());
+                break;
             default:
                 console.log("Invalid filter type");
         }

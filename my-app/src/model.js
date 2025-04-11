@@ -12,7 +12,7 @@ export const model = {
     filterOptions: {
         applyTranscriptFilter: false,
         eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
-        applyLevelFilter:true,
+        applyLevelFilter: true,
         level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         applyLanguageFilter: true,
         language: "none", //the possible values for the string are: "none"/"english"/"swedish"/"both"
@@ -113,7 +113,7 @@ export const model = {
     },
     updateLanguageFilter(languages) {
         this.filterOptions.language = languages;
-        console.log(languages)
+        console.log(languages);
     },
     updateLocationFilter(location) {
         this.filterOptions.location = location;
@@ -121,7 +121,11 @@ export const model = {
     updateCreditsFilter(creditLimits) {
         this.filterOptions.creditMin = creditLimits[0];
         this.filterOptions.creditMax = creditLimits[1];
-        console.log(creditLimits)
+        console.log(creditLimits);
+    },
+    updateTranscriptElegibilityFilter(eligibility) {
+        this.filterOptions.eligibility = eligibility; 
+        console.log(eligibility);
     },
 
     //setters for the filter options
