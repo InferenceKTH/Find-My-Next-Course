@@ -23,7 +23,7 @@ const ListViewPresenter = observer(({ model }) => {
 
     useEffect(() => {
         const cleanup = syncScrollPositionToFirebase(model, scrollContainerRef);
-        return () => cleanup();
+        return () => cleanup;
     }, [model.user, scrollContainerRef]);
 
     const addFavourite = (course) => {
