@@ -1,5 +1,5 @@
 function prereq_convert(courses_taken, current_object, previous_key, hash_bool, count_object) {
-    if (current_object == undefined) {return}
+    if (current_object === undefined) {return}
     /* STEP 1: Sets courses taken to true, and not taken to false */
     if (!Array.isArray(current_object)) {   // Is object
         let key = Object.keys(current_object)[0];
@@ -58,8 +58,8 @@ function eligibility_check(courses_taken, prereqs_object, hash_bool, count_objec
 }
 
 export default function eligibility(courses_taken, prereqs_object) {
-    let prereqs_object1 = structuredClone(prereqs_object);
-    let prereqs_object2 = structuredClone(prereqs_object);
+    let prereqs_object1 = JSON.parse(JSON.stringify(prereqs_object));
+    let prereqs_object2 = JSON.parse(JSON.stringify(prereqs_object));
     let return_object = {strong: false, zero: false, moderate: false, weak: false};
     let count_object = {count: 0};
 

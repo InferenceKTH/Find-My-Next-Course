@@ -7,6 +7,8 @@ const FilterPresenter = observer(({ model }) => {
 
 
     function applyTranscriptEligibility() {
+        if(localFilteredCourses.length == 0) 
+            return;
         /* this elias thing  */
         const eligibilitytype = model.filterOptions.eligibility;
 
@@ -16,6 +18,7 @@ const FilterPresenter = observer(({ model }) => {
         let weakcourses = [];
 
         let storedFinishedCourses = [];
+
         if (localStorage.getItem("completedCourses"))
             storedFinishedCourses = JSON.parse(localStorage.getItem("completedCourses"));
 
@@ -46,6 +49,8 @@ const FilterPresenter = observer(({ model }) => {
     }
 
     function updateCredits() {
+        if(localFilteredCourses.length == 0) 
+            return;
         const min = model.filterOptions.creditMin;
         const max = model.filterOptions.creditMax;
 
@@ -92,6 +97,8 @@ const FilterPresenter = observer(({ model }) => {
     }
 
     function updateLanguages() {
+        if(localFilteredCourses.length == 0) 
+            return;
         //possible model.filterOptions.languages values: "none"/"english"/"swedish"/"both"
         const languages = model.filterOptions.language;
         let data = [...localFilteredCourses];
@@ -104,8 +111,6 @@ const FilterPresenter = observer(({ model }) => {
         //course.language.swedish (true/false/"null")
 
         //console.log(data);
-        if(data.length == 0) 
-            return;
         
         switch (languages) {
             case "none":
@@ -206,6 +211,9 @@ const FilterPresenter = observer(({ model }) => {
     }
 
     function updateLevels() {
+        if(localFilteredCourses.length == 0) 
+            return;
+        
         //the possible values are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         //model.filterOptions.level is an array. it can have []
         const levels = model.filterOptions.level;
@@ -254,6 +262,7 @@ const FilterPresenter = observer(({ model }) => {
 
         model.filteredCourses = [...localFilteredCourses];
         model.filtersChange = false;
+        console.log("filtered objects number of elements: ", model.filteredCourses.length);
     }
 });
 
