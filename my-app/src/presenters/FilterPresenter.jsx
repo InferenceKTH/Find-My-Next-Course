@@ -16,7 +16,13 @@ const FilterPresenter = observer(({ model }) => {
         const max = model.filterOptions.creditMax;
 
         localFilteredCourses = localFilteredCourses.filter(function(course){
-            return ((course.credits >= min)&&(course.credits <= max));
+            try {
+                return ((course.credits >= min)&&(course.credits <= max));
+            } catch (error) {
+                console.log("for some reason course.credits is: ", course?.credits, error);
+                return false;
+            }
+            
         });
     }
 
@@ -29,10 +35,22 @@ const FilterPresenter = observer(({ model }) => {
         let worstCourses = [];
 
         bestCourses = localFilteredCourses.filter(function(course) {
-            return (locations.includes(course.location));
+            try {
+                return (locations.includes(course.location));
+            } catch (error) {
+                console.log("for some reason course.location is: ", course?.location, error);
+                return false;
+            }
+            
         });
         worstCourses = localFilteredCourses.filter(function(course) {
-            return ((course.location === "null"));
+            try {
+                return ((course?.location === undefined) || (course?.location === "null"));
+            } catch (error) {
+                console.log("BIG ERROR", error);
+                return false;
+            }
+            
         });
 
         localFilteredCourses = [...bestCourses, ...worstCourses];
@@ -51,6 +69,9 @@ const FilterPresenter = observer(({ model }) => {
         //course.language.english (true/false/"null")
         //course.language.swedish (true/false/"null")
 
+        //console.log(data);
+        if(data.length == 0) 
+            return;
         
         switch (languages) {
             case "none":
@@ -61,38 +82,87 @@ const FilterPresenter = observer(({ model }) => {
             case "english":
                 {
                     bestCourses = data.filter(function (course) {
-                        return (course.language.english == true);
+                        try {
+                            return (course?.language?.english === true);
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR", error);
+                            return false;
+                        }
+                        
                     }
                     );
                     worstCourses = data.filter(function(course) {
-                        return (course.language.english == "null");
+                        try {
+                            return ((course?.language === undefined ) || course?.language?.english === "null");
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR");
+                            return false;
+                        }
+                        
                     });
                     break;
                 }
             case "swedish":
                 {
                     bestCourses = data.filter(function (course) {
-                        return (course.language.swedish == true);
+                        try {
+                            return (course?.language?.swedish === true);
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR");
+                            return false;
+                        }
+                        
                     }
                     );
                     worstCourses = data.filter(function(course) {
-                        return (course.language.swedish == "null");
+                        try {
+                            return ((course?.language === undefined ) || course?.language?.swedish === "null");
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR");
+                            return false;
+                        }
+                        
                     });
                     break;
                 }
             case "both":
                 { //both on reorders, the both languages are reordered both - english - swedish - null
                     bestCourses = data.filter(function (course) {
-                        return ((course.language.english == true) && (course.language.swedish == true));
+                        try {
+                            return ((course?.language?.english === true) && (course?.language?.swedish === true));
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR");
+                            return false;
+                        }
+                        
                     }
                     );
                     middleCourses = data.filter(function (course) {
-                        return (((course.language.english == true) && (course.language.swedish == false))
-                            || ((course.language.english == false) && (course.language.swedish == true)));
+                        try {
+                            return (((course?.language?.english === true) && (course?.language?.swedish === false))
+                            || ((course?.language?.english === false) && (course?.language?.swedish === true)));
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR");
+                            return false;
+                        }
+                        
                         }
                     );
                     worstCourses = data.filter(function(course) {
-                        return (course.language.english == "null");
+                        try {
+                            return ((course?.language === undefined ) || course?.language?.english === "null");
+                        } catch (error) {
+                            console.log(course);
+                            console.log("BIG ERROR");
+                            return false;
+                        }
+                        
                     });
                     break;
                 }
@@ -125,12 +195,15 @@ const FilterPresenter = observer(({ model }) => {
         }
         localFilteredCourses = [...stayingCourses];*/
     }
-
+    
     if (model.filtersChange) {
         localFilteredCourses = [...model.courses];
 
         if (model.filterOptions.applyLocationFilter) {
-            updateLocations();
+            //after deo finishes locations, until then dont
+
+            //console.log("going to apply location on:",localFilteredCourses.length);
+            //updateLocations();
         }
         if (model.filterOptions.applyLevelFilter) {
             updateLevels();
@@ -145,7 +218,7 @@ const FilterPresenter = observer(({ model }) => {
             applyTranscriptEligibility();
         }
 
-        model.filteredCourses = localFilteredCourses;
+        model.filteredCourses = [...localFilteredCourses];
         model.filtersChange = false;
     }
 });
