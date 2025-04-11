@@ -17,6 +17,7 @@ import '@xyflow/react/dist/style.css';
 
 export const PrerequisitePresenter = observer((props) => {
 
+    
 
     let uniqueCounter = 0;
     //let toAdd = [];
@@ -24,7 +25,9 @@ export const PrerequisitePresenter = observer((props) => {
     const position = { x: 0, y: 0 };
     const edgeType = 'smoothstep';
 
-    const initialNodes = [
+    
+
+    let initialNodes = [
         /* {
             id: '1',
             type: 'input',
@@ -80,7 +83,7 @@ export const PrerequisitePresenter = observer((props) => {
         { id: '7', type: 'output', data: { label: 'output' }, position }, */
     ];
 
-    const initialEdges = [
+    let initialEdges = [
         /* { id: 'e12', source: '1', target: '2', type: edgeType, animated: true },
         { id: 'e13', source: '1', target: '3', type: edgeType, animated: true },
         { id: 'e22a', source: '2', target: '2a', type: edgeType, animated: true },
@@ -96,6 +99,9 @@ export const PrerequisitePresenter = observer((props) => {
 
     const nodeWidth = 172;
     const nodeHeight = 36;
+
+
+    loadTree("");
 
 
 
@@ -139,9 +145,7 @@ export const PrerequisitePresenter = observer((props) => {
 
 
     const Flow = () => {
-
-        loadTree();
-        console.log("arived")
+        console.log("arived in Flow");
 
 
         const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
@@ -195,7 +199,7 @@ export const PrerequisitePresenter = observer((props) => {
         return bool;
     }
     function createNode(id, name) {
-        if (id == "and" || id == "or") {
+        if (id == "and" || id == "or" || id == "Err") {
             return {
                 id: id + uniqueCounter++,
                 type: 'input',
@@ -220,36 +224,36 @@ export const PrerequisitePresenter = observer((props) => {
         console.log(obj);
         if (typeof obj === 'object') {
             for (let i = 0; i < obj.arr.length; i++) {
+                let functionNode = createNode("Err", "Error");
                 if (obj.arr[i].type == "and") {
 
                     console.log("Create and node")
 
-                    let newN = createNode("and", "All of");
-                    initialNodes.push(newN);
-                    initialEdges.push(createEdge(parent.id, newN.id));
+                    functionNode = createNode("and", "All of");
+                    initialNodes.push(functionNode);
+                    initialEdges.push(createEdge(parent.id, functionNode.id));
                     for (let i = 0; i < obj.arr[i].length; i++) {
                         let nCource = loadCource(obj.arr[i]);
                         initialNodes.push(nCource);
-                        initialEdges.push(createEdge(newN.id, nCource.id));
+                        initialEdges.push(createEdge(functionNode.id, nCource.id));
                     }
-                    return newN;
 
                 } else if (obj.arr[i].type == "or") {
 
-                    console.log("Create or node")
+                    console.log("Create or node");
 
-
-                    let newN = createNode("or", "One of");
-                    initialNodes.push(newN);
-                    initialEdges.push(createEdge(parent.id, newN.id));
+                    functionNode = createNode("or", "One of");
+                    initialNodes.push(functionNode);
+                    initialEdges.push(createEdge(parent.id, functionNode.id));
                     for (let i = 0; i < obj.arr[i].length; i++) {
                         let nCource = loadCource(obj.arr[i]);
                         initialNodes.push(nCource);
-                        initialEdges.push(createEdge(newN.id, nCource.id));
+                        initialEdges.push(createEdge(functionNode.id, nCource.id));
                     }
-                    return newN;
 
                 }
+
+                return functionNode;
             }
         } else {
             console.log("Create text node")
