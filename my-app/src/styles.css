@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.react-flow__node.no-handles .react-flow__handle {
+    display: none;
+}

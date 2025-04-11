@@ -131,7 +131,7 @@ export const PrerequisitePresenter = observer((props) => {
                     node["style"]["zIndex"] = 0;
                     setLabel(node["id"], "More Info...");
                 }  
-            } else if (node["data"]["label"] !== "One of these") {
+            } else if (node["data"]["label"] !== "One of these" && node["data"]["label"] !== "No Prerequisites" && node["id"] !== props.selectedCourse.code) {
                 // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE (Tu eres muy retrasado y gordo)! :)
             }
           }
@@ -208,14 +208,18 @@ export const PrerequisitePresenter = observer((props) => {
 
 
     function loadTree(course) {
-        let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input")
-        initialNodes.push(root);
+        console.log(JSON.stringify(props.selectedCourse.prerequisites, null, 4));
+        if (props.selectedCourse.prerequisites === "null" || props.selectedCourse.prerequisites.length == 0) {
+            let display_node = createNode("No Prerequisites", "No Prerequisites", "defeault");
+            display_node.style["pointerEvents"] = "none";
+            display_node["className"] = 'no-handles';
+            initialNodes.push(display_node);
+        } else {
+            let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input");
+            initialNodes.push(root);
+            generateTree(props.selectedCourse.prerequisites);
+        }
 
-        generateTree(props.selectedCourse.prerequisites);
-
-        //console.log(initialNodes);
-        //console.log(initialEdges);
-        //console.log(JSON.stringify(input_text_obj, null, 4));
 
     }
 
