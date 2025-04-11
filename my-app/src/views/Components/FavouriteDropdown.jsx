@@ -20,6 +20,25 @@ const FavouritesDropdown = observer((props) => {
     }
 
     return (
+        <div className=" mt-2 w-48 bg-white border border-solid border-black rounded-lg z-50 overflow-y-auto max-h-60">
+            {props.favouriteCourses.length > 0 ? (
+                props.favouriteCourses.map(course => (
+                    <div
+                        onClick={() => {
+                            console.log('Clicked:', course);
+                            props.setSelectedCourse(course);
+                            props.setIsPopupOpen(true);
+                        }}
+                        key={course.code}
+                        className="p-2 flex justify-between items-center w-full border border-solid border-black ">
+                        <p className="text-black">{course.name}</p>
+                        <button
+                            className="text-red-500 cursor-pointer "
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                props.removeFavourite(course);
+                            }}>
+                            X
         <>
             <div className="fixed mt-3 w-[32rem] right-4 bg-indigo-300/75 backdrop-blur-lg border border-violet-500 rounded-lg z-20 shadow-lg flex flex-col max-h-[calc(100vh-8rem)]">
                 {/* Header */}
@@ -113,6 +132,17 @@ const FavouritesDropdown = observer((props) => {
                     </div>
                 </div>
             )}
+            <div className="relative z-100">
+                {props.isPopupOpen && props.popup}
+            </div>
+            {props.favouriteCourses.length > 0 && (
+                <button
+                    onClick={props.removeAllFavourites}
+                    className="mt-2 text-red-500 ">
+                    Clear Favourites
+                </button>
+            )}
+        </div>
 
             {/* Optional course popup */}
             {props.isPopupOpen && props.popup}
