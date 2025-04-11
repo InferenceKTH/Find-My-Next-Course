@@ -18,6 +18,8 @@ import '@xyflow/react/dist/style.css';
 export const PrerequisitePresenter = observer((props) => {
 
     let uniqueCounter = 0;
+    let textCounter = 0;
+    let codeCounter = 0;
     //let toAdd = [];
 
     const position = { x: 0, y: 0 };
@@ -41,7 +43,7 @@ export const PrerequisitePresenter = observer((props) => {
 
     const getLayoutedElements = (nodes, edges, direction = 'LR') => {
         const isHorizontal = direction === 'LR';
-        dagreGraph.setGraph({ rankdir: direction });
+        dagreGraph.setGraph({ rankdir: direction, nodesep: 30});
 
         nodes.forEach((node) => {
             dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
@@ -77,7 +79,7 @@ export const PrerequisitePresenter = observer((props) => {
 
 
     const Flow = () => {
-        console.log("arived in Flow");
+        //console.log("arived in Flow");
 
 
         const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
@@ -107,7 +109,7 @@ export const PrerequisitePresenter = observer((props) => {
                     style={{ backgroundColor: '#F7F9FB' }}
                     nodesDraggable={false}
                     nodesConnectable={false}
-                    elementsSelectable={false}
+                    elementsSelectable={true}
                     elementsFocusable={false}
                     edgesFocusable={false}
                 >
@@ -163,12 +165,16 @@ export const PrerequisitePresenter = observer((props) => {
         } else {    // Is an array
             for (let i = 0; i < current_object.length; i++) {
                 if (typeof current_object[i] == "string") {
+                    let input_id = "";
                     let input_text = current_object[i];
                     if (current_object[i].startsWith("#")) {
-                        input_text = input_text.slice(1, 115);
-                    } 
-                    initialNodes.push(createNode(input_text, input_text, "output"));
-                    initialEdges.push(createEdge(previous_node_id, input_text, "output"));
+                        input_text = "More Info...";  //input_text.slice(1, 115);
+                        input_id = "text" + ++textCounter;
+                    } else {
+                        input_id = current_object[i] + " " + ++codeCounter;
+                    }
+                    initialNodes.push(createNode(input_id, input_text, "output"));
+                    initialEdges.push(createEdge(previous_node_id, input_id, "output"));
                 } else {
                     prereq_convert(current_object[i], previous_key, previous_node_id);
                 }
