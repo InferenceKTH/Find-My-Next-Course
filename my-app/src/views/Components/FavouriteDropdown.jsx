@@ -57,11 +57,11 @@ function FavouritesDropdown(props) {
                             <>
                                 <button
                                     onClick={props.removeAllFavourites}
-                                    className="w-1/2 p-3 text-red-600 hover:bg-red-600 hover:text-white border-r border-solid border-violet-400 font-semibold transition-colors">
+                                    className="w-1/2 p-3 cursor-pointer text-red-600 hover:bg-red-600 hover:text-white border-r border-solid border-violet-400 font-semibold transition-colors">
                                     Clear All
                                 </button>
                                 <button
-                                    className="w-1/2 p-3 text-violet-700 hover:bg-violet-400/50 flex items-center justify-center gap-2 font-semibold"
+                                    className="w-1/2 p-3 cursor-pointer text-violet-700 hover:bg-blue-500 hover:text-white flex items-center justify-center gap-2 font-semibold"
                                     onClick={() => console.log('Share feature coming soon')}>
                                     Share Courses
                                 </button>
