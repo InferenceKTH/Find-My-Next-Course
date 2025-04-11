@@ -3,7 +3,6 @@ import { getAuth, signInWithPopup, signOut, GoogleAuthProvider } from "firebase/
 import { observer } from "mobx-react-lite";
 import project_logo from "../assets/project_icon.png";
 import FavouritesDropdown from "./Components/FavouriteDropdown.jsx";
-import ShareLinkButton from "./ShareLinkButton";
 
 function SearchbarView(props) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -53,7 +52,7 @@ function SearchbarView(props) {
       />
 
       <div className="flex gap-6 items-center">
-        <ShareLinkButton />
+        {props.share}
 
         <button
           className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200"

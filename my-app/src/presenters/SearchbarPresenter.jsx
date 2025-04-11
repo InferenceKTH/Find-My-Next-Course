@@ -1,7 +1,8 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
 import { useState } from 'react';
-import CoursePagePopup from '../views/Components/CoursePagePopup.jsx';
+import CoursePagePopup from '../views/Components/CoursePagePopup.jsx'
+import { ShareLinkPresenter } from "../presenters/ShareLinkButtonPresenter"
 import PrerequisitePresenter from './PrerequisitePresenter.jsx';
 import SearchbarView from "../views/SearchbarView.jsx";
 
@@ -37,6 +38,7 @@ const SearchbarPresenter = observer(({ model }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
     const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />
+    const shareLinkPresenter = <ShareLinkPresenter model={model}/>
 
     const popup = <CoursePagePopup
         favouriteCourses={model.favourites}
@@ -46,8 +48,6 @@ const SearchbarPresenter = observer(({ model }) => {
         isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}
         course={selectedCourse}
         prerequisiteTree={preP} />
-
-
 
 
     return (
@@ -63,6 +63,7 @@ const SearchbarPresenter = observer(({ model }) => {
             setSelectedCourse={setSelectedCourse}
             popup={popup}
             handleFavouriteClick={handleFavouriteClick}
+            share={shareLinkPresenter}
         />
     );
 });

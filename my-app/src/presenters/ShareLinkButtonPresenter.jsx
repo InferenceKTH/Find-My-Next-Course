@@ -1,9 +1,8 @@
 import { observer } from "mobx-react-lite";
 import { useState, useEffect, useRef } from "react";
 import ShareLinkButton from "../views/ShareLinkButton"
-import {model} from "../../model"
 
-export const useShareLink = observer(() => {
+export const ShareLinkPresenter = observer((props) => {
     console.log("ShareLinkButton rendered"); 
   const [shareUrl, setShareUrl] = useState("");
   const [visible, setVisible] = useState(false);
@@ -12,7 +11,7 @@ export const useShareLink = observer(() => {
 
   const generateShareUrl = () => {
     console.log("generateShareUrl clicked"); 
-    const courseCodes = (model.favourites || []).map(course => course.code);
+    const courseCodes = (props.model.favourites || []).map(course => course.code);
     const query = new URLSearchParams({ favs: courseCodes.join(",") });
     const url = `${window.location.origin}/#/share?${query.toString()}`;
     setShareUrl(url);

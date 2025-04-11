@@ -4,7 +4,6 @@ import { SidebarPresenter } from "../presenters/SidebarPresenter.jsx";
 import { SearchbarPresenter } from "../presenters/SearchbarPresenter.jsx";
 import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';
 import SharedView from '../pages/SharedView.jsx'; 
-import { model } from '/src/model.js';
 
 function MainAppLayout({ model }) {
 	return (

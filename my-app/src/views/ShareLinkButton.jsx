@@ -20,7 +20,11 @@ function ShareLinkButton( { shareUrl, visible, generateShareUrl, handleCopy, pop
         >
           <p className="text-sm mb-2 break-words">{shareUrl}</p>
           <button
-            onClick={handleCopy} // Call the presenter method to copy the URL
+             onClick={handleCopy} // Call the presenter method to copy the URL
+            // onClick={() => {
+            //   console.log('Button pressed');
+            //   handleCopy(); // if you still want to call the actual function
+            // }}
             className="w-full bg-[#0052cc] text-white text-sm py-1 rounded-lg hover:bg-[#003399] transition"
           >
             Copy to Clipboard
