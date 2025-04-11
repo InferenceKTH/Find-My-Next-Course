@@ -100,8 +100,8 @@ const FavouritesDropdown = observer((props) => {
                         )}
                     </div>
 
-                </div>
-            </div>
+                {/* </div>
+            </div> */}
 
         
 
