@@ -2,6 +2,8 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { get, getDatabase, ref, set, onValue, push } from "firebase/database";
 import { reaction, toJS } from "mobx";
+import throttle from "lodash.throttle";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyCBckVI9nhAP62u5jZJW3F4SLulUv7znis",
@@ -24,53 +26,50 @@ googleProvider.addScope("email");
 let noUpload = false;
 
 export function connectToFirebase(model) {
-    loadCoursesFromCacheOrFirebase(model);
+	loadCoursesFromCacheOrFirebase(model);
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
 			model.setUser(user); // Set the user ID once authenticated
-			firebaseToModel(model);  // Set up listeners for user-specific data
-			syncModelToFirebase(model);  // Start syncing changes to Firebase
+			firebaseToModel(model); // Set up listeners for user-specific data
+			syncModelToFirebase(model); // Start syncing changes to Firebase
 			syncScrollPositionToFirebase(model);
 		} else {
-			model.setUser(null);  // If no user, clear user-specific data
+			model.setUser(null); // If no user, clear user-specific data
 		}
 	});
 }
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
-	if (!model.user) 
-        return;
+	if (!model.user) return;
 	const userRef = ref(db, `users/${model.user.uid}`);
 	onValue(userRef, (snapshot) => {
-		if (!snapshot.exists()) 
-            return;
+		if (!snapshot.exists()) return;
 		const data = snapshot.val();
 		noUpload = true;
-		if (data.favourites) 
-            model.setFavourite(data.favourites);
-		if(data.currentSearchText)
+		if (data.favourites) model.setFavourite(data.favourites);
+		if (data.currentSearchText)
 			model.setCurrentSearchText(data.currentSearchText);
-		// if (data.currentSearch) 
-        //     model.setCurrentSearch(data.currentSearch);
+		if (data.scrollPosition) 
+			model.setScrollPosition(data.scrollPosition);
+		// if (data.currentSearch)
+		//     model.setCurrentSearch(data.currentSearch);
 		noUpload = false;
 	});
 }
-
 
 export function syncModelToFirebase(model) {
 	reaction(
 		() => ({
 			userId: model?.user.uid,
 			favourites: toJS(model.favourites),
-			currentSearchText : toJS(model.currentSearchText),
+			currentSearchText: toJS(model.currentSearchText),
 			// currentSearch: toJS(model.currentSearch),
 			// Add more per-user attributes here
 		}),
 		// eslint-disable-next-line no-unused-vars
 		({ userId, favourites, currentSearchText }) => {
-			if (noUpload || !userId) 
-                return;
+			if (noUpload || !userId) return;
 			const userRef = ref(db, `users/${userId}`);
 			const dataToSync = {
 				favourites,
@@ -84,27 +83,35 @@ export function syncModelToFirebase(model) {
 	);
 }
 
-function syncScrollPositionToFirebase(model) {
-    reaction(
-        () => window.scrollY,
-        (scrollPixel) => {
-            if (model?.user?.uid) {
-                const userRef = ref(db, `users/${model.user.uid}/scrollPosition`);
-                set(userRef, { scrollPixel })
-                    .catch(console.error);
-            }
+export function syncScrollPositionToFirebase(model, containerRef) {
+	if (!containerRef?.current) return;
+
+    const throttledSet = throttle((scrollPixel) => {
+        if (model?.user?.uid) {
+            const userRef = ref(db, `users/${model.user.uid}/scrollPosition`);
+            set(userRef, scrollPixel).catch(console.error);
         }
-    );
+    }, 500);
+
+    const handleScroll = () => {
+        const scrollTop = containerRef.current.scrollTop;
+        model.setScrollPosition(scrollTop);
+        if (!model.user) {
+            localStorage.setItem("scrollPosition", scrollTop);
+        }
+        throttledSet(scrollTop);
+    };
+
+    containerRef.current.addEventListener('scroll', handleScroll);
+    
+    // Return cleanup function
+    return () => {
+        if (containerRef.current) {
+            containerRef.current.removeEventListener('scroll', handleScroll);
+        }
+    };
 }
 
-export async function getScrollPositionFromFirebase(userId) {
-    const scrollRef = ref(db, `users/${userId}/scrollPosition`);
-    const snapshot = await get(scrollRef);
-    if (snapshot.exists()) {
-        return snapshot.val().scrollPercentage || 0;
-    }
-    return 0;
-}
 
 function saveCoursesInChunks(courses, timestamp) {
 	const parts = 3; // Adjust this based on course size
@@ -196,30 +203,28 @@ export async function saveJSONCoursesToFirebase(model, data) {
 	});
 }
 
-
 export async function addReviewForCourse(courseCode, review) {
-    try {
-        const reviewsRef = ref(db, `reviews/${courseCode}`);
-        const newReviewRef = push(reviewsRef);
-        await set(newReviewRef, review);
-    } catch (error) {
-        console.error("Error when adding a course to firebase:", error);
+	try {
+		const reviewsRef = ref(db, `reviews/${courseCode}`);
+		const newReviewRef = push(reviewsRef);
+		await set(newReviewRef, review);
+	} catch (error) {
+		console.error("Error when adding a course to firebase:", error);
 	}
 }
 
-
 export async function getReviewsForCourse(courseCode) {
-    const reviewsRef = ref(db, `reviews/${courseCode}`);
-    const snapshot = await get(reviewsRef);
-    if (!snapshot.exists()) return [];
+	const reviewsRef = ref(db, `reviews/${courseCode}`);
+	const snapshot = await get(reviewsRef);
+	if (!snapshot.exists()) return [];
 
-    const reviews = [];
-    snapshot.forEach(childSnapshot => {
-        reviews.push({
-            id: childSnapshot.key,  // Firebase-generated unique key
-            userName: childSnapshot.val().userName,
-            text: childSnapshot.val().text
-        });
-    });
-    return reviews;
+	const reviews = [];
+	snapshot.forEach((childSnapshot) => {
+		reviews.push({
+			id: childSnapshot.key, // Firebase-generated unique key
+			userName: childSnapshot.val().userName,
+			text: childSnapshot.val().text,
+		});
+	});
+	return reviews;
 }

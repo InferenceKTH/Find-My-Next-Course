@@ -1,41 +1,31 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ListView from "../views/ListView.jsx";
 import CoursePagePopup from '../views/Components/CoursePagePopup.jsx';
 import PrerequisitePresenter from './PrerequisitePresenter.jsx';
 import {ReviewPresenter} from "../presenters/ReviewPresenter.jsx"
+import {syncScrollPositionToFirebase} from "../../firebase.js"
 
 const ListViewPresenter = observer(({ model }) => {
+    
+    const scrollContainerRef = useRef(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPixel = window.scrollY;
-            model.setScrollPosition(scrollPixel);
-            // If not logged in, also save in localStorage (absolute pixel value)
-            if (!model.user) {
-                localStorage.setItem("scrollPosition", scrollPixel);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [model]);
-
-    // When user is not logged in, restore scroll from localStorage on login state change.
-    useEffect(() => {
-        if (!model.user) {
-            const stored = localStorage.getItem("scrollPosition");
-            if (stored) {
-                const target = Number(stored);
-                // Only scroll if the document is tall enough
-                if (document.documentElement.scrollHeight > target) {
-                    window.scrollTo(0, target);
-                }
-            }
+        // Load initial scroll position
+        const savedPosition = model.user 
+            ? model.scrollPosition
+            : localStorage.getItem("scrollPosition");
+        if (savedPosition) {
+            model.setScrollPosition(parseInt(savedPosition, 10));
         }
     }, [model.user]);
-    
+
+    useEffect(() => {
+        const cleanup = syncScrollPositionToFirebase(model, scrollContainerRef);
+        return () => cleanup();
+    }, [model.user, scrollContainerRef]);
+
     const addFavourite = (course) => {
         model.addFavourite(course);
     }
@@ -79,6 +69,7 @@ const ListViewPresenter = observer(({ model }) => {
         popup={popup}
         handleFavouriteClick={handleFavouriteClick}
         targetScroll={model.scrollPosition}
+        scrollContainerRef={scrollContainerRef}
     />;
 });
 

@@ -9,7 +9,7 @@ function ListView(props) {
     const [hasMore, setHasMore] = useState(true);
     const [readMore, setReadMore] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-
+   
     const toggleReadMore = (courseCode) => {
         setReadMore(prevState => ({
             ...prevState,
@@ -35,25 +35,27 @@ function ListView(props) {
 
     const fetchMoreCourses = useCallback(() => {
         if (!hasMore) return;
-    
         const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 10);
         setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
         setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
     }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
     useEffect(() => {
-        if (!props.targetScroll) return;  // nothing to restore
-
-        const currentHeight = document.documentElement.scrollHeight;
-        if (currentHeight < props.targetScroll && hasMore) {
-            // Load more courses, then try again.
-            fetchMoreCourses();
-        } else {
-            // Once enough content has loaded, scroll to the target.
-            window.scrollTo(0, props.targetScroll);
-        }
-    }, [displayedCourses, hasMore, props.targetScroll, fetchMoreCourses]);
-
+        const container = props.scrollContainerRef.current;
+        if (!container || !props.targetScroll) return;
+    
+        const attemptScroll = () => {
+            if (container.scrollHeight >= props.targetScroll) {
+                container.scrollTop = props.targetScroll;
+            } else if (hasMore) {
+                fetchMoreCourses();
+                setTimeout(attemptScroll, 100);
+            }
+        };
+        
+        attemptScroll();
+    }, [props.targetScroll, hasMore, displayedCourses.length]);
+    
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
             {isLoading ? (
@@ -61,7 +63,7 @@ function ListView(props) {
                     <Quantum size="400" speed="10" color="#000061" />
                 </div>
             ) : (
-                <div className="overflow-y-auto h-full" id="scrollableDiv">
+                <div className="overflow-y-auto h-full" id="scrollableDiv" ref={props.scrollContainerRef}>
                     <InfiniteScroll
                         dataLength={displayedCourses.length}
                         next={fetchMoreCourses}
