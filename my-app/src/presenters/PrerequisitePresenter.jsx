@@ -132,7 +132,7 @@ export const PrerequisitePresenter = observer((props) => {
                     setLabel(node["id"], "More Info...");
                 }  
             } else {
-                // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE
+                // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE (Tu eres muy retrasado y gordo)! :)
             }
           }
     };
