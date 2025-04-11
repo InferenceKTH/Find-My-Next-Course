@@ -11,13 +11,13 @@ export const model = {
     filteredCourses: [],
     filterOptions: {
         applyTranscriptFilter: false,
-        applyLevelFilter:false,
+        applyLevelFilter:true,
         level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
-        applyLanguageFilter: false,
+        applyLanguageFilter: true,
         language: [], //the possible values for the array are: "none"/"english"/"swedish"/"both"
-        applyLocationFilter:false,
+        applyLocationFilter:true,
         location: [], //the possible values for the array are: 'KTH Campus', 'KTH Kista', 'AlbaNova', 'KTH Flemingsberg', 'KTH Solna', 'KTH Södertälje', 'Handelshögskolan', 'KI Solna', 'Stockholms universitet', 'KONSTFACK'
-        applyCreditsFilter:false,
+        applyCreditsFilter:true,
         creditMin: 0,
         creditMax: 45,
         //applyDepartmentFilter:false,

@@ -57,7 +57,7 @@ function eligibility_check(courses_taken, prereqs_object, hash_bool, count_objec
     return prereqs_object[key];
 }
 
-export function eligibility(courses_taken, prereqs_object) {
+export default function eligibility(courses_taken, prereqs_object) {
     let prereqs_object1 = structuredClone(prereqs_object);
     let prereqs_object2 = structuredClone(prereqs_object);
     let return_object = {strong: false, zero: false, moderate: false, weak: false};

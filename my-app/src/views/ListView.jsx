@@ -72,6 +72,9 @@ function ListView(props) {
                         >
                             <div>
                                 <p className="font-bold text-[#000061]">{course.code}</p>
+                                {/*mah*/}
+                                <p className="font-bold text-[#000061]">{course.language.english? "English" : "Swedish"}</p>
+                                {/*mah-end*/}
                                 <p className="font-bold">{course.name}</p>
                                 <p
                                     className="text-gray-600"

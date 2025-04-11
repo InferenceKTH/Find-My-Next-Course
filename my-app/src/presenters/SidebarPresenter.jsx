@@ -62,10 +62,10 @@ const SidebarPresenter = observer(({ model }) => {
                 break;
         }
 
-        if (!currentLevelSet.includes(param)) {
-            currentLevelSet.push(param);
+        if (!currentLevelSet.includes(properParam)) {
+            currentLevelSet.push(properParam);
         } else {
-            const index = currentLevelSet.indexOf(param);
+            const index = currentLevelSet.indexOf(properParam);
             if (index > -1) {
                 currentLevelSet.splice(index, 1);
             }
