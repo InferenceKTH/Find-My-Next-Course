@@ -17,8 +17,6 @@ import '@xyflow/react/dist/style.css';
 
 export const PrerequisitePresenter = observer((props) => {
 
-    
-
     let uniqueCounter = 0;
     //let toAdd = [];
 
@@ -27,85 +25,19 @@ export const PrerequisitePresenter = observer((props) => {
 
     
 
-    let initialNodes = [
-        /* {
-            id: '1',
-            type: 'input',
-            data: { label: 'input' },
-            position,
-        },
-        {
-            id: '2',
-            data: { label: 'node 2' },
-            position,
-        },
-        {
-            id: '2a',
-            data: { label: 'node 2a' },
-            position,
-        },
-        {
-            id: '2b',
-            data: { label: 'node 2b' },
-            position,
-        },
-        {
-            id: '2c',
-            data: { label: 'node 2c' },
-            position,
-        },
-        {
-            id: '2d',
-            data: { label: 'node 2d' },
-            position,
-        },
-        {
-            id: '3',
-            data: { label: 'node 3' },
-            position,
-        },
-        {
-            id: '4',
-            data: { label: 'node 4' },
-            position,
-        },
-        {
-            id: '5',
-            data: { label: 'node 5' },
-            position,
-        },
-        {
-            id: '6',
-            type: 'output',
-            data: { label: 'output' },
-            position,
-        },
-        { id: '7', type: 'output', data: { label: 'output' }, position }, */
-    ];
-
-    let initialEdges = [
-        /* { id: 'e12', source: '1', target: '2', type: edgeType, animated: true },
-        { id: 'e13', source: '1', target: '3', type: edgeType, animated: true },
-        { id: 'e22a', source: '2', target: '2a', type: edgeType, animated: true },
-        { id: 'e22b', source: '2', target: '2b', type: edgeType, animated: true },
-        { id: 'e22c', source: '2', target: '2c', type: edgeType, animated: true },
-        { id: 'e2c2d', source: '2c', target: '2d', type: edgeType, animated: true },
-        { id: 'e45', source: '4', target: '5', type: edgeType, animated: true },
-        { id: 'e56', source: '5', target: '6', type: edgeType, animated: true },
-        { id: 'e57', source: '5', target: '7', type: edgeType, animated: true }, */
-    ];
+    let initialNodes = [];
+    let initialEdges = [];
 
     const dagreGraph = new dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
 
     const nodeWidth = 172;
     const nodeHeight = 36;
 
-
-    loadTree("");
-
-
-
-
+    //initialNodes.push(createNode("IK1203", "IK1203", "default"));
+    //initialNodes.push(createNode("IK1204", "IK1204", "default"));
+    //initialEdges.push(createEdge(props.selectedCourse.code, "IK1203"));
+    //initialEdges.push(createEdge(props.selectedCourse.code, "IK1204"));
+    loadTree(props.selectedCourse.code);
 
     const getLayoutedElements = (nodes, edges, direction = 'LR') => {
         const isHorizontal = direction === 'LR';
@@ -173,6 +105,11 @@ export const PrerequisitePresenter = observer((props) => {
                     connectionLineType={ConnectionLineType.SmoothStep}
                     fitView
                     style={{ backgroundColor: '#F7F9FB' }}
+                    nodesDraggable={false}
+                    nodesConnectable={false}
+                    elementsSelectable={false}
+                    elementsFocusable={false}
+                    edgesFocusable={false}
                 >
                     <Background />
                 </ReactFlow>
@@ -186,30 +123,18 @@ export const PrerequisitePresenter = observer((props) => {
 
 
 
-
-
-
-    function containsArr(arr) {
-        let bool = false
-        arr.forEach(element => {
-            if (Array.isArray(element)) {
-                bool = true;
-            }
-        });
-        return bool;
-    }
-    function createNode(id, name) {
-        if (id == "and" || id == "or" || id == "Err") {
+    function createNode(id, name, node_type) {
+        if (id == "and" || id == "or") {
             return {
-                id: id + uniqueCounter++,
-                type: 'input',
+                id: id,
+                type: node_type,
                 data: { label: name },
                 position,
             };
         } else {
             return {
                 id: id,
-                type: 'input',
+                type: node_type,
                 data: { label: name },
                 position,
             };
@@ -217,111 +142,86 @@ export const PrerequisitePresenter = observer((props) => {
         }
     }
     function createEdge(s, t) {
-        return { id: s + " " + t, source: s, target: s, type: edgeType, animated: true };
+        return { id: s + " " + t, source: s, target: t, type: edgeType, animated: true };
     }
 
-    function loadCource(parent, obj) {
-        console.log(obj);
-        if (typeof obj === 'object') {
-            for (let i = 0; i < obj.arr.length; i++) {
-                let functionNode = createNode("Err", "Error");
-                if (obj.arr[i].type == "and") {
 
-                    console.log("Create and node")
-
-                    functionNode = createNode("and", "All of");
-                    initialNodes.push(functionNode);
-                    initialEdges.push(createEdge(parent.id, functionNode.id));
-                    for (let i = 0; i < obj.arr[i].length; i++) {
-                        let nCource = loadCource(obj.arr[i]);
-                        initialNodes.push(nCource);
-                        initialEdges.push(createEdge(functionNode.id, nCource.id));
-                    }
-
-                } else if (obj.arr[i].type == "or") {
-
-                    console.log("Create or node");
-
-                    functionNode = createNode("or", "One of");
-                    initialNodes.push(functionNode);
-                    initialEdges.push(createEdge(parent.id, functionNode.id));
-                    for (let i = 0; i < obj.arr[i].length; i++) {
-                        let nCource = loadCource(obj.arr[i]);
-                        initialNodes.push(nCource);
-                        initialEdges.push(createEdge(functionNode.id, nCource.id));
-                    }
-
-                }
-
-                return functionNode;
+    function prereq_convert(current_object, previous_key, previous_node_id) {
+        if (current_object == undefined) {return}
+        
+        if (!Array.isArray(current_object)) {   // Is object
+            let key = Object.keys(current_object)[0];
+            //console.log("key: " + key);
+            if (key == "or") {
+                initialNodes.push(createNode(key + uniqueCounter, "One of these", "default"));
+                initialEdges.push(createEdge(previous_node_id, key + uniqueCounter));
+                prereq_convert(current_object[key], key, key + uniqueCounter++);      
+            } else if (key == "and") {
+                prereq_convert(current_object[key], key, previous_node_id);      
             }
-        } else {
-            console.log("Create text node")
-            console.log(obj);
 
-
-
-
-            let newN = createNode(obj, obj);
-            initialNodes.push(newN);
-            return newN;
+        } else {    // Is an array
+            for (let i = 0; i < current_object.length; i++) {
+                if (typeof current_object[i] == "string") {
+                    let input_text = current_object[i];
+                    if (current_object[i].startsWith("#")) {
+                        input_text = input_text.slice(1, 115);
+                    } 
+                    initialNodes.push(createNode(input_text, input_text, "output"));
+                    initialEdges.push(createEdge(previous_node_id, input_text, "output"));
+                } else {
+                    prereq_convert(current_object[i], previous_key, previous_node_id);
+                }
+            }
         }
+        
+        /* 
+        
+        if (typeof current_object == "object" && !Array.isArray(current_object)) {
+            let key = Object.keys(current_object)[0];
+            let object_array = current_object[key];
+            console.log(key);
+            console.log(object_array);
+            let num_of_matches = 0;
+            for (let i = 0; i < object_array.length; i++) {
+                if (Array.isArray(object_array[i])) {
+                    let num_of_inner_matches = 0;
+                    for (let j = 0; j < object_array[i].length; j++) {
+                        if (object_array[i][j]) {
+                            num_of_inner_matches ++;
+                        }
+                    }
+                    if (key == "or" && num_of_inner_matches > 0) {object_array[i] = true; num_of_matches++; continue;}
+                    if (key == "and" && num_of_inner_matches == object_array[i].length) {object_array[i] = true; num_of_matches++; continue;}
+                    object_array[i] = false;
+                } else if (typeof object_array[i] == "object") {
+                    let inner_key = Object.keys(object_array[i])[0];
+                    if (object_array[i][inner_key]) {num_of_matches++;}
+                } else if(object_array[i]) {num_of_matches++}
+            }
+            if (key == "or" && num_of_matches > 0) {current_object[key] = true}
+            else if (key == "and" && num_of_matches == object_array.length) {current_object[key] = true}
+            else {current_object[key] = false}
+
+        }
+        */        
+    }
+
+    function generateTree(prereqs) {
+        console.log(JSON.stringify(prereqs, null, 4));
+        prereq_convert(prereqs, null, props.selectedCourse.code);
     }
 
 
     function loadTree(course) {
-        let start = createNode(props.selectedCourse.code, props.selectedCourse.code)
-        initialNodes.push(start);
-        let preR = loadPrer(props.selectedCourse);
-        loadCource(start, preR);
+        let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input")
+        initialNodes.push(root);
+
+        generateTree(props.selectedCourse.prerequisites);
+
+        console.log(initialNodes);
+        console.log(initialEdges);
     }
-
-    //loads the prerequistes
-    function load(cur) {
-        if (cur.and != null) {
-            let temp = { type: "and", arr: [] };
-
-            for (let i = 0; i < cur.and.length; i++) {
-                temp.arr.push(load(cur.and[i]));
-            }
-            return temp;
-        } else if (cur.or != null) {
-            let temp = { type: "or", arr: [] };
-
-            for (let i = 0; i < cur.or.length; i++) {
-                temp.arr.push(load(cur.or[i]));
-            }
-            return temp;
-        }
-        return cur;
-    }
-
-    function dataFixer(obj) {
-        let fixed;
-        if (typeof obj === 'object') {
-            if (Array.isArray(obj.arr)) {
-                if (Array.isArray(obj.arr[0]) && obj.arr.length == 1) {
-                    obj.arr = obj.arr[0];
-                }
-                for (let i = 0; i < obj.arr.length; i++) {
-                    fixed = dataFixer(obj.arr[i]);
-                }
-            }
-        } else {
-            return obj;
-        }
-        return fixed;
-    }
-
-    //does the loading and cleaning of prerequisites
-    function loadPrer(course) {
-        let prereq = course.prerequisites;
-        let arrP = load(prereq)
-        dataFixer(arrP);
-        return arrP;
-    }
-
-    loadTree(props.selectedCourse.code);
 
     /* return <PrerequisiteTreeView initialNodes={initialNodes} initialEdges={initialEdges} /> */
     return <Flow />
@@ -330,3 +230,51 @@ export const PrerequisitePresenter = observer((props) => {
 export default PrerequisitePresenter;
 
 
+/*
+
+
+if (current_object == undefined) {return}
+        
+        if (!Array.isArray(current_object)) {   // Is object
+            let key = Object.keys(current_object)[0];
+            prereq_convert(current_object[key], key);      
+        } else {    // Is an array
+            for (let i = 0; i < current_object.length; i++) {
+                if (typeof current_object[i] == "string") {
+                    
+                } else {
+                    prereq_convert(current_object[i], previous_key);
+                }
+            }
+        }
+        
+        
+        if (typeof current_object == "object" && !Array.isArray(current_object)) {
+            let key = Object.keys(current_object)[0];
+            let object_array = current_object[key];
+            console.log(key);
+            console.log(object_array);
+            let num_of_matches = 0;
+            for (let i = 0; i < object_array.length; i++) {
+                if (Array.isArray(object_array[i])) {
+                    let num_of_inner_matches = 0;
+                    for (let j = 0; j < object_array[i].length; j++) {
+                        if (object_array[i][j]) {
+                            num_of_inner_matches ++;
+                        }
+                    }
+                    if (key == "or" && num_of_inner_matches > 0) {object_array[i] = true; num_of_matches++; continue;}
+                    if (key == "and" && num_of_inner_matches == object_array[i].length) {object_array[i] = true; num_of_matches++; continue;}
+                    object_array[i] = false;
+                } else if (typeof object_array[i] == "object") {
+                    let inner_key = Object.keys(object_array[i])[0];
+                    if (object_array[i][inner_key]) {num_of_matches++;}
+                } else if(object_array[i]) {num_of_matches++}
+            }
+            if (key == "or" && num_of_matches > 0) {current_object[key] = true}
+            else if (key == "and" && num_of_matches == object_array.length) {current_object[key] = true}
+            else {current_object[key] = false}
+
+        }
+
+*/
