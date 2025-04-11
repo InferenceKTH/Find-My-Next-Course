@@ -5,6 +5,7 @@ import ButtonGroupField from "./Components/SideBarComponents/ButtonGroupField.js
 import SliderField from "./Components/SideBarComponents/SliderField.jsx";
 import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
 import { UploadTranscriptPresenter } from '../presenters/UploadTranscriptPresenter.jsx';
+import CollapsibleCheckboxes from './Components/SideBarComponents/CollapsibleCheckboxes.jsx';
 
 
 function SidebarView(props) {
@@ -48,12 +49,17 @@ function SidebarView(props) {
 
                     <ButtonGroupField
                         items={["item 1", "item 2", "item 3"]}
-                        filterName="language" 
+                        filterName="languageN" 
                         HandleFilterEnable={props.HandleFilterEnable}
                     />
                     <SliderField
                         HandleFilterChange={props.HandleFilterChange}
                         filterName="credits"
+                        HandleFilterEnable={props.HandleFilterEnable}
+                    />
+                    <CollapsibleCheckboxes
+                        HandleFilterChange={props.HandleFilterChange}
+                        filterName="department"
                         HandleFilterEnable={props.HandleFilterEnable}
                     />
                 </div>
