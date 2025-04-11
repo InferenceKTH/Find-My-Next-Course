@@ -8,10 +8,21 @@ const CollapsibleCheckboxes = (props) => {
 
 
 
-  const toggleExpand = (id) => {
+  const toggleExpand = (id, subItems) => {
     setExpanded((prev) => ({
       ...prev,
       [id]: !prev[id],
+    }));
+    subItems.map((_, index) => {
+      setSubCheckbox(id,index)
+     });
+  };
+
+  const setSubCheckbox = (mainId, index) => {
+    const key = `${mainId}-${index}`;
+    setCheckedSubItems((prev) => ({
+      ...prev,
+      [key]: true,
     }));
   };
 
@@ -48,11 +59,6 @@ const CollapsibleCheckboxes = (props) => {
     },
   ];
 
-    rows.forEach((row) => {
-      row.subItems.forEach((_, index) => {
-        //toggleSubCheckbox(row.id, index);
-      });
-    });
 
   return (
     <div className="m-2">
@@ -80,13 +86,13 @@ const CollapsibleCheckboxes = (props) => {
       >
         <div className="rounded-lg shadow-2xs w-full text-white bg-[#aba8e0] border border-gray-200 p-4">
           {rows.map((row) => (
-            <div key={row.id} className="relative pl-4 border-l-2 border-white ml-2">
+            <div key={row.id} className="relative pl-4  ml-2">
               <div className="flex items-center gap-2 mb-1 relative">
                 <input
                   type="checkbox"
                   id={`checkbox-${row.id}`}
                   checked={expanded[row.id] || false}
-                  onChange={() => toggleExpand(row.id)}
+                  onChange={() => toggleExpand(row.id, row.subItems)}
                   className="accent-violet-500 z-10"
                 />
                 <label htmlFor={`checkbox-${row.id}`} className="cursor-pointer font-semibold">
@@ -95,29 +101,44 @@ const CollapsibleCheckboxes = (props) => {
               </div>
 
               {expanded[row.id] && (
-                <div className="mt-2 space-y-2 relative">
+                <div className="mt-2 relative">
                   {row.subItems.map((subItem, index) => {
                     const checkboxId = `sub-checkbox-${row.id}-${index}`;
                     const key = `${row.id}-${index}`;
                     const y = index * 32;
+
+                    <svg
+                    width="40"
+                    height={row.subItems.length * 50}
+                    viewBox={`0 0 200 200`}
+                            className="absolute left-[-40px] top-1 transition-all duration-300 ease-in-out stroke-animate"
+                          >
+                            <path
+                              d={`M0 0 V200 `}
+                              stroke="white"
+                              strokeWidth="1.5"
+                              fill="none"
+                              className="transition-all duration-300 ease-in-out stroke-animate"
+                            />
+                          </svg>
 
                     return (
                       <div key={checkboxId} className="relative pl-6 flex items-center">
                         {/* SVG line only if the checkbox is checked */}
                         {checkedSubItems[key] && (
                           <svg
-                            width="40"
-                            height="30"
-                            viewBox="0 0 40 30"
+                            width="100"
+                            height="50"
+                            viewBox="10 0 40 50"
                             preserveAspectRatio="none"
-                            className="absolute left-[-40px] top-1 transition-all duration-300 ease-in-out"
+                            className="absolute left-[-40px] top-1 transition-all duration-300 ease-in-out stroke-animate"
                           >
                             <path
-                              d="M10 0 L10 15 H40"
+                              d="M20 5 H30"
                               stroke="white"
-                              strokeWidth="1.5"
+                              strokeWidth="2"
                               fill="none"
-                              className="transition-all duration-300 ease-in-out"
+                              className="transition-all duration-300 ease-in-out stroke-animate"
                             />
                           </svg>
                         )}
