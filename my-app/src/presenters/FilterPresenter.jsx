@@ -8,6 +8,40 @@ const FilterPresenter = observer(({ model }) => {
 
     function applyTranscriptEligibility() {
         /* this elias thing  */
+        const eligibilitytype = model.filterOptions.eligibility;
+
+        let strongcourses = [];
+        let zerocourses = [];
+        let moderatecourses = [];
+        let weakcourses = [];
+
+        let storedFinishedCourses = [];
+        if (localStorage.getItem("completedCourses"))
+            storedFinishedCourses = JSON.parse(localStorage.getItem("completedCourses"));
+
+
+        localFilteredCourses.forEach(course => {
+            let resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
+            if(resultEligibility.strong){
+                strongcourses.push(course);
+                return;
+            }else if(resultEligibility.zero){
+                zerocourses.push(course);
+                return;
+            }else if(resultEligibility.moderate){
+                moderatecourses.push(course);
+                return;
+            }else if(resultEligibility.weak){
+                weakcourses.push(course);
+                return;
+            }else{
+                //it's not eligible at all
+                return;
+            }
+            
+        });
+
+        localFilteredCourses = [...strongcourses, ...moderatecourses, ...weakcourses, ...zerocourses];
 
     }
 

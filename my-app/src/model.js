@@ -11,10 +11,11 @@ export const model = {
     filteredCourses: [],
     filterOptions: {
         applyTranscriptFilter: false,
+        eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
         applyLevelFilter:true,
         level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         applyLanguageFilter: true,
-        language: "none", //the possible values for the array are: "none"/"english"/"swedish"/"both"
+        language: "none", //the possible values for the string are: "none"/"english"/"swedish"/"both"
         applyLocationFilter:true,
         location: [], //the possible values for the array are: 'KTH Campus', 'KTH Kista', 'AlbaNova', 'KTH Flemingsberg', 'KTH Solna', 'KTH Södertälje', 'Handelshögskolan', 'KI Solna', 'Stockholms universitet', 'KONSTFACK'
         applyCreditsFilter:true,
