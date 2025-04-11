@@ -3,7 +3,7 @@ import React from 'react';
 function FavouritesDropdown(props) {
     return (
         <>
-            <div className="fixed mt-3   w-[32rem] right-4 bg-indigo-300/75 backdrop-blur-lg border border-violet-500 rounded-lg z-20 shadow-lg flex flex-col max-h-[calc(100vh-8rem)]">
+            <div className="fixed mt-3  w-[32rem] right-4 bg-indigo-300/75 backdrop-blur-lg border border-violet-500 rounded-lg z-20 shadow-lg flex flex-col max-h-[calc(100vh-8rem)]">
                 {/* Fixed Header */}
                 <div className="sticky top-0 p-3 rounded-t-md bg-violet-500 flex justify-between items-center w-full border-b border-solid border-violet-600 font-semibold">
                     <p className="text-white w-1/4">Code</p>
