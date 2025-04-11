@@ -30,6 +30,7 @@ export function connectToFirebase(model) {
 			model.setUser(user); // Set the user ID once authenticated
 			firebaseToModel(model);  // Set up listeners for user-specific data
 			syncModelToFirebase(model);  // Start syncing changes to Firebase
+			syncScrollPositionToFirebase(model);
 		} else {
 			model.setUser(null);  // If no user, clear user-specific data
 		}
@@ -81,6 +82,31 @@ export function syncModelToFirebase(model) {
 				.catch(console.error);
 		}
 	);
+}
+
+function syncScrollPositionToFirebase(model) {
+    reaction(
+        () => ({
+            // Here we calculate a percentage based on window.scrollY and total scrollable height.
+            scrollPercentage: window.scrollY / document.documentElement.scrollHeight,
+        }),
+        ({ scrollPercentage }) => {
+            if (model?.user?.uid) {
+                const userRef = ref(db, `users/${model.user.uid}/scrollPosition`);
+                set(userRef, { scrollPercentage })
+                    .catch(console.error);
+            }
+        }
+    );
+}
+
+export async function getScrollPositionFromFirebase(userId) {
+    const scrollRef = ref(db, `users/${userId}/scrollPosition`);
+    const snapshot = await get(scrollRef);
+    if (snapshot.exists()) {
+        return snapshot.val().scrollPercentage || 0;
+    }
+    return 0;
 }
 
 function saveCoursesInChunks(courses, timestamp) {
@@ -200,7 +226,3 @@ export async function getReviewsForCourse(courseCode) {
     });
     return reviews;
 }
-
-
-
-

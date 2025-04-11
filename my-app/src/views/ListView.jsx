@@ -24,7 +24,7 @@ function ListView(props) {
             props.addFavourite(course);
         }
     };
-
+    
     useEffect(() => {
         setIsLoading(true);
         const initialCourses = coursesToDisplay.slice(0, 10);

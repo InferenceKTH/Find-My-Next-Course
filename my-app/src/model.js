@@ -5,7 +5,7 @@ export const model = {
     user: undefined,
     currentSearch: [],
     currentSearchText: "",
-    currentScrollPosition : "",
+    scrollPosition: 0,
     courses: [],
     favourites: [],
 
@@ -20,6 +20,10 @@ export const model = {
 
     setCurrentSearchText(text){
         this.currentSearchText = text;
+    },
+    
+    setScrollPosition(position) {
+        this.scrollPosition = position; // This method updates the scroll position
     },
 
     setCourses(courses){

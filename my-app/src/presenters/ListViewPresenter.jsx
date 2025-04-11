@@ -1,12 +1,38 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ListView from "../views/ListView.jsx";
 import CoursePagePopup from '../views/Components/CoursePagePopup.jsx';
 import PrerequisitePresenter from './PrerequisitePresenter.jsx';
 import {ReviewPresenter} from "../presenters/ReviewPresenter.jsx"
 
 const ListViewPresenter = observer(({ model }) => {
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Calculate the percentage
+            const scrollPercentage = window.scrollY / document.documentElement.scrollHeight;
+            // Update the model's scroll position
+            model.setScrollPosition(scrollPercentage);
+            // If not logged in, also store in localStorage
+            if (!model.user) {
+                localStorage.setItem("scrollPercentage", scrollPercentage);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [model]);
+
+    useEffect(() => {
+        if (!model.user) {
+            const stored = localStorage.getItem("scrollPercentage");
+            if (stored) {
+                window.scrollTo(0, stored * document.documentElement.scrollHeight);
+            }
+        }
+    }, [model.user]);
+    
     const addFavourite = (course) => {
         model.addFavourite(course);
     }
@@ -49,7 +75,6 @@ const ListViewPresenter = observer(({ model }) => {
         setSelectedCourse={setSelectedCourse}
         popup={popup}
         handleFavouriteClick={handleFavouriteClick}
-
     />;
 });
 
