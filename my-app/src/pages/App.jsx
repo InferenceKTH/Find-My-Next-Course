@@ -24,12 +24,13 @@ function MainAppLayout({ model }) {
 }
 
 function App({ model }) {
-	return (
-		<Routes>
-			<Route path="/" element={<MainAppLayout model={model} />} />
-			<Route path="/share" element={<SharedView />} />
-		</Routes>
-	);
+	//return (
+		//<Routes>
+		//	<Route path="/" element={<MainAppLayout model={model} />} />
+		//	<Route path="/share" element={<SharedView />} />
+		//</Routes>
+		return <MainAppLayout model={model} />;
+	//);
 }
 
 export default App;

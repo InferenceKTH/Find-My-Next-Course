@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+/*import React, { useEffect } from "react";
 import { model } from "../model";
 
 /**
  * Reads favs from URL hash query string and populates model.favourites
- */
+
 function SharedView() {
   useEffect(() => {
     const processFavouritesFromURL = () => {
@@ -46,6 +46,42 @@ function SharedView() {
       <p>Click the <b>Favourites</b> button to see the list!</p>
     </div>
   );
+}
+
+export default SharedView;
+*/
+
+import React, { useEffect } from "react";
+import MainAppLayout from "./App.jsx"; // or wherever it's defined
+
+function SharedView({ model }) {
+  useEffect(() => {
+    const processFavouritesFromURL = () => {
+      const hash = window.location.hash;
+      const queryString = hash.includes("?") ? hash.split("?")[1] : "";
+      const params = new URLSearchParams(queryString);
+      const favCodes = (params.get("favs") || "").split(",").filter(Boolean);
+
+      if (!model.courses || model.courses.length === 0) return;
+
+      const favCourses = favCodes
+        .map(code => model.getCourse(code))
+        .filter(Boolean);
+
+      model.favourites = favCourses;
+    };
+
+    const interval = setInterval(() => {
+      if (model.courses && model.courses.length > 0) {
+        processFavouritesFromURL();
+        clearInterval(interval);
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [model]);
+
+  return <MainAppLayout model={model} />;
 }
 
 export default SharedView;
