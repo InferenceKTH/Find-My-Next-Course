@@ -2,17 +2,31 @@ import React, { useState } from 'react';
 import { observer } from "mobx-react-lite";
 
 const FavouritesDropdown = observer((props) => {
-    const [showShareBox, setShowShareBox] = useState(false);
     const [shareUrl, setShareUrl] = useState("");
+    const [copied, setCopied] = useState(false);
+
+
+
+
 
     function handleShareCourses() {
         if (!props.favouriteCourses || props.favouriteCourses.length === 0) return;
-
+    
         const courseCodes = props.favouriteCourses.map(course => course.code).join(",");
         const url = `${window.location.origin}/#/share?favs=${encodeURIComponent(courseCodes)}`;
-        setShareUrl(url);
-        setShowShareBox(true);
+    
+        navigator.clipboard.writeText(url)
+            .then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2500); // revert after 2.5 seconds
+            })
+            .catch(err => {
+                console.error("Copy failed:", err);
+            });
     }
+    
+    
+    
 
     function handleCopy() {
         navigator.clipboard.writeText(shareUrl)
@@ -81,38 +95,23 @@ const FavouritesDropdown = observer((props) => {
                                 >
                                     Clear All
                                 </button>
+                                
                                 <button
                                     onClick={handleShareCourses}
-                                    className="w-1/2 p-3 cursor-pointer text-violet-700 hover:bg-blue-500 hover:text-white flex items-center justify-center gap-2 font-semibold"
+                                    className={`w-1/2 p-3 cursor-pointer ${
+                                        copied ? "bg-violet-600 text-white" : "text-violet-700 hover:bg-blue-500 hover:text-white"
+                                    } flex items-center justify-center gap-2 font-semibold transition-colors duration-300`}
                                 >
-                                    Share Courses
+                                    {copied ? "Copied to Clipboard!" : "Share Courses"}
                                 </button>
+
                             </>
                         )}
                     </div>
                 </div>
             </div>
 
-            {/* Floating share box */}
-            {showShareBox && (
-                <div className="fixed z-30 right-8 top-20 bg-white p-4 border border-gray-300 rounded-xl shadow-xl w-[320px]">
-                    <p className="text-sm break-words mb-2">{shareUrl}</p>
-                    <div className="flex justify-between items-center">
-                        <button
-                            onClick={handleCopy}
-                            className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-800 text-sm"
-                        >
-                            Copy to Clipboard
-                        </button>
-                        <button
-                            onClick={() => setShowShareBox(false)}
-                            className="text-gray-600 text-sm hover:underline"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
-            )}
+        
 
             {/* Optional course popup */}
             {props.isPopupOpen && props.popup}
