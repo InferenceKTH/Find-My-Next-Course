@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PrerequisiteTree(props) {
+function PrerequisiteTree() {
     return (
         <div class ="flex ">
 

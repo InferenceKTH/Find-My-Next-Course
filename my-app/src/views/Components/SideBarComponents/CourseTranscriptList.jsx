@@ -5,7 +5,7 @@ export default function CourseTranscriptList() {
     if (localStorage.getItem("completedCourses"))
         local = JSON.parse(localStorage.getItem("completedCourses"));
 
-
+    // eslint-disable-next-line no-unused-vars
     window.addEventListener("completedCourses changed", event => {
         if (localStorage.getItem("completedCourses"))
             local = JSON.parse(localStorage.getItem("completedCourses"));
