@@ -2,17 +2,31 @@ import React, { useState } from 'react';
 import { observer } from "mobx-react-lite";
 
 const FavouritesDropdown = observer((props) => {
-    const [showShareBox, setShowShareBox] = useState(false);
     const [shareUrl, setShareUrl] = useState("");
+    const [copied, setCopied] = useState(false);
+
+
+
+
 
     function handleShareCourses() {
         if (!props.favouriteCourses || props.favouriteCourses.length === 0) return;
-
+    
         const courseCodes = props.favouriteCourses.map(course => course.code).join(",");
         const url = `${window.location.origin}/#/share?favs=${encodeURIComponent(courseCodes)}`;
-        setShareUrl(url);
-        setShowShareBox(true);
+    
+        navigator.clipboard.writeText(url)
+            .then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2500); // revert after 2.5 seconds
+            })
+            .catch(err => {
+                console.error("Copy failed:", err);
+            });
     }
+    
+    
+    
 
     function handleCopy() {
         navigator.clipboard.writeText(shareUrl)
@@ -62,55 +76,34 @@ const FavouritesDropdown = observer((props) => {
                 )}
             </div>
 
-            {/* Footer */}
-            <div className="sticky bottom-0 border-t border-solid border-violet-400 bg-indigo-300/75 backdrop-blur-lg">
-                <div className='p-3 flex justify-between items-center bg-violet-400/30'>
-                    <p className='text-slate-900 font-bold w-1/2'>Total:</p>
-                    <p className='text-slate-900 font-bold w-1/4'></p>
-                    <p className='text-slate-900 font-bold w-1/4 text-center'>{props.totalCredits} hp</p>
-                    <div className="w-8"></div>
-                </div>
 
-                <div className="flex border-t border-solid border-violet-400">
-                    {props.favouriteCourses.length > 0 && (
-                        <>
-                            <button
-                                onClick={props.removeAllFavourites}
-                                className="w-1/2 p-3 cursor-pointer text-red-600 hover:bg-red-600 hover:text-white border-r border-solid border-violet-400 font-semibold transition-colors"
-                            >
-                                Clear All
-                            </button>
-                            <button
-                                onClick={handleShareCourses}
-                                className="w-1/2 p-3 cursor-pointer text-violet-700 hover:bg-blue-500 hover:text-white flex items-center justify-center gap-2 font-semibold"
-                            >
-                                Share Courses
-                            </button>
-                        </>
-                    )}
+                    <div className="flex border-t border-solid border-violet-400">
+                        {props.favouriteCourses.length > 0 && (
+                            <>
+                                <button
+                                    onClick={props.removeAllFavourites}
+                                    className="w-1/2 p-3 cursor-pointer text-red-600 hover:bg-red-600 hover:text-white border-r border-solid border-violet-400 font-semibold transition-colors"
+                                >
+                                    Clear All
+                                </button>
+                                
+                                <button
+                                    onClick={handleShareCourses}
+                                    className={`w-1/2 p-3 cursor-pointer ${
+                                        copied ? "bg-violet-600 text-white" : "text-violet-700 hover:bg-blue-500 hover:text-white"
+                                    } flex items-center justify-center gap-2 font-semibold transition-colors duration-300`}
+                                >
+                                    {copied ? "Copied to Clipboard!" : "Share Courses"}
+                                </button>
+
+                            </>
+                        )}
+                    </div>
+
                 </div>
             </div>
 
-            {/* Floating share box */}
-            {showShareBox && (
-                <div className="fixed z-30 right-8 top-20 bg-white p-4 border border-gray-300 rounded-xl shadow-xl w-[320px]">
-                    <p className="text-sm break-words mb-2">{shareUrl}</p>
-                    <div className="flex justify-between items-center">
-                        <button
-                            onClick={handleCopy}
-                            className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-800 text-sm"
-                        >
-                            Copy to Clipboard
-                        </button>
-                        <button
-                            onClick={() => setShowShareBox(false)}
-                            className="text-gray-600 text-sm hover:underline"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
-            )}
+        
 
             {/* Optional course popup */}
             <div className="relative z-100">
