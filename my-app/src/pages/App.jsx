@@ -6,7 +6,7 @@ import {model} from '/src/model.js';
 
 function App() {
 	return (
-		<div className="flex h-screen w-screen">
+		<div className="flex overflow-hidden h-screen w-screen">
 			<div className="flex-auto w-40% h-full bg-gradient-to-t from-[#4f3646] to-[#6747c0]">
 				<SidebarPresenter model={model} />
 
@@ -16,7 +16,7 @@ function App() {
 				{/* bg-gradient-to-t from-[#6246a8] to-[#6747c0] */}
 					<SearchbarPresenter model={model} />
 				</div>
-				<div className="flex-auto border overflow-auto bg-[#121212]">
+				<div className="flex-auto border bg-[#121212]">
 					<ListViewPresenter model={model} />
 				</div>
 			</div>
