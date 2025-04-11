@@ -3,6 +3,8 @@ import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"
 
 export const model = {
     user: undefined,
+    //add searchChange: false,   //this is for reworking the searchbar presenter, so that it triggers as a model, 
+    //instead of passing searchcouses lambda function down into the searchbarview.
     currentSearch: [],
     courses: [],
     favourites: [],

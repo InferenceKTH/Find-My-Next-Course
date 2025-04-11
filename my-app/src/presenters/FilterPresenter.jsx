@@ -22,9 +22,16 @@ const FilterPresenter = observer(({ model }) => {
         if (localStorage.getItem("completedCourses"))
             storedFinishedCourses = JSON.parse(localStorage.getItem("completedCourses"));
 
-
+        
         localFilteredCourses.forEach(course => {
-            let resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
+            //console.log(storedFinishedCourses);
+            //console.log(course?.prerequisites);
+            if(course?.prerequisites && (course.prerequisites !== "null"))
+                var resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
+            else{
+                //zerocourses.push(course);
+                return;
+            }
             if(resultEligibility.strong){
                 strongcourses.push(course);
                 return;
@@ -44,7 +51,30 @@ const FilterPresenter = observer(({ model }) => {
             
         });
 
-        localFilteredCourses = [...strongcourses, ...moderatecourses, ...weakcourses, ...zerocourses];
+        switch(eligibilitytype){
+            case "strong":
+                {
+                    localFilteredCourses = [...strongcourses, ...zerocourses];
+                    break;
+                }
+            case "moderate":
+                {
+                    localFilteredCourses = [...strongcourses, ...moderatecourses, ...zerocourses];
+                    break;
+                }
+            case "weak":
+                {
+                    localFilteredCourses = [...strongcourses, ...moderatecourses, ...weakcourses, ...zerocourses];
+                    break; 
+                }
+            default:
+                {
+                    console.log("Error: somehow we got into a state where model.eligibility is no \"strong\"/\"moderat\"/\"weak\".");
+                    localFilteredCourses = [];
+                    break;
+                }
+        }
+        
 
     }
 
@@ -213,7 +243,7 @@ const FilterPresenter = observer(({ model }) => {
     function updateLevels() {
         if(localFilteredCourses.length == 0) 
             return;
-        
+
         //the possible values are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         //model.filterOptions.level is an array. it can have []
         const levels = model.filterOptions.level;
