@@ -20,7 +20,6 @@ export const PrerequisitePresenter = observer((props) => {
     let uniqueCounter = 0;
     let textCounter = 0;
     let codeCounter = 0;
-    //let toAdd = [];
 
     const position = { x: 0, y: 0 };
     const edgeType = 'smoothstep';
@@ -35,10 +34,6 @@ export const PrerequisitePresenter = observer((props) => {
     const nodeWidth = 172;
     const nodeHeight = 36;
 
-    //initialNodes.push(createNode("IK1203", "IK1203", "default"));
-    //initialNodes.push(createNode("IK1204", "IK1204", "default"));
-    //initialEdges.push(createEdge(props.selectedCourse.code, "IK1203"));
-    //initialEdges.push(createEdge(props.selectedCourse.code, "IK1204"));
     loadTree(props.selectedCourse.code);
 
     const getLayoutedElements = (nodes, edges, direction = 'LR') => {
@@ -79,9 +74,6 @@ export const PrerequisitePresenter = observer((props) => {
 
 
     const Flow = () => {
-        //console.log("arived in Flow");
-
-
         const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
         const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
@@ -153,7 +145,6 @@ export const PrerequisitePresenter = observer((props) => {
         
         if (!Array.isArray(current_object)) {   // Is object
             let key = Object.keys(current_object)[0];
-            //console.log("key: " + key);
             if (key == "or") {
                 initialNodes.push(createNode(key + uniqueCounter, "One of these", "default"));
                 initialEdges.push(createEdge(previous_node_id, key + uniqueCounter));
@@ -168,7 +159,7 @@ export const PrerequisitePresenter = observer((props) => {
                     let input_id = "";
                     let input_text = current_object[i];
                     if (current_object[i].startsWith("#")) {
-                        input_text = "More Info...";  //input_text.slice(1, 115);
+                        input_text = "More Info...";
                         input_id = "text" + ++textCounter;
                     } else {
                         input_id = current_object[i] + " " + ++codeCounter;
@@ -180,37 +171,7 @@ export const PrerequisitePresenter = observer((props) => {
                 }
             }
         }
-        
-        /* 
-        
-        if (typeof current_object == "object" && !Array.isArray(current_object)) {
-            let key = Object.keys(current_object)[0];
-            let object_array = current_object[key];
-            console.log(key);
-            console.log(object_array);
-            let num_of_matches = 0;
-            for (let i = 0; i < object_array.length; i++) {
-                if (Array.isArray(object_array[i])) {
-                    let num_of_inner_matches = 0;
-                    for (let j = 0; j < object_array[i].length; j++) {
-                        if (object_array[i][j]) {
-                            num_of_inner_matches ++;
-                        }
-                    }
-                    if (key == "or" && num_of_inner_matches > 0) {object_array[i] = true; num_of_matches++; continue;}
-                    if (key == "and" && num_of_inner_matches == object_array[i].length) {object_array[i] = true; num_of_matches++; continue;}
-                    object_array[i] = false;
-                } else if (typeof object_array[i] == "object") {
-                    let inner_key = Object.keys(object_array[i])[0];
-                    if (object_array[i][inner_key]) {num_of_matches++;}
-                } else if(object_array[i]) {num_of_matches++}
-            }
-            if (key == "or" && num_of_matches > 0) {current_object[key] = true}
-            else if (key == "and" && num_of_matches == object_array.length) {current_object[key] = true}
-            else {current_object[key] = false}
-
-        }
-        */        
+          
     }
 
     function generateTree(prereqs) {
