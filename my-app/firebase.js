@@ -41,7 +41,13 @@ export function connectToFirebase(model) {
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
-	if (!model.user) return;
+	if (!model.user){ 
+		const options = localStorage.getItem("filterOptions");
+		if(options){
+			model.setFilterOptions(options);
+			console.log("Restore options from local storage")
+		}
+		return}
 	const userRef = ref(db, `users/${model.user.uid}`);
 	onValue(userRef, (snapshot) => {
 		if (!snapshot.exists()) return;
@@ -80,6 +86,9 @@ export function syncModelToFirebase(model) {
 			set(userRef, dataToSync)
 				.then(() => console.log("User model synced to Firebase"))
 				.catch(console.error);
+
+			// also save to local storage
+			localStorage.setItem("filterOptions",filterOptions);
 		}
 	);
 }
