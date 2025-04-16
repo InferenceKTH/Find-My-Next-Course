@@ -63,6 +63,14 @@ function ListView(props) {
                 </div>
             ) : (
                 <div className="overflow-y-auto h-full" id="scrollableDiv">
+                    <p className="text-base font-semibold text-gray-600 mb-4">
+                        Found 
+                        <span className="font-bold text-[#000061] mx-1">
+                            {props.currentSearchLenght}
+                        </span>
+                        courses
+                    </p>
+                    
                     <InfiniteScroll
                         dataLength={displayedCourses.length}
                         next={fetchMoreCourses}

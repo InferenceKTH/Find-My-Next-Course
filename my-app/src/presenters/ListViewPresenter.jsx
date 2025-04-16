@@ -49,6 +49,7 @@ const ListViewPresenter = observer(({ model }) => {
         setSelectedCourse={setSelectedCourse}
         popup={popup}
         handleFavouriteClick={handleFavouriteClick}
+        currentSearchLenght={model.currentSearch.length}
 
     />;
 });
