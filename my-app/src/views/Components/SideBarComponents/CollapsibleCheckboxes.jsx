@@ -7,7 +7,7 @@ const CollapsibleCheckboxes = (props) => {
   const [checkedSubItems, setCheckedSubItems] = useState({});
   const [stupidLines, setStupidLines] = useState(0);
 
-
+  const strokeWidth = 2;
 
   const toggleExpand = (id, subItems) => {
     setExpanded((prev) => ({
@@ -115,7 +115,7 @@ const CollapsibleCheckboxes = (props) => {
                 <path
                   d={`M20 0 V${(row.subItems.length) * 24 + 35}`}
                   stroke="white"
-                  strokeWidth="5"
+                  strokeWidth={strokeWidth}
                   fill="none"
                   className=""
                 />
@@ -123,7 +123,7 @@ const CollapsibleCheckboxes = (props) => {
                   <path
                   d={`M20 2 H33`}
                   stroke="white"
-                  strokeWidth="5"
+                  strokeWidth={strokeWidth}
                   fill="none"
                   className=""
                 />
@@ -132,7 +132,7 @@ const CollapsibleCheckboxes = (props) => {
                   <path
                   d={`M20 ${(expanded[row.id]? row.subItems.length:1) * 30 -3} H33`}
                   stroke="white"
-                  strokeWidth="5"
+                  strokeWidth={strokeWidth}
                   fill="none"
                   className=""
                 />
@@ -152,7 +152,7 @@ const CollapsibleCheckboxes = (props) => {
                     <path
                       d={`M20 0 V${(row.subItems.length) * 32}`}
                       stroke="white"
-                      strokeWidth="5"
+                      strokeWidth={strokeWidth}
                       fill="none"
                       className="transition-all duration-300 ease-in-out stroke-animate"
                     />
@@ -175,7 +175,7 @@ const CollapsibleCheckboxes = (props) => {
                             <path
                               d="M20 10 H33"
                               stroke="white"
-                              strokeWidth="5"
+                              strokeWidth={strokeWidth}
                               fill="none"
                               className="transition-all duration-300 ease-in-out stroke-animate"
                             />
