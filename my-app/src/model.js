@@ -164,6 +164,12 @@ export const model = {
     //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
     // },
 
+    async getAverageRating(courseCode) {
+        const reviews = await getReviewsForCourse(courseCode);
+        if (!reviews || reviews.length === 0) return null;
+        const total = reviews.reduce((sum, review) => sum + (review.overallRating || 0), 0);
+        return (total / reviews.length).toFixed(1);
+    },
 
 
 };
