@@ -18,3 +18,7 @@
 .font-kanit {
     font-family: var(--font-kanit);
 }
+
+.react-flow__node.no-handles .react-flow__handle {
+    display: none;
+  }
