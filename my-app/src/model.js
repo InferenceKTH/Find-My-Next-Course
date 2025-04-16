@@ -1,50 +1,64 @@
-// This model is representing our program logic. 
-// A certain model is bound to a specific session. 
+import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase";
 
-import { addCourse } from "../firebase";
 
 export const model = {
     user: undefined,
-    currentCourse: undefined,
-    currentSearch: {},
+    //add searchChange: false,   //this is for reworking the searchbar presenter, so that it triggers as a model, 
+    //instead of passing searchcouses lambda function down into the searchbarview.
+    currentSearch: [],
     courses: [],
+    favourites: [],
     isReady: false,
+    filtersChange: false,
+    filtersCalculated: false,
+    filteredCourses: [],
+    filterOptions: {
+        applyTranscriptFilter: true,
+        eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
+        applyLevelFilter: true,
+        level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
+        applyLanguageFilter: true,
+        language: "none", //the possible values for the string are: "none"/"english"/"swedish"/"both"
+        applyLocationFilter:true,
+        location: [], //the possible values for the array are: 'KTH Campus', 'KTH Kista', 'AlbaNova', 'KTH Flemingsberg', 'KTH Solna', 'KTH Södertälje', 'Handelshögskolan', 'KI Solna', 'Stockholms universitet', 'KONSTFACK'
+        applyCreditsFilter:true,
+        creditMin: 0,
+        creditMax: 45,
+        applyDepartmentFilter:false,
+        department: []
+    },
 
-    // sets the current user
     setUser(user) {
         if (!this.user)
             this.user = user;
     },
-    
-    // sets the currently selected course (detail view?) - could be component state
-    setCurrentCourse(course){
-        this.currentCourse = course;
+
+    setCurrentSearch(searchResults){
+        this.currentSearch = searchResults;
     },
 
-    // keeps track of the current search / the associated promises.
-    setCurrentSearch(search){
-        this.currentSearch = search;
-    },
-
-    // sets the course array - for example after loading all courses from the DB
     setCourses(courses){
         this.courses = courses;
     },
-
-    // add a single course
-    // addCourse(course){
-    //     this.courses = [...this.courses, course] // update local copy
-    //     addCourse(course); // update firebase
-    // },
 
     async addCourse(course) {
         try {
             await addCourse(course);
             this.courses = [...this.courses, course];
-            console.log("Course added successfully.");
         } catch (error) {
             console.error("Error adding course:", error);
         }
+    },
+    setFavourite(favorites){
+        this.favourites = favorites;
+    },
+
+    addFavourite(course) {
+        this.favourites = [...this.favourites, course];
+    },
+
+    removeFavourite(course) {
+        this.favourites = (this.favourites || []).filter(fav => fav.code !== course.code);
     },
 
     getCourse(courseID) {
@@ -72,6 +86,72 @@ export const model = {
             };
             this.addCourse(course);
         });
-    }
-}
+    },
+    //for reviews
+    async addReview(courseCode, review) {
+        try {
+            await addReviewForCourse(courseCode, review);
 
+        } catch (error) {
+            console.error("Error adding review:", error);
+        }
+    },
+    
+    async getReviews(courseCode) {
+        try {
+            return await getReviewsForCourse(courseCode);
+        } catch (error) {
+            console.error("Error fetching reviews:", error);
+            return [];
+        }
+    },
+    //for filters
+
+    setFiltersChange() {
+        this.filtersChange = true;
+    },
+
+    setFiltersCalculated() {
+        this.filtersCalculated = true;
+    },
+    
+    updateLevelFilter(level) {
+        this.filterOptions.level = level;
+    },
+    updateLanguageFilter(languages) {
+        this.filterOptions.language = languages;
+    },
+    updateLocationFilter(location) {
+        this.filterOptions.location = location;
+    },
+    updateCreditsFilter(creditLimits) {
+        this.filterOptions.creditMin = creditLimits[0];
+        this.filterOptions.creditMax = creditLimits[1];
+    },
+    updateTranscriptElegibilityFilter(eligibility) {
+        this.filterOptions.eligibility = eligibility;
+    },
+
+    //setters for the filter options
+    setApplyTranscriptFilter(transcriptFilterState) {
+        this.filterOptions.applyTranscriptFilter = transcriptFilterState;
+    },
+    setApplyLevelFilter(levelFilterState) {
+        this.filterOptions.applyLevelFilter = levelFilterState;
+    },
+    setApplyLanguageFilter(languageFilterState) {
+        this.filterOptions.applyLanguageFilter = languageFilterState;
+    },
+    setApplyLocationFilter(locationFilterState) {
+        this.filterOptions.applyLocationFilter = locationFilterState;
+    },
+    setApplyCreditsFilter(creditsFilterState) {
+        this.filterOptions.applyCreditsFilter = creditsFilterState;
+    },
+    // setApplyDepartmentFilter(departmentFilterState) {
+    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
+    // },
+
+
+
+};
