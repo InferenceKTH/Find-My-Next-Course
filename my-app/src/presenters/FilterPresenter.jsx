@@ -28,8 +28,8 @@ const FilterPresenter = observer(({ model }) => {
             //console.log(course?.prerequisites);
             if(course?.prerequisites && (course.prerequisites !== "null"))
                 var resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
-            else{
-                //zerocourses.push(course);
+            else{ // {strong: , zero: , moderate: , weak: }
+                zerocourses.push(course);
                 return;
             }
             if(resultEligibility.strong){
@@ -267,6 +267,33 @@ const FilterPresenter = observer(({ model }) => {
         }
         localFilteredCourses = [...stayingCourses];*/
     }
+
+    function updateDepartments(){
+        const deparments = model.filterOptions.deparment;
+        let bestCourses = [];
+        let worstCourses = [];
+
+        bestCourses = localFilteredCourses.filter(function(course) {
+            try {
+                return (deparments.includes(course.deparment));
+            } catch (error) {
+                console.log("for some reason course.department is: ", course?.department, error);
+                return false;
+            }
+            
+        });
+        worstCourses = localFilteredCourses.filter(function(course) {
+            try {
+                return ((course?.department === undefined) || (course?.deparment === "null"));
+            } catch (error) {
+                console.log("BIG ERROR", error);
+                return false;
+            }
+            
+        });
+
+        localFilteredCourses = [...bestCourses, ...worstCourses];
+    }
     
     if (model.filtersChange) {
         localFilteredCourses = [...model.courses];
@@ -289,9 +316,14 @@ const FilterPresenter = observer(({ model }) => {
         if (model.filterOptions.applyTranscriptFilter) {
             applyTranscriptEligibility();
         }
+        if (model.filterOptions.applyDepartments) {
+            //console.log("going to apply location on:",localFilteredCourses.length);
+            //updateDepartments();
+        }
 
         model.filteredCourses = [...localFilteredCourses];
         model.filtersChange = false;
+        model.setFiltersCalculated();
         console.log("filtered objects number of elements: ", model.filteredCourses.length);
     }
 });

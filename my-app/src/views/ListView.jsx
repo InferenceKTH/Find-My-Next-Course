@@ -4,10 +4,10 @@ import 'ldrs/react/Quantum.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 function ListView(props) {
-  const coursesToDisplay =
-      (props.searchResults && props.searchResults.length > 0
+  const coursesToDisplay = props.searchResults;
+      /*(props.searchResults && props.searchResults.length > 0
           ? props.searchResults
-          : props.courses) || [];
+          : props.courses) || [];*/
 
   const [displayedCourses, setDisplayedCourses] = useState([]);
   const [hasMore, setHasMore] = useState(true);

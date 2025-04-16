@@ -9,7 +9,7 @@ import { model } from '/src/model.js';
 
 function MainAppLayout({ model }) {
 	return (
-		<div className="flex h-screen w-screen">
+		<div className="flex h-screen w-screen overflow-hidden">
 			<FilterPresenter model={model} />
 			<div className="flex-auto w-40% h-full bg-gradient-to-t from-[#4f3646] to-[#6747c0]">
 				<SidebarPresenter model={model} />
