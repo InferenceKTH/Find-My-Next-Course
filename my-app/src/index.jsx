@@ -15,7 +15,6 @@ configure({ enforceActions: "never" });
 const reactiveModel = makeAutoObservable(model);
 connectToFirebase(reactiveModel);
 
-// ✅ Add /share route here
 export function makeRouter(reactiveModel) {
   return createHashRouter([
     {

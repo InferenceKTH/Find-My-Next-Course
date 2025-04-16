@@ -92,26 +92,25 @@ export const PrerequisitePresenter = observer((props) => {
         );
 
         return (
-            <div style={{ width: "100%", height: "500px" }}>
-                
-                    <ReactFlow
-                        nodes={nodes}
-                        edges={edges}
-                        onNodesChange={onNodesChange}
-                        onEdgesChange={onEdgesChange}
-                        onConnect={onConnect}
-                        connectionLineType={ConnectionLineType.SmoothStep}
-                        fitView
-                        style={{ backgroundColor: '#F7F9FB' }}
-                        nodesDraggable={false}
-                        nodesConnectable={false}
-                        edgesFocusable={false}
-                        onNodeClick={clicked}
-                        elementsSelectable={false}
-                    >
-                        <Background />
-                    </ReactFlow>
-                
+            <div className="w-full h-[500px] rounded-lg">
+                <ReactFlow
+                    nodes={nodes}
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    onConnect={onConnect}
+                    connectionLineType={ConnectionLineType.SmoothStep}
+                    fitView
+                    style={{ backgroundColor: 'white', borderRadius: '10px'}}
+                    nodesDraggable={false}
+                    nodesConnectable={false}
+                    elementsSelectable={true}
+                    elementsFocusable={false}
+                    edgesFocusable={false}
+                >
+                    <Background />
+                </ReactFlow>
+
             </div>
 
         );

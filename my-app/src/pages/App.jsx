@@ -2,6 +2,7 @@ import React from 'react';
 import { SidebarPresenter } from '../presenters/SidebarPresenter.jsx';
 import { SearchbarPresenter } from '../presenters/SearchbarPresenter.jsx';
 import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';
+import { FilterPresenter } from "../presenters/FilterPresenter.jsx";
 import { Routes, Route } from 'react-router-dom';
 import SharedView from '../pages/SharedView.jsx';
 import { model } from '/src/model.js';
@@ -9,7 +10,8 @@ import { model } from '/src/model.js';
 function MainAppLayout({ model }) {
 	return (
 		<div className="flex h-screen w-screen overflow-hidden">
-			<div className="w-1/4 h-full bg-gradient-to-t from-[#4f3646] to-[#6747c0]">
+			<FilterPresenter model={model} />
+			<div className="flex-auto w-40% h-full bg-gradient-to-t from-[#4f3646] to-[#6747c0]">
 				<SidebarPresenter model={model} />
 			</div>
 			<div className="w-3/4 h-full flex flex-col">
