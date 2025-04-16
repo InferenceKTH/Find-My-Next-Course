@@ -10,6 +10,7 @@ export const model = {
     favourites: [],
     isReady: false,
     filtersChange: false,
+    filtersCalculated: false,
     filteredCourses: [],
     filterOptions: {
         applyTranscriptFilter: true,
@@ -23,7 +24,8 @@ export const model = {
         applyCreditsFilter:true,
         creditMin: 0,
         creditMax: 45,
-        //applyDepartmentFilter:false,
+        applyDepartmentFilter:false,
+        department: []
     },
 
     setUser(user) {
@@ -107,6 +109,10 @@ export const model = {
 
     setFiltersChange() {
         this.filtersChange = true;
+    },
+
+    setFiltersCalculated() {
+        this.filtersCalculated = true;
     },
     
     updateLevelFilter(level) {
