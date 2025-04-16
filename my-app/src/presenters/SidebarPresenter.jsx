@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from "mobx-react-lite";
 import SidebarView from "../views/SidebarView.jsx";
 
 
 const SidebarPresenter = observer(({ model }) => {
 
+    useEffect(() => {
+        model.setFiltersChange();
+    })
+
     let currentLanguageSet = 'none';
-    let currentLevelSet = [];
+    let currentLevelSet = ["PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"];
     function handleLanguageFilterChange(param) {
         if (param === "English") {
             switch (currentLanguageSet) {
@@ -117,6 +121,8 @@ const SidebarPresenter = observer(({ model }) => {
                 break;
             case "level":
                 console.log("level filter set to: " + param[1]);
+                
+                console.log("model -",model.filterOptions.level);
                 model.setApplyLevelFilter(param[1]);
                 break;
             case "location":
@@ -136,9 +142,17 @@ const SidebarPresenter = observer(({ model }) => {
         }
         model.setFiltersChange();
     }
+    function reApplyFilter() {
+        model.setFiltersChange();
+    }
+
+    
+
     return (
         <SidebarView HandleFilterChange={HandleFilterChange}
-            HandleFilterEnable={HandleFilterEnable} />
+            HandleFilterEnable={HandleFilterEnable}
+            reApplyFilter = {reApplyFilter}    
+        />
     );
 });
 

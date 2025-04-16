@@ -3,6 +3,8 @@ import { DotPulse, Quantum } from 'ldrs/react';
 import 'ldrs/react/Quantum.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
+var startupFlag = true;
+
 function ListView(props) {
   const coursesToDisplay = props.searchResults;
       /*(props.searchResults && props.searchResults.length > 0
@@ -20,6 +22,12 @@ function ListView(props) {
       [courseCode]: !prevState[courseCode]
     }));
   };
+
+  if (startupFlag) {
+    startupFlag = false;
+    console.log("first presenter");
+    //model.setFiltersCalculated();
+}
 
   const handleFavouriteClick = (course) => {
     if (props.favouriteCourses?.some((fav) => fav.code === course.code)) {
@@ -54,7 +62,6 @@ function ListView(props) {
         </div>
     );
   }
-
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-3 h-screen">
             {isLoading ? (
