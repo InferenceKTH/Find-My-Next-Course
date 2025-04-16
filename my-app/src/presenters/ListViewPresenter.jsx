@@ -72,8 +72,13 @@ const ListViewPresenter = observer(({ model }) => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
-    const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />;
-    const reviewPresenter = <ReviewPresenter model={model} course={selectedCourse}/>;
+    const preP = <PrerequisitePresenter
+        model={model}
+        isPopupOpen={isPopupOpen}
+        setIsPopupOpen={setIsPopupOpen}
+        setSelectedCourse={setSelectedCourse}
+        selectedCourse={selectedCourse} />;
+    const reviewPresenter = <ReviewPresenter model={model} course={selectedCourse} />;
 
     const popup = <CoursePagePopup
         favouriteCourses={model.favourites}
@@ -84,6 +89,7 @@ const ListViewPresenter = observer(({ model }) => {
         course={selectedCourse}
         prerequisiteTree={preP}
         reviewPresenter={reviewPresenter}/>
+
 
 
 
