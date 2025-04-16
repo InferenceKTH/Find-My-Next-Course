@@ -10,6 +10,7 @@ export const model = {
     favourites: [],
     isReady: false,
     filtersChange: false,
+    filtersCalculated: false,
     filteredCourses: [],
     filterOptions: {
         applyTranscriptFilter: true,
@@ -107,6 +108,10 @@ export const model = {
 
     setFiltersChange() {
         this.filtersChange = true;
+    },
+
+    setFiltersCalculated() {
+        this.filtersCalculated = true;
     },
     
     updateLevelFilter(level) {

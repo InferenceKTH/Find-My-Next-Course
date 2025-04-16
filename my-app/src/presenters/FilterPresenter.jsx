@@ -28,8 +28,8 @@ const FilterPresenter = observer(({ model }) => {
             //console.log(course?.prerequisites);
             if(course?.prerequisites && (course.prerequisites !== "null"))
                 var resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
-            else{
-                //zerocourses.push(course);
+            else{ // {strong: , zero: , moderate: , weak: }
+                zerocourses.push(course);
                 return;
             }
             if(resultEligibility.strong){
@@ -292,6 +292,7 @@ const FilterPresenter = observer(({ model }) => {
 
         model.filteredCourses = [...localFilteredCourses];
         model.filtersChange = false;
+        model.setFiltersCalculated();
         console.log("filtered objects number of elements: ", model.filteredCourses.length);
     }
 });
