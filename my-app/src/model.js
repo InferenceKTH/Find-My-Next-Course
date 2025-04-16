@@ -11,7 +11,7 @@ export const model = {
     courses: [],
     favourites: [],
     isReady: false,
-    filtersChange: false,
+    filtersChange: false, // 
     filtersCalculated: false,
     filteredCourses: [],
     filterOptions: {
@@ -123,6 +123,10 @@ export const model = {
 
     setFiltersCalculated() {
         this.filtersCalculated = true;
+    },
+
+    setFilterOptions(options){
+        this.filterOptions = options; // do we want to set the flags? What about useEffect?
     },
     
     updateLevelFilter(level) {

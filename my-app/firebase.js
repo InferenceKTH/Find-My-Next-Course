@@ -50,10 +50,10 @@ async function firebaseToModel(model) {
 		if (data.favourites) model.setFavourite(data.favourites);
 		if (data.currentSearchText)
 			model.setCurrentSearchText(data.currentSearchText);
-		if (data.scrollPosition) 
-			model.setScrollPosition(data.scrollPosition);
-		// if (data.currentSearch)
-		//     model.setCurrentSearch(data.currentSearch);
+		// if (data.scrollPosition) 
+		// 	model.setScrollPosition(data.scrollPosition);
+		if (data.filterOptions)
+		     model.setFilterOptions(data.filterOptions);
 		noUpload = false;
 	});
 }
@@ -64,16 +64,17 @@ export function syncModelToFirebase(model) {
 			userId: model?.user.uid,
 			favourites: toJS(model.favourites),
 			currentSearchText: toJS(model.currentSearchText),
-			// currentSearch: toJS(model.currentSearch),
+			filterOptions: toJS(model.filterOptions),
 			// Add more per-user attributes here
 		}),
 		// eslint-disable-next-line no-unused-vars
-		({ userId, favourites, currentSearchText }) => {
+		({ userId, favourites, currentSearchText, filterOptions }) => {
 			if (noUpload || !userId) return;
 			const userRef = ref(db, `users/${userId}`);
 			const dataToSync = {
 				favourites,
 				currentSearchText,
+				filterOptions,
 			};
 
 			set(userRef, dataToSync)
