@@ -132,7 +132,8 @@ export const model = {
     },
     
     setApplyRemoveNullCourses() {
-        this.applyRemoveNullCourses = !this.applyRemoveNullCourses;
+        this.filterOptions.applyRemoveNullCourses = !this.filterOptions.applyRemoveNullCourses;
+        this.setFiltersChange();
     },
 
     updateLevelFilter(level) {
@@ -153,7 +154,6 @@ export const model = {
     },
 
     updateDepartmentFilter(department) {
-        console.log(department);
         this.filterOptions.department = department;
     },
 
