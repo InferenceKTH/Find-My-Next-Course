@@ -24,6 +24,7 @@ function SidebarView(props) {
                 HandleFilterChange={props.HandleFilterChange}
                 filterName = "transcript"
                 HandleFilterEnable={props.HandleFilterEnable}
+                reApplyFilter = {props.reApplyFilter}
             />
             <div className='flex-auto justify-center h-100 max-h-100 '>
                 <div className="z-10 w-100% rounded-lg justify-center pb-10" >

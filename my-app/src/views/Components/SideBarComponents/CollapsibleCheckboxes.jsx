@@ -7,7 +7,7 @@ const CollapsibleCheckboxes = (props) => {
   const [checkedSubItems, setCheckedSubItems] = useState({});
   const [stupidLines, setStupidLines] = useState(0);
 
-  const strokeWidth = 2;
+  const strokeWidth = 5;
 
   const toggleExpand = (id, subItems) => {
     setExpanded((prev) => ({
@@ -107,13 +107,13 @@ const CollapsibleCheckboxes = (props) => {
 
               <svg
                 width="40"
-                height={`${expanded[row.id] ? (row.subItems.length) * 24 + 35 : 30}`}
-                viewBox={`0 0 40 ${expanded[row.id] ? (row.subItems.length) * 24 + 35 : 30}`}
+                height={`${expanded[row.id] ? (row.subItems.length) * 24 + 34 : 30}`}
+                viewBox={`0 0 40 ${expanded[row.id] ? (row.subItems.length) * 24 + 34 : 30}`}
                 preserveAspectRatio="none"
                 className="absolute left-[-25px] top-[-5px]"
               >
                 <path
-                  d={`M20 0 V${(row.subItems.length) * 24 + 35}`}
+                  d={`M20 0 V${(row.subItems.length) * 24 + 34}`}
                   stroke="white"
                   strokeWidth={strokeWidth}
                   fill="none"

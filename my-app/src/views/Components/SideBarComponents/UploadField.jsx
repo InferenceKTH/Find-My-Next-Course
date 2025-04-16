@@ -7,7 +7,6 @@ import ButtonGroupField from './ButtonGroupField';
 
 export default function UploadField(props) {
 
-
     const [isDragging, setIsDragging] = useState(false);
     const [filterEnabled, setFilterEnabled] = useState(true);
 
@@ -74,7 +73,9 @@ export default function UploadField(props) {
             </div>
             <div className={`opacity-${filterEnabled ? "100" : "50"} ${filterEnabled ? "pointer-events-auto" : "pointer-events-none user-select-none"
                 }`}>
-                <CourseTranscriptList />
+                <CourseTranscriptList
+                    reApplyFilter = {props.reApplyFilter}
+                />
             </div>
         </div>
     );
