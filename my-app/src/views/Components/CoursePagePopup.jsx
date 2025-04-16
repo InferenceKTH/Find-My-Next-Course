@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
 function CoursePagePopup({
-	favouriteCourses,
-	handleFavouriteClick,
-	isOpen,
-	onClose,
-	course,
-	prerequisiteTree,
-	reviewPresenter,
-}) {
+							 favouriteCourses,
+							 handleFavouriteClick,
+							 isOpen,
+							 onClose,
+							 course,
+							 prerequisiteTree,
+							 reviewPresenter,
+						 }) {
 	const treeRef = useRef(null);
 
 	useEffect(() => {
@@ -49,20 +49,20 @@ function CoursePagePopup({
 							<h2 className="text-5xl font-extrabold text-[#2e2e4f]">
 								<span className="text-violet-700">{course.code}</span> - {course.name}
 								<span className="ml-4 text-lg text-violet-700 whitespace-nowrap">
-									({course.credits} Credits)
-								</span>
+                                    ({course.credits} Credits)
+                                </span>
 							</h2>
 							<div className="my-6 h-1.5 w-full bg-violet-500"></div>
 						</div>
 						<div>
 							<button
 								className={`inline-flex items-center px-4 py-2 gap-2 rounded-lg
-										   transition-all duration-300 ease-in-out
-										   font-semibold text-sm shadow-sm
-										   ${favouriteCourses.some((fav) => fav.code === course.code)
-											   ? 'bg-yellow-400 /90 hover:bg-yellow-500/90 border-2 border-yellow-600 hover:border-yellow-700 text-yellow-900'
-											   : 'bg-yellow-200/90 hover:bg-yellow-300 border-2 border-yellow-400 hover:border-yellow-500 text-yellow-600 hover:text-yellow-700'
-										   }`}
+                                   transition-all duration-300 ease-in-out
+                                   font-semibold text-sm shadow-sm
+                                   ${favouriteCourses.some((fav) => fav.code === course.code)
+									? 'bg-yellow-400 /90 hover:bg-yellow-500/90 border-2 border-yellow-600 hover:border-yellow-700 text-yellow-900'
+									: 'bg-yellow-200/90 hover:bg-yellow-300 border-2 border-yellow-400 hover:border-yellow-500 text-yellow-600 hover:text-yellow-700'
+								}`}
 								onClick={(e) => {
 									e.stopPropagation();
 									handleFavouriteClick(course);

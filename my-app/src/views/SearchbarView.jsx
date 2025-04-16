@@ -44,7 +44,7 @@ function SearchbarView(props) {
 
   return (
     <div className="w-full px-6 py-6 flex items-center justify-between" onClick={handleClickOutside}>
-      <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
+      <a href="https://findmynextcourse.web.app/" className="flex items-center h-[90px] w-auto">
         <img src={project_logo} className="h-[90px] w-auto" alt="KTH Logo" />
       </a>
 
