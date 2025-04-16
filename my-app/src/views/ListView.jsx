@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 var startupFlag = true;
 
 function ListView(props) {
-    const coursesToDisplay = props.searchResults.length > 0 ? props.searchResults : props.courses;
+    const coursesToDisplay = props.searchResults;
     const [displayedCourses, setDisplayedCourses] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const [readMore, setReadMore] = useState({});

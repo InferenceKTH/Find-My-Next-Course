@@ -27,7 +27,8 @@ export const model = {
         creditMin: 0,
         creditMax: 45,
         applyDepartmentFilter: true,
-        department: []
+        department: [],
+        applyRemoveNullCourses: false
     },
 
     setUser(user) {

@@ -252,7 +252,7 @@ const FilterPresenter = observer(({ model }) => {
         const levels = model.filterOptions.level;
 
 
-        localFilteredCourses = localFilteredCourses.filter(course => levels.includes(course.academicLevel));
+        localFilteredCourses = localFilteredCourses.filter(course => levels.includes(course?.academicLevel));
 
         /*
         let levels = model.filterOptions.level;
@@ -297,6 +297,52 @@ const FilterPresenter = observer(({ model }) => {
 
         localFilteredCourses = [...bestCourses, ...worstCourses];
     }
+
+    function updateNoNullcourses(){
+        let local = [...localFilteredCourses];
+
+        console.log("miauuuuu:",local.length);
+
+        if(model.filterOptions.applyTranscriptFilter){
+            local = local.filter(function(course){
+                return (course?.prerequisites && (course.prerequisites !== "null"));
+            })
+        }
+        console.log("miauuuuu:",local.length);
+        if(model.filterOptions.applyLevelFilter){
+            local = local.filter(function(course){
+                return (course?.prerequisites && (course.prerequisites !== "null"));
+            })
+        }
+        console.log("miauuuuu:",local.length);
+        if(model.filterOptions.applyLanguageFilter){
+            local = local.filter(function(course){
+                return ((course?.language) && (course?.language?.swedish !== "null" && course?.language?.english !== "null"));
+            })
+        }
+        console.log("miauuuuu:",local.length);
+        /*if(model.filterOptions.applyLocationFilter){
+            local = local.filter(function(course){
+                return ((course?.location) && (course?.location !== "null"));
+            })
+        }*/
+        console.log("miauuuuu:",local.length);
+        if(model.filterOptions.applyCreditsFilter){
+            local = local.filter(function(course){
+                return ((course?.credit) && (course?.credit !== "null"));
+            })
+        }
+        console.log("miauuuuu:",local.length);
+        if(model.filterOptions.applyDepartmentFilter){
+            local = local.filter(function(course){
+                return ((course?.deparment) && (course?.department !== "null"));
+            })
+        }
+        console.log("miauuuuu:",local.length);
+
+        localFilteredCourses = [...local];
+    }
+
     async function run() {
         if (model.courses.length == 0) {
             return;
@@ -304,6 +350,9 @@ const FilterPresenter = observer(({ model }) => {
         if (model.filtersChange) {
             localFilteredCourses = [...model.courses];
 
+            if (model.filterOptions.applyRemoveNullCourses) {
+                updateNoNullcourses();
+            }
             if (model.filterOptions.applyLocationFilter) {
                 //after deo finishes locations, until then dont
 
@@ -319,37 +368,18 @@ const FilterPresenter = observer(({ model }) => {
             if (model.filterOptions.applyCreditsFilter) {
                 updateCredits();
             }
-            if (model.filtersChange) {
-                localFilteredCourses = [...model.courses];
-
-                if (model.filterOptions.applyLocationFilter) {
-                    //after deo finishes locations, until then dont
-
-                    //console.log("going to apply location on:",localFilteredCourses.length);
-                    //updateLocations();
-                }
-                if (model.filterOptions.applyLevelFilter) {
-                    updateLevels();
-                }
-                if (model.filterOptions.applyLanguageFilter) {
-                    updateLanguages();
-                }
-                if (model.filterOptions.applyCreditsFilter) {
-                    updateCredits();
-                }
-                if (model.filterOptions.applyTranscriptFilter) {
-                    applyTranscriptEligibility();
-                }
-                if (model.filterOptions.applyDepartments) {
-                    //console.log("going to apply location on:",localFilteredCourses.length);
-                    //updateDepartments();
-                }
-
-                model.filteredCourses = [...localFilteredCourses];
-                model.filtersChange = false;
-                model.setFiltersCalculated();
-                console.log("filtered objects number of elements: ", model.filteredCourses.length);
+            if (model.filterOptions.applyTranscriptFilter) {
+                applyTranscriptEligibility();
             }
+            if (model.filterOptions.applyDepartments) {
+                //console.log("going to apply location on:",localFilteredCourses.length);
+                //updateDepartments();
+            }
+
+            model.filteredCourses = [...localFilteredCourses];
+            model.filtersChange = false;
+            model.setFiltersCalculated();
+            console.log("filtered objects number of elements: ", model.filteredCourses.length);
         }
     }
 
