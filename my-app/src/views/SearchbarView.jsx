@@ -73,12 +73,18 @@ function SearchbarView(props) {
                             e.stopPropagation();
                             setShowFavourites(!showFavourites);
                         }}
-                        className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
-                        Favourites
+                        className={`w-[120px] h-[44px] ${
+                            !showFavourites
+                            ? 'bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200'
+                            : 'bg-[#003399]     rounded-full border border-red-600  transition-all duration-200 cursor-pointer text-red-600 hover:bg-red-600 hover:text-white border-solid font-bold'
+                            // cursor-pointer text-red-600 hover:bg-red-600 hover:text-white border-r border-solid border-violet-400 font-semibold transition-colors
+                        
+                        }`}>
+                        {showFavourites? "Close":"Favourites"}
                     </button>
                     {showFavourites && (
                         <FavouritesDropdown
-                            {...props}
+                            {...props}  
                             onClick={(e) => e.stopPropagation()}
                         />
                     )}
