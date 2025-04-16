@@ -84,29 +84,37 @@ function SearchbarView(props) {
                     )}
                 </div>
 
-        <div className="flex items-center cursor-pointer">
-          {user ? (
-            <button
-              onClick={handleSignOut}
-              className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
-              Sign out
-            </button>
-          ) : (
-            <button
-              onClick={handleSignIn}
-              className="w-auto min-w-[120px] h-[44px] bg-[#003399] text-white text-sm rounded-full border border-[#001a4d] cursor-pointer hover:bg-[#001a4d] transition-all duration-200 flex items-center justify-center px-4">
-              Sign in with Google
-            </button>
-          )}
-        </div>
+          <div className="flex items-center cursor-pointer">
+              {user ? (
+                  <button
+                      onClick={handleSignOut}
+                      className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+                      Sign out
+                  </button>
+              ) : (
+                  <button
+                      onClick={handleSignIn}
+                      className="w-auto min-w-[120px] h-[44px] bg-[#003399] text-white text-sm rounded-full border border-[#001a4d] cursor-pointer hover:bg-[#001a4d] transition-all duration-200 flex items-center justify-center px-4">
+                      Sign in with Google
+                  </button>
 
-        {user && (
-          <img
-            src={user.photoURL}
-            alt="Profile"
-            className="w-[44px] h-[44px] rounded-full border border-[#000061]"
-          />
-        )}
+              )}
+
+              <button
+                  onClick={() => window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+                  className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+                  Super secret button
+              </button>
+
+          </div>
+
+          {user && (
+              <img
+                  src={user.photoURL}
+                  alt="Profile"
+                  className="w-[44px] h-[44px] rounded-full border border-[#000061]"
+              />
+          )}
       </div>
     </div>
   );
