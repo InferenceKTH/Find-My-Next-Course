@@ -3,8 +3,6 @@ import { DotPulse, Quantum } from 'ldrs/react';
 import 'ldrs/react/Quantum.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-var startupFlag = true;
-
 function ListView(props) {
     const coursesToDisplay = props.searchResults;
     const [displayedCourses, setDisplayedCourses] = useState([]);
@@ -42,15 +40,25 @@ function ListView(props) {
         setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
     }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
-  if (!props.courses) {
-    return (
-        <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
-          <div className="text-white p-4 text-center">
-            ⚠️ No course data available.
-          </div>
-        </div>
-    );
-  }
+    const [isRestoringScroll, setIsRestoringScroll] = useState(false);
+    useEffect(() => {
+        if (props.targetScroll > 0 && !isRestoringScroll) {
+            setIsRestoringScroll(true);
+            props.persistantScrolling(fetchMoreCourses, hasMore);
+            setIsRestoringScroll(false);
+        }
+    }, [props.targetScroll, hasMore, displayedCourses.length]);
+   
+    if (!props.courses) {
+        return (
+            <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
+                <div className="text-white p-4 text-center">
+                    ⚠️ No course data available.
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-3 h-screen">
             {isLoading ? (
