@@ -8,12 +8,15 @@ import SearchbarView from "../views/SearchbarView.jsx";
 
 const SearchbarPresenter = observer(({ model }) => {
     const searchCourses = (query) => {
+        console.log("---------------search recalculated");
+        console.log("filtered courses length: ", model.filteredCourses.length);
         const searchResults = model.courses.filter(course =>
             course.code.toLowerCase().includes(query.toLowerCase()) ||
             course.name.toLowerCase().includes(query.toLowerCase()) ||
             course.description.toLowerCase().includes(query.toLowerCase())
         );
         model.setCurrentSearch(searchResults);
+        console.log(model.currentSearch.length);
     };
 
     const addFavourite = (course) => {
@@ -42,6 +45,7 @@ const SearchbarPresenter = observer(({ model }) => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
+
     const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />;
     const reviewPresenter = <ReviewPresenter model={model} course={selectedCourse} />;
 

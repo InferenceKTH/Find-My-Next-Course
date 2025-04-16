@@ -5,9 +5,9 @@ import project_logo from "../assets/project_icon.png";
 import FavouritesDropdown from "./Components/FavouriteDropdown.jsx";
 
 function SearchbarView(props) {
-  const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState(null);
   const [showFavourites, setShowFavourites] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
@@ -36,15 +36,15 @@ function SearchbarView(props) {
     signOut(auth);
   };
 
-    const handleClickOutside = (e) => {
-        if (!e.target.closest('.favourites-container')) {
-            setShowFavourites(false);
-        }
-    };
+  const handleClickOutside = (e) => {
+    if (!e.target.closest('.favourites-container')) {
+      setShowFavourites(false);
+    }
+  };
 
   return (
     <div className="w-full px-6 py-6 flex items-center justify-between" onClick={handleClickOutside}>
-      <a href="https://www.kth.se" className="flex items-center h-[90px] w-auto">
+      <a href="https://findmynextcourse.web.app/" className="flex items-center h-[90px] w-auto">
         <img src={project_logo} className="h-[90px] w-auto" alt="KTH Logo" />
       </a>
 
@@ -52,9 +52,8 @@ function SearchbarView(props) {
         type="text"
         placeholder="What course are you looking for?"
         value={searchQuery}
-        onChange={(e) => 
-                    handleSearch(e.target.value)}
-                onClick={(e)=>e.stopPropagation()}  //TODO decide if we want to close the fav list after clicking the searchbar
+        onChange={(e) => handleSearch(e.target.value)}
+        onClick={(e) => e.stopPropagation()}
         className="w-[400px] h-[44px] pl-14 pr-4 bg-white text-black rounded-full"
       />
 
@@ -67,22 +66,22 @@ function SearchbarView(props) {
           About us
         </button>
 
-                <div className="relative favourites-container">
-                    <button 
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            setShowFavourites(!showFavourites);
-                        }}
-                        className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
-                        Favourites
-                    </button>
-                    {showFavourites && (
-                        <FavouritesDropdown
-                            {...props}
-                            onClick={(e) => e.stopPropagation()}
-                        />
-                    )}
-                </div>
+        <div className="relative favourites-container">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowFavourites(!showFavourites);
+            }}
+            className="w-[120px] h-[44px] bg-[#003399] text-white rounded-full border border-[#000061] cursor-pointer hover:bg-[#001a4d] transition-all duration-200">
+            Favourites
+          </button>
+          {showFavourites && (
+            <FavouritesDropdown
+              {...props}
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
+        </div>
 
         <div className="flex items-center cursor-pointer">
           {user ? (
