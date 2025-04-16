@@ -190,7 +190,7 @@ export const model = {
         this.filteredCourses = this.courses.filter(course => {
             // Language
             if (fo.applyLanguageFilter && fo.language !== "none") {
-                const cl = course.language.toLowerCase();
+                const cl = course.language; // TODO to lower case
                 if (fo.language === "english" && cl !== "english") return false;
                 if (fo.language === "swedish" && cl !== "swedish") return false;
                 if (fo.language === "both" && !(cl === "english" || cl === "swedish")) return false;

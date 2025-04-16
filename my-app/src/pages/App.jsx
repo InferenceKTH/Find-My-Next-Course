@@ -1,13 +1,10 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import { SidebarPresenter } from '../presenters/SidebarPresenter.jsx';
 import { SearchbarPresenter } from '../presenters/SearchbarPresenter.jsx';
 import { ListViewPresenter } from '../presenters/ListViewPresenter.jsx';
 import { FilterPresenter } from "../presenters/FilterPresenter.jsx";
-import SharedView from '../pages/SharedView.jsx';
-import { model } from '/src/model.js';
 
-function MainAppLayout({ model }) {
+function App({ model }) {
 	return (
 		<div className="flex h-screen w-screen">
 			<FilterPresenter model={model} />
@@ -26,23 +23,5 @@ function MainAppLayout({ model }) {
 	);
 }
 
-function App({ model }) {
-	return (
-		<Routes>
-			<Route path="/" element={<MainAppLayout model={model} />} />
-			<Route path="/share" element={<SharedView model={model} />} />
-		</Routes>
-	);
-}
-
-//function App({ model }) {
-	//return (
-		//<Routes>
-		//	<Route path="/" element={<MainAppLayout model={model} />} />
-		//	<Route path="/share" element={<SharedView />} />
-		//</Routes>
-		//return <MainAppLayout model={model} />;
-	//);
-//}
 
 export default App;

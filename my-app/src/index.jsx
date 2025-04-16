@@ -24,7 +24,6 @@ export function makeRouter(reactiveModel) {
     },
     {
       path: "/share",
-      //element: <SharedView />,
       element: <SharedView model={reactiveModel} />,
     },
     {
