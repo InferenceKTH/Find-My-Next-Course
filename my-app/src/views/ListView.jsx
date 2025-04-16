@@ -101,7 +101,7 @@ function ListView(props) {
                                         dangerouslySetInnerHTML={{
                                             __html: readMore[course.code]
                                                 ? course.description
-                                                : course.description.slice(0, 150),
+                                                : (course.description.slice(0, 200)+"..."),
                                         }}
                                     />
                                     {course.description.length > 150 && (

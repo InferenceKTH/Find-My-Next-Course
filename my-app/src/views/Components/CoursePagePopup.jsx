@@ -34,8 +34,10 @@ function CoursePagePopup({
 
 	if (!isOpen || !course) return null;
 
+	console.log(course);``
 	return (
 		<div
+			
 			className="fixed backdrop-blur-sm inset-0 bg-transparent flex justify-end z-50"
 			onClick={onClose}
 		>
