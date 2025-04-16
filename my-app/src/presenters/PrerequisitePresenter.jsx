@@ -99,6 +99,7 @@ export const PrerequisitePresenter = observer((props) => {
                     onNodesChange={onNodesChange}
                     onEdgesChange={onEdgesChange}
                     onConnect={onConnect}
+                    onNodeClick={clicked}
                     connectionLineType={ConnectionLineType.SmoothStep}
                     fitView
                     style={{ backgroundColor: 'white', borderRadius: '10px'}}
@@ -211,6 +212,7 @@ export const PrerequisitePresenter = observer((props) => {
         }
 
         /* STEP 2: Check if an object is true or false based on content of the inner object */
+        
         if (typeof current_object == "object" && !Array.isArray(current_object)) {
             let key = Object.keys(current_object)[0];
             let object_array = current_object[key];
@@ -260,6 +262,7 @@ export const PrerequisitePresenter = observer((props) => {
             }
             else {current_object[key] = false}
         }
+        
     }
 
     function generateTree(courses_taken, prereqs) {
@@ -280,7 +283,7 @@ export const PrerequisitePresenter = observer((props) => {
             initialNodes.push(display_node);
         } else {
             let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input");
-            let copy = {...props.selectedCourse.prerequisites};
+            let copy = JSON.parse(JSON.stringify(props.selectedCourse.prerequisites));
             let eligible = generateTree(JSON.parse(localStorage.getItem("completedCourses")), copy);
             if (eligible) {
                 root["style"]["backgroundColor"] = "lightgreen";
