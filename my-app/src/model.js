@@ -25,7 +25,10 @@ export const model = {
         creditMin: 0,
         creditMax: 45,
         applyDepartmentFilter: true,
-        department: []
+        department: ["EECS/Computational Science and  Technology", "EECS/Theoretical Computer Science", "EECS/Electric Power and Energy Systems", "EECS/Network and Systems Engineering",
+        "ITM/Learning in Engineering Sciences", "ITM/Industrial Economics and Management", "ITM/Energy Systems", "ITM/Integrated Product Development and Design", "ITM/SKD GRU",
+        "SCI/Mathematics", "SCI/Applied Physics", "SCI/Mechanics", "SCI/Aeronautical and Vehicle Engineering", 
+        "ABE/Sustainability and Environmental Engineering", "ABE/Concrete Structures", "ABE/Structural Design & Bridges", "ABE/History of Science, Technology and Environment", ]
     },
 
     setUser(user) {
@@ -132,14 +135,17 @@ export const model = {
         this.filterOptions.eligibility = eligibility;
     },
 
+    updateDepartmentFilter(department) {
+        console.log(department);
+        this.filterOptions.department = department;
+    },
+
     //setters for the filter options
     setApplyTranscriptFilter(transcriptFilterState) {
         this.filterOptions.applyTranscriptFilter = transcriptFilterState;
     },
     setApplyLevelFilter(levelFilterState) {
         this.filterOptions.applyLevelFilter = levelFilterState;
-        
-        console.log("model -",this.filterOptions.level);
     },
     setApplyLanguageFilter(languageFilterState) {
         this.filterOptions.applyLanguageFilter = languageFilterState;
@@ -150,9 +156,9 @@ export const model = {
     setApplyCreditsFilter(creditsFilterState) {
         this.filterOptions.applyCreditsFilter = creditsFilterState;
     },
-    // setApplyDepartmentFilter(departmentFilterState) {
-    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
-    // },
+    setApplyDepartmentFilter(departmentFilterState) {
+        this.filterOptions.applyDepartmentFilter = departmentFilterState;
+    },
 
 
 
