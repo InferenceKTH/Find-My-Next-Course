@@ -70,15 +70,29 @@ export const model = {
     },
     getActiveFiltersFromOptions() {
         const af = {};
-        if (this.filterOptions.applyLanguageFilter) af.language = this.filterOptions.language;
-        if (this.filterOptions.applyLevelFilter && this.filterOptions.level.length > 0)
-            af.level = this.filterOptions.level[0]; // Or join(',') if needed
-        if (this.filterOptions.applyLocationFilter && this.filterOptions.location.length > 0)
-            af.location = this.filterOptions.location[0];
-        if (this.filterOptions.applyCreditsFilter)
-            af.credits = this.filterOptions.creditMin.toString();
-        if (this.filterOptions.applyTranscriptFilter)
-            af.transcript = this.filterOptions.eligibility;
+        const fo = this.filterOptions;
+    
+        if (fo.applyLanguageFilter && fo.language !== "none") {
+            af.language = fo.language;
+        }
+    
+        if (fo.applyLevelFilter && fo.level.length > 0) {
+            af.level = fo.level[0]; // or join if you support multiple
+        }
+    
+        if (fo.applyLocationFilter && fo.location.length > 0) {
+            af.location = fo.location[0]; // or join
+        }
+    
+        if (fo.applyCreditsFilter) {
+            af.creditMin = fo.creditMin.toString();
+            af.creditMax = fo.creditMax.toString();
+        }
+    
+        if (fo.applyTranscriptFilter) {
+            af.transcript = fo.eligibility;
+        }
+    
         return af;
     },
     
