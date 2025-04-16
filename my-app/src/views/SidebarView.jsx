@@ -105,6 +105,21 @@ function SidebarView(props) {
                             ]
                         }
                     />
+                    <div className='mr-3'>
+                    <input
+                            id="excludeNullCheckbox"
+                            type="checkbox"
+                            onChange={props.toggleRemoveNull}
+                            className="w-4 h-4 pt-4 text-purple-600 bg-gray-100 border-gray-300 rounded-sm accent-violet-600"
+                        />
+                        <label 
+                            htmlFor="excludeNullCheckbox" 
+                            className="ml-2 text-sm font-medium text-gray-300 cursor-pointer"
+                        >
+                            Exclude unidentified field courses
+                        </label>
+                        
+                    </div>
                 </div>
 
             </div>
