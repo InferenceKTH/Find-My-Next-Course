@@ -274,7 +274,8 @@ export const PrerequisitePresenter = observer((props) => {
 
 
     function loadTree(courses_taken) {
-        
+        // console.log("Hei")
+        // console.log(JSON.parse(localStorage.getItem("completedCourses")))
         console.log(JSON.stringify(props.selectedCourse.prerequisites, null, 4));
         if (props.selectedCourse.prerequisites === "null" || props.selectedCourse.prerequisites.length == 0) {
             let display_node = createNode("No Prerequisites", "No Prerequisites", "default");
