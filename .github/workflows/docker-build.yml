@@ -1,0 +1,33 @@
+name: Docker CI Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build and start services with Docker Compose (CI Mode)
+      run: |
+        CI=true COMMAND="npx serve -s build" docker compose up -d --build
+
+    - name: Check running containers
+      run: docker ps -a
+
+    - name: Check for container failures
+      run: |
+        docker compose logs --tail=50
+        if [ "$(docker compose ps --format '{{.State}}' | grep -c exited)" -gt 0 ]; then
+          echo "A container has exited with an error. Failing the workflow."
+          exit 1
+        fi

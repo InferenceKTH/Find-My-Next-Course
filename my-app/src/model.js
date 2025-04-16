@@ -6,6 +6,8 @@ export const model = {
     //add searchChange: false,   //this is for reworking the searchbar presenter, so that it triggers as a model, 
     //instead of passing searchcouses lambda function down into the searchbarview.
     currentSearch: [],
+    currentSearchText: "",
+    scrollPosition: 0,
     courses: [],
     favourites: [],
     isReady: false,
@@ -35,6 +37,14 @@ export const model = {
 
     setCurrentSearch(searchResults){
         this.currentSearch = searchResults;
+    },
+
+    setCurrentSearchText(text){
+        this.currentSearchText = text;
+    },
+    
+    setScrollPosition(position) {
+        this.scrollPosition = position;
     },
 
     setCourses(courses){
