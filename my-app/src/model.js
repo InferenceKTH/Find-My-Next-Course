@@ -24,7 +24,8 @@ export const model = {
         applyCreditsFilter:true,
         creditMin: 0,
         creditMax: 45,
-        //applyDepartmentFilter:false,
+        applyDepartmentFilter:false,
+        department: []
     },
 
     setUser(user) {
