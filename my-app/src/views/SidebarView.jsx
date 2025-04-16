@@ -5,32 +5,59 @@ import ButtonGroupField from "./Components/SideBarComponents/ButtonGroupField.js
 import SliderField from "./Components/SideBarComponents/SliderField.jsx";
 import DropDownField from "./Components/SideBarComponents/DropDownField.jsx";
 import { UploadTranscriptPresenter } from '../presenters/UploadTranscriptPresenter.jsx';
+import CollapsibleCheckboxes from './Components/SideBarComponents/CollapsibleCheckboxes.jsx';
 
-function SidebarView() {
+
+function SidebarView(props) {
     return (
-        <div className='object-center text-white p-3 pt-15  flex-col h-screen
+        <div className='object-center text-white p-3 pt-2  flex-col h-screen
          overflow-y-scroll'
             style={{
                 scrollbarWidth: "thin",
                 scrollbarColor: "#888 #f1f1f1",
             }}
         >
-            <UploadTranscriptPresenter/>
-            <div className='flex-auto justify-center h-100 max-h-100 '>
-                <div className="z-10 w-100% rounded-lg justify-center" >
-                    <h6 className="m-2 text-lg font-medium text-white text-center">
+            <h6 className="m-2 text-lg font-medium text-white text-center">
                         Filters 
                     </h6>
-                    <ToggleField
-                        field1={"English"}
-                        field2={"Swedish"}
-                    />
-                    <ButtonGroupField
-                        items={["item 1", "item 2", "item 3"]}
-                    />
-                    <SliderField />
+            <UploadTranscriptPresenter
+                HandleFilterChange={props.HandleFilterChange}
+                filterName = "transcript"
+                HandleFilterEnable={props.HandleFilterEnable}
+            />
+            <div className='flex-auto justify-center h-100 max-h-100 '>
+                <div className="z-10 w-100% rounded-lg justify-center pb-10" >
+                    
                     <DropDownField
-                        options={["option 1", "option 2", "option 3", "option 4", "option 5"]}
+                        options={["Preparatory", "Basic", "Advanced", "Research"]}
+                        HandleFilterChange={props.HandleFilterChange}
+                        filterName = "level"
+                        HandleFilterEnable={props.HandleFilterEnable}
+                    />
+                    <ToggleField
+                        fields={["English", "Swedish"]}
+                        HandleFilterChange={props.HandleFilterChange}
+                        filterName = "language"
+                        HandleFilterEnable={props.HandleFilterEnable}
+                    />
+
+                    {/*expanding list for department */}
+
+                    <DropDownField
+                        options={["Kista", "Valhalavagen", "Sodetalje", "T-centralen"]}
+                        HandleFilterChange={props.HandleFilterChange}
+                        filterName="location"
+                        HandleFilterEnable={props.HandleFilterEnable}
+                    />
+                    <SliderField
+                        HandleFilterChange={props.HandleFilterChange}
+                        filterName="credits"
+                        HandleFilterEnable={props.HandleFilterEnable}
+                    />
+                    <CollapsibleCheckboxes
+                        HandleFilterChange={props.HandleFilterChange}
+                        filterName="department"
+                        HandleFilterEnable={props.HandleFilterEnable}
                     />
                 </div>
 
