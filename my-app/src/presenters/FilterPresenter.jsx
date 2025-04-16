@@ -29,7 +29,7 @@ const FilterPresenter = observer(({ model }) => {
             //console.log(course?.prerequisites);
             if (storedFinishedCourses.includes(course?.code))
                 return;
-            if (course?.prerequisites && (course.prerequisites !== "null"))
+            if (course?.prerequisites && (course?.prerequisites !== "null"))
                 var resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
             else { // {strong: , zero: , moderate: , weak: }
                 zerocourses.push(course);
@@ -89,9 +89,9 @@ const FilterPresenter = observer(({ model }) => {
 
         localFilteredCourses = localFilteredCourses.filter(function (course) {
             try {
-                return ((course.credits >= min) && (course.credits <= max));
+                return ((course?.credits >= min) && (course?.credits <= max));
             } catch (error) {
-                console.log("for some reason course.credits is: ", course?.credits, error);
+                console.log("for some reason course?.credits is: ", course?.credits, error);
                 return false;
             }
 
@@ -108,9 +108,9 @@ const FilterPresenter = observer(({ model }) => {
 
         bestCourses = localFilteredCourses.filter(function (course) {
             try {
-                return (locations.includes(course.location));
+                return (locations.includes(course?.location));
             } catch (error) {
-                console.log("for some reason course.location is: ", course?.location, error);
+                console.log("for some reason course?.location is: ", course?.location, error);
                 return false;
             }
 
@@ -140,8 +140,8 @@ const FilterPresenter = observer(({ model }) => {
         let worstCourses = [];
 
         //in the database a course can have
-        //course.language.english (true/false/"null")
-        //course.language.swedish (true/false/"null")
+        //course?.language.english (true/false/"null")
+        //course?.language.swedish (true/false/"null")
 
         //console.log(data);
 
@@ -278,9 +278,9 @@ const FilterPresenter = observer(({ model }) => {
 
         bestCourses = localFilteredCourses.filter(function (course) {
             try {
-                return (deparments.includes(course.deparment));
+                return (deparments.includes(course?.deparment));
             } catch (error) {
-                console.log("for some reason course.department is: ", course?.department, error);
+                console.log("for some reason course?.department is: ", course?.department, error);
                 return false;
             }
 
@@ -305,13 +305,13 @@ const FilterPresenter = observer(({ model }) => {
 
         if(model.filterOptions.applyTranscriptFilter){
             local = local.filter(function(course){
-                return (course?.prerequisites && (course.prerequisites !== "null"));
+                return (course?.prerequisites && (course?.prerequisites !== "null"));
             })
         }
         console.log("miauuuuu:",local.length);
         if(model.filterOptions.applyLevelFilter){
             local = local.filter(function(course){
-                return (course?.prerequisites && (course.prerequisites !== "null"));
+                return (course?.prerequisites && (course?.prerequisites !== "null"));
             })
         }
         console.log("miauuuuu:",local.length);
