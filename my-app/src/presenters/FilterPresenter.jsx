@@ -26,6 +26,8 @@ const FilterPresenter = observer(({ model }) => {
         localFilteredCourses.forEach(course => {
             //console.log(storedFinishedCourses);
             //console.log(course?.prerequisites);
+            if(storedFinishedCourses.includes(course?.code))
+                return;
             if(course?.prerequisites && (course.prerequisites !== "null"))
                 var resultEligibility = eligibility(storedFinishedCourses, course?.prerequisites);
             else{ // {strong: , zero: , moderate: , weak: }
