@@ -4,6 +4,8 @@ import FilterEnableCheckbox from "./FilterEnableCheckbox";
 //import * as scraper from '../../../../src/scripts/transcript-scraper/transcript-scraper.js';
 import { useState } from "react";
 import ButtonGroupField from './ButtonGroupField';
+import ToolTip from './ToolTip';
+import ToolTipIcon from './ToolTipIcon';
 
 export default function UploadField(props) {
 
@@ -55,9 +57,7 @@ export default function UploadField(props) {
             </div>
             <div className="mb-2 text-white flex justify-between">
                 <div className="flex items-center text-wrap max-w-70">
-                    <p className='text-sm opacity-50'>
-                        Describe how the Transcript upload works
-                    </p>
+                    <ToolTipIcon/>
                 </div>
                 <div className='pt-2'>
 

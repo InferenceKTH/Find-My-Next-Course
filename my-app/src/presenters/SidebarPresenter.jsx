@@ -170,12 +170,15 @@ const SidebarPresenter = observer(({ model }) => {
         model.setFiltersChange();
     }
 
-
+    function setApplyRemoveNullCourses(){
+        model.setApplyRemoveNullCourses();
+    }
 
     return (
         <SidebarView HandleFilterChange={HandleFilterChange}
             HandleFilterEnable={HandleFilterEnable}
             reApplyFilter={reApplyFilter}
+            toggleRemoveNull={setApplyRemoveNullCourses}
         />
     );
 });

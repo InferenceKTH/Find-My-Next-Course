@@ -131,6 +131,10 @@ export const model = {
         this.filtersCalculated = true;
     },
     
+    setApplyRemoveNullCourses() {
+        this.applyRemoveNullCourses = !this.applyRemoveNullCourses;
+    },
+
     updateLevelFilter(level) {
         this.filterOptions.level = level;
     },
