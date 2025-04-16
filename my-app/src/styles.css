@@ -11,3 +11,10 @@
       stroke-dashoffset: 0;
     }
   }
+:root {
+    --font-kanit: "Kanit", sans-serif;
+}
+
+.font-kanit {
+    font-family: var(--font-kanit);
+}

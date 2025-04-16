@@ -1,4 +1,4 @@
-import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"; // for reviews
+import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase";
 
 
 export const model = {
