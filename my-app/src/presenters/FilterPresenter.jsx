@@ -317,7 +317,7 @@ const FilterPresenter = observer(({ model }) => {
         console.log("miauuuuu:",local.length);
         if(model.filterOptions.applyLanguageFilter){
             local = local.filter(function(course){
-                return ((course?.language) && (course?.language?.swedish !== "null" && course?.language?.english !== "null"));
+                return ((course?.language) && ((course?.language?.swedish !== "null") && (course?.language?.english !== "null")));
             })
         }
         console.log("miauuuuu:",local.length);
@@ -329,13 +329,13 @@ const FilterPresenter = observer(({ model }) => {
         console.log("miauuuuu:",local.length);
         if(model.filterOptions.applyCreditsFilter){
             local = local.filter(function(course){
-                return ((course?.credit) && (course?.credit !== "null"));
+                return ((course?.credits) && (course?.credits !== "null"));
             })
         }
         console.log("miauuuuu:",local.length);
         if(model.filterOptions.applyDepartmentFilter){
             local = local.filter(function(course){
-                return ((course?.deparment) && (course?.department !== "null"));
+                return ((course?.department) && (course?.department !== "null"));
             })
         }
         console.log("miauuuuu:",local.length);
