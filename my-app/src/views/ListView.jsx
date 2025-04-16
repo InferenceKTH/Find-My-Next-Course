@@ -56,14 +56,14 @@ function ListView(props) {
   }
 
     return (
-        <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
+        <div className="relative bg-white text-black p-2 flex flex-col gap-3 h-screen">
             {isLoading ? (
                 <div className="flex justify-center items-center h-full">
                     <Quantum size="400" speed="10" color="#000061" />
                 </div>
             ) : (
                 <div className="overflow-y-auto h-full" id="scrollableDiv">
-                    <p className="text-base font-semibold text-gray-600 mb-4">
+                    <p className="text-base font-semibold text-gray-600 mb-2">
                         Found 
                         <span className="font-bold text-[#000061] mx-1">
                             {props.currentSearchLenght}
