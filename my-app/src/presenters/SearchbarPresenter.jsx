@@ -33,6 +33,10 @@ const SearchbarPresenter = observer(({ model }) => {
         }
     };
 
+    function resetScoll(){
+        model.setScrollPosition(0.01);
+    }
+
     const creditsSum = (favouriteCourses) => {
         return favouriteCourses.reduce((sum, course) => sum + parseFloat(course.credits), 0);
     };
@@ -57,10 +61,10 @@ const SearchbarPresenter = observer(({ model }) => {
         reviewPresenter={reviewPresenter}
         prerequisiteTree={preP}
     />;
+    
 
     return (
         <SearchbarView
-            model={model}
             searchCourses={searchCourses}
             favouriteCourses={model.favourites}
             removeAllFavourites={removeAllFavourites}
@@ -72,6 +76,7 @@ const SearchbarPresenter = observer(({ model }) => {
             popup={popup}
             handleFavouriteClick={handleFavouriteClick}
             totalCredits={creditsSum(model.favourites)}
+            resetScrollPosition={resetScoll}
         />
     );
 });

@@ -20,6 +20,7 @@ function SearchbarView(props) {
   }, [auth]);
 
   const handleSearch = (query) => {
+    props.resetScrollPosition();
     setSearchQuery(query);
     props.searchCourses(query);
   };

@@ -8,8 +8,38 @@ import {ReviewPresenter} from "../presenters/ReviewPresenter.jsx"
 import {syncScrollPositionToFirebase} from "../../firebase.js"
 
 const ListViewPresenter = observer(({ model }) => {
-    
     const scrollContainerRef = useRef(null);
+    let attempts = 0;
+    const MAX_Depth = 49;
+
+    function persistantScrolling(fetchMoreCourses, hasMore){
+        const container = scrollContainerRef.current;
+        if (!container || !model.scrollPosition) return;
+
+        
+
+        const attemptScroll = () => {
+
+            // refresh on significant change (same as in firebase)
+            if (Math.abs(container.scrollTop - model.scrollPosition) < 100) 
+                return;
+
+            attempts++;
+            if (attempts > MAX_Depth) {
+                return;
+            }
+            const needsMoreCourses = container.scrollHeight < model.scrollPosition && hasMore;
+
+            if (needsMoreCourses) {
+                fetchMoreCourses();
+                setTimeout(attemptScroll, 100); // Add delay between attempts
+            } else {
+                container.scrollTop = model.scrollPosition;
+                syncScrollPositionToFirebase(model, scrollContainerRef)
+            }
+        };
+        attemptScroll();
+    }
 
     useEffect(() => {
         // Load initial scroll position
@@ -24,7 +54,7 @@ const ListViewPresenter = observer(({ model }) => {
     useEffect(() => {
         const cleanup = syncScrollPositionToFirebase(model, scrollContainerRef);
         return () => cleanup;
-    }, [model.user, scrollContainerRef]);
+    }, [model.user, model.currentSearch, scrollContainerRef]);
 
     const addFavourite = (course) => {
         model.addFavourite(course);
@@ -60,16 +90,20 @@ const ListViewPresenter = observer(({ model }) => {
     return <ListView
         courses={model.courses}
         searchResults={model.currentSearch}
+        
         favouriteCourses={model.favourites}
         addFavourite={addFavourite}
         removeFavourite={removeFavourite}
+        handleFavouriteClick={handleFavouriteClick}
+
         isPopupOpen={isPopupOpen}
         setIsPopupOpen={setIsPopupOpen}
         setSelectedCourse={setSelectedCourse}
         popup={popup}
-        handleFavouriteClick={handleFavouriteClick}
+        
         targetScroll={model.scrollPosition}
         scrollContainerRef={scrollContainerRef}
+        persistantScrolling={persistantScrolling}
     />;
 });
 

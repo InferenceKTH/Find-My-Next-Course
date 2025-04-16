@@ -23,7 +23,7 @@ export const model = {
     },
     
     setScrollPosition(position) {
-        this.scrollPosition = position; // This method updates the scroll position
+        this.scrollPosition = position;
     },
 
     setCourses(courses){

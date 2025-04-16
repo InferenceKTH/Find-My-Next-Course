@@ -85,31 +85,29 @@ export function syncModelToFirebase(model) {
 
 export function syncScrollPositionToFirebase(model, containerRef) {
 	if (!containerRef?.current) return;
-
-    const throttledSet = throttle((scrollPixel) => {
-        if (model?.user?.uid) {
-            const userRef = ref(db, `users/${model.user.uid}/scrollPosition`);
-            set(userRef, scrollPixel).catch(console.error);
-        }
-    }, 500);
+	let lastSavedPosition = 0;
+	
+    // const throttledSet = throttle((scrollPixel) => {
+    //     if (model?.user?.uid) {
+    //         const userRef = ref(db, `users/${model.user.uid}/scrollPosition`);
+    //         set(userRef, scrollPixel).catch(console.error);
+    //     }
+    // }, 500);
 
     const handleScroll = () => {
         const scrollTop = containerRef.current.scrollTop;
+		// make a 100px threshold
+		if (Math.abs(scrollTop - lastSavedPosition) < 100)
+			return;
+
+		lastSavedPosition = scrollTop;
         model.setScrollPosition(scrollTop);
-        if (!model.user) {
-            localStorage.setItem("scrollPosition", scrollTop);
-        }
-        throttledSet(scrollTop);
+        localStorage.setItem("scrollPosition", scrollTop);
+        // throttledSet(scrollTop);
     };
 
     containerRef.current.addEventListener('scroll', handleScroll);
-    
-    // Return cleanup function
-    return () => {
-        if (containerRef.current) {
-            containerRef.current.removeEventListener('scroll', handleScroll);
-        }
-    };
+    return () => containerRef.current?.removeEventListener('scroll', handleScroll);
 }
 
 

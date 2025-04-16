@@ -35,25 +35,18 @@ function ListView(props) {
 
     const fetchMoreCourses = useCallback(() => {
         if (!hasMore) return;
-        const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 10);
+        const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 50);
         setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
         setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
     }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
+    const [isRestoringScroll, setIsRestoringScroll] = useState(false);
     useEffect(() => {
-        const container = props.scrollContainerRef.current;
-        if (!container || !props.targetScroll) return;
-    
-        const attemptScroll = () => {
-            if (container.scrollHeight >= props.targetScroll) {
-                container.scrollTop = props.targetScroll;
-            } else if (hasMore) {
-                fetchMoreCourses();
-                setTimeout(attemptScroll, 100);
-            }
-        };
-        
-        attemptScroll();
+        if (props.targetScroll > 0 && !isRestoringScroll) {
+            setIsRestoringScroll(true);
+            props.persistantScrolling(fetchMoreCourses, hasMore);
+            setIsRestoringScroll(false);
+        }
     }, [props.targetScroll, hasMore, displayedCourses.length]);
     
     return (
@@ -76,6 +69,7 @@ function ListView(props) {
                         endMessage={<p className="text-center py-2">No more courses</p>}
                         scrollThreshold={0.9} // 90% of the container height
                         scrollableTarget="scrollableDiv"
+                        initialScrollY={0}
                     >
                         {displayedCourses.map(course => (
                             <div
