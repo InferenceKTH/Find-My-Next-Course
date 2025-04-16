@@ -1,8 +1,13 @@
 import React from 'react';
 
-export const StarComponent = ({ index, rating, onRatingChange, onHover }) => {
-    const handleLeftClick = () => onRatingChange(index, false);
-    const handleRightClick = () => onRatingChange(index, true);
+const StarComponent = ({ index, rating, onRatingChange, onHover, readOnly = false }) => {
+    const handleLeftClick = () => {
+        if (!readOnly) onRatingChange(index, true);
+    };
+
+    const handleRightClick = () => {
+        if (!readOnly) onRatingChange(index, false);
+    };
 
     const isFullStar = rating >= index + 1;
     const isHalfStar = rating >= index + 0.5 && rating < index + 1;
@@ -10,21 +15,25 @@ export const StarComponent = ({ index, rating, onRatingChange, onHover }) => {
 
     return (
         <div
-            className="relative group"
-            onMouseEnter={() => onHover(index + 1)}
-            onMouseLeave={() => onHover(0)}
+            className={`relative group ${readOnly ? 'cursor-default' : 'cursor-pointer'}`}
+            onMouseEnter={() => !readOnly && onHover && onHover(index + 1)}
+            onMouseLeave={() => !readOnly && onHover && onHover(0)}
         >
             <i
-                className={`bx ${starClass} text-5xl text-violet-500 t-500 transition-transform duration-200 group-hover:scale-110`}
+                className={`bx ${starClass} text-5xl text-violet-500 t-500 transition-transform duration-200 ${!readOnly && 'group-hover:scale-110'}`}
             ></i>
-            <button
-                className="absolute top-0 left-1/2 w-1/2 h-full cursor-pointer"
-                onClick={handleLeftClick}
-            />
-            <button
-                className="absolute top-0 right-1/2 w-1/2 h-full cursor-pointer"
-                onClick={handleRightClick}
-            />
+            {!readOnly && (
+                <>
+                    <button
+                        className="absolute top-0 left-1/2 w-1/2 h-full cursor-pointer"
+                        onClick={handleLeftClick}
+                    />
+                    <button
+                        className="absolute top-0 right-1/2 w-1/2 h-full cursor-pointer"
+                        onClick={handleRightClick}
+                    />
+                </>
+            )}
         </div>
     );
 };

@@ -97,7 +97,7 @@ export const PrerequisitePresenter = observer((props) => {
         );
 
         return (
-            <div style={{ width: "100%", height: "500px" }}>
+            <div className="w-full h-[500px] rounded-lg">
                 <ReactFlow
                     nodes={nodes}
                     edges={edges}
@@ -106,7 +106,7 @@ export const PrerequisitePresenter = observer((props) => {
                     onConnect={onConnect}
                     connectionLineType={ConnectionLineType.SmoothStep}
                     fitView
-                    style={{ backgroundColor: '#F7F9FB' }}
+                    style={{ backgroundColor: 'white', borderRadius: '10px'}}
                     nodesDraggable={false}
                     nodesConnectable={false}
                     elementsSelectable={true}

@@ -3,11 +3,32 @@ import { addCourse, addReviewForCourse, getReviewsForCourse } from "../firebase"
 
 export const model = {
     user: undefined,
+    //add searchChange: false,   //this is for reworking the searchbar presenter, so that it triggers as a model, 
+    //instead of passing searchcouses lambda function down into the searchbarview.
     currentSearch: [],
     currentSearchText: "",
     scrollPosition: 0,
     courses: [],
     favourites: [],
+    isReady: false,
+    filtersChange: false,
+    filtersCalculated: false,
+    filteredCourses: [],
+    filterOptions: {
+        applyTranscriptFilter: true,
+        eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
+        applyLevelFilter: true,
+        level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
+        applyLanguageFilter: true,
+        language: "none", //the possible values for the string are: "none"/"english"/"swedish"/"both"
+        applyLocationFilter:true,
+        location: [], //the possible values for the array are: 'KTH Campus', 'KTH Kista', 'AlbaNova', 'KTH Flemingsberg', 'KTH Solna', 'KTH Södertälje', 'Handelshögskolan', 'KI Solna', 'Stockholms universitet', 'KONSTFACK'
+        applyCreditsFilter:true,
+        creditMin: 0,
+        creditMax: 45,
+        applyDepartmentFilter:false,
+        department: []
+    },
 
     setUser(user) {
         if (!this.user)
@@ -76,7 +97,6 @@ export const model = {
             this.addCourse(course);
         });
     },
-
     //for reviews
     async addReview(courseCode, review) {
         try {
@@ -95,4 +115,53 @@ export const model = {
             return [];
         }
     },
+    //for filters
+
+    setFiltersChange() {
+        this.filtersChange = true;
+    },
+
+    setFiltersCalculated() {
+        this.filtersCalculated = true;
+    },
+    
+    updateLevelFilter(level) {
+        this.filterOptions.level = level;
+    },
+    updateLanguageFilter(languages) {
+        this.filterOptions.language = languages;
+    },
+    updateLocationFilter(location) {
+        this.filterOptions.location = location;
+    },
+    updateCreditsFilter(creditLimits) {
+        this.filterOptions.creditMin = creditLimits[0];
+        this.filterOptions.creditMax = creditLimits[1];
+    },
+    updateTranscriptElegibilityFilter(eligibility) {
+        this.filterOptions.eligibility = eligibility;
+    },
+
+    //setters for the filter options
+    setApplyTranscriptFilter(transcriptFilterState) {
+        this.filterOptions.applyTranscriptFilter = transcriptFilterState;
+    },
+    setApplyLevelFilter(levelFilterState) {
+        this.filterOptions.applyLevelFilter = levelFilterState;
+    },
+    setApplyLanguageFilter(languageFilterState) {
+        this.filterOptions.applyLanguageFilter = languageFilterState;
+    },
+    setApplyLocationFilter(locationFilterState) {
+        this.filterOptions.applyLocationFilter = locationFilterState;
+    },
+    setApplyCreditsFilter(creditsFilterState) {
+        this.filterOptions.applyCreditsFilter = creditsFilterState;
+    },
+    // setApplyDepartmentFilter(departmentFilterState) {
+    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
+    // },
+
+
+
 };

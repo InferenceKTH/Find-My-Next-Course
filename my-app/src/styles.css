@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+.stroke-animate {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 10s ease-out forwards;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 :root {
     --font-kanit: "Kanit", sans-serif;
 }

@@ -215,13 +215,11 @@ export async function getReviewsForCourse(courseCode) {
 	const reviewsRef = ref(db, `reviews/${courseCode}`);
 	const snapshot = await get(reviewsRef);
 	if (!snapshot.exists()) return [];
-
 	const reviews = [];
-	snapshot.forEach((childSnapshot) => {
+	snapshot.forEach(childSnapshot => {
 		reviews.push({
-			id: childSnapshot.key, // Firebase-generated unique key
-			userName: childSnapshot.val().userName,
-			text: childSnapshot.val().text,
+			id: childSnapshot.key,
+			...childSnapshot.val()
 		});
 	});
 	return reviews;

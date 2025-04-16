@@ -90,6 +90,7 @@ const ListViewPresenter = observer(({ model }) => {
     return <ListView
         courses={model.courses}
         searchResults={model.currentSearch}
+        currentSearchLenght={model.currentSearch.length}
         
         favouriteCourses={model.favourites}
         addFavourite={addFavourite}
@@ -104,6 +105,7 @@ const ListViewPresenter = observer(({ model }) => {
         targetScroll={model.scrollPosition}
         scrollContainerRef={scrollContainerRef}
         persistantScrolling={persistantScrolling}
+
     />;
 });
 
