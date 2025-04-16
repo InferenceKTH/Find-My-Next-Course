@@ -18,7 +18,7 @@ export const model = {
         applyTranscriptFilter: true,
         eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
         applyLevelFilter: true,
-        level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
+        level: ["PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         applyLanguageFilter: true,
         language: "none", //the possible values for the string are: "none"/"english"/"swedish"/"both"
         applyLocationFilter:true,
@@ -26,8 +26,12 @@ export const model = {
         applyCreditsFilter:true,
         creditMin: 0,
         creditMax: 45,
-        applyDepartmentFilter:false,
-        department: []
+        applyDepartmentFilter: true,
+        department: ["EECS/Computational Science and  Technology", "EECS/Theoretical Computer Science", "EECS/Electric Power and Energy Systems", "EECS/Network and Systems Engineering",
+        "ITM/Learning in Engineering Sciences", "ITM/Industrial Economics and Management", "ITM/Energy Systems", "ITM/Integrated Product Development and Design", "ITM/SKD GRU",
+        "SCI/Mathematics", "SCI/Applied Physics", "SCI/Mechanics", "SCI/Aeronautical and Vehicle Engineering", 
+        "ABE/Sustainability and Environmental Engineering", "ABE/Concrete Structures", "ABE/Structural Design & Bridges", "ABE/History of Science, Technology and Environment", ],
+        applyRemoveNullCourses: false
     },
 
     setUser(user) {
@@ -144,6 +148,11 @@ export const model = {
         this.filterOptions.eligibility = eligibility;
     },
 
+    updateDepartmentFilter(department) {
+        console.log(department);
+        this.filterOptions.department = department;
+    },
+
     //setters for the filter options
     setApplyTranscriptFilter(transcriptFilterState) {
         this.filterOptions.applyTranscriptFilter = transcriptFilterState;
@@ -160,9 +169,9 @@ export const model = {
     setApplyCreditsFilter(creditsFilterState) {
         this.filterOptions.applyCreditsFilter = creditsFilterState;
     },
-    // setApplyDepartmentFilter(departmentFilterState) {
-    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
-    // },
+    setApplyDepartmentFilter(departmentFilterState) {
+        this.filterOptions.applyDepartmentFilter = departmentFilterState;
+    },
 
     async getAverageRating(courseCode) {
         const reviews = await getReviewsForCourse(courseCode);
