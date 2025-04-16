@@ -4,56 +4,60 @@ import 'ldrs/react/Quantum.css';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 function ListView(props) {
-  const coursesToDisplay = props.searchResults;
-      /*(props.searchResults && props.searchResults.length > 0
-          ? props.searchResults
-          : props.courses) || [];*/
+    const coursesToDisplay = props.searchResults.length > 0 ? props.searchResults : props.courses;
+    const [displayedCourses, setDisplayedCourses] = useState([]);
+    const [hasMore, setHasMore] = useState(true);
+    const [readMore, setReadMore] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+   
+    const toggleReadMore = (courseCode) => {
+        setReadMore(prevState => ({
+            ...prevState,
+            [courseCode]: !prevState[courseCode]
+        }));
+    };
 
-  const [displayedCourses, setDisplayedCourses] = useState([]);
-  const [hasMore, setHasMore] = useState(true);
-  const [readMore, setReadMore] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+    const handleFavouriteClick = (course) => {
+        if (props.favouriteCourses.some(fav => fav.code === course.code)) {
+            props.removeFavourite(course);
+        } else {
+            props.addFavourite(course);
+        }
+    };
+    
+    useEffect(() => {
+        setIsLoading(true);
+        const initialCourses = coursesToDisplay.slice(0, 10);
+        setDisplayedCourses(initialCourses);
+        setHasMore(coursesToDisplay.length > 10);
+        setIsLoading(false);
+    }, [props.courses, props.searchResults]);
 
-  const toggleReadMore = (courseCode) => {
-    setReadMore(prevState => ({
-      ...prevState,
-      [courseCode]: !prevState[courseCode]
-    }));
-  };
+    const fetchMoreCourses = useCallback(() => {
+        if (!hasMore) return;
+        const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 50);
+        setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
+        setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
+    }, [displayedCourses.length, coursesToDisplay, hasMore]);
 
-  const handleFavouriteClick = (course) => {
-    if (props.favouriteCourses?.some((fav) => fav.code === course.code)) {
-      props.removeFavourite(course);
-    } else {
-      props.addFavourite(course);
+    const [isRestoringScroll, setIsRestoringScroll] = useState(false);
+    useEffect(() => {
+        if (props.targetScroll > 0 && !isRestoringScroll) {
+            setIsRestoringScroll(true);
+            props.persistantScrolling(fetchMoreCourses, hasMore);
+            setIsRestoringScroll(false);
+        }
+    }, [props.targetScroll, hasMore, displayedCourses.length]);
+   
+    if (!props.courses) {
+        return (
+            <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
+                <div className="text-white p-4 text-center">
+                    ⚠️ No course data available.
+                </div>
+            </div>
+        );
     }
-  };
-
-  useEffect(() => {
-    setIsLoading(true);
-    const initialCourses = coursesToDisplay.slice(0, 10);
-    setDisplayedCourses(initialCourses);
-    setHasMore(coursesToDisplay.length > 10);
-    setIsLoading(false);
-  }, [props.courses, props.searchResults]);
-
-  const fetchMoreCourses = useCallback(() => {
-    if (!hasMore) return;
-
-    const nextItems = coursesToDisplay.slice(displayedCourses.length, displayedCourses.length + 10);
-    setDisplayedCourses(prevCourses => [...prevCourses, ...nextItems]);
-    setHasMore(displayedCourses.length + nextItems.length < coursesToDisplay.length);
-  }, [displayedCourses.length, coursesToDisplay, hasMore]);
-
-  if (!props.courses) {
-    return (
-        <div className="relative bg-white text-black p-2 flex flex-col gap-5 h-screen">
-          <div className="text-white p-4 text-center">
-            ⚠️ No course data available.
-          </div>
-        </div>
-    );
-  }
 
     return (
         <div className="relative bg-white text-black p-2 flex flex-col gap-3 h-screen">
@@ -62,15 +66,15 @@ function ListView(props) {
                     <Quantum size="400" speed="10" color="#000061" />
                 </div>
             ) : (
-                <div className="overflow-y-auto h-full" id="scrollableDiv">
+                <div className="overflow-y-auto h-full" id="scrollableDiv" ref={props.scrollContainerRef}>
                     <p className="text-base font-semibold text-gray-600 mb-2">
-                        Found 
+                        Found
                         <span className="font-bold text-[#000061] mx-1">
                             {props.currentSearchLenght}
                         </span>
                         courses
                     </p>
-                    
+
                     <InfiniteScroll
                         dataLength={displayedCourses.length}
                         next={fetchMoreCourses}
@@ -83,6 +87,7 @@ function ListView(props) {
                         endMessage={<p className="text-center py-2">No more courses</p>}
                         scrollThreshold={0.9} // 90% of the container height
                         scrollableTarget="scrollableDiv"
+                        initialScrollY={0}
                     >
                         {displayedCourses.map(course => (
                             <div
@@ -166,7 +171,7 @@ function ListView(props) {
             )}
             {props.popup}
         </div>
-    );
+   );
 }
 
 export default ListView;

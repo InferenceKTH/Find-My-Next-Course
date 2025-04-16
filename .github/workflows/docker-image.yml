@@ -1,4 +1,4 @@
-name: Docker CI
+name: Docker CI LINT
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
 
     - name: Build and start services with Docker Compose (CI Mode)
       run: |
-        CI=true COMMAND="npx serve -s build" docker compose up -d --build
+        CI=true LINT=true COMMAND="npx serve -s build" docker compose up -d --build
 
     - name: Check running containers
       run: docker ps -a

@@ -16,6 +16,7 @@ const SearchbarPresenter = observer(({ model }) => {
             course.name.toLowerCase().includes(query.toLowerCase()) ||
             course.description.toLowerCase().includes(query.toLowerCase())
         );
+        model.setCurrentSearchText(query);
         model.setCurrentSearch(searchResults);
         console.log(model.currentSearch.length);
     };
@@ -35,6 +36,10 @@ const SearchbarPresenter = observer(({ model }) => {
             model.addFavourite(course);
         }
     };
+
+    function resetScoll(){
+        model.setScrollPosition(0.01);
+    }
 
     const creditsSum = (favouriteCourses) => {
         return favouriteCourses.reduce((sum, course) => sum + parseFloat(course.credits), 0);
@@ -60,6 +65,7 @@ const SearchbarPresenter = observer(({ model }) => {
         reviewPresenter={reviewPresenter}
         prerequisiteTree={preP}
     />;
+    
 
     if(model.filtersCalculated){
         searchCourses("");
@@ -68,7 +74,6 @@ const SearchbarPresenter = observer(({ model }) => {
 
     return (
         <SearchbarView
-            model={model}
             searchCourses={searchCourses}
             favouriteCourses={model.favourites}
             removeAllFavourites={removeAllFavourites}
@@ -80,6 +85,7 @@ const SearchbarPresenter = observer(({ model }) => {
             popup={popup}
             handleFavouriteClick={handleFavouriteClick}
             totalCredits={creditsSum(model.favourites)}
+            resetScrollPosition={resetScoll}
         />
     );
 });
