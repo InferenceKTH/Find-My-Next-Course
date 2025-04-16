@@ -16,12 +16,12 @@ const ListViewPresenter = observer(({ model }) => {
         const container = scrollContainerRef.current;
         if (!container || !model.scrollPosition) return;
 
-        
+
 
         const attemptScroll = () => {
 
             // refresh on significant change (same as in firebase)
-            if (Math.abs(container.scrollTop - model.scrollPosition) < 100) 
+            if (Math.abs(container.scrollTop - model.scrollPosition) < 100)
                 return;
 
             attempts++;
@@ -43,7 +43,7 @@ const ListViewPresenter = observer(({ model }) => {
 
     useEffect(() => {
         // Load initial scroll position
-        const savedPosition = model.user 
+        const savedPosition = model.user
             ? model.scrollPosition
             : localStorage.getItem("scrollPosition");
         if (savedPosition) {
@@ -59,7 +59,7 @@ const ListViewPresenter = observer(({ model }) => {
     const addFavourite = (course) => {
         model.addFavourite(course);
     }
-    const removeFavourite = (course) => {   
+    const removeFavourite = (course) => {
         model.removeFavourite(course);
     }
     const handleFavouriteClick = (course) => {
@@ -82,16 +82,16 @@ const ListViewPresenter = observer(({ model }) => {
         handleFavouriteClick={handleFavouriteClick}
         isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}
         course={selectedCourse}
-        prerequisiteTree={preP} 
+        prerequisiteTree={preP}
         reviewPresenter={reviewPresenter}/>
-        
+
 
 
     return <ListView
         courses={model.courses}
         searchResults={model.currentSearch}
         currentSearchLenght={model.currentSearch.length}
-        
+
         favouriteCourses={model.favourites}
         addFavourite={addFavourite}
         removeFavourite={removeFavourite}
@@ -101,7 +101,7 @@ const ListViewPresenter = observer(({ model }) => {
         setIsPopupOpen={setIsPopupOpen}
         setSelectedCourse={setSelectedCourse}
         popup={popup}
-        
+
         targetScroll={model.scrollPosition}
         scrollContainerRef={scrollContainerRef}
         persistantScrolling={persistantScrolling}
