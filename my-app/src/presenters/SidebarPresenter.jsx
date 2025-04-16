@@ -136,6 +136,8 @@ const SidebarPresenter = observer(({ model }) => {
                 break;
             case "location":
                 console.log("location filter set to: " + param[2]);
+                model.updateLocationFilter([param[2]]);
+                model.updateFilter("location", param[2]);
                 break;
             case "credits":
                 model.updateCreditsFilter(param[2]);

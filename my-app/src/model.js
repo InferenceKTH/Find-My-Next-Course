@@ -59,7 +59,16 @@ export const model = {
         if (obj.language) this.updateLanguageFilter(obj.language);
         if (obj.level) this.updateLevelFilter([obj.level]);
         if (obj.location) this.updateLocationFilter([obj.location]);
-        if (obj.credits) this.updateCreditsFilter([parseFloat(obj.credits), parseFloat(obj.credits)]);
+        if (obj.creditMin && obj.creditMax) {
+            this.updateCreditsFilter([
+                parseFloat(obj.creditMin),
+                parseFloat(obj.creditMax)
+            ]);
+        }
+        if (obj.location) {
+            this.updateLocationFilter([obj.location]); // use .split(',') if supporting multiple
+        }
+        
         if (obj.transcript) this.updateTranscriptElegibilityFilter(obj.transcript);
 
         this.setApplyLanguageFilter(true);
@@ -71,6 +80,7 @@ export const model = {
     getActiveFiltersFromOptions() {
         const af = {};
         const fo = this.filterOptions;
+        
     
         if (fo.applyLanguageFilter && fo.language !== "none") {
             af.language = fo.language;
