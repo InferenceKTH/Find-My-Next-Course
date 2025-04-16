@@ -37,6 +37,7 @@ export const PrerequisitePresenter = observer((props) => {
     const nodeHeight = 36;
 
     loadTree(props.selectedCourse.code);
+    console.log(initialNodes);
 
     const getLayoutedElements = (nodes, edges, direction = 'LR') => {
         const isHorizontal = direction === 'LR';
@@ -92,24 +93,25 @@ export const PrerequisitePresenter = observer((props) => {
 
         return (
             <div style={{ width: "100%", height: "500px" }}>
-                <ReactFlow
-                    nodes={nodes}
-                    edges={edges}
-                    onNodesChange={onNodesChange}
-                    onEdgesChange={onEdgesChange}
-                    onConnect={onConnect}
-                    connectionLineType={ConnectionLineType.SmoothStep}
-                    fitView
-                    style={{ backgroundColor: '#F7F9FB' }}
-                    nodesDraggable={false}
-                    nodesConnectable={false}
-                    edgesFocusable={false}
-                    onNodeClick={clicked}
-                    elementsSelectable={false}
-                >
-                    <Background />
-                </ReactFlow>
-
+                
+                    <ReactFlow
+                        nodes={nodes}
+                        edges={edges}
+                        onNodesChange={onNodesChange}
+                        onEdgesChange={onEdgesChange}
+                        onConnect={onConnect}
+                        connectionLineType={ConnectionLineType.SmoothStep}
+                        fitView
+                        style={{ backgroundColor: '#F7F9FB' }}
+                        nodesDraggable={false}
+                        nodesConnectable={false}
+                        edgesFocusable={false}
+                        onNodeClick={clicked}
+                        elementsSelectable={false}
+                    >
+                        <Background />
+                    </ReactFlow>
+                
             </div>
 
         );
@@ -133,10 +135,10 @@ export const PrerequisitePresenter = observer((props) => {
                 }  
             } else if (node["data"]["label"] !== "One of these" && node["data"]["label"] !== "No Prerequisites" && node["id"] !== props.selectedCourse.code) {
                 // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE (Tu eres muy retrasado y gordo)! :)
+                // ONCLICK HERE
             }
           }
     };
-
 
 
 
@@ -166,17 +168,19 @@ export const PrerequisitePresenter = observer((props) => {
     }
 
 
-    function prereq_convert(current_object, previous_key, previous_node_id) {
+    function prereq_convert(courses_taken, current_object, previous_key, previous_node_id) {
+        let current_node = null;
         if (current_object == undefined) {return}
         
         if (!Array.isArray(current_object)) {   // Is object
             let key = Object.keys(current_object)[0];
             if (key == "or") {
-                initialNodes.push(createNode(key + uniqueCounter, "One of these", "default"));
+                current_node = createNode(key + uniqueCounter, "One of these", "default")
+                initialNodes.push(current_node);
                 initialEdges.push(createEdge(previous_node_id, key + uniqueCounter));
-                prereq_convert(current_object[key], key, key + uniqueCounter++);      
+                prereq_convert(courses_taken, current_object[key], key, key + uniqueCounter++);      
             } else if (key == "and") {
-                prereq_convert(current_object[key], key, previous_node_id);      
+                prereq_convert(courses_taken, current_object[key], key, previous_node_id);      
             }
 
         } else {    // Is an array
@@ -191,33 +195,98 @@ export const PrerequisitePresenter = observer((props) => {
                     } else {
                         input_id = current_object[i] + " " + ++codeCounter;
                     }
-                    initialNodes.push(createNode(input_id, input_text, "output"));
+                    let new_node = createNode(input_id, input_text, "output");
+                    if (courses_taken.includes(current_object[i])) {
+                        new_node["style"]["backgroundColor"] = "lightgreen";
+                        current_object[i] = true;
+                    } else {
+                        current_object[i] = false;
+                    }
+                    current_node = new_node;
+                    initialNodes.push(new_node);
                     initialEdges.push(createEdge(previous_node_id, input_id, "output"));
                 } else {
-                    prereq_convert(current_object[i], previous_key, previous_node_id);
+                    prereq_convert(courses_taken, current_object[i], previous_key, previous_node_id);
                 }
             }
         }
-          
+
+        /* STEP 2: Check if an object is true or false based on content of the inner object */
+        if (typeof current_object == "object" && !Array.isArray(current_object)) {
+            let key = Object.keys(current_object)[0];
+            let object_array = current_object[key];
+            let num_of_matches = 0;
+            for (let i = 0; i < object_array.length; i++) {
+                if (Array.isArray(object_array[i])) {
+                    let num_of_inner_matches = 0;
+                    for (let j = 0; j < object_array[i].length; j++) {
+                        if (object_array[i][j]) {
+                            num_of_inner_matches ++;
+                            if (current_node != null) {
+                                current_node["style"]["backgroundColor"] = "lightgreen";
+                            }
+                        }
+                    }
+                    if (key == "or" && num_of_inner_matches > 0) {
+                        object_array[i] = true; num_of_matches++; 
+                        if (current_node != null) {
+                            current_node["style"]["backgroundColor"] = "lightgreen";
+                        }
+                        continue;
+                    }
+                    if (key == "and" && num_of_inner_matches == object_array[i].length) {
+                        object_array[i] = true; num_of_matches++;
+                        if (current_node != null) {
+                            current_node["style"]["backgroundColor"] = "lightgreen";
+                        }
+                        continue;
+                    }
+                    object_array[i] = false;
+                } else if (typeof object_array[i] == "object") {
+                    let inner_key = Object.keys(object_array[i])[0];
+                    if (object_array[i][inner_key]) {num_of_matches++;}
+                } else if(object_array[i]) {num_of_matches++}
+            }
+            if (key == "or" && num_of_matches > 0) {
+                current_object[key] = true;
+                if (current_node != null) {
+                    current_node["style"]["backgroundColor"] = "lightgreen";
+                }
+            }
+            else if (key == "and" && num_of_matches == object_array.length) {
+                current_object[key] = true;
+                if (current_node != null) {
+                    current_node["style"]["backgroundColor"] = "lightgreen";
+                }
+            }
+            else {current_object[key] = false}
+        }
     }
 
-    function generateTree(prereqs) {
-        //console.log(JSON.stringify(prereqs, null, 4));
-        prereq_convert(prereqs, null, props.selectedCourse.code);
+    function generateTree(courses_taken, prereqs) {
+        prereq_convert(courses_taken, prereqs, null, props.selectedCourse.code);
+        let key = Object.keys(prereqs);
+        return prereqs[key];
+
     }
 
 
-    function loadTree(course) {
+    function loadTree(courses_taken) {
+        
         console.log(JSON.stringify(props.selectedCourse.prerequisites, null, 4));
         if (props.selectedCourse.prerequisites === "null" || props.selectedCourse.prerequisites.length == 0) {
-            let display_node = createNode("No Prerequisites", "No Prerequisites", "defeault");
+            let display_node = createNode("No Prerequisites", "No Prerequisites", "default");
             display_node.style["pointerEvents"] = "none";
             display_node["className"] = 'no-handles';
             initialNodes.push(display_node);
         } else {
             let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input");
+            let copy = {...props.selectedCourse.prerequisites};
+            let eligible = generateTree(JSON.parse(localStorage.getItem("completedCourses")), copy);
+            if (eligible) {
+                root["style"]["backgroundColor"] = "lightgreen";
+            }
             initialNodes.push(root);
-            generateTree(props.selectedCourse.prerequisites);
         }
 
 
@@ -229,23 +298,3 @@ export const PrerequisitePresenter = observer((props) => {
 
 export default PrerequisitePresenter;
 
-
-
-/*
-
-
-
-
-        let HTML_nodes = document.getElementsByClassName("react-flow__node");
-
-        for (let i = 0; i < HTML_nodes.length; i++) {
-            //console.log(HTML_nodes[i].children[0].getAttribute("data-nodeid").split(" ")[0])
-            if (HTML_nodes[i].children[0].getAttribute("data-nodeid").split(" ")[0] === "text") {
-                HTML_nodes[i].addEventListener('click', function () {
-                    alert('Button was clicked!');
-                  });
-            }   // Can add else
-        }
-
-
-        */
