@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 import { useState } from 'react';
 import CoursePagePopup from '../views/Components/CoursePagePopup.jsx';
 import PrerequisitePresenter from './PrerequisitePresenter.jsx';
-import {ReviewPresenter} from "../presenters/ReviewPresenter.jsx"
+import { ReviewPresenter } from "../presenters/ReviewPresenter.jsx";
 import SearchbarView from "../views/SearchbarView.jsx";
 
 const SearchbarPresenter = observer(({ model }) => {
@@ -15,14 +15,16 @@ const SearchbarPresenter = observer(({ model }) => {
         );
         model.setCurrentSearchText(query);
         model.setCurrentSearch(searchResults);
-    }
+    };
 
     const addFavourite = (course) => {
         model.addFavourite(course);
-    }
+    };
+
     const removeFavourite = (course) => {
         model.removeFavourite(course);
-    }
+    };
+
     const handleFavouriteClick = (course) => {
         if (model.favourites.some(fav => fav.code === course.code)) {
             model.removeFavourite(course);
@@ -30,6 +32,7 @@ const SearchbarPresenter = observer(({ model }) => {
             model.addFavourite(course);
         }
     };
+
     const creditsSum = (favouriteCourses) => {
         return favouriteCourses.reduce((sum, course) => sum + parseFloat(course.credits), 0);
     };
@@ -40,7 +43,7 @@ const SearchbarPresenter = observer(({ model }) => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [selectedCourse, setSelectedCourse] = useState(null);
-    const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />
+    const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />;
     const reviewPresenter = <ReviewPresenter model={model} course={selectedCourse} />;
 
     const popup = <CoursePagePopup
@@ -48,13 +51,12 @@ const SearchbarPresenter = observer(({ model }) => {
         addFavourite={addFavourite}
         removeFavourite={removeFavourite}
         handleFavouriteClick={handleFavouriteClick}
-        isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)}
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
         course={selectedCourse}
         reviewPresenter={reviewPresenter}
-        prerequisiteTree={preP} />
-
-
-
+        prerequisiteTree={preP}
+    />;
 
     return (
         <SearchbarView
@@ -69,7 +71,7 @@ const SearchbarPresenter = observer(({ model }) => {
             setSelectedCourse={setSelectedCourse}
             popup={popup}
             handleFavouriteClick={handleFavouriteClick}
-            const totalCredits = {creditsSum(model.favourites)}
+            totalCredits={creditsSum(model.favourites)}
         />
     );
 });

@@ -130,6 +130,6 @@ function ListView(props) {
             {props.popup}
         </div>
     );
-}
+  }
 
 export default ListView;
