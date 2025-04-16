@@ -11,6 +11,9 @@ export const model = {
     isReady: false,
     filtersChange: false,
     filteredCourses: [],
+     // ✅ NEW: holds filter settings in a flat format for URL sharing
+     activeFilters: {},
+
     filterOptions: {
         applyTranscriptFilter: true,
         eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
@@ -25,7 +28,60 @@ export const model = {
         creditMax: 45,
         //applyDepartmentFilter:false,
     },
+    
+    setFiltersChange() { this.filtersChange = true; },
 
+    // 🟣 Update internal filters
+    updateLevelFilter(level) { this.filterOptions.level = level; },
+    updateLanguageFilter(lang) { this.filterOptions.language = lang; },
+    updateLocationFilter(loc) { this.filterOptions.location = loc; },
+    updateCreditsFilter([min, max]) {
+        this.filterOptions.creditMin = min;
+        this.filterOptions.creditMax = max;
+    },
+    updateTranscriptElegibilityFilter(val) { this.filterOptions.eligibility = val; },
+
+    setApplyTranscriptFilter(state) { this.filterOptions.applyTranscriptFilter = state; },
+    setApplyLevelFilter(state) { this.filterOptions.applyLevelFilter = state; },
+    setApplyLanguageFilter(state) { this.filterOptions.applyLanguageFilter = state; },
+    setApplyLocationFilter(state) { this.filterOptions.applyLocationFilter = state; },
+    setApplyCreditsFilter(state) { this.filterOptions.applyCreditsFilter = state; },
+
+    // ✅ NEW: Called by presenters when user changes a filter
+    updateFilter(name, value) {
+        this.activeFilters[name] = value;
+    },
+
+    // ✅ NEW: Called when loading from a shared filter URL
+    setFiltersFromObject(obj) {
+        this.activeFilters = { ...obj };
+
+        if (obj.language) this.updateLanguageFilter(obj.language);
+        if (obj.level) this.updateLevelFilter([obj.level]);
+        if (obj.location) this.updateLocationFilter([obj.location]);
+        if (obj.credits) this.updateCreditsFilter([parseFloat(obj.credits), parseFloat(obj.credits)]);
+        if (obj.transcript) this.updateTranscriptElegibilityFilter(obj.transcript);
+
+        this.setApplyLanguageFilter(true);
+        this.setApplyLevelFilter(true);
+        this.setApplyLocationFilter(true);
+        this.setApplyCreditsFilter(true);
+        this.setApplyTranscriptFilter(true);
+    },
+    getActiveFiltersFromOptions() {
+        const af = {};
+        if (this.filterOptions.applyLanguageFilter) af.language = this.filterOptions.language;
+        if (this.filterOptions.applyLevelFilter && this.filterOptions.level.length > 0)
+            af.level = this.filterOptions.level[0]; // Or join(',') if needed
+        if (this.filterOptions.applyLocationFilter && this.filterOptions.location.length > 0)
+            af.location = this.filterOptions.location[0];
+        if (this.filterOptions.applyCreditsFilter)
+            af.credits = this.filterOptions.creditMin.toString();
+        if (this.filterOptions.applyTranscriptFilter)
+            af.transcript = this.filterOptions.eligibility;
+        return af;
+    },
+    
     setUser(user) {
         if (!this.user)
             this.user = user;
@@ -103,48 +159,45 @@ export const model = {
             return [];
         }
     },
-    //for filters
-
-    setFiltersChange() {
-        this.filtersChange = true;
-    },
+   
+    applyFilters() {
+        const fo = this.filterOptions;
     
-    updateLevelFilter(level) {
-        this.filterOptions.level = level;
-    },
-    updateLanguageFilter(languages) {
-        this.filterOptions.language = languages;
-    },
-    updateLocationFilter(location) {
-        this.filterOptions.location = location;
-    },
-    updateCreditsFilter(creditLimits) {
-        this.filterOptions.creditMin = creditLimits[0];
-        this.filterOptions.creditMax = creditLimits[1];
-    },
-    updateTranscriptElegibilityFilter(eligibility) {
-        this.filterOptions.eligibility = eligibility;
-    },
-
-    //setters for the filter options
-    setApplyTranscriptFilter(transcriptFilterState) {
-        this.filterOptions.applyTranscriptFilter = transcriptFilterState;
-    },
-    setApplyLevelFilter(levelFilterState) {
-        this.filterOptions.applyLevelFilter = levelFilterState;
-    },
-    setApplyLanguageFilter(languageFilterState) {
-        this.filterOptions.applyLanguageFilter = languageFilterState;
-    },
-    setApplyLocationFilter(locationFilterState) {
-        this.filterOptions.applyLocationFilter = locationFilterState;
-    },
-    setApplyCreditsFilter(creditsFilterState) {
-        this.filterOptions.applyCreditsFilter = creditsFilterState;
-    },
-    // setApplyDepartmentFilter(departmentFilterState) {
-    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
-    // },
+        this.filteredCourses = this.courses.filter(course => {
+            // Language
+            if (fo.applyLanguageFilter && fo.language !== "none") {
+                const cl = course.language.toLowerCase();
+                if (fo.language === "english" && cl !== "english") return false;
+                if (fo.language === "swedish" && cl !== "swedish") return false;
+                if (fo.language === "both" && !(cl === "english" || cl === "swedish")) return false;
+            }
+    
+            // Level
+            if (fo.applyLevelFilter && fo.level.length > 0) {
+                if (!fo.level.includes(course.academicLevel)) return false;
+            }
+    
+            // Location
+            if (fo.applyLocationFilter && fo.location.length > 0) {
+                if (!fo.location.includes(course.location)) return false;
+            }
+    
+            // Credits
+            if (fo.applyCreditsFilter) {
+                const c = parseFloat(course.credits);
+                if (c < fo.creditMin || c > fo.creditMax) return false;
+            }
+    
+            // Transcript eligibility (if you ever want to use it for filtering directly)
+            // Can be added here if needed
+    
+            return true;
+        });
+    
+        this.setFiltersChange(); // Let the UI know filtering occurred
+    }
+    
+   
 
 
 

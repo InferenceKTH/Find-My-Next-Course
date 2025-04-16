@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite";
 const FavouritesDropdown = observer((props) => {
     const [shareUrl, setShareUrl] = useState("");
     const [copied, setCopied] = useState(false);
+    const [showShareBox, setShowShareBox] = useState(false);
 
 
 

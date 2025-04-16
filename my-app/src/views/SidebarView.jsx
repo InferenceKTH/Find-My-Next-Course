@@ -59,7 +59,17 @@ function SidebarView(props) {
                         filterName="department"
                         HandleFilterEnable={props.HandleFilterEnable}
                     />
+                    
                 </div>
+                <button
+                    onClick={props.onShareFilters}
+                    className={`w-full mt-4 p-3 cursor-pointer ${
+                        props.filterCopied ? "bg-green-600 text-white" : "text-violet-700 hover:bg-blue-500 hover:text-white"
+                    } font-semibold rounded-lg transition-colors duration-300`}
+                    >
+                    {props.filterCopied ? "Filter Link Copied!" : "Share Filters"}
+                </button>
+
 
             </div>
         </div>

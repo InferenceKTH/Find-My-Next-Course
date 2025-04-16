@@ -50,30 +50,81 @@ function SharedView() {
 
 export default SharedView;
 */
-
+/*
 import React, { useEffect } from "react";
-import MainAppLayout from "./App.jsx"; // or wherever it's defined
+import MainAppLayout from "./App.jsx";
 
 function SharedView({ model }) {
   useEffect(() => {
-    const processFavouritesFromURL = () => {
+    const processURLData = () => {
       const hash = window.location.hash;
       const queryString = hash.includes("?") ? hash.split("?")[1] : "";
       const params = new URLSearchParams(queryString);
+
+      // ✅ Parse favourites
       const favCodes = (params.get("favs") || "").split(",").filter(Boolean);
-
-      if (!model.courses || model.courses.length === 0) return;
-
       const favCourses = favCodes
         .map(code => model.getCourse(code))
         .filter(Boolean);
-
       model.favourites = favCourses;
+
+      // ✅ Parse filters (everything that's not "favs")
+      const filters = {};
+      for (const [key, value] of params.entries()) {
+        if (key !== "favs") {
+          filters[key] = value;
+        }
+      }
+
+      model.setFiltersFromObject(filters);
     };
 
     const interval = setInterval(() => {
       if (model.courses && model.courses.length > 0) {
-        processFavouritesFromURL();
+        processURLData();
+        clearInterval(interval);
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [model]);
+
+  return <MainAppLayout model={model} />;
+}
+
+export default SharedView;
+*/
+import React, { useEffect } from "react";
+import MainAppLayout from "./App.jsx";
+
+function SharedView({ model }) {
+  useEffect(() => {
+    const processURL = () => {
+      const hash = window.location.hash;
+      const queryString = hash.includes("?") ? hash.split("?")[1] : "";
+      const params = new URLSearchParams(queryString);
+
+      // ✅ Handle favourites
+      const favCodes = (params.get("favs") || "").split(",").filter(Boolean);
+      const favCourses = favCodes
+        .map(code => model.getCourse(code))
+        .filter(Boolean);
+      model.favourites = favCourses;
+
+      // ✅ Handle filters
+      const knownKeys = ["language", "level", "location", "credits", "transcript"];
+      const filters = {};
+      for (const key of knownKeys) {
+        if (params.has(key)) filters[key] = params.get(key);
+      }
+      model.setFiltersFromObject(filters);
+      model.applyFilters();
+
+    };
+
+    const interval = setInterval(() => {
+      if (model.courses && model.courses.length > 0) {
+        processURL();
         clearInterval(interval);
       }
     }, 200);

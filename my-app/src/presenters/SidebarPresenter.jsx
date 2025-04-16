@@ -1,9 +1,45 @@
 import React from 'react';
 import { observer } from "mobx-react-lite";
 import SidebarView from "../views/SidebarView.jsx";
+import { useState } from "react";
+
+
+
+
+
+
+
 
 
 const SidebarPresenter = observer(({ model }) => {
+    
+
+
+
+
+
+
+    const [filterCopied, setFilterCopied] = useState(false);
+
+    const handleShareFilters = () => {
+        model.activeFilters = model.getActiveFiltersFromOptions();
+        const query = new URLSearchParams(model.activeFilters || {}).toString();
+        const url = `${window.location.origin}/#/share?${query}`;
+
+        navigator.clipboard.writeText(url)
+            .then(() => {
+            setFilterCopied(true);
+            setTimeout(() => setFilterCopied(false), 2500); // revert after 2.5 sec
+            })
+            .catch(err => {
+            console.error("Copy failed:", err);
+            });
+    };
+
+
+
+
+
 
     let currentLanguageSet = 'none';
     let currentLevelSet = [];
@@ -61,7 +97,7 @@ const SidebarPresenter = observer(({ model }) => {
                 properParam = "RESEARCH";
                 break;
         }
-
+    
         if (!currentLevelSet.includes(properParam)) {
             currentLevelSet.push(properParam);
         } else {
@@ -70,8 +106,18 @@ const SidebarPresenter = observer(({ model }) => {
                 currentLevelSet.splice(index, 1);
             }
         }
+    
         model.updateLevelFilter(currentLevelSet);
+    
+        // ✅ Add this line to reflect it in the shareable link
+        // You can choose how to serialize it — here we just use the first selected level
+        if (currentLevelSet.length > 0) {
+            model.updateFilter("level", currentLevelSet[0]); // or join if multiple
+        } else {
+            delete model.activeFilters.level;
+        }
     }
+    
 
     /*HandleFilterChange param is structured as such
         [
@@ -136,10 +182,23 @@ const SidebarPresenter = observer(({ model }) => {
         }
         model.setFiltersChange();
     }
+   // return (
+     //   <SidebarView HandleFilterChange={HandleFilterChange}
+       //     HandleFilterEnable={HandleFilterEnable} />
+    //);
+
+
+
+
     return (
-        <SidebarView HandleFilterChange={HandleFilterChange}
-            HandleFilterEnable={HandleFilterEnable} />
-    );
+        <SidebarView
+          HandleFilterChange={HandleFilterChange}
+          HandleFilterEnable={HandleFilterEnable}
+          onShareFilters={handleShareFilters}
+          filterCopied={filterCopied}
+        />
+      );
+      
 });
 
 export { SidebarPresenter };
