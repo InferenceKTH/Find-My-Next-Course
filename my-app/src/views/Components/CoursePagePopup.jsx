@@ -1,16 +1,36 @@
 import React, { useEffect, useRef, useState } from 'react';
+import RatingComponent from "./RatingComponent.jsx";
+import { model } from "../../model.js";
 
 function CoursePagePopup({
-	favouriteCourses,
-	handleFavouriteClick,
-	isOpen,
-	onClose,
-	course,
-	prerequisiteTree,
-	reviewPresenter,
-}) {
+							 favouriteCourses,
+							 handleFavouriteClick,
+							 isOpen,
+							 onClose,
+							 course,
+							 prerequisiteTree,
+							 reviewPresenter,
+						 }) {
+
 	const treeRef = useRef(null);
 	const [showOverlay, setShowOverlay] = useState(true);
+	const [averageRating, setAverageRating] = useState(null);
+
+
+	useEffect(() => {
+		const fetchAverageRating = async () => {
+			try {
+				const avg = await model.getAverageRating(course.code);
+				setAverageRating(avg);
+			} catch (error) {
+				setAverageRating(null);
+			}
+		};
+
+		if (isOpen && course) fetchAverageRating();
+
+	}, [isOpen, course]);
+
 
 	useEffect(() => {
 		const handleKeyDown = (event) => {
@@ -64,12 +84,12 @@ function CoursePagePopup({
 									{course.name}
 								</a>
 								<span className="ml-4 text-lg text-violet-700 whitespace-nowrap">
-									({course.credits} Credits)
-								</span>
+                  ({course.credits} Credits)
+                </span>
 							</h2>
 							<div className="my-6 h-1.5 w-full bg-violet-500"></div>
 						</div>
-						<div>
+						<div className="flex justify-between items-center">
 							<button
 								className={`inline-flex items-center px-4 py-2 gap-2 rounded-lg
 										   transition-all duration-300 ease-in-out
@@ -85,21 +105,52 @@ function CoursePagePopup({
 							>
 								{favouriteCourses.some((fav) => fav.code === course.code) ? (
 									<>
-										<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-yellow-900" viewBox="0 0 20 20">
-											<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-5 w-5 fill-yellow-900"
+											viewBox="0 0 20 20"
+										>
+											<path
+												d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+											/>
 										</svg>
 										Remove from Favourites
 									</>
 								) : (
 									<>
-										<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 stroke-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="h-5 w-5 stroke-yellow-500"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth={2}
+												d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+											/>
 										</svg>
 										Add to Favourites
 									</>
 								)}
 							</button>
+
+							<div className="flex flex-col items-center">
+								{averageRating !== null ? (
+									<p className="text-lg font-semibold text-violet-700">
+										Average Rating: {averageRating} / 5
+									</p>
+								) : (
+									<p className="text-lg font-semibold text-violet-700">
+										No Reviews Yet
+									</p>
+								)}
+								<RatingComponent readOnly={true} value={averageRating || 0} />
+							</div>
 						</div>
+
 						{/* Description Section */}
 						{course.description &&
 							course.description.trim() &&

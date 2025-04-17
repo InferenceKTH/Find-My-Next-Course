@@ -10,10 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-
+    "@dagrejs/dagre": "^1.1.4",
     "@headlessui/react": "^2.2.1",
     "@heroicons/react": "^2.2.0",
-    "@dagrejs/dagre": "^1.1.4",
+    "@react-buddy/ide-toolbox": "^2.4.0",
     "@tailwindcss/vite": "^4.0.17",
     "@xyflow/react": "^12.5.5",
     "autoprefixer": "^10.4.21",
