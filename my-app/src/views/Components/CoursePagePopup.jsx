@@ -59,8 +59,8 @@ function CoursePagePopup({
 									rel="noopener noreferrer"
 									className="hover:text-violet-600 transition-colors duration-300"
 								>
-									<span className="text-violet-700 hover:text-violet-950 transition-colors duration-300">{course.code}</span>
-									- {' '}
+									<span className="text-violet-700 ">{course.code}</span>
+									{' '}- {' '}
 									{course.name}
 								</a>
 								<span className="ml-4 text-lg text-violet-700 whitespace-nowrap">
