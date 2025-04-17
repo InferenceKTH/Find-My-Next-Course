@@ -1,1 +1,76 @@
 @import "tailwindcss";
+
+.team-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f8fafc;
+  }
+  
+  .team-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-intro {
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+  }
+  
+  .team-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 240px;
+    transition: transform 0.2s ease;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.75rem;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    color: #111827;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .team-card h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .team-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+  }
+  
+  .team-links a {
+    margin: 0 0.4rem;
+    font-size: 1.2rem;
+    color: #374151;
+    text-decoration: none;
+  }
+  
+  .team-links a:hover {
+    color: #1d4ed8;
+  }
+  

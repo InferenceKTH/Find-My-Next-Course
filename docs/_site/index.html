@@ -1,101 +1,502 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png">
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Find My Next Course | Find my next course - by Inference</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Find My Next Course" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="A web application designed to help students explore KTH’s course offerings." />
-<meta property="og:description" content="A web application designed to help students explore KTH’s course offerings." />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Find my next course - by Inference" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Find My Next Course" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"A web application designed to help students explore KTH’s course offerings.","headline":"Find My Next Course","name":"Find my next course - by Inference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/favicon.png"}},"url":"http://localhost:4000/"}</script>
-<!-- End Jekyll SEO tag -->
+    <title>Find My Next Course | Find my next course - by Inference</title>
+    <meta name="description" content="A web application designed to help students explore KTH’s course offerings.">
+    <meta property="og:title" content="Find My Next Course" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="A web application designed to help students explore KTH’s course offerings." />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="Find my next course - by Inference" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Find My Next Course" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","description":"A web application designed to help students explore KTH’s course offerings.","headline":"Find My Next Course","name":"Find my next course - by Inference","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/favicon.png"}},"url":"http://localhost:4000/"}
+    </script>
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=6e88508c71a724317f0352971cd7c96b6b9b58a9">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Setup Google Analytics -->
+    <!-- Inline CSS for Cool Design -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #2a1a5e, #3e2a6d); /* Deep navy to dark purple gradient */
+    color: #fff; /* White text for contrast */
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0;
+    background: rgba(52, 61, 73, 0.9); /* Subtle dark overlay for header */
+    color: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+header img {
+    width: 80px;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+header .view a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header .view a:hover {
+    color: #ffeb3b;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: rgba(20, 20, 20, 0.6); /* Slightly darker background for hero section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.5);
+    z-index: 1;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #ccc; /* Lighter text for secondary text */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #4b3f72; /* Muted purple for the call-to-action button */
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator::before {
+    content: '↓';
+    font-size: 2em;
+    color: white;
+}
+
+section {
+    padding: 60px 0;
+    text-align: center;
+    background: rgba(31, 33, 44, 0.8); /* Darker background for sections */
+}
+
+section h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Gold accent color */
+}
+
+section p, section ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #ddd;
+}
+
+section ul {
+    text-align: left;
+    list-style: none;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+}
+
+section ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #ffcc00;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #2a1a5e; /* Matching footer to header theme */
+    color: white;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffeb3b;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 40px 20px;
+    justify-items: center;
+}
+
+.team-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.avatar {
+    background-color: #ffcc00;
+    color: #2a1a5e;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+}
+
+.team-links a {
+    margin: 0 5px;
+    font-size: 1.2em;
+    color: #ffcc00;
+    text-decoration: none;
+}
 
 
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
-  </head>
-  <body>
+    </style>
+</head>
+<body>
     <div class="wrapper">
-      <header>
-        <h1><a href="http://localhost:4000/">Find my next course - by Inference</a></h1>
+        <header>
+            <h1><a href="/">Find My Next Course - by Inference</a></h1>
+            <img src="/assets/images/favicon.png" alt="Logo" />
+            <p>A web application designed to help students explore KTH’s course offerings.</p>
+            <p class="view"><a href="https://github.com/InferenceKTH/Find-My-Next-Course">View the Project on GitHub <small>InferenceKTH/Find-My-Next-Course</small></a></p>
+        </header>
 
-        
-          <img src="/assets/images/favicon.png" alt="Logo" />
-        
+        <section class="hero">
+            <h1>🎓 Find My Next Course</h1>
+            <p>Discover eligible KTH courses based on your academic record.</p>
+            <a href="https://findmynextcourse.web.app" class="cta-button">Try the App</a>
+            <div class="scroll-indicator"></div>
+        </section>
 
-        <p>A web application designed to help students explore KTH’s course offerings.</p>
+        <section>
+            <h1><em>Find My Next Course</em></h1>
+            <h2>About the Project</h2>
+            <p>Find My Next Course is a web application designed to help students explore KTH’s course offerings. With a user-friendly interface, students can search for courses, view prerequisites, and find courses they are eligible for by inputting their academic transcripts. While ‘Find My Next Course’ is currently designed for KTH, we aim to expand its functionality to support other universities. The long-term goal is to create a flexible system where students from different institutions can explore courses, compare options, and find eligible courses based on their academic records.</p>
 
-        
-        <p class="view"><a href="https://github.com/InferenceKTH/Find-My-Next-Course">View the Project on GitHub <small>InferenceKTH/Find-My-Next-Course</small></a></p>
-        
+            <h2>Key Features</h2>
+            <ul>
+                <li>Search and filter KTH courses by subject, level, and prerequisites.</li>
+                <li>Upload a transcript to receive personalized course recommendations based on eligibility.</li>
+                <li>Simple, intuitive design for quick course discovery.</li>
+                <li>Open-source and continuously updated.</li>
+            </ul>
+        </section>
 
-        
+        <section class="team-section">
+            <h2>Our Team</h2>
+            <p class="team-intro">We are a group of passionate students from KTH working together to make course planning easier and more efficient.</p>
+            
+          
 
-        
-      </header>
-      <section>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="avatar">JK</div>
+                    <h3>Justus Kluge</h3>
+                    <p>Developer</p>
+                    <div class="team-links">
+                        <a href="https://github.com/jkluge"><span>💻</span></a>
+                        <a href="mailto:justus@example.com"><span>✉</span></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">KL</div>
+                    <h3>Kacper Lisik</h3>
+                    <p>Product Owner</p>
+                    <div class="team-links">
+                        <a href="https://github.com/LSKpr"><span>💻</span></a>
+                        <a href="mailto:kacper@example.com"><span>✉</span></a>
+                    </div>
+                </div>
+                <!-- Add more team members similarly -->
+                <div class="team-card">
+                    <div class="avatar">SA</div>
+                    <h3>Sami Al Saati</h3>
+                    <p>Developer</p>
+                    <div class="team-links">
+                        <a href="https://github.com/Dinoxh"><span>💻</span></a>
+                        <a href="mailto:sami@example.com"><span>✉</span></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="avatar">BB</div>
+                    <h3>Benedek Boldizsar</h3>
+                    <p>Developer</p>
+                    <div class="team-links">
+                        <a href="https://github.com/boldizsarbenedek"><span>💻</span></a>
+                        <a href="mailto:benedek@example.com"><span>✉</span></a>
+                    </div>
+                </div>
 
-      <h1 id="find-my-next-course"><em>Find My Next Course</em></h1>
+                <div class="team-card">
+                  <div class="avatar">BB</div>
+                  <h3>Emanuel Paraschiv</h3>
+                  <p>Developer</p>
+                  <div class="team-links">
+                      <a href="https://github.com/boldizsarbenedek"><span>💻</span></a>
+                      <a href="mailto:benedek@example.com"><span>✉</span></a>
+                  </div>
+              </div>
 
-<h2 id="about-the-project">About the Project</h2>
-<p>Find My Next Course is a web application designed to help students explore KTH’s course offerings. With a user-friendly interface, students can search for courses, view prerequisites, and find courses they are eligible for by inputting their academic transcripts.
-While ‘Find My Next Course’ is currently designed for KTH, we aim to expand its functionality to support other universities. The long-term goal is to create a flexible system where students from different institutions can explore courses, compare options, and find eligible courses based on their academic records.</p>
+              <div class="team-card">
+                <div class="avatar">BB</div>
+                <h3>Chenny Li</h3>
+                <p>Developer</p>
+                <div class="team-links">
+                    <a href="https://github.com/boldizsarbenedek"><span>💻</span></a>
+                    <a href="mailto:benedek@example.com"><span>✉</span></a>
+                </div>
+            </div>
 
-<h2 id="key-features">Key Features</h2>
-<ul>
-  <li>Search and filter KTH courses by subject, level, and prerequisites.</li>
-  <li>Upload a transcript to receive personalized course recommendations based on eligibility.</li>
-  <li>Simple, intuitive design for quick course discovery.</li>
-  <li>Open-source and continuously updated.</li>
-</ul>
+            <div class="team-card">
+              <div class="avatar">BB</div>
+              <h3>Elias Naess</h3>
+              <p>Developer</p>
+              <div class="team-links">
+                  <a href="https://github.com/boldizsarbenedek"><span>💻</span></a>
+                  <a href="mailto:benedek@example.com"><span>✉</span></a>
+              </div>
+          </div>
 
-<h2 id="team-members">Team Members</h2>
+          <div class="team-card">
+            <div class="avatar">BB</div>
+            <h3>Elias Tosteberg</h3>
+            <p>Developer</p>
+            <div class="team-links">
+                <a href="https://github.com/boldizsarbenedek"><span>💻</span></a>
+                <a href="mailto:benedek@example.com"><span>✉</span></a>
+            </div>
+          </div>
 
-<ul>
-  <li><a href="https://github.com/Dinoxh">Sami Al Saati</a></li>
-  <li><a href="https://github.com/boldizsarbenedek">Benedek Boldizsar</a></li>
-  <li><a href="https://github.com/jkluge">Justus Kluge</a></li>
-  <li><a href="https://github.com/re1entlessly">Chenny Li</a></li>
-  <li><a href="https://github.com/LSKpr">Kacper Lisik</a></li>
-  <li><a href="https://github.com/daDevBoat">Elias Naess</a></li>
-  <li><a href="https://github.com/emyemy89">Emanuel Paraschiv</a></li>
-  <li><a href="https://github.com/Sailet03">Elias Tosteberg</a></li>
-  <li><a href="https://github.com/kexana">Dean Tsankov</a></li>
-</ul>
+          <div class="team-card">
+            <div class="avatar">BB</div>
+            <h3>Dean Tsankov</h3>
+            <p>Developer</p>
+            <div class="team-links">
+                <a href="https://github.com/boldizsarbenedek"><span>💻</span></a>
+                <a href="mailto:benedek@example.com"><span>✉</span></a>
+            </div>
+          
+        </div>
+        </div>
+    
 
+            </div>
+        </section>
 
-      </section>
-      <footer>
-        
-        <p>This project is maintained by <a href="https://github.com/InferenceKTH">InferenceKTH</a></p>
-        
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+        <footer>
+            <p>This project is maintained by <a href="https://github.com/InferenceKTH">InferenceKTH</a></p>
+            <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        </footer>
     </div>
-    <script src="/assets/js/scale.fix.js"></script>
-  </body>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            let scrollPosition = window.pageYOffset;
+            hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+        });
+
+        // Fade-in elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section, .team-card').forEach(element => {
+            element.classList.add('fade-out');
+            observer.observe(element);
+        });
+    </script>
+
+    <!-- Additional CSS for Fade-in Animation -->
+    <style>
+        .fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</body>
 </html>
