@@ -1,6 +1,4 @@
-Project Structure Draft:
 
-```
 .
 ├── firebase.js      // handles fetching and saving to the realtime database on firebase
 ├── firebase.json    // used for firebase deploy
