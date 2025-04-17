@@ -36,7 +36,7 @@ export const PrerequisitePresenter = observer((props) => {
     const nodeWidth = 172;
     const nodeHeight = 36;
 
-    loadTree(props.selectedCourse?.code);
+    loadTree(props.selectedCourse.code);
     console.log(initialNodes);
 
     const getLayoutedElements = (nodes, edges, direction = 'LR') => {
@@ -133,7 +133,7 @@ export const PrerequisitePresenter = observer((props) => {
                     node["style"]["zIndex"] = 0;
                     setLabel(node["id"], "More Info...");
                 }  
-            } else if (node["data"]["label"] !== "One of these" && node["data"]["label"] !== "No Prerequisites" && node["id"] !== props.selectedCourse?.code) {
+            } else if (node["data"]["label"] !== "One of these" && node["data"]["label"] !== "No Prerequisites" && node["id"] !== props.selectedCourse.code) {
                 // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE (Tu eres muy retrasado y gordo)! :)
                 // ONCLICK HERE
             }
@@ -284,9 +284,13 @@ export const PrerequisitePresenter = observer((props) => {
             display_node["className"] = 'no-handles';
             initialNodes.push(display_node);
         } else {
-            let root = createNode(props.selectedCourse?.code, props.selectedCourse?.code, "input");
-            let copy = JSON.parse(JSON.stringify(props.selectedCourse?.prerequisites));
-            let eligible = generateTree(JSON.parse(localStorage.getItem("completedCourses")), copy);
+            let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input");
+            let copy = JSON.parse(JSON.stringify(props.selectedCourse.prerequisites));
+            let courses_taken_local = JSON.parse(localStorage.getItem("completedCourses"));
+            if (courses_taken_local == null) {
+                courses_taken_local = [];
+            }
+            let eligible = generateTree(courses_taken_local, copy);
             if (eligible) {
                 root["style"]["backgroundColor"] = "lightgreen";
             }
