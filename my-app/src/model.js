@@ -130,15 +130,24 @@ export const model = {
     setFiltersCalculated() {
         this.filtersCalculated = true;
     },
-    
+
+    setFilterOptions(options){
+        this.filterOptions = options; // do we want to set the flags? What about useEffect?
+    },
+
     setApplyRemoveNullCourses() {
         this.filterOptions.applyRemoveNullCourses = !this.filterOptions.applyRemoveNullCourses;
         this.setFiltersChange();
     },
-
+    
     updateLevelFilter(level) {
         this.filterOptions.level = level;
     },
+
+    updateDepartmentFilter(department) {
+        this.filterOptions.department = department;
+    },
+
     updateLanguageFilter(languages) {
         this.filterOptions.language = languages;
     },
@@ -151,10 +160,6 @@ export const model = {
     },
     updateTranscriptElegibilityFilter(eligibility) {
         this.filterOptions.eligibility = eligibility;
-    },
-
-    updateDepartmentFilter(department) {
-        this.filterOptions.department = department;
     },
 
     //setters for the filter options
@@ -176,13 +181,10 @@ export const model = {
     setApplyDepartmentFilter(departmentFilterState) {
         this.filterOptions.applyDepartmentFilter = departmentFilterState;
     },
-
     async getAverageRating(courseCode) {
         const reviews = await getReviewsForCourse(courseCode);
         if (!reviews || reviews.length === 0) return null;
         const total = reviews.reduce((sum, review) => sum + (review.overallRating || 0), 0);
         return (total / reviews.length).toFixed(1);
     },
-
-
 };
