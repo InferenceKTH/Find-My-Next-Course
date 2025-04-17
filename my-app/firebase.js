@@ -30,12 +30,20 @@ export function connectToFirebase(model) {
 
 	// setting missing
 	// also save filters to local storage
-	//localStorage.setItem("filterOptions", filterOptions);
-	const options = localStorage.getItem("filterOptions");
-			if (options) {
-				model.setFilterOptions(options);
-				console.log("Restore options from local storage");
-			}
+	// 
+	const options = JSON.parse(localStorage.getItem("filterOptions"));
+		if (options) {
+			model.setFilterOptions(options);
+			console.log("Restore options from local storage");
+		}
+
+	reaction(
+		() => ({filterOptions: JSON.stringify(model.filterOptions)}),
+		// eslint-disable-next-line no-unused-vars
+		({filterOptions}) => {
+			localStorage.setItem("filterOptions", filterOptions);
+		}
+	);
 
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
@@ -61,7 +69,7 @@ async function firebaseToModel(model) {
 			model.setCurrentSearchText(data.currentSearchText);
 		// if (data.scrollPosition)
 		// 	model.setScrollPosition(data.scrollPosition);
-		if (data.filterOptions) model.setFilterOptions(data.filterOptions);
+		// if (data.filterOptions) model.setFilterOptions(data.filterOptions);
 		noUpload = false;
 	});
 }
@@ -72,7 +80,7 @@ export function syncModelToFirebase(model) {
 			userId: model?.user.uid,
 			favourites: toJS(model.favourites),
 			currentSearchText: toJS(model.currentSearchText),
-			filterOptions: toJS(model.filterOptions),
+			// filterOptions: toJS(model.filterOptions),
 			// Add more per-user attributes here
 		}),
 		// eslint-disable-next-line no-unused-vars
@@ -82,7 +90,7 @@ export function syncModelToFirebase(model) {
 			const dataToSync = {
 				favourites,
 				currentSearchText,
-				filterOptions,
+				// filterOptions,
 			};
 
 			set(userRef, dataToSync)
