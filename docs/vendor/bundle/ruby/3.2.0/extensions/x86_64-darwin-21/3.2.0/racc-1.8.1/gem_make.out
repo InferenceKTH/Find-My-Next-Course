@@ -1,0 +1,19 @@
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/emiparaschiv/.rbenv/versions/3.2.3/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-n9lyvb sitelibdir\=./.gem.20250417-20062-n9lyvb clean
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-n9lyvb sitelibdir\=./.gem.20250417-20062-n9lyvb
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-n9lyvb sitelibdir\=./.gem.20250417-20062-n9lyvb install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20250417-20062-n9lyvb/racc
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-n9lyvb sitelibdir\=./.gem.20250417-20062-n9lyvb clean

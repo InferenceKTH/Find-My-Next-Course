@@ -1,0 +1,24 @@
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/Users/emiparaschiv/.rbenv/versions/3.2.3/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-flrxmv sitelibdir\=./.gem.20250417-20062-flrxmv clean
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-flrxmv sitelibdir\=./.gem.20250417-20062-flrxmv
+compiling ruby_http_parser.c
+ruby_http_parser.c:365:17: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'long' [-Wsign-compare]
+    if (nparsed < len)
+        ~~~~~~~ ^ ~~~
+1 warning generated.
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-flrxmv sitelibdir\=./.gem.20250417-20062-flrxmv install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20250417-20062-flrxmv
+
+current directory: /Users/emiparaschiv/Documents/GitHub/Find-My-Next-Course/docs/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250417-20062-flrxmv sitelibdir\=./.gem.20250417-20062-flrxmv clean
