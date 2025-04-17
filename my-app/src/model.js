@@ -18,7 +18,7 @@ export const model = {
         applyTranscriptFilter: true,
         eligibility: "weak",  //the possible values for the string are: "weak"/"moderate"/"strong"
         applyLevelFilter: true,
-        level: [], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
+        level: ["PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"], //the possible values for the array are: "PREPARATORY", "BASIC", "ADVANCED", "RESEARCH"
         applyLanguageFilter: true,
         language: "none", //the possible values for the string are: "none"/"english"/"swedish"/"both"
         applyLocationFilter:true,
@@ -26,8 +26,12 @@ export const model = {
         applyCreditsFilter:true,
         creditMin: 0,
         creditMax: 45,
-        applyDepartmentFilter:false,
-        department: []
+        applyDepartmentFilter: true,
+        department: ["EECS/Computational Science and  Technology", "EECS/Theoretical Computer Science", "EECS/Electric Power and Energy Systems", "EECS/Network and Systems Engineering",
+        "ITM/Learning in Engineering Sciences", "ITM/Industrial Economics and Management", "ITM/Energy Systems", "ITM/Integrated Product Development and Design", "ITM/SKD GRU",
+        "SCI/Mathematics", "SCI/Applied Physics", "SCI/Mechanics", "SCI/Aeronautical and Vehicle Engineering", 
+        "ABE/Sustainability and Environmental Engineering", "ABE/Concrete Structures", "ABE/Structural Design & Bridges", "ABE/History of Science, Technology and Environment", ],
+        applyRemoveNullCourses: false
     },
 
     setUser(user) {
@@ -84,15 +88,17 @@ export const model = {
         entries.forEach(entry => {
             const course = {
                 code: entry[1].code,
-                name: entry[1]?.name ?? "",
-                location: entry[1]?.location ?? "",
-                department: entry[1]?.department ?? "",
-                language: entry[1]?.language ?? "",
-                description: entry[1]?.description ?? "",
-                academicLevel: entry[1]?.academic_level ?? "",
-                period: entry[1]?.period ?? "",
+                name: entry[1]?.name ?? "null",
+                location: entry[1]?.location ?? "null",
+                department: entry[1]?.department ?? "null",
+                language: entry[1]?.language ?? "null",
+                description: entry[1]?.description ?? "null",
+                academicLevel: entry[1]?.academic_level ?? "null",
+                period: entry[1]?.period ?? "null",
                 credits: entry[1]?.credits ?? 0,
-                prerequisites: entry[1]?.prerequisites ?? "",
+                prerequisites: entry[1]?.prerequisites ?? "null",
+                prerequisites_text: entry[1]?.prerequisites_text ?? "null",
+                learning_outcomes: entry[1]?.learning_outcomes ?? "null"
             };
             this.addCourse(course);
         });
@@ -129,6 +135,11 @@ export const model = {
         this.filterOptions = options; // do we want to set the flags? What about useEffect?
     },
     
+    setApplyRemoveNullCourses() {
+        this.filterOptions.applyRemoveNullCourses = !this.filterOptions.applyRemoveNullCourses;
+        this.setFiltersChange();
+    },
+
     updateLevelFilter(level) {
         this.filterOptions.level = level;
     },
@@ -144,6 +155,10 @@ export const model = {
     },
     updateTranscriptElegibilityFilter(eligibility) {
         this.filterOptions.eligibility = eligibility;
+    },
+
+    updateDepartmentFilter(department) {
+        this.filterOptions.department = department;
     },
 
     //setters for the filter options
@@ -162,10 +177,16 @@ export const model = {
     setApplyCreditsFilter(creditsFilterState) {
         this.filterOptions.applyCreditsFilter = creditsFilterState;
     },
-    // setApplyDepartmentFilter(departmentFilterState) {
-    //     this.filterOptions.applyDepartmentFilter = departmentFilterState;
-    // },
+    setApplyDepartmentFilter(departmentFilterState) {
+        this.filterOptions.applyDepartmentFilter = departmentFilterState;
+    },
 
+    async getAverageRating(courseCode) {
+        const reviews = await getReviewsForCourse(courseCode);
+        if (!reviews || reviews.length === 0) return null;
+        const total = reviews.reduce((sum, review) => sum + (review.overallRating || 0), 0);
+        return (total / reviews.length).toFixed(1);
+    },
 
 
 };
