@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import { get, getDatabase, ref, set, onValue, push } from "firebase/database";
 import { reaction, toJS } from "mobx";
-import throttle from "lodash.throttle";
+// import throttle from "lodash.throttle";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
