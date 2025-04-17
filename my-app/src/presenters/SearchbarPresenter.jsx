@@ -54,6 +54,8 @@ const SearchbarPresenter = observer(({ model }) => {
     const [selectedCourse, setSelectedCourse] = useState(null);
     const preP = <PrerequisitePresenter model={model} selectedCourse={selectedCourse} />;
     const reviewPresenter = <ReviewPresenter model={model} course={selectedCourse} />;
+    const [searchQuery, setSearchQuery] = useState("");
+
 
     const popup = <CoursePagePopup
         favouriteCourses={model.favourites}
@@ -69,13 +71,18 @@ const SearchbarPresenter = observer(({ model }) => {
     
 
     if(model.filtersCalculated){
-        searchCourses("");
+        searchCourses(searchQuery);
         model.filtersCalculated = false;
     }
-
+    const handleSearch = (query) => {
+        resetScoll();  
+        setSearchQuery(query);
+        searchCourses(query);
+        // console.log("ERRORRRR");
+        // console.log(query);
+    };
     return (
         <SearchbarView
-            searchCourses={searchCourses}
             favouriteCourses={model.favourites}
             removeAllFavourites={removeAllFavourites}
             addFavourite={addFavourite}
@@ -86,7 +93,7 @@ const SearchbarPresenter = observer(({ model }) => {
             popup={popup}
             handleFavouriteClick={handleFavouriteClick}
             totalCredits={creditsSum(model.favourites)}
-            resetScrollPosition={resetScoll}
+            handleSearch={handleSearch}
         />
     );
 });

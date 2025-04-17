@@ -19,11 +19,6 @@ function SearchbarView(props) {
     return () => unsubscribe();
   }, [auth]);
 
-  const handleSearch = (query) => {
-    props.resetScrollPosition();
-    setSearchQuery(query);
-    props.searchCourses(query);
-  };
 
   const handleSignIn = async () => {
     try {
@@ -52,9 +47,9 @@ function SearchbarView(props) {
       <input
         type="text"
         placeholder="What course are you looking for?"
-        value={searchQuery}
+        value={props.searchQuery}
         onChange={(e) => 
-                    handleSearch(e.target.value)}
+                  props.handleSearch(e.target.value)}
                 onClick={(e)=>e.stopPropagation()}  //TODO decide if we want to close the fav list after clicking the searchbar
         className="w-[400px] h-[44px] pl-14 pr-4 bg-white text-black rounded-full"
       />
