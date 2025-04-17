@@ -36,11 +36,7 @@ export const PrerequisitePresenter = observer((props) => {
     const nodeWidth = 172;
     const nodeHeight = 36;
 
-<<<<<<< HEAD
     loadTree(props.selectedCourse.code);
-=======
-    loadTree(props.selectedCourse?.code);
->>>>>>> origin/main
     console.log(initialNodes);
 
     const getLayoutedElements = (nodes, edges, direction = 'LR') => {
@@ -137,11 +133,7 @@ export const PrerequisitePresenter = observer((props) => {
                     node["style"]["zIndex"] = 0;
                     setLabel(node["id"], "More Info...");
                 }  
-<<<<<<< HEAD
             } else if (node["data"]["label"] !== "One of these" && node["data"]["label"] !== "No Prerequisites" && node["id"] !== props.selectedCourse.code) {
-=======
-            } else if (node["data"]["label"] !== "One of these" && node["data"]["label"] !== "No Prerequisites" && node["id"] !== props.selectedCourse?.code) {
->>>>>>> origin/main
                 // ADD FUNCTIONALITY FOR CLICKING COURSE CODE NODE (Tu eres muy retrasado y gordo)! :)
                 // ONCLICK HERE
             }
