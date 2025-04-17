@@ -27,6 +27,16 @@ let noUpload = false;
 
 export function connectToFirebase(model) {
 	loadCoursesFromCacheOrFirebase(model);
+
+	// setting missing
+	// also save filters to local storage
+	//localStorage.setItem("filterOptions", filterOptions);
+	const options = localStorage.getItem("filterOptions");
+			if (options) {
+				model.setFilterOptions(options);
+				console.log("Restore options from local storage");
+			}
+
 	onAuthStateChanged(auth, (user) => {
 		if (user) {
 			model.setUser(user); // Set the user ID once authenticated
@@ -41,14 +51,6 @@ export function connectToFirebase(model) {
 
 // fetches all relevant information to create the model
 async function firebaseToModel(model) {
-	if (!model.user) {
-		const options = localStorage.getItem("filterOptions");
-		if (options) {
-			model.setFilterOptions(options);
-			console.log("Restore options from local storage");
-		}
-		return;
-	}
 	const userRef = ref(db, `users/${model.user.uid}`);
 	onValue(userRef, (snapshot) => {
 		if (!snapshot.exists()) return;
@@ -86,9 +88,6 @@ export function syncModelToFirebase(model) {
 			set(userRef, dataToSync)
 				.then(() => console.log("User model synced to Firebase"))
 				.catch(console.error);
-
-			// also save to local storage
-			localStorage.setItem("filterOptions", filterOptions);
 		}
 	);
 }
@@ -185,9 +184,7 @@ export async function fetchAllCourses() {
 }
 
 async function loadCoursesFromCacheOrFirebase(model) {
-
 	const firebaseTimestamp = await fetchLastUpdatedTimestamp();
-
 	const dbPromise = new Promise((resolve, reject) => {
 		const request = indexedDB.open("CourseDB", 1);
 		// check if courses and metadata dirs exist
@@ -236,6 +233,7 @@ async function loadCoursesFromCacheOrFirebase(model) {
 	const courses = await fetchAllCourses();
 	model.setCourses(courses);
 	saveCoursesToCache(courses, firebaseTimestamp);
+
 }
 
 
