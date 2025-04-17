@@ -284,7 +284,11 @@ export const PrerequisitePresenter = observer((props) => {
         } else {
             let root = createNode(props.selectedCourse.code, props.selectedCourse.code, "input");
             let copy = JSON.parse(JSON.stringify(props.selectedCourse.prerequisites));
-            let eligible = generateTree(JSON.parse(localStorage.getItem("completedCourses")), copy);
+            let courses_taken_local = JSON.parse(localStorage.getItem("completedCourses"));
+            if (courses_taken_local == null) {
+                courses_taken_local = [];
+            }
+            let eligible = generateTree(courses_taken_local, copy);
             if (eligible) {
                 root["style"]["backgroundColor"] = "lightgreen";
             }
